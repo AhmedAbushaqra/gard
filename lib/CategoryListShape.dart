@@ -30,7 +30,7 @@ class CategoryListShape extends StatelessWidget {
           catagoryData.onChangedSecondCallback(name);
         },
         child: GridTile(
-          child: Image.network(imgUrl,fit: BoxFit.cover,),
+          child: Image.asset(imgUrl,fit: BoxFit.fill,),
           // header: ,
           footer: GridTileBar(
             backgroundColor: Colors.black54,

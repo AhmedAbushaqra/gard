@@ -761,16 +761,45 @@ class Chains with ChangeNotifier {
   var Category=[
   {
    'cateName':'BONJORNO',
-   'cateImage':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+   'cateImage':'images/BONJORNO.jpg'
   },
     {
+      'cateName':'NESCAFE',
+      'cateImage':'images/NESCAFE.jpg'
+    },
+    {
+      'cateName':'COFFEE-MATE',
+      'cateImage':'images/COFFEE-MATE.jpg'
+    },
+    {
+      'cateName':'NIDO',
+      'cateImage':'images/NIDO.png'
+    },
+    {
+      'cateName':'BABY FOOD',
+      'cateImage':'images/BABY FOOD.png'
+    },
+    {
       'cateName':'NESQUIK',
-      'cateImage':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+      'cateImage':'images/NESQUIK.png'
+    },
+    {
+      'cateName':'MAGGI',
+      'cateImage':'images/MAGGI.jpg'
+    },
+    {
+      'cateName':'CEREAL',
+      'cateImage':'images/CEREAL.jpg'
+    },
+    {
+      'cateName':'CONFECTIONERY',
+      'cateImage':'images/CONFECTIONERY.png'
     },
     {
       'cateName':'WATER',
-      'cateImage':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+      'cateImage':'images/WATER.png'
     },
+
   ];
   final List<String> bonjornoSub=[
     'Bon.Mixes',
