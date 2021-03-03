@@ -51,37 +51,37 @@ class Chains with ChangeNotifier {
     {
       'id':'1',
       'name':'Carrefour',
-      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+      'imgUrl':'images/Carrefour.jpeg'
     },
     {
       'id':'2',
       'name':'Carrefour Express',
-      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+      'imgUrl':'images/CarrefourExpress.jpeg'
     },
     {
       'id':'3',
       'name':'Hipper one',
-      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+      'imgUrl':'images/HipperOne.jpeg'
     },
     {
       'id':'4',
       'name':'Spinneys',
-      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+      'imgUrl':'images/Spinneys.jpeg'
     },
     {
       'id':'5',
       'name':'Seoudi',
-      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+      'imgUrl':'images/Seoudi.jpeg'
     },
     {
       'id':'6',
       'name':'Ragab sons',
-      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+      'imgUrl':'images/RagabSons.jpeg'
     },
     {
       'id':'7',
       'name':'Metro',
-      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+      'imgUrl':'images/Metro.jpeg'
     },
   ];
   var Carrefour = [

@@ -15,7 +15,7 @@ class ListViewItem extends StatelessWidget {
       children: [
         ListTile(
           title: Text(BranchName),
-          leading: CircleAvatar(maxRadius: 55,backgroundImage: NetworkImage(imgUrl),),
+          leading: CircleAvatar(backgroundImage: AssetImage(imgUrl),maxRadius: 55,),
           trailing: IconButton(
             icon: Icon(Icons.arrow_forward_ios,),
             onPressed: (){

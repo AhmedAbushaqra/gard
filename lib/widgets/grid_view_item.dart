@@ -31,7 +31,7 @@ class GridViewItem extends StatelessWidget {
             Navigator.of(context).pushNamed(Branches.RouteName);
     },
         child: GridTile(
-          child: Image.network(imgUrl,fit: BoxFit.cover,),
+          child: Image.asset(imgUrl,fit: BoxFit.fill,),
           // header: ,
           footer: GridTileBar(
             backgroundColor: Colors.black54,
