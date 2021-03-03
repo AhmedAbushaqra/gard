@@ -722,15 +722,12 @@ class Chains with ChangeNotifier {
       'BranchName':  'المنصورة',
     },
   ];
+
   var branches = [];
   String selectedPlace;
   String imgUrlSelectedPlace;
   String selectedBranch;
   String id;
-
-
-
-
 
   void onChangedCallback(place) {
     if (place == 'Carrefour') {
@@ -758,5 +755,136 @@ class Chains with ChangeNotifier {
   void setSelectedBranch(String branch){
     selectedBranch=branch;
     notifyListeners();
+  }
+
+
+  var Category=[
+  {
+   'cateName':'BONJORNO',
+   'cateImage':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+  },
+    {
+      'cateName':'NESQUIK',
+      'cateImage':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'cateName':'WATER',
+      'cateImage':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+  ];
+  final List<String> bonjornoSub=[
+    'Bon.Mixes',
+    'Bon.Cappuuccino',
+  ];
+  var BonMixItems=[
+    {
+      'name':'khamsina2in1',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'name':'2in1',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg',
+    },
+    {
+      'name':'2in1Hazelnut',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg',
+    }
+  ];
+  var BonCappItems=[
+    {
+      'name':'mocha',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'name':'latte',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'name':'vanilla',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+  ];
+  final List<String> nesquikSub=[
+    'Powder',
+    'RTD',
+  ];
+  var NesPowderItems=[
+    {
+      'name':'NESQUIK 880g ',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'name':'NESQUIK 330g ',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'name':'NESQUIK 154g ',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+  ];
+  var NesRTDItems=[
+    {
+      'name':'Chocolate RTD ',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'name':'Strawbery Milk RTD ',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+  ];
+  final List<String> waterSub=[
+    'Water',
+  ];
+  var waterItems=[
+    {
+      'name':'Baraka 1 L',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'name':'Baraka 0.6 L ',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'name':'Baraka Shrink 6 L ',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+  ];
+
+
+  List<String> subCategory = [];
+  var items;
+  String selectedCategory;
+  String selectedSubCategory;
+
+
+  void onChangedSecondCallback(cate) {
+    if (cate == 'BONJORNO') {
+      subCategory = bonjornoSub;
+    } else if (cate == 'NESQUIK') {
+      subCategory = nesquikSub;
+    } else if (cate == 'WATER') {
+      subCategory = waterSub;
+    } else {
+      subCategory = [];
+    }
+      selectedSubCategory = null;
+      selectedCategory = cate;
+      notifyListeners();
+  }
+  void onChangedThiredCallback(subCate) {
+    if(subCate=='Bon.Mixes'){
+      items=BonMixItems;
+    }else if(subCate=='Bon.Cappuuccino'){
+      items=BonCappItems;
+    }else if(subCate=='Powder'){
+      items=NesPowderItems;
+    }else if(subCate=='RTD'){
+      items=NesRTDItems;
+    }else if(subCate=='Water'){
+      items=waterItems;
+    }
+    /* setState(() {
+      selectedSubCategory = subCate;
+    });*/
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gard/Category.dart';
 import 'package:gard/models/chainModel.dart';
 
 class ListViewItem extends StatelessWidget {
@@ -17,7 +18,9 @@ class ListViewItem extends StatelessWidget {
           leading: CircleAvatar(maxRadius: 55,backgroundImage: NetworkImage(imgUrl),),
           trailing: IconButton(
             icon: Icon(Icons.arrow_forward_ios,),
-            onPressed: (){},
+            onPressed: (){
+              Navigator.of(context).pushNamed(Category.RouteName);
+            },
           ),
         ),
         Divider(),

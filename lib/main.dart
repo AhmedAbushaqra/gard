@@ -2,7 +2,7 @@ import 'package:gard/Branches.dart';
 import 'package:flutter/material.dart';
 import 'package:gard/models/chainModel.dart';
 import 'package:gard/provider/ChainProvider.dart';
-import 'package:gard/selectItem.dart';
+import 'package:gard/Category.dart';
 import 'package:gard/widgets/grid_view_item.dart';
 import 'package:provider/provider.dart';
 
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         home: Home(),
         routes: {
           Branches.RouteName:(ctx)=>Branches(),
-          //selectItem.RouteName:(ctx)=>selectItem(),
+          Category.RouteName:(ctx)=>Category(),
         },
       ),
     );
