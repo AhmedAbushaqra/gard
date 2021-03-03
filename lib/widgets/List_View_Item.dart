@@ -13,7 +13,6 @@ class ListViewItem extends StatelessWidget {
     return Column(
       children: [
         ListTile(
-
           title: Text(BranchName),
           leading: CircleAvatar(maxRadius: 55,backgroundImage: NetworkImage(imgUrl),),
           trailing: IconButton(
