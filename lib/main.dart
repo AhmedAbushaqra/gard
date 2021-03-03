@@ -1,10 +1,12 @@
-import 'package:gard/category.dart';
+import 'package:gard/Branches.dart';
 import 'package:flutter/material.dart';
 import 'package:gard/models/chainModel.dart';
 import 'package:gard/provider/ChainProvider.dart';
 import 'package:gard/selectItem.dart';
+import 'package:gard/widgets/grid_view_item.dart';
 import 'package:provider/provider.dart';
 
+//https://script.google.com/macros/s/AKfycbyeaJJtVRgXqEqJrW0VPzhhSfdjzGvbJSGLLE05gF858bR-Vp5UFRR__Q/exec
 //https://script.google.com/macros/s/AKfycbyeaJJtVRgXqEqJrW0VPzhhSfdjzGvbJSGLLE05gF858bR-Vp5UFRR__Q/exec
 
 void main() => runApp(MyApp());
@@ -17,7 +19,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         home: Home(),
         routes: {
-          category.RouteName:(ctx)=>category(),
+          Branches.RouteName:(ctx)=>Branches(),
           //selectItem.RouteName:(ctx)=>selectItem(),
         },
       ),
@@ -28,97 +30,35 @@ class MyApp extends StatelessWidget {
 class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final chainData=Provider.of<Chains>(context);
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Center(
-          child: Container(
-            height: MediaQuery
-                .of(context)
-                .size
-                .height * 0.3,
-            child: ListView(
-              children: [
-                Container(
-                  height: 65,
-                  child: InputDecorator(
-                    decoration: InputDecoration(
-                      labelText: 'Chain',
-                      labelStyle: Theme
-                          .of(context)
-                          .primaryTextTheme
-                          .caption
-                          .copyWith(color: Colors.black, fontSize: 18),
-                      border: const OutlineInputBorder(),
-                    ),
-                    child: DropdownButtonHideUnderline(
-                      child: Consumer<Chains>(
-                        builder: (_, provider, __) {
-                          return DropdownButton<String>(
-
-                            /// place dropdown
-                            hint: Text('Select Place'),
-                            value: provider.selectedPlace,
-                            isExpanded: true,
-                            items: provider.places.map((String value) {
-                              return DropdownMenuItem<String>(
-                                value: value,
-                                child: Text(value),
-                              );
-                            }).toList(),
-                            onChanged: provider.onChangedCallback,
-                          );
-                        },
-                      ),
-                    ),
-                  ),
-                ),
-                SizedBox(height: 30,),
-                Container(
-                  height: 65,
-                  child: InputDecorator(
-                    decoration: InputDecoration(
-                      labelText: 'Branch',
-                      labelStyle: Theme
-                          .of(context)
-                          .primaryTextTheme
-                          .caption
-                          .copyWith(color: Colors.black, fontSize: 18),
-                      border: OutlineInputBorder(),
-                    ),
-                    child: DropdownButtonHideUnderline(
-                      child: Consumer<Chains>(
-                        builder: (_, provider, __) {
-                          return DropdownButton<String>(
-
-                            /// branch dropdown
-                            hint: Text('Select branch'),
-                            isExpanded: true,
-                            value: provider.selectedBranch,
-                            items: provider.branches.map((String value) {
-                              return DropdownMenuItem<String>(
-                                value: value,
-                                child: Text(value),
-                              );
-                            }).toList(),
-                            onChanged: provider.setSelectedBranch,
-                          );
-                        },
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
+      body:  Padding(
+        padding: EdgeInsets.only(top: MediaQuery.of(context).size.height*0.05),
+        child: GridView.builder(
+          padding: EdgeInsets.all(10),
+          itemCount: chainData.places.length,
+          itemBuilder: (ctx,i)=>GridViewItem(chainData.places[i]['id'],chainData.places[i]['name'],chainData.places[i]['imgUrl'],),
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount:2,
+            childAspectRatio: 3/2,
+            crossAxisSpacing: 10,
+            mainAxisSpacing: 10,
           ),
         ),
       ),
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {
-          Navigator.of(context).pushNamed(category.RouteName);
+      floatingActionButton: Consumer<Chains>(
+        builder: (_,provider,__){
+          return  FloatingActionButton.extended(
+            onPressed: () {
+              //provider.submitForm(Chain(id: provider.id,chain: provider.selectedPlace,branch: provider.selectedBranch), (String response) {
+               // print("Response:$response");
+              //});
+              Navigator.of(context).pushNamed(Branches.RouteName);
+            },
+            icon: Icon(Icons.save),
+            label: Text("Save"),
+          );
         },
-        icon: Icon(Icons.save),
-        label: Text("Save"),
       ),
     );
   }

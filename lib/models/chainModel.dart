@@ -2,14 +2,30 @@ import 'package:flutter/cupertino.dart';
 
 class Chain {
   final String id;
-  final String chainName;
+  final String chain;
   final String branch;
+  final String imgUrl;
 
+  Chain({this.id,
+    this.chain,
+    this.branch,
+    this.imgUrl,
+  });
 
-  Chain(
-      { this.id,
-        this.chainName,
-        this.branch,
-        });
-  String toParams() =>"?id=$id&chainName=$chainName&branch=$branch";
+  factory Chain.fromJson(dynamic json) {
+    return Chain(
+      id: json['id'],
+      chain: json['chain'],
+      branch: json['branch']
+      // "${json['id']}",
+      // "${json['chain']}",
+      // "${json['branch']}",
+    );
+  }
+
+  Map toJson() => {
+        'id': id,
+        'chain': chain,
+        'branch': branch,
+      };
 }

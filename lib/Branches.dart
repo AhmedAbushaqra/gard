@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:gard/provider/ChainProvider.dart';
 import 'package:gard/selectItem.dart';
+import 'package:gard/widgets/List_View_Item.dart';
+import 'package:provider/provider.dart';
 
-class category extends StatefulWidget {
+class Branches extends StatelessWidget {
   static const RouteName = "/Category";
-  @override
-  _categoryState createState() => _categoryState();
-}
-
-class _categoryState extends State<category> {
-  final List<String> category=[
+  final List<String> Category=[
     'BONJORNO',
     'NESQUIK',
     'WATER',
@@ -96,82 +94,22 @@ class _categoryState extends State<category> {
   String selectedSubCategory;
   @override
   Widget build(BuildContext context) {
+    final chainData=Provider.of<Chains>(context);
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Center(
-          child: Container(
-            height: MediaQuery.of(context).size.height*0.3,
-            child: ListView(
-              children: [
-                Container(
-                  height: 65,
-                  child: InputDecorator(
-                    decoration: InputDecoration(
-                      labelText: 'Category',
-                      labelStyle: Theme.of(context)
-                          .primaryTextTheme
-                          .caption
-                          .copyWith(color: Colors.black,fontSize: 18),
-                      border: const OutlineInputBorder(),
-                    ),
-                    child: DropdownButtonHideUnderline(
-                      child: DropdownButton<String>(
-                        /// place dropdown
-                        hint: Text('Select Category'),
-                        value: selectedCategory,
-                        isExpanded: true,
-                        items: category.map((String value) {
-                          return DropdownMenuItem<String>(
-                            value: value,
-                            child: Text(value),
-                          );
-                        }).toList(),
-                        onChanged: onChangedCallback,
-                      ),
-                    ),
-                  ),
-                ),
-                SizedBox(height: 30,),
-                Container(
-                  height: 65,
-                  child: InputDecorator(
-                    decoration: InputDecoration(
-                      labelText: 'Sub.Category',
-                      labelStyle: Theme.of(context)
-                          .primaryTextTheme
-                          .caption
-                          .copyWith(color: Colors.black,fontSize: 18),
-                      border:  OutlineInputBorder(),
-                    ),
-                    child: DropdownButtonHideUnderline(
-                      child: DropdownButton<String>(
-                        /// branch dropdown
-                        hint: Text('Select Sub.Category'),
-                        isExpanded: true,
-                        value: selectedSubCategory,
-                        items: subCategory.map((String value) {
-                          return DropdownMenuItem<String>(
-                            value: value,
-                            child: Text(value),
-                          );
-                        }).toList(),
-                        onChanged: onChangedSecondCallback,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
+      body:ListView.builder(
+          itemBuilder: (ctx,index)=>ListViewItem(
+            chainData.branches[index]['id'],
+            chainData.branches[index]['BranchName'],
+            chainData.imgUrlSelectedPlace,
           ),
-        ),
+        itemCount: chainData.branches.length,
       ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: (){
-         // Navigator.of(context).pushNamed(selectItem.RouteName,arguments: {
-          Navigator.of(context).push(MaterialPageRoute(
-              builder: (context)=>selectItem(items,selectedCategory,selectedSubCategory),
-          ));
+          // Navigator.of(context).pushNamed(selectItem.RouteName,arguments: {
+        //  Navigator.of(context).push(MaterialPageRoute(
+          //    builder: (context)=>selectItem(items,selectedCategory,selectedSubCategory),
+          //));
         },
         icon: Icon(Icons.save),
         label: Text("Save"),
@@ -191,10 +129,10 @@ class _categoryState extends State<category> {
     } else {
       subCategory = [];
     }
-    setState(() {
+   /* setState(() {
       selectedSubCategory = null;
       selectedCategory = cate;
-    });
+    });*/
   }
   void onChangedSecondCallback(subCate) {
     if(subCate=='Bon.Mixes'){
@@ -208,8 +146,8 @@ class _categoryState extends State<category> {
     }else if(subCate=='Water'){
       items=waterItems;
     }
-    setState(() {
+   /* setState(() {
       selectedSubCategory = subCate;
-    });
+    });*/
   }
 }
