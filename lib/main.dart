@@ -1,13 +1,13 @@
 import 'package:gard/Branches.dart';
 import 'package:flutter/material.dart';
+import 'package:gard/Items.dart';
 import 'package:gard/models/chainModel.dart';
 import 'package:gard/provider/ChainProvider.dart';
 import 'package:gard/Category.dart';
 import 'package:gard/widgets/grid_view_item.dart';
 import 'package:provider/provider.dart';
 
-//https://script.google.com/macros/s/AKfycbyeaJJtVRgXqEqJrW0VPzhhSfdjzGvbJSGLLE05gF858bR-Vp5UFRR__Q/exec
-//https://script.google.com/macros/s/AKfycbyeaJJtVRgXqEqJrW0VPzhhSfdjzGvbJSGLLE05gF858bR-Vp5UFRR__Q/exec
+//https://script.google.com/macros/s/AKfycbz6KOa6RIj8Qfdjl5KdKzXC0jZnT4-seCbrCCen45cw0q1LZGRxEFAoSZBShL3vFNZVFw/exec
 
 void main() => runApp(MyApp());
 
@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
         routes: {
           Branches.RouteName:(ctx)=>Branches(),
           Category.RouteName:(ctx)=>Category(),
+          Items.RouteName:(ctx)=>Items(),
         },
       ),
     );
@@ -45,20 +46,6 @@ class Home extends StatelessWidget {
             mainAxisSpacing: 10,
           ),
         ),
-      ),
-      floatingActionButton: Consumer<Chains>(
-        builder: (_,provider,__){
-          return  FloatingActionButton.extended(
-            onPressed: () {
-              //provider.submitForm(Chain(id: provider.id,chain: provider.selectedPlace,branch: provider.selectedBranch), (String response) {
-               // print("Response:$response");
-              //});
-              Navigator.of(context).pushNamed(Branches.RouteName);
-            },
-            icon: Icon(Icons.save),
-            label: Text("Save"),
-          );
-        },
       ),
     );
   }

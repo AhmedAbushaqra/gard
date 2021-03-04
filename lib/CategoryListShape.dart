@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:gard/Items.dart';
 import 'package:gard/models/product.dart';
 import 'package:gard/provider/ChainProvider.dart';
 import 'package:provider/provider.dart';
@@ -28,6 +29,7 @@ class CategoryListShape extends StatelessWidget {
           ];
           catagoryData.selectedCategory=name;
           catagoryData.onChangedSecondCallback(name);
+          Navigator.of(context).pushNamed(Items.RouteName);
         },
         child: GridTile(
           child: Image.asset(imgUrl,fit: BoxFit.fill,),

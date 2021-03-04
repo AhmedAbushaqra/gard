@@ -18,16 +18,6 @@ class Branches extends StatelessWidget {
           ),
         itemCount: chainData.branches.length,
       ),
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: (){
-          // Navigator.of(context).pushNamed(selectItem.RouteName,arguments: {
-        //  Navigator.of(context).push(MaterialPageRoute(
-          //    builder: (context)=>selectItem(items,selectedCategory,selectedSubCategory),
-          //));
-        },
-        icon: Icon(Icons.save),
-        label: Text("Save"),
-      ),
     );
   }
 }

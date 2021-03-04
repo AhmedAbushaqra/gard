@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gard/models/chainModel.dart';
+import 'package:gard/models/final_data.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert' as convert;
 
@@ -16,10 +17,10 @@ class Chains with ChangeNotifier {
   }
 
   void submitForm(
-      Chain chain, void Function(String) callback) async {
-    String URL="https://script.google.com/macros/s/AKfycbyRLDv1yv8jvNCtB42-y-bI24TuspgjMQALfYiONdeaYLHZPBrDr00mxg/exec";
+      FinalData finaldata, void Function(String) callback) async {
+    String URL="https://script.google.com/macros/s/AKfycbz6KOa6RIj8Qfdjl5KdKzXC0jZnT4-seCbrCCen45cw0q1LZGRxEFAoSZBShL3vFNZVFw/exec";
     try {
-      await http.post(URL, body: chain.toJson()).then((response) async {
+      await http.post(URL, body: finaldata.toJson()).then((response) async {
         if (response.statusCode == 302) {
           var url = response.headers['location'];
           await http.get(url).then((response) {
@@ -801,96 +802,238 @@ class Chains with ChangeNotifier {
     },
 
   ];
-  final List<String> bonjornoSub=[
-    'Bon.Mixes',
-    'Bon.Cappuuccino',
-  ];
-  var BonMixItems=[
+  var bonjornoSub=[
     {
-      'name':'khamsina2in1',
+      'id':'1',
+      'SubCate':'Bon.Mixes',
+      'Itemname':'khamsina2in1',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
-      'name':'2in1',
+    'id':'1',
+    'SubCate':'Bon.Mixes',
+    'Itemname':'2in1',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg',
     },
     {
-      'name':'2in1Hazelnut',
+      'id':'1',
+      'SubCate':'Bon.Mixes',
+      'Itemname':'2in1Hazelnut',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg',
-    }
-  ];
-  var BonCappItems=[
+    },
     {
-      'name':'mocha',
+      'id':'1',
+      'SubCate':'Bon.Cappuuccino',
+      'Itemname':'mocha',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
-      'name':'latte',
+      'id':'1',
+      'SubCate':'Bon.Cappuuccino',
+      'Itemname':'latte',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
-      'name':'vanilla',
-      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
-    },
-  ];
-  final List<String> nesquikSub=[
-    'Powder',
-    'RTD',
-  ];
-  var NesPowderItems=[
-    {
-      'name':'NESQUIK 880g ',
-      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
-    },
-    {
-      'name':'NESQUIK 330g ',
-      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
-    },
-    {
-      'name':'NESQUIK 154g ',
+      'id':'1',
+      'SubCate':'Bon.Cappuuccino',
+      'Itemname':'vanilla',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
   ];
-  var NesRTDItems=[
+  var Nescafesub=[
     {
-      'name':'Chocolate RTD ',
+      'id':'1',
+      'SubCate':'NESCAFE CLASSIC ',
+      'Itemname':'NESCAFE CLASSIC 1.8g',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
-      'name':'Strawbery Milk RTD ',
+      'id':'1',
+      'SubCate':'NESCAFE CLASSIC ',
+      'Itemname':'NESCAFE Pouch 18g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'NESCAFE CLASSIC ',
+      'Itemname':'CL200 Pouch',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'NESCAFE GOLD',
+      'Itemname':'NESCAFE G 100g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'NESCAFE GOLD',
+      'Itemname':'NESCAFE G 200g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'NESCAFE GOLD',
+      'Itemname':'NESCAFE G 50g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'NESCAFE MIX 2 IN 1',
+      'Itemname':' 2IN1 (24 Sticks )',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'NESCAFE MIX 3 IN 1',
+      'Itemname':' 3in1',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'NESCAFE MIX 3 IN 1',
+      'Itemname':' 3IN1 RICH',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'NESCAFE CAPPU',
+      'Itemname':' GOLD Sweet',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'NESCAFE CAPPU',
+      'Itemname':'GOLD Latte',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'NESCAFE CAPPU',
+      'Itemname':'GOLD vanilla',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
   ];
-  final List<String> waterSub=[
-    'Water',
+  var CoffeeMateSub=[
+    {
+      'id':'1',
+      'SubCate':'Coffee - Mate',
+      'Itemname':'400 g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Coffee - Mate',
+      'Itemname':'170 g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Coffee - Mate',
+      'Itemname':'CFMT + NESC CLAS CP (400g+50g)',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
   ];
-  var waterItems=[
+  var NidoSub=[
     {
-      'name':'Baraka 1 L',
+      'id':'1',
+      'SubCate':'Nido',
+      'Itemname':'NIDO 25g',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
-      'name':'Baraka 0.6 L ',
+      'id':'1',
+      'SubCate':'Nido',
+      'Itemname':'NIDO 100g',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
-      'name':'Baraka Shrink 6 L ',
+      'id':'1',
+      'SubCate':'Nido',
+      'Itemname':'NIDO 200g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+
+  ];
+  var nesquikSub=[
+    {
+      'id':'1',
+      'SubCate':'Powder',
+      'Itemname':'NESQUIK 880g ',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Powder',
+      'Itemname':'NESQUIK 330g ',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Powder',
+      'Itemname':'NESQUIK 154g ',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'RTD',
+      'Itemname':'Chocolate RTD ',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'RTD',
+      'Itemname':'Strawbery Milk RTD ',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+  ];
+  var waterSub=[
+    {
+      'id':'1',
+      'SubCate':'Water',
+      'Itemname':'Baraka 1 L',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Water',
+      'Itemname':'Baraka 0.6 L ',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Water',
+      'Itemname':'Baraka Shrink 6 L ',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
   ];
 
 
-  List<String> subCategory = [];
-  var items;
+  var subCategory = [];
+  //var items;
   String selectedCategory;
   String selectedSubCategory;
+  String itemId;
+  String ItemName;
 
 
   void onChangedSecondCallback(cate) {
     if (cate == 'BONJORNO') {
       subCategory = bonjornoSub;
+    }else if (cate == 'COFFEE-MATE') {
+      subCategory = CoffeeMateSub;
+    }else if (cate == 'NIDO') {
+      subCategory = NidoSub;
+    } else if (cate == 'BABY FOOD') {
+      subCategory = NidoSub;
     } else if (cate == 'NESQUIK') {
       subCategory = nesquikSub;
+    }else if (cate == 'MAGGI') {
+      subCategory = NidoSub;
+    }else if (cate == 'CEREAL') {
+      subCategory = NidoSub;
+    }else if (cate == 'CONFECTIONERY') {
+      subCategory = NidoSub;
     } else if (cate == 'WATER') {
       subCategory = waterSub;
     } else {
@@ -900,7 +1043,7 @@ class Chains with ChangeNotifier {
       selectedCategory = cate;
       notifyListeners();
   }
-  void onChangedThiredCallback(subCate) {
+ /* void onChangedThiredCallback(subCate) {
     if(subCate=='Bon.Mixes'){
       items=BonMixItems;
     }else if(subCate=='Bon.Cappuuccino'){
@@ -915,5 +1058,5 @@ class Chains with ChangeNotifier {
     /* setState(() {
       selectedSubCategory = subCate;
     });*/
-  }
+  }*/
 }
