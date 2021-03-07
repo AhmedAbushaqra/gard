@@ -4,6 +4,7 @@ import 'package:gard/Items.dart';
 import 'package:gard/models/chainModel.dart';
 import 'package:gard/provider/ChainProvider.dart';
 import 'package:gard/Category.dart';
+import 'package:gard/splash_screen.dart';
 import 'package:gard/widgets/grid_view_item.dart';
 import 'package:provider/provider.dart';
 
@@ -17,8 +18,10 @@ class MyApp extends StatelessWidget {
     return ChangeNotifierProvider<Chains>(
       create: (context)=>Chains(),
       child: MaterialApp(
-        home: Home(),
+        home: SplashScreen(),
         routes: {
+          SplashScreen.RouteName: (ctx)=>SplashScreen(),
+          Home.RouteName: (ctx)=> Home(),
           Branches.RouteName:(ctx)=>Branches(),
           Category.RouteName:(ctx)=>Category(),
           Items.RouteName:(ctx)=>Items(),
@@ -29,6 +32,8 @@ class MyApp extends StatelessWidget {
 }
 
 class Home extends StatelessWidget {
+  static const RouteName = "/home_screen";
+
   @override
   Widget build(BuildContext context) {
     final chainData=Provider.of<Chains>(context);

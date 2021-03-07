@@ -197,6 +197,7 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
                   });
                   Navigator.of(context).pop();
                  ISValidate=true;
+                 AllData.onChangedCheckBox();
                 }
               },
               icon: Icon(Icons.save),

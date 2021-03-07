@@ -1015,6 +1015,7 @@ class Chains with ChangeNotifier {
   String selectedSubCategory;
   String itemId;
   String ItemName;
+  bool isClick= false;
 
 
   void onChangedSecondCallback(cate) {
@@ -1043,6 +1044,10 @@ class Chains with ChangeNotifier {
       selectedCategory = cate;
       notifyListeners();
   }
+  void onChangedCheckBox(){
+    isClick = !isClick;
+    notifyListeners();
+  }
  /* void onChangedThiredCallback(subCate) {
     if(subCate=='Bon.Mixes'){
       items=BonMixItems;
@@ -1059,4 +1064,5 @@ class Chains with ChangeNotifier {
       selectedSubCategory = subCate;
     });*/
   }*/
+
 }

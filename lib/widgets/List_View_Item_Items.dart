@@ -9,7 +9,7 @@ class ItemsListView extends StatefulWidget {
   final String itemImgUrl;
   final String SubCate;
 
-  ItemsListView(this.id,this.ItemName,this.itemImgUrl,this.SubCate);
+  ItemsListView(this.id, this.ItemName, this.itemImgUrl, this.SubCate);
 
   @override
   _ItemsListViewState createState() => _ItemsListViewState();
@@ -17,35 +17,43 @@ class ItemsListView extends StatefulWidget {
 
 class _ItemsListViewState extends State<ItemsListView> {
   bool isClick = false;
+
   @override
   Widget build(BuildContext context) {
-    final itemData=Provider.of<Chains>(context);
+    final itemData = Provider.of<Chains>(context);
     return Column(
       children: [
         Divider(),
         ListTile(
-          onTap: (){
-            itemData.itemId=widget.id;
-            itemData.selectedSubCategory=widget.SubCate;
-            itemData.ItemName=widget.ItemName;
-            showDialog(context: context,
-                      builder: (BuildContext context){
-                        return CustomDialogBox(
-                          img: widget.itemImgUrl,
-                        );
-                      }
+          onTap: () {
+            itemData.itemId = widget.id;
+            itemData.selectedSubCategory = widget.SubCate;
+            itemData.ItemName = widget.ItemName;
+            showDialog(
+                context: context,
+                builder: (BuildContext context) {
+                  return CustomDialogBox(
+                    img: widget.itemImgUrl,
                   );
-            setState(() {
-              this.isClick = !isClick;
-            });
+                });
+            // setState(() {
+            //   this.isClick = !isClick;
+            // });
           },
           title: Text(widget.ItemName),
-          leading: CircleAvatar(backgroundImage: NetworkImage(widget.itemImgUrl),maxRadius: 55,),
-          trailing: Checkbox(
-            value: isClick,
-            onChanged: (isClick){
-            },
+          leading: CircleAvatar(
+            backgroundImage: NetworkImage(widget.itemImgUrl),
+            maxRadius: 55,
           ),
+          trailing: Consumer<Chains>(builder: (_, provider, __) {
+            return Checkbox(
+              value: provider.isClick,
+              onChanged: (value){
+                provider.onChangedCheckBox();
+                print(value);
+              },
+            );
+          }),
         ),
       ],
     );
