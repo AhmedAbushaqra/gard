@@ -87,639 +87,639 @@ class Chains with ChangeNotifier {
   ];
   var Carrefour = [
     {
-      'id':'1',
+      'id':'10001',
       'BranchName': 'المعادى',
     },
     {
-      'id':'2',
+      'id':'10002',
       'BranchName': "مول مصر",
     },
     {
-      'id':'3',
+      'id':'10003',
       'BranchName': "CFC",
     },
     {
-      'id':'4',
+      'id':'10004',
       'BranchName': "الماظه",
     },
     {
-      'id':'5',
+      'id':'10005',
       'BranchName': "داندى مول",
     },
     {
-      'id':'6',
+      'id':'10006',
       'BranchName': "العبور",
     },
     {
-      'id':'7',
+      'id':'10007',
       'BranchName': "صن ستى",
     },
     {
-      'id':'8',
+      'id':'10008',
       'BranchName': "الشروق",
     },
     {
-      'id':'9',
+      'id':'10009',
       'BranchName': "مدينتى",
     },
     {
-      'id':'10',
+      'id':'10010',
       'BranchName':  "محرم بك",
     },
     {
-      'id':'11',
+      'id':'10011',
       'BranchName': "العروبه",
     },
     {
-      'id':'12',
+      'id':'10012',
       'BranchName': "ستى لايت",
     },
     {
-      'id':'13',
+      'id':'10013',
       'BranchName':"طنطا",
     },
-    {
-      'id':'14',
-      'BranchName':  "مراكز",
-    },
+    // {
+    //   'id':'14',
+    //   'BranchName':  "مراكز",
+    // },
   ];
   var CarrefourExpress = [
     {
-      'id':'1',
+      'id':'10014',
       'BranchName': 'دمشق',
     },
     {
-      'id':'1',
+      'id':'10015',
       'BranchName': 'الزيتون',
     },
     {
-      'id':'1',
+      'id':'10016',
       'BranchName': 'سرايا مول',
     },
     {
-      'id':'1',
+      'id':'10017',
       'BranchName': 'بفرلى هيلز',
     },
     {
-      'id':'1',
+      'id':'10018',
       'BranchName': 'الجزيره مول',
     },
     {
-      'id':'1',
+      'id':'10019',
       'BranchName': 'المحافظه',
     },
     {
-      'id':'1',
+      'id':'10020',
       'BranchName': 'دولفن مول',
     },
     {
-      'id':'1',
+      'id':'10021',
       'BranchName': 'مشعل',
     },
     {
-      'id':'1',
+      'id':'10022',
       'BranchName': 'زيزينيا مول',
     },
     {
-      'id':'1',
+      'id':'10023',
       'BranchName': 'شبرا',
     },
     {
-      'id':'1',
+      'id':'10024',
       'BranchName': 'طيبه مول',
     },
     {
-      'id':'1',
+      'id':'10025',
       'BranchName': 'ميفيدا',
     },
     {
-      'id':'1',
+      'id':'10026',
       'BranchName': 'ميراج',
     },
     {
-      'id':'1',
+      'id':'10027',
       'BranchName': 'الرحاب',
     },
     {
-      'id':'1',
+      'id':'10028',
       'BranchName': 'الحمد',
     },
     {
-      'id':'1',
+      'id':'10029',
       'BranchName': 'ميجا',
     },
     {
-      'id':'1',
+      'id':'10030',
       'BranchName': 'داون تاون',
     },
     {
-      'id':'1',
+      'id':'10031',
       'BranchName': 'حلوان',
     },
     {
-      'id':'1',
+      'id':'10032',
       'BranchName': 'الاسمرات',
     },
     {
-      'id':'1',
+      'id':'10033',
       'BranchName': 'المقطم',
     },
     {
-      'id':'1',
+      'id':'10034',
       'BranchName': 'اعمار',
     },
     {
-      'id':'1',
+      'id':'10035',
       'BranchName': 'دجله',
     },
     {
-      'id':'1',
+      'id':'10036',
       'BranchName': 'البارون',
     },
     {
-      'id':'1',
+      'id':'10037',
       'BranchName': 'مايو 15',
     },
     {
-      'id':'1',
+      'id':'10038',
       'BranchName': 'الجزائر',
     },
     {
-      'id':'1',
+      'id':'10039',
       'BranchName': 'طره',
     },
     {
-      'id':'1',
+      'id':'10040',
       'BranchName': 'ونجت',
     },
     {
-      'id':'1',
+      'id':'10041',
       'BranchName': 'المنتزه',
     },
     {
-      'id':'1',
+      'id':'10042',
       'BranchName': 'كفر عبده',
     },
     {
-      'id':'1',
+      'id':'10043',
       'BranchName': 'جرين بلازا',
     },
     {
-      'id':'1',
+      'id':'10044',
       'BranchName': 'محطة الرمل',
     },
     {
-      'id':'1',
+      'id':'10045',
       'BranchName': 'الملتقى',
     },
     {
-      'id':'1',
+      'id':'10046',
       'BranchName': 'زكى رجب - الابراهيميه',
     },
     {
-      'id':'1',
+      'id':'10047',
       'BranchName': 'الهانوفيل',
     },
     {
-      'id':'1',
+      'id':'10048',
       'BranchName': 'دمنهور',
     },
     {
-      'id':'1',
+      'id':'10049',
       'BranchName': 'المنصورة',
     },
   ];
   var HipperOne = [
     {
-      'id':'1',
+      'id':'10050',
       'BranchName': 'العاشر من رمضان',
     },
     {
-      'id':'1',
+      'id':'10051',
       'BranchName': 'زايد',
     },
     {
-      'id':'1',
+      'id':'10052',
       'BranchName': 'السليمانيه',
     },
   ];
   var Spinneys = [
     {
-      'id':'1',
+      'id':'10053',
       'BranchName': 'ارينا مول',
     },
     {
-      'id':'1',
+      'id':'10054',
       'BranchName':  'سيتى سكيب',
     },
     {
-      'id':'1',
+      'id':'10055',
       'BranchName': 'مول العرب',
     },
     {
-      'id':'1',
+      'id':'10056',
       'BranchName':  'الهرم',
     },
     {
-      'id':'1',
+      'id':'10057',
       'BranchName': 'زايد',
     },
     {
-      'id':'1',
+      'id':'10058',
       'BranchName': 'الشروق',
     },
     {
-      'id':'1',
+      'id':'10059',
       'BranchName': 'التجمع الخامس',
     },
     {
-      'id':'1',
+      'id':'10060',
       'BranchName': 'المقطم',
     },
     {
-      'id':'1',
+      'id':'10061',
       'BranchName': 'سموحة',
     },
   ];
   var Seoudi = [
     {
-      'id':'1',
+      'id':'10062',
       'BranchName': 'سيتى ستارز',
     },
     {
-      'id':'1',
+      'id':'10063',
       'BranchName': 'واتر واى',
     },
     {
-      'id':'1',
+      'id':'10064',
       'BranchName': 'الشيخ زايد',
     },
     {
-      'id':'1',
+      'id':'10065',
       'BranchName': 'التجمع الخامس',
     },
     {
-      'id':'1',
+      'id':'10066',
       'BranchName': 'شيراتون',
     },
     {
-      'id':'1',
+      'id':'10067',
       'BranchName': 'حسنين هيكل',
     },
     {
-      'id':'1',
+      'id':'10068',
       'BranchName': 'دريم',
     },
     {
-      'id':'1',
+      'id':'10069',
       'BranchName': 'روكسى',
     },
     {
-      'id':'1',
+      'id':'10070',
       'BranchName': 'سوديك',
     },
     {
-      'id':'1',
+      'id':'10071',
       'BranchName': 'االدقى',
     },
     {
-      'id':'1',
+      'id':'10072',
       'BranchName': 'الحجاز',
     },
     {
-      'id':'1',
+      'id':'10073',
       'BranchName':'الحكمه',
     },
     {
-      'id':'1',
+      'id':'10074',
       'BranchName': 'سفنكس',
     },
     {
-      'id':'1',
+      'id':'10075',
       'BranchName': 'الطيران',
     },
     {
-      'id':'1',
+      'id':'10076',
       'BranchName': 'المعادى',
     },
     {
-      'id':'1',
+      'id':'10077',
       'BranchName': 'دجله',
     },
   ];
   var RagabSons = [
     {
-      'id':'1',
+      'id':'10078',
       'BranchName':'التجنيد',
     },
     {
-      'id':'1',
+      'id':'10079',
       'BranchName':  'الزيتون',
     },
     {
-      'id':'1',
+      'id':'10080',
       'BranchName': 'النعام',
     },
     {
-      'id':'1',
+      'id':'10081',
       'BranchName': 'جسر السويس',
     },
     {
-      'id':'1',
+      'id':'10082',
       'BranchName': 'الفتح',
     },
     {
-      'id':'1',
+      'id':'10083',
       'BranchName': 'ألف مسكن',
     },
     {
-      'id':'1',
+      'id':'10084',
       'BranchName': 'الميرغنى 2',
     },
     {
-      'id':'1',
+      'id':'10085',
       'BranchName': 'الميرغنى 1',
     },
     {
-      'id':'1',
+      'id':'10086',
       'BranchName':   'النزهه',
     },
     {
-      'id':'1',
+      'id':'10087',
       'BranchName': 'حدائق القبه',
     },
     {
-      'id':'1',
+      'id':'10088',
       'BranchName': 'الظاهر',
     },
     {
-      'id':'1',
+      'id':'10089',
       'BranchName': 'المطار',
     },
     {
-      'id':'1',
+      'id':'10090',
       'BranchName': 'الحجاز',
     },
     {
-      'id':'1',
+      'id':'10091',
       'BranchName': 'فيصل الاطباء',
     },
     {
-      'id':'1',
+      'id':'10092',
       'BranchName': 'الطالبية',
     },
     {
-      'id':'1',
+      'id':'10093',
       'BranchName': 'ناصر الثورة',
     },
     {
-      'id':'1',
+      'id':'10094',
       'BranchName': 'الوفاء والامل',
     },
     {
-      'id':'1',
+      'id':'10095',
       'BranchName': 'الحصري',
     },
     {
-      'id':'1',
+      'id':'10096',
       'BranchName': 'مول فايف ستارز',
     },
     {
-      'id':'1',
+      'id':'10097',
       'BranchName': 'الملكه',
     },
     {
-      'id':'1',
+      'id':'10098',
       'BranchName': 'الجيزة',
     },
     {
-      'id':'1',
+      'id':'10099',
       'BranchName': 'المجزر',
     },
     {
-      'id':'1',
+      'id':'10100',
       'BranchName': 'حدائق الأهرام',
     },
     {
-      'id':'1',
+      'id':'10101',
       'BranchName':  'السيدة',
     },
     {
-      'id':'1',
+      'id':'10102',
       'BranchName':  'يلبغا',
     },
     {
-      'id':'1',
+      'id':'10103',
       'BranchName': 'أحمد فخري',
     },
     {
-      'id':'1',
+      'id':'10104',
       'BranchName': 'الفنجري',
     },
     {
-      'id':'1',
+      'id':'10105',
       'BranchName':'الحي الثامن',
     },
     {
-      'id':'1',
+      'id':'10106',
       'BranchName': 'الحي العاشر',
     },
     {
-      'id':'1',
+      'id':'10107',
       'BranchName': 'مصطفى النحاس',
     },
     {
-      'id':'1',
+      'id':'10108',
       'BranchName':'وندر لاند',
     },
     {
-      'id':'1',
+      'id':'10109',
       'BranchName': 'التجمع الأول',
     },
     {
-      'id':'1',
+      'id':'10110',
       'BranchName': 'مدينتي 1',
     },
     {
-      'id':'1',
+      'id':'10111',
       'BranchName': 'مدينتي 2',
     },
     {
-      'id':'1',
+      'id':'10112',
       'BranchName': 'الشباب',
     },
     {
-      'id':'1',
+      'id':'10113',
       'BranchName': 'المدينة',
     },
     {
-      'id':'1',
+      'id':'10114',
       'BranchName': 'الرحاب',
     },
     {
-      'id':'1',
+      'id':'10115',
       'BranchName': 'التجمع الخامس',
     },
     {
-      'id':'1',
+      'id':'10116',
       'BranchName': 'حدائق حلوان',
     },
     {
-      'id':'1',
+      'id':'10117',
       'BranchName': 'حلوان',
     },
     {
-      'id':'1',
+      'id':'10118',
       'BranchName': 'رياض باشا',
     },
     {
-      'id':'1',
+      'id':'10119',
       'BranchName': 'شريف باشا',
     },
     {
-      'id':'1',
+      'id':'10120',
       'BranchName': 'المقطم 1',
     },
     {
-      'id':'1',
+      'id':'10121',
       'BranchName':'اللاسلكي',
     },
     {
-      'id':'1',
+      'id':'10122',
       'BranchName':'المقطم 2',
     },
     {
-      'id':'1',
+      'id':'10123',
       'BranchName':  'الجزائر',
     },
     {
-      'id':'1',
+      'id':'10124',
       'BranchName': 'المندرة',
     },
     {
-      'id':'1',
+      'id':'10125',
       'BranchName': 'الاستاد',
     },
     {
-      'id':'1',
+      'id':'10126',
       'BranchName':  'سامية الجمل',
     },
     {
-      'id':'1',
+      'id':'10127',
       'BranchName': 'قناة السويس',
     },
   ];
   var Metro = [
     {
-      'id':'1',
+      'id':'10128',
       'BranchName':  'روكسي',
     },
     {
-      'id':'1',
+      'id':'10129',
       'BranchName': 'الخليفه المأمون',
     },
     {
-      'id':'1',
+      'id':'10130',
       'BranchName': 'عمار بن ياسر',
     },
     {
-      'id':'1',
+      'id':'10131',
       'BranchName': 'شيراتون',
     },
     {
-      'id':'1',
+      'id':'10132',
       'BranchName':'العريش',
     },
     {
-      'id':'1',
+      'id':'10133',
       'BranchName': 'المنيل',
     },
     {
-      'id':'1',
+      'id':'10134',
       'BranchName':  'كوبري الجامعة',
     },
     {
-      'id':'1',
+      'id':'10135',
       'BranchName':  'مصدق',
     },
     {
-      'id':'1',
+      'id':'10136',
       'BranchName': 'الثورة',
     },
     {
-      'id':'1',
+      'id':'10137',
       'BranchName': 'المساحة',
     },
     {
-      'id':'1',
+      'id':'10138',
       'BranchName':  'سوريا',
     },
     {
-      'id':'1',
+      'id':'10139',
       'BranchName': 'الزمالك',
     },
     {
-      'id':'1',
+      'id':'10140',
       'BranchName': 'جامعة الدول',
     },
     {
-      'id':'1',
+      'id':'10141',
       'BranchName':  'لبنان',
     },
     {
-      'id':'1',
+      'id':'10142',
       'BranchName':  'النادي الاهلي',
     },
     {
-      'id':'1',
+      'id':'10143',
       'BranchName': 'جنينه مول',
     },
     {
-      'id':'1',
+      'id':'10144',
       'BranchName':'مدينتي',
     },
     {
-      'id':'1',
+      'id':'10145',
       'BranchName': 'الشروق',
     },
     {
-      'id':'1',
+      'id':'10146',
       'BranchName': 'الرحاب',
     },
     {
-      'id':'1',
+      'id':'10147',
       'BranchName': 'المقطم',
     },
     {
-      'id':'1',
+      'id':'10148',
       'BranchName': 'اللاسلكي',
     },
     {
-      'id':'1',
+      'id':'10149',
       'BranchName':  'دجله',
     },
     {
-      'id':'1',
+      'id':'10150',
       'BranchName': 'معادي الزراعي',
     },
     {
-      'id':'1',
+      'id':'10151',
       'BranchName':'سموحه',
     },
     {
-      'id':'1',
+      'id':'10152',
       'BranchName': 'زيزينيا',
     },
     {
-      'id':'1',
+      'id':'10153',
       'BranchName': 'لوران',
     },
     {
-      'id':'1',
+      'id':'10154',
       'BranchName': 'رشدي',
     },
     {
-      'id':'1',
+      'id':'10155',
       'BranchName':  'المنصورة',
     },
   ];
@@ -806,37 +806,67 @@ class Chains with ChangeNotifier {
     {
       'id':'1',
       'SubCate':'Bon.Mixes',
-      'Itemname':'khamsina2in1',
+      'Itemname':' khamsina2in1',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Bon.Mixes',
+      'Itemname':' (6) gm Mehwega',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
     'id':'1',
     'SubCate':'Bon.Mixes',
-    'Itemname':'2in1',
+    'Itemname':' 2in1',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg',
     },
     {
       'id':'1',
       'SubCate':'Bon.Mixes',
-      'Itemname':'2in1Hazelnut',
+      'Itemname':' 2in1Hazelnut',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg',
     },
     {
       'id':'1',
-      'SubCate':'Bon.Cappuuccino',
-      'Itemname':'mocha',
+      'SubCate':'Bon.Mixes',
+      'Itemname':' 2in1 Jar 400g EG',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'1',
       'SubCate':'Bon.Cappuuccino',
-      'Itemname':'latte',
+      'Itemname':' Mocha',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'1',
       'SubCate':'Bon.Cappuuccino',
-      'Itemname':'vanilla',
+      'Itemname':' Latte',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Bon.Cappuuccino',
+      'Itemname':' Hazelnut',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Bon.Cappuuccino',
+      'Itemname':' Latte Caramel',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Bon.Cappuuccino',
+      'Itemname':' Vanilla',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Bon.Cappuuccino',
+      'Itemname':' Latte Cinnamon Cocoa',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
   ];
@@ -844,45 +874,114 @@ class Chains with ChangeNotifier {
     {
       'id':'1',
       'SubCate':'NESCAFE CLASSIC ',
-      'Itemname':'NESCAFE CLASSIC 1.8g',
+      'Itemname':' NESCAFE CLASSIC 1.8g',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'1',
       'SubCate':'NESCAFE CLASSIC ',
-      'Itemname':'NESCAFE Pouch 18g',
+      'Itemname':' NESCAFE Pouch 18g',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'1',
       'SubCate':'NESCAFE CLASSIC ',
-      'Itemname':'CL200 Pouch',
+      'Itemname':' CL200 Pouch',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'NESCAFE CLASSIC ',
+      'Itemname':' NESCAFE Pouch 50g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'NESCAFE CLASSIC ',
+      'Itemname':' NESCAFE CLASSIC 100g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'NESCAFE CLASSIC ',
+      'Itemname':' NESCAFE CLASSIC 200g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'NESCAFE CLASSIC ',
+      'Itemname':' NESCAFE CLSSIC 200g Red Mug',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'NESCAFE CLASSIC ',
+      'Itemname':' NESCAFE CLASSIC Creama 100g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+
+    {
+      'id':'1',
+      'SubCate':'NESCAFE GOLD',
+      'Itemname':' NESCAFE G 100g',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'1',
       'SubCate':'NESCAFE GOLD',
-      'Itemname':'NESCAFE G 100g',
+      'Itemname':' NESCAFE G 200g',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'1',
       'SubCate':'NESCAFE GOLD',
-      'Itemname':'NESCAFE G 200g',
+      'Itemname':' NESCAFE G 50g',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'1',
       'SubCate':'NESCAFE GOLD',
-      'Itemname':'NESCAFE G 50g',
+      'Itemname':' NESCAFE GOLD Dcf 100g',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
+    {
+      'id':'1',
+      'SubCate':'NESCAFE GOLD',
+      'Itemname':' NESCAFE ESPRESSO 100g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'NESCAFE GOLD',
+      'Itemname':' NESCAFE GOLD Stick 1.8g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'NESCAFE GOLD',
+      'Itemname':' NESCAFE ESPRESSO 1.8g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'NESCAFE GOLD',
+      'Itemname':' NESCAFE GOLD Dcf 100g 20%PriceOff',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+
     {
       'id':'1',
       'SubCate':'NESCAFE MIX 2 IN 1',
       'Itemname':' 2IN1 (24 Sticks )',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
+    {
+      'id':'1',
+      'SubCate':'NESCAFE MIX 2 IN 1',
+      'Itemname':' 2IN1 (12 Sticks )',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+
     {
       'id':'1',
       'SubCate':'NESCAFE MIX 3 IN 1',
@@ -895,6 +994,61 @@ class Chains with ChangeNotifier {
       'Itemname':' 3IN1 RICH',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
+    {
+      'id':'1',
+      'SubCate':'NESCAFE MIX 3 IN 1',
+      'Itemname':' GOLD 3IN1',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'NESCAFE MIX 3 IN 1',
+      'Itemname':' Arabiana',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'NESCAFE MIX 3 IN 1',
+      'Itemname':' 3in1 Hzn',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'NESCAFE MIX 3 IN 1',
+      'Itemname':' 3in1 Choc',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'NESCAFE MIX 3 IN 1',
+      'Itemname':' 3in1 Caramel',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'NESCAFE MIX 3 IN 1',
+      'Itemname':' 3IN1 Milk',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'NESCAFE MIX 3 IN 1',
+      'Itemname':' 3in1 ICE',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'NESCAFE MIX 3 IN 1',
+      'Itemname':' NESC 3in1 Salted Crml',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'NESCAFE MIX 3 IN 1',
+      'Itemname':' 3in1 Vanilla',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+
     {
       'id':'1',
       'SubCate':'NESCAFE CAPPU',
@@ -910,9 +1064,22 @@ class Chains with ChangeNotifier {
     {
       'id':'1',
       'SubCate':'NESCAFE CAPPU',
-      'Itemname':'GOLD vanilla',
+      'Itemname':'GOLD Vanilla',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
+    {
+      'id':'1',
+      'SubCate':'NESCAFE CAPPU',
+      'Itemname':'GOLD Mocha',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'NESCAFE CAPPU',
+      'Itemname':'GOLD Caramel',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+
   ];
   var CoffeeMateSub=[
     {
@@ -953,8 +1120,282 @@ class Chains with ChangeNotifier {
       'Itemname':'NIDO 200g',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
-
+    {
+      'id':'1',
+      'SubCate':'Nido',
+      'Itemname':'NIDO 300g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Nido',
+      'Itemname':'NIDO 450g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Nido',
+      'Itemname':'NIDO 700g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Nido',
+      'Itemname':'NIDO 1500g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Nido',
+      'Itemname':'Elasasy 275 g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Nido',
+      'Itemname':'NIDO(1.5KG+450g)',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Nido',
+      'Itemname':'NIDO 400g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Nido',
+      'Itemname':'NIDO 900g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Nido',
+      'Itemname':'NESTLE Powder Salep 17g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Nido',
+      'Itemname':'NESTLE SCM 397g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Nido',
+      'Itemname':'NESTLE Milk Cream 160g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'GUMs',
+      'Itemname':'NIDO 1+ (576g)',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'GUMs',
+      'Itemname':'NIDO 1+ (288g)',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'GUMs',
+      'Itemname':'NIDO 1+ (145g)',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
   ];
+
+  var babyfoodSub = [
+    {
+      'id':'1',
+      'SubCate':'Wyeth',
+      'Itemname':'MAN 3 400g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Wyeth',
+      'Itemname':'MAN 1 400g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Wyeth',
+      'Itemname':'MAN 2 400g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Wyeth',
+      'Itemname':'NESTOGEN 1 400G',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Wyeth',
+      'Itemname':'NESTOGEN 3 200G',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Wyeth',
+      'Itemname':'NESTOGEN 2 400G',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Wyeth',
+      'Itemname':'PROGRESS GOLD 3 400G',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Wyeth',
+      'Itemname':'Pro GOLD Tin 400G',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Wyeth',
+      'Itemname':'Promil Gold 400G',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Wyeth',
+      'Itemname':'PROGRESS GOLD 3 800G',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Wyeth',
+      'Itemname':'Pro GOLD Tin 800G',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Wyeth',
+      'Itemname':'Promil GOLD 800G',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Wyeth',
+      'Itemname':'RESOURCE JUNIOR 400G',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'CERELAC',
+      'Itemname':'Rice Wtht Milk 125g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'CERELAC',
+      'Itemname':'Rice Milk 125g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'CERELAC',
+      'Itemname':'Rise+Vegetables Wtht Milk 125g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'CERELAC',
+      'Itemname':'Dates Milk 125g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'CERELAC',
+      'Itemname':'Honey Milk 125g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'CERELAC',
+      'Itemname':'3 Fruits Milk 125g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'CERELAC',
+      'Itemname':'Wheat Milk 125g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'CERELAC',
+      'Itemname':'Wheat Without Milk 125g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'CERELAC',
+      'Itemname':'Wheat Without Milk 250g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'CERELAC',
+      'Itemname':'Rice Without Milk 250g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'CERELAC',
+      'Itemname':'Wheat Milk 250g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'CERELAC',
+      'Itemname':'3 Fruits Milk 250g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'CERELAC',
+      'Itemname':'Honey Milk 250g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'CERELAC',
+      'Itemname':'Iron + Rice Milk 250g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'CERELAC',
+      'Itemname':'Iron + Wheat Milk 500g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'CERELAC',
+      'Itemname':'Iron+ 3 Fruits Milk 500g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'CERELAC',
+      'Itemname':'Iron+ Wheat Milk 500g Price Off EG',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'CERELAC',
+      'Itemname':'Iron+ 3Frt Milk 500g Price Off EG',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+  ];
+
+
   var nesquikSub=[
     {
       'id':'1',
@@ -976,6 +1417,37 @@ class Chains with ChangeNotifier {
     },
     {
       'id':'1',
+      'SubCate':'Powder',
+      'Itemname':'NESQUIK 11g ',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Powder',
+      'Itemname':'NESQUIK 77g ',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Powder',
+      'Itemname':'NESQUIK 44g ',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Powder',
+      'Itemname':'BONJORNO Hot Choc Hazelnut',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Powder',
+      'Itemname':'BONJORNO Hot Chocolate',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+
+    {
+      'id':'1',
       'SubCate':'RTD',
       'Itemname':'Chocolate RTD ',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
@@ -987,23 +1459,650 @@ class Chains with ChangeNotifier {
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
   ];
+
+  var maggiSub = [
+    {
+      'id':'1',
+      'SubCate':'Tab',
+      'Itemname':'MAGGI 72g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Tab',
+      'Itemname':'MAGGI Beef 20g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Tab',
+      'Itemname':'MAGGI LowSalt 20g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Tab',
+      'Itemname':'MAGGI V 18g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Tab',
+      'Itemname':'MAGGI V 72g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Tab',
+      'Itemname':'MAGGI 12 Tab',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Mix',
+      'Itemname':'Bechamel',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Mix',
+      'Itemname':'Shawerma',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Mix',
+      'Itemname':'Shish Tawuuk',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Mix',
+      'Itemname':'Fish',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Mix',
+      'Itemname':'Burger',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Mix',
+      'Itemname':'Hawawshi',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Mix',
+      'Itemname':'Kofta',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Mix',
+      'Itemname':'Kofta With Parsley',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Mix',
+      'Itemname':'Chicken Mashawy',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Mix',
+      'Itemname':'Chinese',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Mix',
+      'Itemname':'Indian',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Soup',
+      'Itemname':'Chicken Noodle',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Soup',
+      'Itemname':'Chicken ABC',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Soup',
+      'Itemname':'Chicken Cream',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Soup',
+      'Itemname':'Mushroom',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Soup',
+      'Itemname':'Chicken pasta',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Soup',
+      'Itemname':'Kids potato',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+  ];
+
+  var cerealSub = [
+    {
+      'id':'1',
+      'SubCate':'Cereal',
+      'Itemname':'FITNESS 375g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Cereal',
+      'Itemname':'LION 400g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Cereal',
+      'Itemname':'NESQUIK 330g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Cereal',
+      'Itemname':'NESQUIK 180g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Cereal',
+      'Itemname':'LION 250g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Cereal',
+      'Itemname':'FITNESS & FRT 375g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Cereal',
+      'Itemname':'FITNESS HNY&LMD 355g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Cereal',
+      'Itemname':'NESQUIK 25g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Cereal',
+      'Itemname':'LION 25g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Cereal',
+      'Itemname':'Cheerios',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+  ];
+
+  var confectionerySub = [
+    {
+      'id':'1',
+      'SubCate':'Chocolate',
+      'Itemname':'QUALITY STREET 240g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Chocolate',
+      'Itemname':'QUALITY STREET 480g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Chocolate',
+      'Itemname':'QUALITY STREET 900g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Chocolate',
+      'Itemname':'MACKINTOSH\'S QUALITY 200g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Chocolate',
+      'Itemname':'MACKINTOSH\'S QUALITY 375g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Chocolate',
+      'Itemname':'MACKINTOSH\'S QUALITY 850g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Chocolate',
+      'Itemname':'KIT KAT 4F',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Chocolate',
+      'Itemname':'KIT KAT CHUNKY Lotus',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Chocolate',
+      'Itemname':'KIT KAT CHUNKY Caramel ',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Chocolate',
+      'Itemname':'KIT KAT CHUNKY Cookies & Cream',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Chocolate',
+      'Itemname':'KIT KAT CHUNKY peant butter',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Chocolate',
+      'Itemname':'KIT KAT CHUNKY White',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Chocolate',
+      'Itemname':'KIT KAT CKY Popcorn',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Chocolate',
+      'Itemname':'KIT KAT CHUNKY Red',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Chocolate',
+      'Itemname':'KIT KAT Dark',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Chocolate',
+      'Itemname':'KIT KAT 4F White',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Chocolate',
+      'Itemname':'KIT KAT 2F',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Chocolate',
+      'Itemname':'KIT KAT 2F Caramel',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Chocolate',
+      'Itemname':'KIT KAT 2F Hazelnut',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Chocolate',
+      'Itemname':'KIT KAT 2F Cookie',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Chocolate',
+      'Itemname':'KIT KAT 2F Raspberry',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Chocolate',
+      'Itemname':'KIT KAT MINI Bag 2F 250g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Chocolate',
+      'Itemname':'KIT KAT Mini Mix Bag 227',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Chocolate',
+      'Itemname':'KIT KAT Minis 232g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Chocolate',
+      'Itemname':'KIT KAT CUNKY Mini 250g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Chocolate',
+      'Itemname':'KITKAT MINI Moments 272',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Chocolate',
+      'Itemname':'KIT KAT MINI Moments Desserts',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Chocolate',
+      'Itemname':'KITKAT MINI Moments Lotus',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Chocolate',
+      'Itemname':'Kit Kat Miniatures',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Promotion',
+      'Itemname':'KIT KAT 2 Finger4 + 1 Free',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Promotion',
+      'Itemname':'KIT KAT 4 Finger 5 + 1 Free',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Promotion',
+      'Itemname':'KIT KAT CHUNKY Red 3+1 Free',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Promotion',
+      'Itemname':'KIT KAT 2 Finger +6 Free',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Promotion',
+      'Itemname':'KIT KAT 4 Finger + 4 Free',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Promotion',
+      'Itemname':'KIT KAT 2F Hazelnut 5+ 1 Free',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Promotion',
+      'Itemname':'KIT KAT 2F Cookie Crumble 5+1 Free',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Promotion',
+      'Itemname':'KIT KAT 2F Caramel 5+1 Free',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Promotion',
+      'Itemname':'KIT KAT 2F Raspberry 5+1 Free',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'FITNESS Toasties',
+      'Itemname':'Honey Mustard',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'FITNESS Toasties',
+      'Itemname':'Tomato Herbs',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'FITNESS Toasties',
+      'Itemname':'Cumin Lemon',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'FITNESS Toasties',
+      'Itemname':'Mix Spices',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'FITNESS Toasties',
+      'Itemname':'Cheese',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'FITNESS Toasties',
+      'Itemname':'FITNESS Biscuits App&Cinnamon',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'FITNESS Toasties',
+      'Itemname':'Fitness Biscuits Plain',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'DOLCECA',
+      'Itemname':'Coat Wafer Eshta',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'DOLCECA',
+      'Itemname':'Coat Wafer Choc',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'DOLCECA',
+      'Itemname':'Long Chocolate',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'DOLCECA',
+      'Itemname':'Long Brownie',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'DOLCECA',
+      'Itemname':'Long Eshta',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Buscuits Nesquik',
+      'Itemname':'Swch Milk 56g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Buscuits Nesquik',
+      'Itemname':'Swch Choc 28g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Buscuits Nesquik',
+      'Itemname':'Swch Choc 56g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Buscuits Nesquik',
+      'Itemname':'Swch Milk 28g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Buscuits Nesquik',
+      'Itemname':'Choco 37g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Buscuits Nesquik',
+      'Itemname':'Choco 75g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+    {
+      'id':'1',
+      'SubCate':'Buscuits Nesquik',
+      'Itemname':'Milk 37g',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+  ];
+
   var waterSub=[
     {
       'id':'1',
       'SubCate':'Water',
-      'Itemname':'Baraka 1 L',
+      'Itemname':'NPL 1.5 L',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+
+    {
+      'id':'1',
+      'SubCate':'Water',
+      'Itemname':'NPL .6 L',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+
+    {
+      'id':'1',
+      'SubCate':'Water',
+      'Itemname':'Nestle Shrink 6L',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+
+    {
+      'id':'1',
+      'SubCate':'Water',
+      'Itemname':'Kids Charcters 330L',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+
+    {
+      'id':'1',
+      'SubCate':'Water',
+      'Itemname':'Sparkling 0.24 L',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+
+    {
+      'id':'1',
+      'SubCate':'Water',
+      'Itemname':'1.5 Shrink',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+
+    {
+      'id':'1',
+      'SubCate':'Water',
+      'Itemname':'Baraka 1.5L',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'1',
       'SubCate':'Water',
-      'Itemname':'Baraka 0.6 L ',
+      'Itemname':'Baraka 0.6 L',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'1',
       'SubCate':'Water',
-      'Itemname':'Baraka Shrink 6 L ',
+      'Itemname':'Baraka Shrink 6 L',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+
+    {
+      'id':'1',
+      'SubCate':'Water',
+      'Itemname':'Lime 12B',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+
+    {
+      'id':'1',
+      'SubCate':'Water',
+      'Itemname':'Vitality .500 L',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+
+    {
+      'id':'1',
+      'SubCate':'Water',
+      'Itemname':'Lemon 12B',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+
+    {
+      'id':'1',
+      'SubCate':'Water',
+      'Itemname':'Mixed Berries 12B',
+      'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
+    },
+
+    {
+      'id':'1',
+      'SubCate':'Water',
+      'Itemname':'Green Apple 12B',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
   ];
@@ -1021,20 +2120,25 @@ class Chains with ChangeNotifier {
   void onChangedSecondCallback(cate) {
     if (cate == 'BONJORNO') {
       subCategory = bonjornoSub;
-    }else if (cate == 'COFFEE-MATE') {
+    }
+    else if (cate == 'NESCAFE') {
+      subCategory = Nescafesub;
+    }
+    else if (cate == 'COFFEE-MATE') {
       subCategory = CoffeeMateSub;
-    }else if (cate == 'NIDO') {
+    }
+    else if (cate == 'NIDO') {
       subCategory = NidoSub;
     } else if (cate == 'BABY FOOD') {
-      subCategory = NidoSub;
+      subCategory = babyfoodSub;
     } else if (cate == 'NESQUIK') {
       subCategory = nesquikSub;
     }else if (cate == 'MAGGI') {
-      subCategory = NidoSub;
+      subCategory = maggiSub;
     }else if (cate == 'CEREAL') {
-      subCategory = NidoSub;
+      subCategory = cerealSub;
     }else if (cate == 'CONFECTIONERY') {
-      subCategory = NidoSub;
+      subCategory = confectionerySub;
     } else if (cate == 'WATER') {
       subCategory = waterSub;
     } else {
