@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gard/Category.dart';
+import 'package:gard/Reports.dart';
 import 'package:gard/models/chainModel.dart';
 import 'package:gard/provider/ChainProvider.dart';
 import 'package:provider/provider.dart';
@@ -22,7 +23,7 @@ class ListViewItem extends StatelessWidget {
           onTap: (){
             chainData.id=id;
             chainData.selectedBranch=BranchName;
-            Navigator.of(context).pushNamed(Category.RouteName);
+            Navigator.of(context).pushNamed(Reports.RouteName);
           },
           leading: CircleAvatar(backgroundImage: AssetImage(imgUrl),maxRadius: 55,),
           trailing: IconButton(

@@ -36,9 +36,9 @@ class _ItemsListViewState extends State<ItemsListView> {
                     img: widget.itemImgUrl,
                   );
                 });
-            // setState(() {
-            //   this.isClick = !isClick;
-            // });
+             setState(() {
+               this.isClick = !isClick;
+             });
           },
           title: Text(widget.ItemName),
           leading: CircleAvatar(
@@ -47,10 +47,8 @@ class _ItemsListViewState extends State<ItemsListView> {
           ),
           trailing: Consumer<Chains>(builder: (_, provider, __) {
             return Checkbox(
-              value: provider.isClick,
+              value: isClick,
               onChanged: (value){
-                provider.onChangedCheckBox();
-                print(value);
               },
             );
           }),

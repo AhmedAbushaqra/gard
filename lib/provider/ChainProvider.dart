@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gard/models/MissingData.dart';
 import 'package:gard/models/chainModel.dart';
 import 'package:gard/models/final_data.dart';
 import 'package:http/http.dart' as http;
@@ -35,19 +36,25 @@ class Chains with ChangeNotifier {
     }
   }
 
+  void submitMissingForm(
+      MissingData missingData, void Function(String) callback) async {
+    String URL="https://script.google.com/macros/s/AKfycbwaK9qeiDftz4QdutY5Ad_yXxbFm8V51GznxNbr436590zCCAtROfwP25E1yW8RPtrMQQ/exec";
+    try {
+      await http.post(URL, body: missingData.toJson()).then((response) async {
+        if (response.statusCode == 302) {
+          var url = response.headers['location'];
+          await http.get(url).then((response) {
+            callback(convert.jsonDecode(response.body)['status']);
+          });
+        } else {
+          callback(convert.jsonDecode(response.body)['status']);
+        }
+      });
+    } catch (e) {
+      print(e);
+    }
+  }
 
-  // void submitForm(Chain chain) async{
-  //    String URL="https://script.google.com/macros/s/AKfycbw-EtV4Rsh4kfoT9ETaj9ooCYHe7zd2U4tERo3SvK0JLP2MfpXuukM/exec";
-  //   try {
-  //    final response = await http.post(URL,body: chain.toParams()
-  //     ).then((response){
-  //       convert.jsonDecode(response.body)['status'];
-  //     });
-  //    notifyListeners();
-  //   }catch (e){
-  //     print(e);
-  //   }
-  // }
   var places = [
     {
       'id':'1',
@@ -2116,6 +2123,7 @@ class Chains with ChangeNotifier {
   String ItemName;
   bool isClick= false;
 
+  String reportType;
 
   void onChangedSecondCallback(cate) {
     if (cate == 'BONJORNO') {

@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 
 //[branchid,date,chain,branch,catename,subcatename,itemname,capacity,faces]
 
-class FinalData {
+class MissingData {
   final String branchid;
   final String date;
   final String chain;
@@ -11,9 +11,8 @@ class FinalData {
   final String subcatename;
   final String itemname;
   final String capacity;
-  final String faces;
 
-  FinalData({
+  MissingData({
     this.branchid,
     this.date,
     this.chain,
@@ -22,11 +21,10 @@ class FinalData {
     this.subcatename,
     this.itemname,
     this.capacity,
-    this.faces,
   });
 
-  factory FinalData.fromJson(dynamic json) {
-    return FinalData(
+  factory MissingData.fromJson(dynamic json) {
+    return MissingData(
       branchid: json['branchid'],
       date: json['date'],
       chain: json['chain'],
@@ -35,19 +33,17 @@ class FinalData {
       subcatename: json['subcatename'],
       itemname: json['itemname'],
       capacity: json['capacity'],
-      faces: json['faces'],
     );
   }
 
   Map toJson() => {
-        'branchid': branchid,
-        'date': date,
-        'chain': chain,
-        'branch': branch,
-        'catename': catename,
-        'subcatename': subcatename,
-        'itemname': itemname,
-        'capacity': capacity,
-        'faces': faces,
-      };
+    'branchid': branchid,
+    'date': date,
+    'chain': chain,
+    'branch': branch,
+    'catename': catename,
+    'subcatename': subcatename,
+    'itemname': itemname,
+    'capacity': capacity,
+  };
 }
