@@ -2138,7 +2138,10 @@ class Chains with ChangeNotifier {
 
 
   var subCategory = [];
-  //var items;
+  List<Chain> _expireItems=[];
+  List<Chain> get expireItems {
+    return [..._expireItems];
+  }
   String selectedCategory;
   String selectedSubCategory;
   String itemId;
@@ -2146,6 +2149,17 @@ class Chains with ChangeNotifier {
   bool isClick= false;
 
   String reportType;
+
+  void AddProduct(Chain expiryData){
+    final newExpireItem=Chain(
+      id: expiryData.id,
+      chain: expiryData.chain,
+      branch: expiryData.branch,
+      imgUrl: expiryData.imgUrl,
+    );
+    _expireItems.add(newExpireItem);
+    notifyListeners();
+  }
 
   void onChangedSecondCallback(cate) {
     if (cate == 'BONJORNO') {

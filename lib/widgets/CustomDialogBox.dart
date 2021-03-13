@@ -388,7 +388,7 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
                   branchid: AllData.id,
                   chain: AllData.selectedPlace,
                   branch: AllData.selectedBranch,
-                  itemnum: '-',
+                  itemnum: AllData.itemId,
                   catename: AllData.selectedCategory,
                   subcatename: AllData.selectedSubCategory,
                   itemname: AllData.ItemName,
