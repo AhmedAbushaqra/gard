@@ -67,6 +67,8 @@ flutter:
     - images/NESQUIK.png
     - images/WATER.png
     - images/nestle.mp4
+    - images/nestle_logo.jpg
+    - images/nestle_logo.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -22,6 +22,7 @@ class MyApp extends StatelessWidget {
         home: SplashScreen(),
         routes: {
           SplashScreen.RouteName: (ctx)=>SplashScreen(),
+          LogoScreen.RouteName: (ctx)=>LogoScreen(),
           Home.RouteName: (ctx)=> Home(),
           Branches.RouteName:(ctx)=>Branches(),
           Category.RouteName:(ctx)=>Category(),
