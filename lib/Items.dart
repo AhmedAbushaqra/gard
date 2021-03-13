@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:gard/models/final_data.dart';
 import 'package:gard/provider/ChainProvider.dart';
 import 'package:gard/widgets/List_View_Item_Items.dart';
+import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
 class Items extends StatelessWidget {
@@ -17,6 +19,26 @@ class Items extends StatelessWidget {
           ItemData.subCategory[index]['SubCate'],
         ),
         itemCount: ItemData.subCategory.length,
+      ),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {
+            ItemData.submitForm(FinalData(
+              branchid: ItemData.id,
+              date:  DateFormat.yMMMMd("en_US").format(DateTime.now()),
+              chain: ItemData.selectedPlace,
+              branch: ItemData.selectedBranch,
+              catename: ItemData.selectedCategory+" Shelf Share",
+              subcatename: "",
+              itemname: "",
+              capacity: "",
+              faces: '',
+            ), (String response) {
+              print("Response:$response");
+            });
+           // Navigator.of(context).pop();
+        },
+        icon: Icon(Icons.save),
+        label: Text("Save"),
       ),
     );
   }

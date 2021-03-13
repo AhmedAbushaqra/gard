@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:gard/models/ExpiryData.dart';
 import 'package:gard/models/MissingData.dart';
 import 'package:gard/models/final_data.dart';
 import 'package:gard/provider/ChainProvider.dart';
@@ -40,6 +41,7 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
   TextEditingController PriceController = TextEditingController();
   TextEditingController FacesController = TextEditingController();
   String capacity;
+  String missingType;
   bool ISValidate=true;
   int _index = 0;
   void isClicked(int index){
@@ -287,6 +289,7 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
                             borderRadius: BorderRadius.circular(10)),
                         child: Text('قطعه'),
                         onPressed: () {
+                          missingType='قطعه ';
                           isClicked(1);
                         }),
                   ),
@@ -299,6 +302,7 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
                             borderRadius: BorderRadius.circular(10)),
                         child: Text('علبه'),
                         onPressed: () {
+                          missingType='علبه ';
                           isClicked(2);
                         }),
                   ),
@@ -311,6 +315,7 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
                             borderRadius: BorderRadius.circular(10)),
                         child: Text('كرتونه'),
                         onPressed: () {
+                          missingType='كرتونه ';
                           isClicked(3);
                         }),
                   ),
@@ -331,7 +336,7 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
                         autofocus: false,
                         style: TextStyle(fontSize: 22.0, color: Colors.black),
                         decoration: InputDecoration(
-                          hintText: '00.0 L.E',
+                          hintText: '00',
                           filled: true,
                           fillColor: Colors.white,
                           contentPadding: const EdgeInsets.only(
@@ -374,11 +379,25 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
           right: 10,
           child: FloatingActionButton.extended(
             onPressed: () {
-              if(_index==0||PriceController.text.isEmpty||_index!=3 && FacesController.text.isEmpty){
+              if(_index==0||PriceController.text.isEmpty||_selectedDate=='Tap to select date'){
                 setState(() {
                   ISValidate=false;
                 });
               }else{
+                AllData.submitExpiryForm(ExpiryData(
+                  branchid: AllData.id,
+                  chain: AllData.selectedPlace,
+                  branch: AllData.selectedBranch,
+                  itemnum: '-',
+                  catename: AllData.selectedCategory,
+                  subcatename: AllData.selectedSubCategory,
+                  itemname: AllData.ItemName,
+                  count: PriceController.text,
+                  itemtype: missingType,
+                  expirydate: _selectedDate,
+                ), (String response) {
+                  print("Response:$response");
+                });
                 Navigator.of(context).pop();
                 ISValidate=true;
               }

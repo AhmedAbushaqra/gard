@@ -1,8 +1,8 @@
 import 'package:gard/Branches.dart';
 import 'package:flutter/material.dart';
+import 'package:gard/ExpiryItem.dart';
 import 'package:gard/Items.dart';
 import 'package:gard/Reports.dart';
-import 'package:gard/models/chainModel.dart';
 import 'package:gard/provider/ChainProvider.dart';
 import 'package:gard/Category.dart';
 import 'package:gard/splash_screen.dart';
@@ -27,6 +27,7 @@ class MyApp extends StatelessWidget {
           Category.RouteName:(ctx)=>Category(),
           Items.RouteName:(ctx)=>Items(),
           Reports.RouteName:(ctx)=>Reports(),
+          ExpireItems.RouteName:(ctx)=>ExpireItems(),
         },
       ),
     );

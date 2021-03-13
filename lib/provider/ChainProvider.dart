@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gard/models/ExpiryData.dart';
 import 'package:gard/models/MissingData.dart';
 import 'package:gard/models/chainModel.dart';
 import 'package:gard/models/final_data.dart';
@@ -19,13 +20,14 @@ class Chains with ChangeNotifier {
 
   void submitForm(
       FinalData finaldata, void Function(String) callback) async {
-    String URL="https://script.google.com/macros/s/AKfycbz6KOa6RIj8Qfdjl5KdKzXC0jZnT4-seCbrCCen45cw0q1LZGRxEFAoSZBShL3vFNZVFw/exec";
+    String URL="https://script.google.com/macros/s/AKfycbz48rnB9hUyO94_iSM-8hhojLAkVY9Fv7Wv9GTbfGvZxflO2oDNjk4RzUN3SlZ8mCz6/exec";
     try {
       await http.post(URL, body: finaldata.toJson()).then((response) async {
         if (response.statusCode == 302) {
           var url = response.headers['location'];
           await http.get(url).then((response) {
             callback(convert.jsonDecode(response.body)['status']);
+            print(response.body);
           });
         } else {
           callback(convert.jsonDecode(response.body)['status']);
@@ -41,6 +43,26 @@ class Chains with ChangeNotifier {
     String URL="https://script.google.com/macros/s/AKfycbwaK9qeiDftz4QdutY5Ad_yXxbFm8V51GznxNbr436590zCCAtROfwP25E1yW8RPtrMQQ/exec";
     try {
       await http.post(URL, body: missingData.toJson()).then((response) async {
+        if (response.statusCode == 302) {
+          var url = response.headers['location'];
+          await http.get(url).then((response) {
+            callback(convert.jsonDecode(response.body)['status']);
+            print(url);
+          });
+        } else {
+          callback(convert.jsonDecode(response.body)['status']);
+        }
+      });
+    } catch (e) {
+      print(e);
+    }
+  }
+
+  void submitExpiryForm(
+      ExpiryData expiryData, void Function(String) callback) async {
+    String URL="https://script.google.com/macros/s/AKfycbwyIsyjv75uOpiuB3JpKUD2-Kk6pV8GhPY-25Yp9_zibszuJDVCrlK7DEddRsW5rNA_Kg/exec";
+    try {
+      await http.post(URL, body: expiryData.toJson()).then((response) async {
         if (response.statusCode == 302) {
           var url = response.headers['location'];
           await http.get(url).then((response) {
