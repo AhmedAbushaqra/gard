@@ -30,16 +30,16 @@ class ExpiryData {
   factory ExpiryData.fromJson(dynamic json) {
     return ExpiryData(
       //[branchid,chain,branch,itemnum,catename,subcatename,itemname,count,itemtype,expirydate]);
-      branchid: json['branchid'],
+      branchid: json['branchid'].toString(),
       chain: json['chain'],
       branch: json['branch'],
-      itemnum: json['itemnum'],
+      itemnum: json['itemnum'].toString(),
       catename: json['catename'],
       subcatename: json['subcatename'],
       itemname: json['itemname'],
-      count: json['count'],
+      count: json['count'].toString(),
       itemtype: json['itemtype'],
-      expirydate: json['expirydate'],
+      expirydate: json['expirydate'].toString(),
     );
   }
 

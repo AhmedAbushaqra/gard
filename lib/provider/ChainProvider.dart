@@ -77,6 +77,14 @@ class Chains with ChangeNotifier {
     }
   }
 
+  Future <List<ExpiryData>> getExpiryData() async{
+    String url="https://script.googleusercontent.com/macros/echo?user_content_key=awXMseV_a5okNCYTJjnjFpcN9EN82nJ_TRZmthnXJZfVj0DwYQyFum9jjmOF8pJcTqPycz9gSap0tKrxqqhI6E0_HLis874cm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnJxYUa5uQdKcDAbOfnZ7P7j82qSntl7QhRAhl1jb0zQoM03vgzlDFqPRcqHXfzeRZe8FdJ4lNu6DZcLw06a1VKNmgtc75oG099z9Jw9Md8uu&lib=Mb-x6iD7wcckEB-FUIi6s3h3FEm5DsUVw";
+    return await http.get(url).then((response){
+      var jsonExpiryData=convert.jsonDecode(response.body) as List;
+      return jsonExpiryData.map((json) => ExpiryData.fromJson(json)).toList();
+    });
+  }
+
   var places = [
     {
       'id':'1',

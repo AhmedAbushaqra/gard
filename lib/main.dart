@@ -1,5 +1,6 @@
 import 'package:gard/Branches.dart';
 import 'package:flutter/material.dart';
+import 'package:gard/Charts.dart';
 import 'package:gard/ExpiryItem.dart';
 import 'package:gard/Items.dart';
 import 'package:gard/Reports.dart';
@@ -29,6 +30,7 @@ class MyApp extends StatelessWidget {
           Items.RouteName:(ctx)=>Items(),
           Reports.RouteName:(ctx)=>Reports(),
           ExpireItems.RouteName:(ctx)=>ExpireItems(),
+          Charts.RouteName:(ctx)=>Charts(),
         },
       ),
     );
@@ -55,6 +57,13 @@ class Home extends StatelessWidget {
             mainAxisSpacing: 10,
           ),
         ),
+      ),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {
+         Navigator.of(context).pushNamed(Charts.RouteName);
+        },
+        icon: Icon(Icons.save),
+        label: Text("get data"),
       ),
     );
   }
