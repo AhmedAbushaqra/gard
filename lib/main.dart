@@ -11,6 +11,8 @@ import 'package:gard/splash_screen.dart';
 import 'package:gard/widgets/grid_view_item.dart';
 import 'package:provider/provider.dart';
 
+import 'Charts/ChainMissChart.dart';
+
 //https://script.google.com/macros/s/AKfycbz6KOa6RIj8Qfdjl5KdKzXC0jZnT4-seCbrCCen45cw0q1LZGRxEFAoSZBShL3vFNZVFw/exec
 
 void main() => runApp(MyApp());
@@ -33,6 +35,7 @@ class MyApp extends StatelessWidget {
           ExpireItems.RouteName:(ctx)=>ExpireItems(),
           Charts.RouteName:(ctx)=>Charts(),
           CategoryMissChart.RouteName:(ctx)=>CategoryMissChart(),
+          ChainMissChart.RouteName:(ctx)=>ChainMissChart(),
         },
       ),
     );

@@ -1,6 +1,7 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:gard/Charts/CategoryMissChart.dart';
+import 'package:gard/Charts/ChainMissChart.dart';
 import 'package:gard/widgets/indicator.dart';
 
 import 'models/final_data.dart';
@@ -119,6 +120,7 @@ class _ChartsState extends State<Charts> {
                         borderRadius: BorderRadius.circular(18.0),
                         side: BorderSide(color: Color.fromRGBO(0, 160, 227, 1))),
                     onPressed: () {
+                      Navigator.pushNamed(context, ChainMissChart.RouteName);
                       setState(() {
                       });
                     },
