@@ -27,15 +27,15 @@ class FinalData {
 
   factory FinalData.fromJson(dynamic json) {
     return FinalData(
-      branchid: json['branchid'],
-      date: json['date'],
+      branchid: json['branchid'].toString(),
+      date: json['date'].toString(),
       chain: json['chain'],
       branch: json['branch'],
       catename: json['catename'],
       subcatename: json['subcatename'],
       itemname: json['itemname'],
       capacity: json['capacity'],
-      faces: json['faces'],
+      faces: json['faces'].toString(),
     );
   }
 

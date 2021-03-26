@@ -25,8 +25,8 @@ class MissingData {
 
   factory MissingData.fromJson(dynamic json) {
     return MissingData(
-      branchid: json['branchid'],
-      date: json['date'],
+      branchid: json['branchid'].toString(),
+      date: json['date'].toString(),
       chain: json['chain'],
       branch: json['branch'],
       catename: json['catename'],

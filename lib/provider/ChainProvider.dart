@@ -77,14 +77,21 @@ class Chains with ChangeNotifier {
     }
   }
 
-  Future <List<ExpiryData>> getExpiryData() async{
-    String url="https://script.googleusercontent.com/macros/echo?user_content_key=awXMseV_a5okNCYTJjnjFpcN9EN82nJ_TRZmthnXJZfVj0DwYQyFum9jjmOF8pJcTqPycz9gSap0tKrxqqhI6E0_HLis874cm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnJxYUa5uQdKcDAbOfnZ7P7j82qSntl7QhRAhl1jb0zQoM03vgzlDFqPRcqHXfzeRZe8FdJ4lNu6DZcLw06a1VKNmgtc75oG099z9Jw9Md8uu&lib=Mb-x6iD7wcckEB-FUIi6s3h3FEm5DsUVw";
+  Future <List<FinalData>> getFinalData() async{
+    String url="https://script.googleusercontent.com/macros/echo?user_content_key=t8uhE5hYfZIf9qi-zFxhaRVhZfEzSm4LtFLmQauSTlMrAnxpPFaKRhKg4N5aFw3fGTdSfchu04-8iSYikTMlq3kC8lda5iU2m5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnGGcslfnUjN6VO1QOyZlPfeQf1Y8_1kn8HNjiMxPh9rVgH5ZG8cw3FLkM0nMJ8I1M-V5AzzEaSC5Jbbwct18HuK5cYJfSf_JZA&lib=M3t1tCGwgHqOX9dp5NQev3sTi32_F69pn";
     return await http.get(url).then((response){
-      var jsonExpiryData=convert.jsonDecode(response.body) as List;
-      return jsonExpiryData.map((json) => ExpiryData.fromJson(json)).toList();
+      var jsonFinalData=convert.jsonDecode(response.body) as List;
+      return jsonFinalData.map((json) => FinalData.fromJson(json)).toList();
     });
   }
 
+  Future <List<MissingData>> getMissingData() async{
+    String url="https://script.googleusercontent.com/macros/echo?user_content_key=H5r_K0kTna7cdAaTLuD_FOGOvCEMKfrdp-7dfGD25cyXbaPv4zjbyheehFawOE5wbQOou6iPdLbqSlMQgoNJCjo1wFZj9Ytnm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnJ2EfnAQMcHN03OJI_QCBaQ0-zeNgHkqqwZJnyk9rUhYheLZF7Ythy3pEb83tFqEWjVB-BR8CHRpgkx4UgTMRkQi_fu5QULTZNz9Jw9Md8uu&lib=MjFhorCodd5ZCEa_dCMgbWR3FEm5DsUVw";
+    return await http.get(url).then((response){
+      var jsonFinalData=convert.jsonDecode(response.body) as List;
+      return jsonFinalData.map((json) => MissingData.fromJson(json)).toList();
+    });
+  }
   var places = [
     {
       'id':'1',
