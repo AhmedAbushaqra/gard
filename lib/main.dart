@@ -1,6 +1,7 @@
 import 'package:gard/Branches.dart';
 import 'package:flutter/material.dart';
 import 'package:gard/Charts.dart';
+import 'package:gard/Charts/CategoryMissChart.dart';
 import 'package:gard/ExpiryItem.dart';
 import 'package:gard/Items.dart';
 import 'package:gard/Reports.dart';
@@ -31,6 +32,7 @@ class MyApp extends StatelessWidget {
           Reports.RouteName:(ctx)=>Reports(),
           ExpireItems.RouteName:(ctx)=>ExpireItems(),
           Charts.RouteName:(ctx)=>Charts(),
+          CategoryMissChart.RouteName:(ctx)=>CategoryMissChart(),
         },
       ),
     );

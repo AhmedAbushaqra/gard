@@ -15,7 +15,6 @@ class Charts extends StatefulWidget {
 class _ChartsState extends State<Charts> {
   List<FinalData> DataItems = List<FinalData>();
   int touchedIndex;
-  int selectedChart=0;
   @override
   void initState() {
     Chains().getFinalData().then((DataItems) {
@@ -87,12 +86,12 @@ class _ChartsState extends State<Charts> {
                     sections: showingSections()),
               ),
             ),
-            Row(
+            Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Container(
                   margin: EdgeInsets.all(10),
-                  width: MediaQuery.of(context).size.width*0.4,
+                  width: MediaQuery.of(context).size.width*0.6,
                   height: 50.0,
                   child: RaisedButton(
                     shape: RoundedRectangleBorder(
@@ -100,20 +99,20 @@ class _ChartsState extends State<Charts> {
                         side: BorderSide(color: Color.fromRGBO(0, 160, 227, 1))),
                     onPressed: () {
                       setState(() {
-                        selectedChart=1;
+                        Navigator.of(context).pushNamed(CategoryMissChart.RouteName);
                       });
                     },
                     padding: EdgeInsets.all(10.0),
-                    color: selectedChart==1?Color.fromRGBO(0, 160, 227, 1):Colors.grey,
+                    color: Color.fromRGBO(0, 160, 227, 1),
                     textColor: Colors.white,
-                    child: Text("Item Side View",
+                    child: Text("Item Side Of View",
                         style: TextStyle(fontSize: 15)),
                   ),
                 ),
 
                 Container(
                   margin: EdgeInsets.all(10),
-                  width: MediaQuery.of(context).size.width*0.4,
+                  width: MediaQuery.of(context).size.width*0.6,
                   height: 50.0,
                   child: RaisedButton(
                     shape: RoundedRectangleBorder(
@@ -121,20 +120,16 @@ class _ChartsState extends State<Charts> {
                         side: BorderSide(color: Color.fromRGBO(0, 160, 227, 1))),
                     onPressed: () {
                       setState(() {
-                        selectedChart=2;
                       });
                     },
                     padding: EdgeInsets.all(10.0),
-                    color: selectedChart==2?Color.fromRGBO(0, 160, 227, 1):Colors.grey,
+                    color: Color.fromRGBO(0, 160, 227, 1),
                     textColor: Colors.white,
-                    child: Text("Chain Side View",
+                    child: Text("Chain Side Of View",
                         style: TextStyle(fontSize: 15)),
                   ),
                 ),
               ],
-            ),
-            Container(
-              child: selectedChart==1?CategoryMissChart():selectedChart==2?Container():Container(),
             ),
           ],
         ),
