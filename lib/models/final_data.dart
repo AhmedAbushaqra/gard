@@ -29,12 +29,12 @@ class FinalData {
     return FinalData(
       branchid: json['branchid'].toString(),
       date: json['date'].toString(),
-      chain: json['chain'],
-      branch: json['branch'],
-      catename: json['catename'],
-      subcatename: json['subcatename'],
-      itemname: json['itemname'],
-      capacity: json['capacity'],
+      chain: json['chain'].toString(),
+      branch: json['branch'].toString(),
+      catename: json['catename'].toString(),
+      subcatename: json['subcatename'].toString(),
+      itemname: json['itemname'].toString(),
+      capacity: json['capacity'].toString(),
       faces: json['faces'].toString(),
     );
   }

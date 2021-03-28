@@ -2,7 +2,6 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:gard/models/MissingData.dart';
 import 'package:gard/provider/ChainProvider.dart';
-import 'package:gard/widgets/indicator.dart';
 
 class ChainMissChart extends StatefulWidget {
   static const RouteName = "/ChainMissChart";
@@ -301,9 +300,7 @@ class _ChainMissChartState extends State<ChainMissChart> {
           BarChartRodData(
               y: carrefourMiss,
               rodStackItems: [
-                BarChartRodStackItem(0, 2000000000, dark),
-                BarChartRodStackItem(2000000000, 12000000000, normal),
-                BarChartRodStackItem(12000000000, 17000000000, light),
+                BarChartRodStackItem(0, 2000000000, Colors.green),
               ],
               borderRadius: const BorderRadius.all(Radius.zero)),
 
@@ -316,9 +313,7 @@ class _ChainMissChartState extends State<ChainMissChart> {
           BarChartRodData(
               y: carexpMiss,
               rodStackItems: [
-                BarChartRodStackItem(0, 11000000000, dark),
-                BarChartRodStackItem(11000000000, 18000000000, normal),
-                BarChartRodStackItem(18000000000, 31000000000, light),
+                BarChartRodStackItem(0, 11000000000, Colors.black),
               ],
               borderRadius: const BorderRadius.all(Radius.zero)),
         ],
@@ -330,9 +325,7 @@ class _ChainMissChartState extends State<ChainMissChart> {
           BarChartRodData(
               y: hiperoneMiss,
               rodStackItems: [
-                BarChartRodStackItem(0, 6000000000, dark),
-                BarChartRodStackItem(6000000000, 23000000000, normal),
-                BarChartRodStackItem(23000000000, 34000000000, light),
+                BarChartRodStackItem(0, 6000000000, Colors.grey),
               ],
               borderRadius: const BorderRadius.all(Radius.zero)),
         ],
@@ -344,9 +337,7 @@ class _ChainMissChartState extends State<ChainMissChart> {
           BarChartRodData(
               y: spinneysMiss,
               rodStackItems: [
-                BarChartRodStackItem(0, 1000000000.5, dark),
-                BarChartRodStackItem(1000000000.5, 12000000000, normal),
-                BarChartRodStackItem(12000000000, 14000000000, light),
+                BarChartRodStackItem(0, 1000000000.5, Colors.yellow),
               ],
               borderRadius: const BorderRadius.all(Radius.zero)),
         ],
@@ -358,9 +349,7 @@ class _ChainMissChartState extends State<ChainMissChart> {
           BarChartRodData(
               y: seoudiMiss,
               rodStackItems: [
-                BarChartRodStackItem(0, 1000000000.5, dark),
-                BarChartRodStackItem(1000000000.5, 12000000000, normal),
-                BarChartRodStackItem(12000000000, 14000000000, light),
+                BarChartRodStackItem(0, 1000000000.5, Colors.red),
               ],
               borderRadius: const BorderRadius.all(Radius.zero)),
         ],
@@ -372,9 +361,7 @@ class _ChainMissChartState extends State<ChainMissChart> {
           BarChartRodData(
               y: ragabsonsMiss,
               rodStackItems: [
-                BarChartRodStackItem(0, 1000000000.5, dark),
-                BarChartRodStackItem(1000000000.5, 12000000000, normal),
-                BarChartRodStackItem(12000000000, 14000000000, light),
+                BarChartRodStackItem(0, 1000000000.5, Colors.blue),
               ],
               borderRadius: const BorderRadius.all(Radius.zero)),
         ],
@@ -386,9 +373,7 @@ class _ChainMissChartState extends State<ChainMissChart> {
           BarChartRodData(
               y: metroMiss,
               rodStackItems: [
-                BarChartRodStackItem(0, 1000000000.5, dark),
-                BarChartRodStackItem(1000000000.5, 12000000000, normal),
-                BarChartRodStackItem(12000000000, 14000000000, light),
+                BarChartRodStackItem(0, 1000000000.5, Colors.orange),
               ],
               borderRadius: const BorderRadius.all(Radius.zero)),
         ],
@@ -400,9 +385,7 @@ class _ChainMissChartState extends State<ChainMissChart> {
           BarChartRodData(
               y: kherzamanMiss,
               rodStackItems: [
-                BarChartRodStackItem(0, 1000000000.5, dark),
-                BarChartRodStackItem(1000000000.5, 12000000000, normal),
-                BarChartRodStackItem(12000000000, 14000000000, light),
+                BarChartRodStackItem(0, 1000000000.5, Colors.lightGreen),
               ],
               borderRadius: const BorderRadius.all(Radius.zero)),
         ],
@@ -414,9 +397,7 @@ class _ChainMissChartState extends State<ChainMissChart> {
           BarChartRodData(
               y: elouthiemMiss,
               rodStackItems: [
-                BarChartRodStackItem(0, 1000000000.5, dark),
-                BarChartRodStackItem(1000000000.5, 12000000000, normal),
-                BarChartRodStackItem(12000000000, 14000000000, light),
+                BarChartRodStackItem(0, 1000000000.5, Colors.brown),
               ],
               borderRadius: const BorderRadius.all(Radius.zero)),
         ],
@@ -428,9 +409,7 @@ class _ChainMissChartState extends State<ChainMissChart> {
           BarChartRodData(
               y: rayaMiss,
               rodStackItems: [
-                BarChartRodStackItem(0, 1000000000.5, dark),
-                BarChartRodStackItem(1000000000.5, 12000000000, normal),
-                BarChartRodStackItem(12000000000, 14000000000, light),
+                BarChartRodStackItem(0, 1000000000.5, Colors.lightBlue),
               ],
               borderRadius: const BorderRadius.all(Radius.zero)),
         ],
@@ -442,9 +421,7 @@ class _ChainMissChartState extends State<ChainMissChart> {
           BarChartRodData(
               y: alfaMiss,
               rodStackItems: [
-                BarChartRodStackItem(0, 1000000000.5, dark),
-                BarChartRodStackItem(1000000000.5, 12000000000, normal),
-                BarChartRodStackItem(12000000000, 14000000000, light),
+                BarChartRodStackItem(0, 1000000000.5, Colors.purple),
               ],
               borderRadius: const BorderRadius.all(Radius.zero)),
         ],
@@ -456,9 +433,7 @@ class _ChainMissChartState extends State<ChainMissChart> {
           BarChartRodData(
               y: elmahalwyMiss,
               rodStackItems: [
-                BarChartRodStackItem(0, 1000000000.5, dark),
-                BarChartRodStackItem(1000000000.5, 12000000000, normal),
-                BarChartRodStackItem(12000000000, 14000000000, light),
+                BarChartRodStackItem(0, 1000000000.5, Colors.cyan),
               ],
               borderRadius: const BorderRadius.all(Radius.zero)),
         ],
@@ -470,9 +445,7 @@ class _ChainMissChartState extends State<ChainMissChart> {
           BarChartRodData(
               y: pandaMiss,
               rodStackItems: [
-                BarChartRodStackItem(0, 1000000000.5, dark),
-                BarChartRodStackItem(1000000000.5, 12000000000, normal),
-                BarChartRodStackItem(12000000000, 14000000000, light),
+                BarChartRodStackItem(0, 1000000000.5, Colors.teal),
               ],
               borderRadius: const BorderRadius.all(Radius.zero)),
         ],
@@ -484,9 +457,7 @@ class _ChainMissChartState extends State<ChainMissChart> {
           BarChartRodData(
               y: elhawaryMiss,
               rodStackItems: [
-                BarChartRodStackItem(0, 1000000000.5, dark),
-                BarChartRodStackItem(1000000000.5, 12000000000, normal),
-                BarChartRodStackItem(12000000000, 14000000000, light),
+                BarChartRodStackItem(0, 1000000000.5, Colors.pink),
               ],
               borderRadius: const BorderRadius.all(Radius.zero)),
         ],
@@ -498,9 +469,7 @@ class _ChainMissChartState extends State<ChainMissChart> {
           BarChartRodData(
               y: oscarMiss,
               rodStackItems: [
-                BarChartRodStackItem(0, 1000000000.5, dark),
-                BarChartRodStackItem(1000000000.5, 12000000000, normal),
-                BarChartRodStackItem(12000000000, 14000000000, light),
+                BarChartRodStackItem(0, 1000000000.5, Colors.amber),
               ],
               borderRadius: const BorderRadius.all(Radius.zero)),
         ],
@@ -512,9 +481,7 @@ class _ChainMissChartState extends State<ChainMissChart> {
           BarChartRodData(
               y: luluMiss,
               rodStackItems: [
-                BarChartRodStackItem(0, 1000000000.5, dark),
-                BarChartRodStackItem(1000000000.5, 12000000000, normal),
-                BarChartRodStackItem(12000000000, 14000000000, light),
+                BarChartRodStackItem(0, 1000000000.5, Colors.black),
               ],
               borderRadius: const BorderRadius.all(Radius.zero)),
         ],
@@ -526,9 +493,7 @@ class _ChainMissChartState extends State<ChainMissChart> {
           BarChartRodData(
               y: fatgomarketMiss,
               rodStackItems: [
-                BarChartRodStackItem(0, 1000000000.5, dark),
-                BarChartRodStackItem(1000000000.5, 12000000000, normal),
-                BarChartRodStackItem(12000000000, 14000000000, light),
+                BarChartRodStackItem(0, 1000000000.5, Colors.orange),
               ],
               borderRadius: const BorderRadius.all(Radius.zero)),
         ],
@@ -540,9 +505,7 @@ class _ChainMissChartState extends State<ChainMissChart> {
           BarChartRodData(
               y: beitgomlaMiss,
               rodStackItems: [
-                BarChartRodStackItem(0, 1000000000.5, dark),
-                BarChartRodStackItem(1000000000.5, 12000000000, normal),
-                BarChartRodStackItem(12000000000, 14000000000, light),
+                BarChartRodStackItem(0, 1000000000.5, Colors.green),
               ],
               borderRadius: const BorderRadius.all(Radius.zero)),
         ],
@@ -554,9 +517,7 @@ class _ChainMissChartState extends State<ChainMissChart> {
           BarChartRodData(
               y: fathallaMiss,
               rodStackItems: [
-                BarChartRodStackItem(0, 1000000000.5, dark),
-                BarChartRodStackItem(1000000000.5, 12000000000, normal),
-                BarChartRodStackItem(12000000000, 14000000000, light),
+                BarChartRodStackItem(0, 1000000000.5, Colors.teal),
               ],
               borderRadius: const BorderRadius.all(Radius.zero)),
         ],
@@ -568,9 +529,7 @@ class _ChainMissChartState extends State<ChainMissChart> {
           BarChartRodData(
               y: aswakfatminiMiss,
               rodStackItems: [
-                BarChartRodStackItem(0, 1000000000.5, dark),
-                BarChartRodStackItem(1000000000.5, 12000000000, normal),
-                BarChartRodStackItem(12000000000, 14000000000, light),
+                BarChartRodStackItem(0, 1000000000.5, Colors.blueGrey),
               ],
               borderRadius: const BorderRadius.all(Radius.zero)),
         ],
@@ -582,9 +541,7 @@ class _ChainMissChartState extends State<ChainMissChart> {
           BarChartRodData(
               y: zahranMiss,
               rodStackItems: [
-                BarChartRodStackItem(0, 1000000000.5, dark),
-                BarChartRodStackItem(1000000000.5, 12000000000, normal),
-                BarChartRodStackItem(12000000000, 14000000000, light),
+                BarChartRodStackItem(0, 1000000000.5, Colors.cyan),
               ],
               borderRadius: const BorderRadius.all(Radius.zero)),
         ],
@@ -596,9 +553,7 @@ class _ChainMissChartState extends State<ChainMissChart> {
           BarChartRodData(
               y: freshfoodMiss,
               rodStackItems: [
-                BarChartRodStackItem(0, 1000000000.5, dark),
-                BarChartRodStackItem(1000000000.5, 12000000000, normal),
-                BarChartRodStackItem(12000000000, 14000000000, light),
+                BarChartRodStackItem(0, 1000000000.5, Colors.pinkAccent),
               ],
               borderRadius: const BorderRadius.all(Radius.zero)),
         ],
@@ -610,9 +565,7 @@ class _ChainMissChartState extends State<ChainMissChart> {
           BarChartRodData(
               y: royalhouseMiss,
               rodStackItems: [
-                BarChartRodStackItem(0, 1000000000.5, dark),
-                BarChartRodStackItem(1000000000.5, 12000000000, normal),
-                BarChartRodStackItem(12000000000, 14000000000, light),
+                BarChartRodStackItem(0, 1000000000.5, Colors.lightGreenAccent),
               ],
               borderRadius: const BorderRadius.all(Radius.zero)),
         ],
@@ -624,9 +577,7 @@ class _ChainMissChartState extends State<ChainMissChart> {
           BarChartRodData(
               y: marthvileMiss,
               rodStackItems: [
-                BarChartRodStackItem(0, 1000000000.5, dark),
-                BarChartRodStackItem(1000000000.5, 12000000000, normal),
-                BarChartRodStackItem(12000000000, 14000000000, light),
+                BarChartRodStackItem(0, 1000000000.5, Colors.lime),
               ],
               borderRadius: const BorderRadius.all(Radius.zero)),
         ],
@@ -638,9 +589,7 @@ class _ChainMissChartState extends State<ChainMissChart> {
           BarChartRodData(
               y: perimerMiss,
               rodStackItems: [
-                BarChartRodStackItem(0, 1000000000.5, dark),
-                BarChartRodStackItem(1000000000.5, 12000000000, normal),
-                BarChartRodStackItem(12000000000, 14000000000, light),
+                BarChartRodStackItem(0, 1000000000.5, Colors.indigo),
               ],
               borderRadius: const BorderRadius.all(Radius.zero)),
         ],

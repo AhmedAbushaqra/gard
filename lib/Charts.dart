@@ -121,8 +121,6 @@ class _ChartsState extends State<Charts> {
                         side: BorderSide(color: Color.fromRGBO(0, 160, 227, 1))),
                     onPressed: () {
                       Navigator.pushNamed(context, ChainMissChart.RouteName);
-                      setState(() {
-                      });
                     },
                     padding: EdgeInsets.all(10.0),
                     color: Color.fromRGBO(0, 160, 227, 1),
@@ -148,7 +146,7 @@ class _ChartsState extends State<Charts> {
         setState(() {
           FullCapacity=FullCapacity+1;
         });
-      }else if(capecity=="Start Missing"){
+      }else if(capecity=="Start Missing"||capecity=='Start missing'){
         setState(() {
           StartMissing=StartMissing+1;
         });

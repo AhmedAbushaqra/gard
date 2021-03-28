@@ -31,86 +31,197 @@ class _CategoryMissChartState extends State<CategoryMissChart> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: SingleChildScrollView(
-          child: AspectRatio(
-            aspectRatio: 1.66,
-            child: Card(
-              elevation: 4,
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
-              color: Colors.white,
-              child: Padding(
-                padding: const EdgeInsets.only(top: 16.0,bottom: 16),
-                child: BarChart(
-                  BarChartData(
-                    alignment: BarChartAlignment.center,
-                    barTouchData: BarTouchData(
-                      enabled: true,
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Container(
+            height: 50.0,
+            child: RaisedButton(
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(80.0)),
+              padding: EdgeInsets.all(0.0),
+              child: Ink(
+                decoration: BoxDecoration(
+                    gradient: LinearGradient(colors: [new Color(0xff374ABE), new Color(0xff64B6FF)],
+                      begin: Alignment.centerLeft,
+                      end: Alignment.centerRight,
                     ),
-                    titlesData: FlTitlesData(
-                      show: true,
-                      bottomTitles: SideTitles(
-                        rotateAngle: 50,
-                        showTitles: true,
-                        getTextStyles: (value) =>
-                            const TextStyle(color: Color(0xff939393), fontSize: 10),
-                        margin: 10,
-                        getTitles: (double value) {
-                          switch (value.toInt()) {
-                            case 0:
-                              return 'BONJORNO';
-                            case 1:
-                              return 'NESCAFE';
-                            case 2:
-                              return 'COFFEE-MATE';
-                            case 3:
-                              return 'NIDO';
-                            case 4:
-                              return 'BABY FOOD';
-                            case 5:
-                              return 'NESQUIK';
-                            case 6:
-                              return 'MAGGI';
-                            case 7:
-                              return 'CEREAL';
-                            case 8:
-                              return 'CONFECTIONERY';
-                            case 9:
-                              return 'WATER';
-                            default:
-                              return '';
-                          }
-                        },
+                    borderRadius: BorderRadius.circular(30.0)
+                ),
+                child: Container(
+                  width: MediaQuery.of(context).size.width*0.5,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Icon(Icons.analytics_outlined),
+                      Container(
+                        //constraints: BoxConstraints(maxWidth: 300.0, minHeight: 50.0),
+                        //alignment: Alignment.center,
+                        child: Text(
+                          "Item side of view",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: 18,
+                              color: Colors.white
+                          ),
+                        ),
                       ),
-                      leftTitles: SideTitles(
-                        showTitles: true,
-                        getTextStyles: (value) => const TextStyle(
-                            color: Color(
-                              0xff939393,
-                            ),
-                            fontSize: 10),
-                        margin: 0,
-                      ),
-                    ),
-                    gridData: FlGridData(
-                      show: true,
-                      checkToShowHorizontalLine: (value) => value % 10 == 0,
-                      getDrawingHorizontalLine: (value) => FlLine(
-                        color: const Color(0xffe7e8ec),
-                        strokeWidth: 1,
-                      ),
-                    ),
-                    borderData: FlBorderData(
-                      show: false,
-                    ),
-                    groupsSpace: 20,
-                    barGroups: getData(),
+                    ],
                   ),
                 ),
               ),
             ),
           ),
-        ),
+          SingleChildScrollView(
+            child: AspectRatio(
+              aspectRatio: 1,
+              child: Container(
+                height: MediaQuery.of(context).size.height*0.5,
+                child: Card(
+                  elevation: 4,
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
+                  color: Colors.white,
+                  child: Padding(
+                    padding:  EdgeInsets.only(top: 16.0,bottom: 35),
+                    child: BarChart(
+                      BarChartData(
+                        alignment: BarChartAlignment.center,
+                        barTouchData: BarTouchData(
+                          enabled: true,
+                        ),
+                        titlesData: FlTitlesData(
+                          show: true,
+                          bottomTitles: SideTitles(
+                            rotateAngle: 50,
+                            showTitles: true,
+                            getTextStyles: (value) =>
+                                const TextStyle(color: Color(0xff939393), fontSize: 10),
+                            margin: 10,
+                            getTitles: (double value) {
+                              switch (value.toInt()) {
+                                case 0:
+                                  return 'BONJORNO';
+                                case 1:
+                                  return 'NESCAFE';
+                                case 2:
+                                  return 'COFFEE-MATE';
+                                case 3:
+                                  return 'NIDO';
+                                case 4:
+                                  return 'BABY FOOD';
+                                case 5:
+                                  return 'NESQUIK';
+                                case 6:
+                                  return 'MAGGI';
+                                case 7:
+                                  return 'CEREAL';
+                                case 8:
+                                  return 'CONFECTIONERY';
+                                case 9:
+                                  return 'WATER';
+                                default:
+                                  return '';
+                              }
+                            },
+                          ),
+                          leftTitles: SideTitles(
+                            interval: 30,
+                            showTitles: true,
+                            getTextStyles: (value) => const TextStyle(
+                                color: Color(
+                                  0xff939393,
+                                ),
+                                fontSize: 10),
+                            margin: 0,
+                          ),
+                        ),
+                        gridData: FlGridData(
+                          show: true,
+                          checkToShowHorizontalLine: (value) => value % 30 == 0,
+                          getDrawingHorizontalLine: (value) => FlLine(
+                            color: const Color(0xffe7e8ec),
+                            strokeWidth: 1,
+                          ),
+                        ),
+                        borderData: FlBorderData(
+                          show: false,
+                        ),
+                        groupsSpace: 20,
+                        barGroups: getData(),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          Container(
+            width: MediaQuery.of(context).size.width,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                      gradient: LinearGradient(colors: [ Colors.black12, new Color(0xff64B6FF)],
+                        begin: Alignment.centerLeft,
+                        end: Alignment.centerRight,
+                      ),
+                      borderRadius: BorderRadius.circular(30.0)
+                  ),
+                  margin: EdgeInsets.all(10),
+                  //width: MediaQuery.of(context).size.width*0.6,
+                  height: 50.0,
+                  child: Row(
+                    children: [
+                      Icon(Icons.arrow_back_ios_outlined ),
+                      RaisedButton(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(18.0),
+                            side: BorderSide(color: Color.fromRGBO(0, 160, 227, 1))),
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                        padding: EdgeInsets.all(10.0),
+                        color: Colors.lightBlue,
+                        textColor: Colors.white,
+                        child: Text("Back to Master",
+                            style: TextStyle(fontSize: 15)),
+                      ),
+                    ],
+                  ),
+                ),Container(
+                  decoration: BoxDecoration(
+                      gradient: LinearGradient(colors: [new Color(0xff64B6FF),Colors.black12,],
+                        begin: Alignment.centerLeft,
+                        end: Alignment.centerRight,
+                      ),
+                      borderRadius: BorderRadius.circular(30.0)
+                  ),
+                  margin: EdgeInsets.all(10),
+                  //width: MediaQuery.of(context).size.width*0.6,
+                  height: 50.0,
+                  child: Row(
+                    children: [
+                      RaisedButton(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(18.0),
+                            side: BorderSide(color: Colors.lightBlue)),
+                        onPressed: () {
+                        },
+                        padding: EdgeInsets.all(10.0),
+                        color: Color.fromRGBO(0, 160, 227, 1),
+                        textColor: Colors.white,
+                        child: Text("Send",
+                            style: TextStyle(fontSize: 15)),
+                      ),
+                      Icon(Icons.send)
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -177,9 +288,7 @@ class _CategoryMissChartState extends State<CategoryMissChart> {
           BarChartRodData(
               y: bonmiss,
               rodStackItems: [
-                BarChartRodStackItem(0, 2000000000, dark),
-                BarChartRodStackItem(2000000000, 12000000000, normal),
-                BarChartRodStackItem(12000000000, 17000000000, light),
+                BarChartRodStackItem(0, 2000000000, Colors.green),
               ],
               borderRadius: const BorderRadius.all(Radius.zero)),
         ],
@@ -191,9 +300,7 @@ class _CategoryMissChartState extends State<CategoryMissChart> {
           BarChartRodData(
               y: nescmiss,
               rodStackItems: [
-                BarChartRodStackItem(0, 11000000000, dark),
-                BarChartRodStackItem(11000000000, 18000000000, normal),
-                BarChartRodStackItem(18000000000, 31000000000, light),
+                BarChartRodStackItem(0, 11000000000, Colors.black),
               ],
               borderRadius: const BorderRadius.all(Radius.zero)),
         ],
@@ -205,9 +312,7 @@ class _CategoryMissChartState extends State<CategoryMissChart> {
           BarChartRodData(
               y: coffmatemiss,
               rodStackItems: [
-                BarChartRodStackItem(0, 6000000000, dark),
-                BarChartRodStackItem(6000000000, 23000000000, normal),
-                BarChartRodStackItem(23000000000, 34000000000, light),
+                BarChartRodStackItem(0, 6000000000, Colors.grey),
               ],
               borderRadius: const BorderRadius.all(Radius.zero)),
         ],
@@ -219,9 +324,7 @@ class _CategoryMissChartState extends State<CategoryMissChart> {
           BarChartRodData(
               y: nidomiss,
               rodStackItems: [
-                BarChartRodStackItem(0, 1000000000.5, dark),
-                BarChartRodStackItem(1000000000.5, 12000000000, normal),
-                BarChartRodStackItem(12000000000, 14000000000, light),
+                BarChartRodStackItem(0, 1000000000.5, Colors.yellow),
               ],
               borderRadius: const BorderRadius.all(Radius.zero)),
         ],
@@ -233,9 +336,7 @@ class _CategoryMissChartState extends State<CategoryMissChart> {
           BarChartRodData(
               y: babymiss,
               rodStackItems: [
-                BarChartRodStackItem(0, 1000000000.5, dark),
-                BarChartRodStackItem(1000000000.5, 12000000000, normal),
-                BarChartRodStackItem(12000000000, 14000000000, light),
+                BarChartRodStackItem(0, 1000000000.5, Colors.red),
               ],
               borderRadius: const BorderRadius.all(Radius.zero)),
         ],
@@ -247,9 +348,7 @@ class _CategoryMissChartState extends State<CategoryMissChart> {
           BarChartRodData(
               y: nesqmiss,
               rodStackItems: [
-                BarChartRodStackItem(0, 1000000000.5, dark),
-                BarChartRodStackItem(1000000000.5, 12000000000, normal),
-                BarChartRodStackItem(12000000000, 14000000000, light),
+                BarChartRodStackItem(0, 1000000000.5, Colors.blue),
               ],
               borderRadius: const BorderRadius.all(Radius.zero)),
         ],
@@ -261,9 +360,7 @@ class _CategoryMissChartState extends State<CategoryMissChart> {
           BarChartRodData(
               y: maggimiss,
               rodStackItems: [
-                BarChartRodStackItem(0, 1000000000.5, dark),
-                BarChartRodStackItem(1000000000.5, 12000000000, normal),
-                BarChartRodStackItem(12000000000, 14000000000, light),
+                BarChartRodStackItem(0, 1000000000.5, Colors.orange),
               ],
               borderRadius: const BorderRadius.all(Radius.zero)),
         ],
@@ -275,9 +372,7 @@ class _CategoryMissChartState extends State<CategoryMissChart> {
           BarChartRodData(
               y: cerealmiss,
               rodStackItems: [
-                BarChartRodStackItem(0, 1000000000.5, dark),
-                BarChartRodStackItem(1000000000.5, 12000000000, normal),
-                BarChartRodStackItem(12000000000, 14000000000, light),
+                BarChartRodStackItem(0, 1000000000.5, Colors.lightGreen),
               ],
               borderRadius: const BorderRadius.all(Radius.zero)),
         ],
@@ -289,9 +384,7 @@ class _CategoryMissChartState extends State<CategoryMissChart> {
           BarChartRodData(
               y: confecmiss,
               rodStackItems: [
-                BarChartRodStackItem(0, 1000000000.5, dark),
-                BarChartRodStackItem(1000000000.5, 12000000000, normal),
-                BarChartRodStackItem(12000000000, 14000000000, light),
+                BarChartRodStackItem(0, 1000000000.5, Colors.brown),
               ],
               borderRadius: const BorderRadius.all(Radius.zero)),
         ],
@@ -303,9 +396,7 @@ class _CategoryMissChartState extends State<CategoryMissChart> {
           BarChartRodData(
               y: watermiss,
               rodStackItems: [
-                BarChartRodStackItem(0, 1000000000.5, dark),
-                BarChartRodStackItem(1000000000.5, 12000000000, normal),
-                BarChartRodStackItem(12000000000, 14000000000, light),
+                BarChartRodStackItem(0, 1000000000.5, Colors.lightBlue),
               ],
               borderRadius: const BorderRadius.all(Radius.zero)),
         ],
