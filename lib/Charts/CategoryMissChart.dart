@@ -1,9 +1,12 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:gard/Branches.dart';
 import 'package:gard/models/MissingData.dart';
 import 'package:gard/provider/ChainProvider.dart';
 import 'package:gard/widgets/indicator.dart';
+
+import 'ChainMissChart.dart';
 
 class CategoryMissChart extends StatefulWidget {
   static const RouteName = "/CategoryMissChart";
@@ -28,6 +31,9 @@ class _CategoryMissChartState extends State<CategoryMissChart> {
   final Color dark = const Color(0xff3b8c75);
   final Color normal = const Color(0xff64caad);
   final Color light = const Color(0xff73e8c9);
+
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -87,6 +93,26 @@ class _CategoryMissChartState extends State<CategoryMissChart> {
                       BarChartData(
                         alignment: BarChartAlignment.center,
                         barTouchData: BarTouchData(
+                          touchCallback: (BarTouchResponse barTouchResponse){
+                            setState(() {
+                              if(barTouchResponse.touchInput is FlPanStart && barTouchResponse.spot.touchedBarGroupIndex == 0){
+                                      Navigator.pushNamed(context, ChainMissChart.RouteName);
+                              } else if (barTouchResponse.touchInput is FlPanStart && barTouchResponse.spot.touchedBarGroupIndex == 1){
+                                      Navigator.pushNamed(context, CategoryMissChart.RouteName);
+                              }
+                            });
+                          },
+                          // touchCallback: (barTouchResponse){
+                          //   setState(() {
+                          //     if(touchedIndex == 0){
+                          //       Navigator.pushNamed(context, ChainMissChart.RouteName);
+                          //     } else if (touchedIndex == 1){
+                          //       Navigator.pushNamed(context, CategoryMissChart.RouteName);
+                          //     } else if (touchedIndex == 2){
+                          //       Navigator.pushNamed(context, CategoryMissChart.RouteName);
+                          //     }
+                          //   });
+                          // },
                           enabled: true,
                         ),
                         titlesData: FlTitlesData(

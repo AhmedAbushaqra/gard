@@ -26,6 +26,10 @@ class _ChartsState extends State<Charts> {
     super.initState();
   }
 
+  //  _sectionTapped(int index){
+  //   touchedIndex = index;
+  // }
+
   @override
   Widget build(BuildContext context) {
     int index;
@@ -79,6 +83,7 @@ class _ChartsState extends State<Charts> {
                 PieChartData(
                     pieTouchData: PieTouchData(touchCallback: (pieTouchResponse) {
                       setState(() {
+
                         if (pieTouchResponse.touchInput is FlLongPressEnd ||
                             pieTouchResponse.touchInput is FlPanEnd) {
                           touchedIndex = -1;
