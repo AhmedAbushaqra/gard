@@ -64,7 +64,16 @@ class _ChartsState extends State<Charts> {
                 ],
               ),
             ),
-            AspectRatio(
+            DataItems.isEmpty?Container(
+                 padding: EdgeInsets.only(top: 100,bottom: 100),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(Icons.warning_amber_rounded,color: Colors.red,),
+                    Text("Waiting Data",style: TextStyle(color:Colors.red,fontSize: 18),),
+                  ],
+                ))
+                :AspectRatio(
               aspectRatio: 1,
               child: PieChart(
                 PieChartData(
