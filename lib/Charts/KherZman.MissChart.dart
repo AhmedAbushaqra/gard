@@ -1,29 +1,25 @@
 import 'package:fl_chart/fl_chart.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:gard/Charts/Bon.MissChart.dart';
 import 'package:gard/models/MissingData.dart';
 import 'package:gard/provider/ChainProvider.dart';
 
-class CategoryMissChart extends StatefulWidget {
-  static const RouteName = "/CategoryMissChart";
-
+class Kher_MissChart extends StatefulWidget {
+  static const RouteName = "/kherzaman";
   @override
-  _CategoryMissChartState createState() => _CategoryMissChartState();
+  _Kher_MissChartState createState() => _Kher_MissChartState();
 }
 
-class _CategoryMissChartState extends State<CategoryMissChart> {
-  List<MissingData> missingDataItems = List<MissingData>();
+class _Kher_MissChartState extends State<Kher_MissChart> {
+  List<MissingData> KherZamanMissingDataItems = List<MissingData>();
 
   void initState() {
-    Chains().getMissingData().then((missingDataItems) {
+    Chains().getKherzamanMissingData().then((missingDataItems) {
       setState(() {
-        this.missingDataItems = missingDataItems;
+        this.KherZamanMissingDataItems = missingDataItems;
       });
     });
     super.initState();
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,10 +50,10 @@ class _CategoryMissChartState extends State<CategoryMissChart> {
                         //constraints: BoxConstraints(maxWidth: 300.0, minHeight: 50.0),
                         //alignment: Alignment.center,
                         child: Text(
-                          "Item side of view",
+                          "KherZaman",
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                            fontSize: 18,
+                              fontSize: 18,
                               color: Colors.white
                           ),
                         ),
@@ -83,13 +79,6 @@ class _CategoryMissChartState extends State<CategoryMissChart> {
                       BarChartData(
                         alignment: BarChartAlignment.center,
                         barTouchData: BarTouchData(
-                          touchCallback: (BarTouchResponse barTouchResponse){
-                            setState(() {
-                              if(barTouchResponse.touchInput is FlPanStart && barTouchResponse.spot.touchedBarGroupIndex == 0){
-                                      Navigator.pushNamed(context, Bon_MissChart.RouteName);
-                              }
-                            });
-                          },
                           enabled: true,
                         ),
                         titlesData: FlTitlesData(
@@ -98,7 +87,7 @@ class _CategoryMissChartState extends State<CategoryMissChart> {
                             rotateAngle: 50,
                             showTitles: true,
                             getTextStyles: (value) =>
-                                const TextStyle(color: Color(0xff939393), fontSize: 10),
+                            const TextStyle(color: Color(0xff939393), fontSize: 10),
                             margin: 10,
                             getTitles: (double value) {
                               switch (value.toInt()) {
@@ -163,36 +152,72 @@ class _CategoryMissChartState extends State<CategoryMissChart> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
+                Column(
+                  children: [
+                    Container(
+                      decoration: BoxDecoration(
+                          gradient: LinearGradient(colors: [ Colors.black12, new Color(0xff64B6FF)],
+                            begin: Alignment.centerLeft,
+                            end: Alignment.centerRight,
+                          ),
+                          borderRadius: BorderRadius.circular(30.0)
+                      ),
+                      margin: EdgeInsets.all(10),
+                      //width: MediaQuery.of(context).size.width*0.6,
+                      height: 50.0,
+                      child: Row(
+                        children: [
+                          Icon(Icons.arrow_back_ios_outlined ),
+                          RaisedButton(
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(18.0),
+                                side: BorderSide(color: Color.fromRGBO(0, 160, 227, 1))),
+                            onPressed: () {
+                              Navigator.of(context).pop();
+                            },
+                            padding: EdgeInsets.all(10.0),
+                            color: Colors.lightBlue,
+                            textColor: Colors.white,
+                            child: Text("Back",
+                                style: TextStyle(fontSize: 15)),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      decoration: BoxDecoration(
+                          gradient: LinearGradient(colors: [ Colors.black12, new Color(0xff64B6FF)],
+                            begin: Alignment.centerLeft,
+                            end: Alignment.centerRight,
+                          ),
+                          borderRadius: BorderRadius.circular(30.0)
+                      ),
+                      margin: EdgeInsets.all(10),
+                      //width: MediaQuery.of(context).size.width*0.6,
+                      height: 50.0,
+                      child: Row(
+                        children: [
+                          Icon(Icons.arrow_back_ios_outlined ),
+                          RaisedButton(
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(18.0),
+                                side: BorderSide(color: Color.fromRGBO(0, 160, 227, 1))),
+                            onPressed: () {
+                              Navigator.of(context).pop();
+                              Navigator.of(context).pop();
+                            },
+                            padding: EdgeInsets.all(10.0),
+                            color: Colors.lightBlue,
+                            textColor: Colors.white,
+                            child: Text("Back to Master",
+                                style: TextStyle(fontSize: 15)),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
                 Container(
-                  decoration: BoxDecoration(
-                      gradient: LinearGradient(colors: [ Colors.black12, new Color(0xff64B6FF)],
-                        begin: Alignment.centerLeft,
-                        end: Alignment.centerRight,
-                      ),
-                      borderRadius: BorderRadius.circular(30.0)
-                  ),
-                  margin: EdgeInsets.all(10),
-                  //width: MediaQuery.of(context).size.width*0.6,
-                  height: 50.0,
-                  child: Row(
-                    children: [
-                      Icon(Icons.arrow_back_ios_outlined ),
-                      RaisedButton(
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(18.0),
-                            side: BorderSide(color: Color.fromRGBO(0, 160, 227, 1))),
-                        onPressed: () {
-                          Navigator.of(context).pop();
-                        },
-                        padding: EdgeInsets.all(10.0),
-                        color: Colors.lightBlue,
-                        textColor: Colors.white,
-                        child: Text("Back to Master",
-                            style: TextStyle(fontSize: 15)),
-                      ),
-                    ],
-                  ),
-                ),Container(
                   decoration: BoxDecoration(
                       gradient: LinearGradient(colors: [new Color(0xff64B6FF),Colors.black12,],
                         begin: Alignment.centerLeft,
@@ -239,7 +264,7 @@ class _CategoryMissChartState extends State<CategoryMissChart> {
     double cerealmiss=0;
     double confecmiss=0;
     double watermiss=0;
-    for(var item in missingDataItems){
+    for(var item in KherZamanMissingDataItems){
       String category=item.catename;
       if(category=="BONJORNO"){
         setState(() {
@@ -406,172 +431,4 @@ class _CategoryMissChartState extends State<CategoryMissChart> {
       ),
     ];
   }
-/* List<PieChartSectionData> showingSections() {
-    double bonmiss=0;
-    double nescmiss=0;
-    double coffmatemiss=0;
-    double nidomiss=0;
-    double babymiss=0;
-    double nesqmiss=0;
-    double maggimiss=0;
-    double cerealmiss=0;
-    double confecmiss=0;
-    double watermiss=0;
-    for(var item in missingDataItems){
-      String category=item.catename;
-      if(category=="BONJORNO"){
-        setState(() {
-          bonmiss=bonmiss+1;
-        });
-      }else if(category=="NESCAFE"){
-        setState(() {
-          nescmiss=nescmiss+1;
-        });
-      }else if(category=="COFFEE-MATE"){
-        setState(() {
-          coffmatemiss=coffmatemiss+1;
-        });
-      }else if(category=="NIDO"){
-        setState(() {
-          nidomiss=nidomiss+1;
-        });
-      }else if(category=="BABY FOOD"){
-        setState(() {
-          babymiss=babymiss+1;
-        });
-      }else if(category=="NESQUIK"){
-        setState(() {
-          nesqmiss=nesqmiss+1;
-        });
-      }else if(category=="MAGGI"){
-        setState(() {
-          maggimiss=maggimiss+1;
-        });
-      }else if(category=="CEREAL"){
-        setState(() {
-          cerealmiss=cerealmiss+1;
-        });
-      }else if(category=="CONFECTIONERY"){
-        setState(() {
-          confecmiss=confecmiss+1;
-        });
-      }else if(category=="WATER"){
-        setState(() {
-          watermiss=watermiss+1;
-        });
-      }
-    }
-
-    return List.generate(
-      10,
-          (i) {
-        final isTouched = i == touchedIndex;
-        final double opacity = isTouched ? 1 : 0.6;
-        switch (i) {
-          case 0:
-            return PieChartSectionData(
-              color: Colors.green.withOpacity(opacity),
-              value: bonmiss/missingDataItems.length*100,
-              title: 'BONJORNO  (${(bonmiss/missingDataItems.length*100).toStringAsFixed(2)}%)',
-              radius: 140,
-              titleStyle: TextStyle(
-                  fontSize: 18, fontWeight: FontWeight.bold, color: const Color(0xff044d7c)),
-              titlePositionPercentageOffset: 0.55,
-            );
-          case 1:
-            return PieChartSectionData(
-              color: Colors.black.withOpacity(opacity),
-              value: nescmiss/missingDataItems.length*100,
-              title: 'NESCAFE  (${(nescmiss/missingDataItems.length*100).toStringAsFixed(2)}%)',
-              radius: 140,
-              titleStyle: TextStyle(
-                  fontSize: 18, fontWeight: FontWeight.bold, color: const Color(0xff90672d)),
-              titlePositionPercentageOffset: 0.55,
-            );
-          case 2:
-            return PieChartSectionData(
-              color:Colors.grey.withOpacity(opacity),
-              value: coffmatemiss/missingDataItems.length*100,
-              title: 'COFFEE-MATE  (${(coffmatemiss/missingDataItems.length*100).toStringAsFixed(2)}%)',
-              radius: 140,
-              titleStyle: TextStyle(
-                  fontSize: 18, fontWeight: FontWeight.bold, color: const Color(0xff4c3788)),
-              titlePositionPercentageOffset: 0.6,
-            );
-          case 3:
-            return PieChartSectionData(
-              color:Colors.yellow.withOpacity(opacity),
-              value: nidomiss/missingDataItems.length*100,
-              title: 'NIDO  (${(nidomiss/missingDataItems.length*100).toStringAsFixed(2)}%)',
-              radius: 140,
-              titleStyle: TextStyle(
-                  fontSize: 18, fontWeight: FontWeight.bold, color: const Color(0xff4c3788)),
-              titlePositionPercentageOffset: 0.6,
-            );
-          case 4:
-            return PieChartSectionData(
-              color:Colors.red.withOpacity(opacity),
-              value: babymiss/missingDataItems.length*100,
-              title: 'BABY FOOD  (${(babymiss/missingDataItems.length*100).toStringAsFixed(2)}%)',
-              radius: 140,
-              titleStyle: TextStyle(
-                  fontSize: 18, fontWeight: FontWeight.bold, color: const Color(0xff4c3788)),
-              titlePositionPercentageOffset: 0.6,
-            );
-          case 5:
-            return PieChartSectionData(
-              color:Colors.blue.withOpacity(opacity),
-              value: nesqmiss/missingDataItems.length*100,
-              title: 'NESQUIK  (${(nesqmiss/missingDataItems.length*100).toStringAsFixed(2)}%)',
-              radius: 140,
-              titleStyle: TextStyle(
-                  fontSize: 18, fontWeight: FontWeight.bold, color: const Color(0xff4c3788)),
-              titlePositionPercentageOffset: 0.6,
-            );
-          case 6:
-            return PieChartSectionData(
-              color:Colors.orange.withOpacity(opacity),
-              value: maggimiss/missingDataItems.length*100,
-              title: 'MAGGI  (${(maggimiss/missingDataItems.length*100).toStringAsFixed(2)}%)',
-              radius: 140,
-              titleStyle: TextStyle(
-                  fontSize: 18, fontWeight: FontWeight.bold, color: const Color(0xff4c3788)),
-              titlePositionPercentageOffset: 0.6,
-            );
-          case 7:
-            return PieChartSectionData(
-              color:Colors.lightGreen.withOpacity(opacity),
-              value: cerealmiss/missingDataItems.length*100,
-              title: 'CEREAL  (${(cerealmiss/missingDataItems.length*100).toStringAsFixed(2)}%)',
-              radius: 140,
-              titleStyle: TextStyle(
-                  fontSize: 18, fontWeight: FontWeight.bold, color: const Color(0xff4c3788)),
-              titlePositionPercentageOffset: 0.6,
-            );
-          case 8:
-            return PieChartSectionData(
-              color:Colors.brown.withOpacity(opacity),
-              value: confecmiss/missingDataItems.length*100,
-              title: 'CONFECTIONERY  (${(confecmiss/missingDataItems.length*100).toStringAsFixed(2)}%)',
-              radius: 140,
-              titleStyle: TextStyle(
-                  fontSize: 18, fontWeight: FontWeight.bold, color: const Color(0xff4c3788)),
-              titlePositionPercentageOffset: 0.6,
-            );
-          case 9:
-            return PieChartSectionData(
-              color:Colors.lightBlue.withOpacity(opacity),
-              value: watermiss/missingDataItems.length*100,
-              title: 'WATER  (${(watermiss/missingDataItems.length*100).toStringAsFixed(2)}%)',
-              radius: 140,
-              titleStyle: TextStyle(
-                  fontSize: 18, fontWeight: FontWeight.bold, color: const Color(0xff4c3788)),
-              titlePositionPercentageOffset: 0.6,
-            );
-          default:
-            return null;
-        }
-      },
-    );
-  }*/
-}
+  }

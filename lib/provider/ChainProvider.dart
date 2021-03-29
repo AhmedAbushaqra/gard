@@ -92,6 +92,20 @@ class Chains with ChangeNotifier {
       return jsonFinalData.map((json) => MissingData.fromJson(json)).toList();
     });
   }
+  Future <List<MissingData>> getBonjornoMissingData() async{
+    String url="https://script.googleusercontent.com/macros/echo?user_content_key=JEe0E23Qy2HY1ZjDCQrkm3nm9qcO7-vCLklwsu0zx_XndQUoLGMrKnL-h-YxhwPSHplnBD7LmvxyA8SnVZQQ0RXOloZZ0fDgm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnE-qloKSsfROjS9-9Dq1Tn8r9XS6ltfeP04a5vizcRZqR30woaOvQI9ZsuYd3Bld-tY1Uu1SsGmSWCazKqwqsAJk9hoGjx7kAtz9Jw9Md8uu&lib=Mn5cc_qs_GvuLulE0D_Bwdh3FEm5DsUVw";
+    return await http.get(url).then((response){
+      var jsonFinalData=convert.jsonDecode(response.body) as List;
+      return jsonFinalData.map((json) => MissingData.fromJson(json)).toList();
+    });
+  }
+  Future <List<MissingData>> getKherzamanMissingData() async{
+    String url="https://script.googleusercontent.com/macros/echo?user_content_key=H5r_K0kTna7cdAaTLuD_FOGOvCEMKfrdp-7dfGD25cyXbaPv4zjbyheehFawOE5wbQOou6iPdLbqSlMQgoNJCjo1wFZj9Ytnm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnJ2EfnAQMcHN03OJI_QCBaQ0-zeNgHkqqwZJnyk9rUhYheLZF7Ythy3pEb83tFqEWjVB-BR8CHRpgkx4UgTMRkQi_fu5QULTZNz9Jw9Md8uu&lib=MjFhorCodd5ZCEa_dCMgbWR3FEm5DsUVw";
+    return await http.get(url).then((response){
+      var jsonFinalData=convert.jsonDecode(response.body) as List;
+      return jsonFinalData.map((json) => MissingData.fromJson(json)).toList();
+    });
+  }
   var places = [
     {
       'id':'1',

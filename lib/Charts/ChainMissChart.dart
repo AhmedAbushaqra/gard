@@ -1,5 +1,6 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+import 'package:gard/Charts/KherZman.MissChart.dart';
 import 'package:gard/models/MissingData.dart';
 import 'package:gard/provider/ChainProvider.dart';
 
@@ -22,125 +23,234 @@ class _ChainMissChartState extends State<ChainMissChart> {
     super.initState();
   }
 
-  int touchedIndex;
-  final Color dark = const Color(0xff3b8c75);
-  final Color normal = const Color(0xff64caad);
-  final Color light = const Color(0xff73e8c9);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: SingleChildScrollView(
-          child: AspectRatio(
-            aspectRatio: 1.66,
-            child: Card(
-              elevation: 4,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(6)),
-              color: Colors.white,
-              child: Padding(
-                padding: const EdgeInsets.only(top: 16.0,bottom: 25.0),
-                child: BarChart(
-                  BarChartData(
-                    alignment: BarChartAlignment.center,
-                    barTouchData: BarTouchData(
-                      enabled: true,
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Container(
+            height: 50.0,
+            child: RaisedButton(
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(80.0)),
+              padding: EdgeInsets.all(0.0),
+              child: Ink(
+                decoration: BoxDecoration(
+                    gradient: LinearGradient(colors: [new Color(0xff374ABE), new Color(0xff64B6FF)],
+                      begin: Alignment.centerLeft,
+                      end: Alignment.centerRight,
                     ),
-                    titlesData: FlTitlesData(
-                      show: true,
-                      bottomTitles: SideTitles(
-                        rotateAngle: 50,
-                        showTitles: true,
-                        getTextStyles: (value) => const TextStyle(
-                            color: Color(0xff939393), fontSize: 10),
-                        margin: 10,
-                        getTitles: (double value) {
-                          switch (value.toInt()) {
-                            case 0:
-                              return 'Carrefour';
-                            case 1:
-                              return 'Carrefour Express';
-                            case 2:
-                              return 'Hipper one';
-                            case 3:
-                              return 'Spinneys';
-                            case 4:
-                              return 'Seoudi';
-                            case 5:
-                              return 'Ragab sons';
-                            case 6:
-                              return 'Metro';
-                            case 7:
-                              return 'Kher zaman';
-                            case 8:
-                              return 'El otheim';
-                            case 9:
-                              return 'Raya';
-                            case 10:
-                              return 'Alfa';
-                            case 11:
-                              return 'El Mahalawy';
-                            case 12:
-                              return 'Panda';
-                            case 13:
-                              return 'El Hawary';
-                            case 14:
-                              return 'Oscar';
-                            case 15:
-                              return 'Lulu';
-                            case 16:
-                              return 'Fathalla gomla market';
-                            case 17:
-                              return 'Beit el gomla';
-                            case 18:
-                              return 'Fathalla';
-                            case 19:
-                              return 'Aswak fathalla mini';
-                            case 20:
-                              return 'Zahran';
-                            case 21:
-                              return 'Fresh food';
-                            case 22:
-                              return 'Royal house';
-                            case 23:
-                              return 'Mart ville';
-                            case 24:
-                              return 'Premier';
-                            default:
-                              return '';
-                          }
-                        },
+                    borderRadius: BorderRadius.circular(30.0)
+                ),
+                child: Container(
+                  width: MediaQuery.of(context).size.width*0.5,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Icon(Icons.analytics_outlined),
+                      Container(
+                        //constraints: BoxConstraints(maxWidth: 300.0, minHeight: 50.0),
+                        //alignment: Alignment.center,
+                        child: Text(
+                          "Chain side of view",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              fontSize: 18,
+                              color: Colors.white
+                          ),
+                        ),
                       ),
-                      leftTitles: SideTitles(
-                        showTitles: true,
-                        getTextStyles: (value) => const TextStyle(
-                            color: Color(
-                              0xff939393,
-                            ),
-                            fontSize: 10),
-                        margin: 10,
-                      ),
-                    ),
-                    gridData: FlGridData(
-                      show: true,
-                      checkToShowHorizontalLine: (value) => value % 10 == 0,
-                      getDrawingHorizontalLine: (value) => FlLine(
-                        color: const Color(0xffe7e8ec),
-                        strokeWidth: 1,
-                      ),
-                    ),
-                    borderData: FlBorderData(
-                      show: false,
-                    ),
-                    groupsSpace: 5,
-                    barGroups: getData(),
+                    ],
                   ),
                 ),
               ),
             ),
           ),
-        ),
+          SingleChildScrollView(
+            child: AspectRatio(
+              aspectRatio: 1,
+              child: Card(
+                elevation: 4,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(6)),
+                color: Colors.white,
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 16.0,bottom: 25.0),
+                  child: BarChart(
+                    BarChartData(
+                      alignment: BarChartAlignment.center,
+                      barTouchData: BarTouchData(
+                        touchCallback: (BarTouchResponse barTouchResponse){
+                          setState(() {
+                            if(barTouchResponse.touchInput is FlPanStart && barTouchResponse.spot.touchedBarGroupIndex == 7){
+                              Navigator.pushNamed(context, Kher_MissChart.RouteName);
+                            }
+                          });
+                        },
+                        enabled: true,
+                      ),
+                      titlesData: FlTitlesData(
+                        show: true,
+                        bottomTitles: SideTitles(
+                          rotateAngle: 50,
+                          showTitles: true,
+                          getTextStyles: (value) => const TextStyle(
+                              color: Color(0xff939393), fontSize: 10),
+                          margin: 10,
+                          getTitles: (double value) {
+                            switch (value.toInt()) {
+                              case 0:
+                                return 'Carrefour';
+                              case 1:
+                                return 'Carrefour Express';
+                              case 2:
+                                return 'Hipper one';
+                              case 3:
+                                return 'Spinneys';
+                              case 4:
+                                return 'Seoudi';
+                              case 5:
+                                return 'Ragab sons';
+                              case 6:
+                                return 'Metro';
+                              case 7:
+                                return 'Kher zaman';
+                              case 8:
+                                return 'El otheim';
+                              case 9:
+                                return 'Raya';
+                              case 10:
+                                return 'Alfa';
+                              case 11:
+                                return 'El Mahalawy';
+                              case 12:
+                                return 'Panda';
+                              case 13:
+                                return 'El Hawary';
+                              case 14:
+                                return 'Oscar';
+                              case 15:
+                                return 'Lulu';
+                              case 16:
+                                return 'Fathalla gomla market';
+                              case 17:
+                                return 'Beit el gomla';
+                              case 18:
+                                return 'Fathalla';
+                              case 19:
+                                return 'Aswak fathalla mini';
+                              case 20:
+                                return 'Zahran';
+                              case 21:
+                                return 'Fresh food';
+                              case 22:
+                                return 'Royal house';
+                              case 23:
+                                return 'Mart ville';
+                              case 24:
+                                return 'Premier';
+                              default:
+                                return '';
+                            }
+                          },
+                        ),
+                        leftTitles: SideTitles(
+                          showTitles: true,
+                          getTextStyles: (value) => const TextStyle(
+                              color: Color(
+                                0xff939393,
+                              ),
+                              fontSize: 10),
+                          margin: 10,
+                        ),
+                      ),
+                      gridData: FlGridData(
+                        show: true,
+                        checkToShowHorizontalLine: (value) => value % 10 == 0,
+                        getDrawingHorizontalLine: (value) => FlLine(
+                          color: const Color(0xffe7e8ec),
+                          strokeWidth: 1,
+                        ),
+                      ),
+                      borderData: FlBorderData(
+                        show: false,
+                      ),
+                      groupsSpace: 5,
+                      barGroups: getData(),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          Container(
+            width: MediaQuery.of(context).size.width,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                      gradient: LinearGradient(colors: [ Colors.black12, new Color(0xff64B6FF)],
+                        begin: Alignment.centerLeft,
+                        end: Alignment.centerRight,
+                      ),
+                      borderRadius: BorderRadius.circular(30.0)
+                  ),
+                  margin: EdgeInsets.all(10),
+                  //width: MediaQuery.of(context).size.width*0.6,
+                  height: 50.0,
+                  child: Row(
+                    children: [
+                      Icon(Icons.arrow_back_ios_outlined ),
+                      RaisedButton(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(18.0),
+                            side: BorderSide(color: Color.fromRGBO(0, 160, 227, 1))),
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                        padding: EdgeInsets.all(10.0),
+                        color: Colors.lightBlue,
+                        textColor: Colors.white,
+                        child: Text("Back to Master",
+                            style: TextStyle(fontSize: 15)),
+                      ),
+                    ],
+                  ),
+                ),Container(
+                  decoration: BoxDecoration(
+                      gradient: LinearGradient(colors: [new Color(0xff64B6FF),Colors.black12,],
+                        begin: Alignment.centerLeft,
+                        end: Alignment.centerRight,
+                      ),
+                      borderRadius: BorderRadius.circular(30.0)
+                  ),
+                  margin: EdgeInsets.all(10),
+                  //width: MediaQuery.of(context).size.width*0.6,
+                  height: 50.0,
+                  child: Row(
+                    children: [
+                      RaisedButton(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(18.0),
+                            side: BorderSide(color: Colors.lightBlue)),
+                        onPressed: () {
+                        },
+                        padding: EdgeInsets.all(10.0),
+                        color: Color.fromRGBO(0, 160, 227, 1),
+                        textColor: Colors.white,
+                        child: Text("Send",
+                            style: TextStyle(fontSize: 15)),
+                      ),
+                      Icon(Icons.send)
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -595,147 +705,5 @@ class _ChainMissChartState extends State<ChainMissChart> {
         ],
       ),
     ];
-
-    // return List.generate(
-    //   10,
-    //   (i) {
-    //     final isTouched = i == touchedIndex;
-    //     final double opacity = isTouched ? 1 : 0.6;
-    //     switch (i) {
-    //       case 0:
-    //         return PieChartSectionData(
-    //           color: Colors.green.withOpacity(opacity),
-    //           value: bonmiss / missingDataItems.length * 100,
-    //           title:
-    //               'BONJORNO  (${(bonmiss / missingDataItems.length * 100).toStringAsFixed(2)}%)',
-    //           radius: 140,
-    //           titleStyle: TextStyle(
-    //               fontSize: 18,
-    //               fontWeight: FontWeight.bold,
-    //               color: const Color(0xff044d7c)),
-    //           titlePositionPercentageOffset: 0.55,
-    //         );
-    //       case 1:
-    //         return PieChartSectionData(
-    //           color: Colors.black.withOpacity(opacity),
-    //           value: nescmiss / missingDataItems.length * 100,
-    //           title:
-    //               'NESCAFE  (${(nescmiss / missingDataItems.length * 100).toStringAsFixed(2)}%)',
-    //           radius: 140,
-    //           titleStyle: TextStyle(
-    //               fontSize: 18,
-    //               fontWeight: FontWeight.bold,
-    //               color: const Color(0xff90672d)),
-    //           titlePositionPercentageOffset: 0.55,
-    //         );
-    //       case 2:
-    //         return PieChartSectionData(
-    //           color: Colors.grey.withOpacity(opacity),
-    //           value: coffmatemiss / missingDataItems.length * 100,
-    //           title:
-    //               'COFFEE-MATE  (${(coffmatemiss / missingDataItems.length * 100).toStringAsFixed(2)}%)',
-    //           radius: 140,
-    //           titleStyle: TextStyle(
-    //               fontSize: 18,
-    //               fontWeight: FontWeight.bold,
-    //               color: const Color(0xff4c3788)),
-    //           titlePositionPercentageOffset: 0.6,
-    //         );
-    //       case 3:
-    //         return PieChartSectionData(
-    //           color: Colors.yellow.withOpacity(opacity),
-    //           value: nidomiss / missingDataItems.length * 100,
-    //           title:
-    //               'NIDO  (${(nidomiss / missingDataItems.length * 100).toStringAsFixed(2)}%)',
-    //           radius: 140,
-    //           titleStyle: TextStyle(
-    //               fontSize: 18,
-    //               fontWeight: FontWeight.bold,
-    //               color: const Color(0xff4c3788)),
-    //           titlePositionPercentageOffset: 0.6,
-    //         );
-    //       case 4:
-    //         return PieChartSectionData(
-    //           color: Colors.red.withOpacity(opacity),
-    //           value: babymiss / missingDataItems.length * 100,
-    //           title:
-    //               'BABY FOOD  (${(babymiss / missingDataItems.length * 100).toStringAsFixed(2)}%)',
-    //           radius: 140,
-    //           titleStyle: TextStyle(
-    //               fontSize: 18,
-    //               fontWeight: FontWeight.bold,
-    //               color: const Color(0xff4c3788)),
-    //           titlePositionPercentageOffset: 0.6,
-    //         );
-    //       case 5:
-    //         return PieChartSectionData(
-    //           color: Colors.blue.withOpacity(opacity),
-    //           value: nesqmiss / missingDataItems.length * 100,
-    //           title:
-    //               'NESQUIK  (${(nesqmiss / missingDataItems.length * 100).toStringAsFixed(2)}%)',
-    //           radius: 140,
-    //           titleStyle: TextStyle(
-    //               fontSize: 18,
-    //               fontWeight: FontWeight.bold,
-    //               color: const Color(0xff4c3788)),
-    //           titlePositionPercentageOffset: 0.6,
-    //         );
-    //       case 6:
-    //         return PieChartSectionData(
-    //           color: Colors.orange.withOpacity(opacity),
-    //           value: maggimiss / missingDataItems.length * 100,
-    //           title:
-    //               'MAGGI  (${(maggimiss / missingDataItems.length * 100).toStringAsFixed(2)}%)',
-    //           radius: 140,
-    //           titleStyle: TextStyle(
-    //               fontSize: 18,
-    //               fontWeight: FontWeight.bold,
-    //               color: const Color(0xff4c3788)),
-    //           titlePositionPercentageOffset: 0.6,
-    //         );
-    //       case 7:
-    //         return PieChartSectionData(
-    //           color: Colors.lightGreen.withOpacity(opacity),
-    //           value: cerealmiss / missingDataItems.length * 100,
-    //           title:
-    //               'CEREAL  (${(cerealmiss / missingDataItems.length * 100).toStringAsFixed(2)}%)',
-    //           radius: 140,
-    //           titleStyle: TextStyle(
-    //               fontSize: 18,
-    //               fontWeight: FontWeight.bold,
-    //               color: const Color(0xff4c3788)),
-    //           titlePositionPercentageOffset: 0.6,
-    //         );
-    //       case 8:
-    //         return PieChartSectionData(
-    //           color: Colors.brown.withOpacity(opacity),
-    //           value: confecmiss / missingDataItems.length * 100,
-    //           title:
-    //               'CONFECTIONERY  (${(confecmiss / missingDataItems.length * 100).toStringAsFixed(2)}%)',
-    //           radius: 140,
-    //           titleStyle: TextStyle(
-    //               fontSize: 18,
-    //               fontWeight: FontWeight.bold,
-    //               color: const Color(0xff4c3788)),
-    //           titlePositionPercentageOffset: 0.6,
-    //         );
-    //       case 9:
-    //         return PieChartSectionData(
-    //           color: Colors.lightBlue.withOpacity(opacity),
-    //           value: watermiss / missingDataItems.length * 100,
-    //           title:
-    //               'WATER  (${(watermiss / missingDataItems.length * 100).toStringAsFixed(2)}%)',
-    //           radius: 140,
-    //           titleStyle: TextStyle(
-    //               fontSize: 18,
-    //               fontWeight: FontWeight.bold,
-    //               color: const Color(0xff4c3788)),
-    //           titlePositionPercentageOffset: 0.6,
-    //         );
-    //       default:
-    //         return null;
-    //     }
-    //   },
-    // );
   }
 }

@@ -1,7 +1,9 @@
 import 'package:gard/Branches.dart';
 import 'package:flutter/material.dart';
 import 'package:gard/Charts.dart';
+import 'package:gard/Charts/Bon.MissChart.dart';
 import 'package:gard/Charts/CategoryMissChart.dart';
+import 'package:gard/Charts/KherZman.MissChart.dart';
 import 'package:gard/ExpiryItem.dart';
 import 'package:gard/Items.dart';
 import 'package:gard/Reports.dart';
@@ -36,6 +38,8 @@ class MyApp extends StatelessWidget {
           Charts.RouteName:(ctx)=>Charts(),
           CategoryMissChart.RouteName:(ctx)=>CategoryMissChart(),
           ChainMissChart.RouteName:(ctx)=>ChainMissChart(),
+          Bon_MissChart.RouteName:(ctx)=>Bon_MissChart(),
+          Kher_MissChart.RouteName:(ctx)=>Kher_MissChart(),
         },
       ),
     );
