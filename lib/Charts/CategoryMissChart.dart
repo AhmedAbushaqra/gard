@@ -149,7 +149,7 @@ class _CategoryMissChartState extends State<CategoryMissChart> {
                         borderData: FlBorderData(
                           show: false,
                         ),
-                        groupsSpace: 20,
+                        groupsSpace: MediaQuery.of(context).size.width*0.07,
                         barGroups: getData(),
                       ),
                     ),
