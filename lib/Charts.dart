@@ -2,6 +2,7 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:gard/Charts/CategoryMissChart.dart';
 import 'package:gard/Charts/ChainMissChart.dart';
+import 'package:gard/Charts/selectCategoryChart.dart';
 import 'package:gard/widgets/indicator.dart';
 
 import 'models/final_data.dart';
@@ -114,14 +115,14 @@ class _ChartsState extends State<Charts> {
                         side: BorderSide(color: Color.fromRGBO(0, 160, 227, 1))),
                     onPressed: () {
                       setState(() {
-                        Navigator.of(context).pushNamed(CategoryMissChart.RouteName);
+                        Navigator.of(context).pushNamed(SelectCategoryChart.RouteName);
                       });
                     },
                     padding: EdgeInsets.all(10.0),
                     color: Color.fromRGBO(0, 160, 227, 1),
                     textColor: Colors.white,
-                    child: Text("Item Side Of View",
-                        style: TextStyle(fontSize: 15)),
+                    child: Text("Category overview",
+                        style: TextStyle(fontSize: 18)),
                   ),
                 ),
 
@@ -140,7 +141,7 @@ class _ChartsState extends State<Charts> {
                     color: Color.fromRGBO(0, 160, 227, 1),
                     textColor: Colors.white,
                     child: Text("Chain Side Of View",
-                        style: TextStyle(fontSize: 15)),
+                        style: TextStyle(fontSize: 18)),
                   ),
                 ),
               ],

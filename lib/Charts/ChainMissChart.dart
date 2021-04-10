@@ -67,121 +67,112 @@ class _ChainMissChartState extends State<ChainMissChart> {
               ),
             ),
           ),
-          SingleChildScrollView(
-            child: AspectRatio(
-              aspectRatio: 1,
-              child: Container(
-                height: MediaQuery.of(context).size.height*0.5,
-                child: Card(
-                  elevation: 4,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(6)),
-                  color: Colors.white,
-                  child: Padding(
-                    padding: const EdgeInsets.only(top: 16.0,bottom: 35.0),
-                    child: BarChart(
-                      BarChartData(
-                        alignment: BarChartAlignment.center,
-                        barTouchData: BarTouchData(
-                          touchCallback: (BarTouchResponse barTouchResponse){
-                            setState(() {
-                              if(barTouchResponse.touchInput is FlPanStart && barTouchResponse.spot.touchedBarGroupIndex == 7){
-                                Navigator.pushNamed(context, Kher_MissChart.RouteName);
-                              }
-                            });
-                          },
-                          enabled: true,
-                        ),
-                        titlesData: FlTitlesData(
-                          show: true,
-                          bottomTitles: SideTitles(
-                            rotateAngle: 50,
-                            showTitles: true,
-                            getTextStyles: (value) => const TextStyle(
-                                color: Color(0xff939393), fontSize: 10),
-                            margin: 10,
-                            getTitles: (double value) {
-                              switch (value.toInt()) {
-                                case 0:
-                                  return 'Carrefour';
-                                case 1:
-                                  return 'Carrefour Express';
-                                case 2:
-                                  return 'Hipper one';
-                                case 3:
-                                  return 'Spinneys';
-                                case 4:
-                                  return 'Seoudi';
-                                case 5:
-                                  return 'Ragab sons';
-                                case 6:
-                                  return 'Metro';
-                                case 7:
-                                  return 'Kher zaman';
-                                case 8:
-                                  return 'El otheim';
-                                case 9:
-                                  return 'Raya';
-                                case 10:
-                                  return 'Alfa';
-                                case 11:
-                                  return 'El Mahalawy';
-                                case 12:
-                                  return 'Panda';
-                                case 13:
-                                  return 'El Hawary';
-                                case 14:
-                                  return 'Oscar';
-                                case 15:
-                                  return 'Lulu';
-                                case 16:
-                                  return 'Fathalla gomla market';
-                                case 17:
-                                  return 'Beit el gomla';
-                                case 18:
-                                  return 'Fathalla';
-                                case 19:
-                                  return 'Aswak fathalla mini';
-                                case 20:
-                                  return 'Zahran';
-                                case 21:
-                                  return 'Fresh food';
-                                case 22:
-                                  return 'Royal house';
-                                case 23:
-                                  return 'Mart ville';
-                                case 24:
-                                  return 'Premier';
-                                default:
-                                  return '';
-                              }
-                            },
-                          ),
-                          leftTitles: SideTitles(
-                            showTitles: true,
-                            interval: 30,
-                            getTextStyles: (value) => const TextStyle(
-                                color: Color(
-                                  0xff939393,
-                                ),
-                                fontSize: 10),
-                            margin: 0,
-                          ),
-                        ),
-                        gridData: FlGridData(
-                          show: true,
-                          checkToShowHorizontalLine: (value) => value % 30 == 0,
-                          getDrawingHorizontalLine: (value) => FlLine(
-                            color: const Color(0xffe7e8ec),
-                            strokeWidth: 1,
-                          ),
-                        ),
-                        borderData: FlBorderData(
-                          show: false,
-                        ),
-                        groupsSpace: MediaQuery.of(context).size.width*0.015,
-                        barGroups: getData(),
+          AspectRatio(
+            aspectRatio: Orientation==Orientation.portrait?10:1,
+            child: Container(
+              height: MediaQuery.of(context).size.height*0.5,
+              child: Card(
+                elevation: 4,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(6)),
+                color: Colors.white,
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 16.0,bottom: 35.0),
+                  child: BarChart(
+                    BarChartData(
+                      alignment: BarChartAlignment.center,
+                      barTouchData: BarTouchData(
+                       // enabled: true,
                       ),
+                      titlesData: FlTitlesData(
+                        show: true,
+                        bottomTitles: SideTitles(
+                          rotateAngle: 50,
+                          showTitles: true,
+                          getTextStyles: (value) => const TextStyle(
+                              color: Color(0xff939393), fontSize: 10),
+                          margin: 10,
+                          getTitles: (double value) {
+                            switch (value.toInt()) {
+                              case 0:
+                                return 'Carrefour';
+                              case 1:
+                                return 'Carrefour Express';
+                              case 2:
+                                return 'Hipper one';
+                              case 3:
+                                return 'Spinneys';
+                              case 4:
+                                return 'Seoudi';
+                              case 5:
+                                return 'Ragab sons';
+                              case 6:
+                                return 'Metro';
+                              case 7:
+                                return 'Kher zaman';
+                              case 8:
+                                return 'El otheim';
+                              case 9:
+                                return 'Raya';
+                              case 10:
+                                return 'Alfa';
+                              case 11:
+                                return 'El Mahalawy';
+                              case 12:
+                                return 'Panda';
+                              case 13:
+                                return 'El Hawary';
+                              case 14:
+                                return 'Oscar';
+                              case 15:
+                                return 'Lulu';
+                              case 16:
+                                return 'Fathalla gomla market';
+                              case 17:
+                                return 'Beit el gomla';
+                              case 18:
+                                return 'Fathalla';
+                              case 19:
+                                return 'Aswak fathalla mini';
+                              case 20:
+                                return 'Zahran';
+                              case 21:
+                                return 'Fresh food';
+                              case 22:
+                                return 'Royal house';
+                              case 23:
+                                return 'Mart ville';
+                              case 24:
+                                return 'Premier';
+                              default:
+                                return '';
+                            }
+                          },
+                        ),
+                        leftTitles: SideTitles(
+                          showTitles: true,
+                          interval: 30.0,
+                          getTextStyles: (value) => const TextStyle(
+                              color: Color(
+                                0xff939393,
+                              ),
+                              fontSize: 10),
+                          margin: 0,
+                        ),
+                      ),
+                      gridData: FlGridData(
+                        show: true,
+                        checkToShowHorizontalLine: (value) => value % 30 == 0,
+                        getDrawingHorizontalLine: (value) => FlLine(
+                          color: const Color(0xffe7e8ec),
+                          strokeWidth: 1,
+                        ),
+                      ),
+                      borderData: FlBorderData(
+                        show: false,
+                      ),
+                      groupsSpace: MediaQuery.of(context).size.width*0.015,
+                      barGroups: getData(),
                     ),
                   ),
                 ),
@@ -285,9 +276,6 @@ class _ChainMissChartState extends State<ChainMissChart> {
     double royalhouseMiss = 0;
     double marthvileMiss = 0;
     double perimerMiss = 0;
-
-
-
 
     for (var item in missingDataItems) {
       String chain = item.chain;

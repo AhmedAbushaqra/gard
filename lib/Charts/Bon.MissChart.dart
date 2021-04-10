@@ -50,7 +50,7 @@ class _Bon_MissChartState extends State<Bon_MissChart> {
                         //constraints: BoxConstraints(maxWidth: 300.0, minHeight: 50.0),
                         //alignment: Alignment.center,
                         child: Text(
-                          "Item side of view",
+                          "BONJORNO",
                           textAlign: TextAlign.center,
                           style: TextStyle(
                               fontSize: 18,
@@ -202,6 +202,7 @@ class _Bon_MissChartState extends State<Bon_MissChart> {
                                 borderRadius: BorderRadius.circular(18.0),
                                 side: BorderSide(color: Color.fromRGBO(0, 160, 227, 1))),
                             onPressed: () {
+                              Navigator.of(context).pop();
                               Navigator.of(context).pop();
                               Navigator.of(context).pop();
                             },

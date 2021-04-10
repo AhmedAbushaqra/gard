@@ -4,6 +4,7 @@ import 'package:gard/Charts.dart';
 import 'package:gard/Charts/Bon.MissChart.dart';
 import 'package:gard/Charts/CategoryMissChart.dart';
 import 'package:gard/Charts/KherZman.MissChart.dart';
+import 'package:gard/Charts/selectCategoryChart.dart';
 import 'package:gard/ExpiryItem.dart';
 import 'package:gard/Items.dart';
 import 'package:gard/Reports.dart';
@@ -36,6 +37,7 @@ class MyApp extends StatelessWidget {
           Reports.RouteName:(ctx)=>Reports(),
           ExpireItems.RouteName:(ctx)=>ExpireItems(),
           Charts.RouteName:(ctx)=>Charts(),
+          SelectCategoryChart.RouteName:(ctx)=>SelectCategoryChart(),
           CategoryMissChart.RouteName:(ctx)=>CategoryMissChart(),
           ChainMissChart.RouteName:(ctx)=>ChainMissChart(),
           Bon_MissChart.RouteName:(ctx)=>Bon_MissChart(),

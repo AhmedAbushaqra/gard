@@ -2,19 +2,20 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gard/Charts/Bon.MissChart.dart';
+import 'package:gard/Charts/selectCategoryChart.dart';
 import 'package:gard/models/MissingData.dart';
 import 'package:gard/provider/ChainProvider.dart';
 
 class CategoryMissChart extends StatefulWidget {
   static const RouteName = "/CategoryMissChart";
-
+  String cateAnalysis;
+  CategoryMissChart({this.cateAnalysis});
   @override
   _CategoryMissChartState createState() => _CategoryMissChartState();
 }
 
 class _CategoryMissChartState extends State<CategoryMissChart> {
   List<MissingData> missingDataItems = List<MissingData>();
-
   void initState() {
     Chains().getMissingData().then((missingDataItems) {
       setState(() {
@@ -33,6 +34,11 @@ class _CategoryMissChartState extends State<CategoryMissChart> {
           Container(
             height: 50.0,
             child: RaisedButton(
+               /* Navigator.of(context).push(MaterialPageRoute(builder: (context)=>
+                SelectCategoryChart(
+               bonmiss: bonmiss,nescmiss: nescmiss,coffmatemiss: coffmatemiss,nidomiss: nidomiss,babymiss: babymiss,
+               nesqmiss:nesqmiss,maggimiss: maggimiss,cerealmiss: cerealmiss,confecmiss: confecmiss,watermiss: watermiss,
+                )));*/
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(80.0)),
               padding: EdgeInsets.all(0.0),
               child: Ink(
@@ -54,7 +60,7 @@ class _CategoryMissChartState extends State<CategoryMissChart> {
                         //constraints: BoxConstraints(maxWidth: 300.0, minHeight: 50.0),
                         //alignment: Alignment.center,
                         child: Text(
-                          "Item side of view",
+                          widget.cateAnalysis,
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontSize: 18,
@@ -83,13 +89,6 @@ class _CategoryMissChartState extends State<CategoryMissChart> {
                       BarChartData(
                         alignment: BarChartAlignment.center,
                         barTouchData: BarTouchData(
-                          touchCallback: (BarTouchResponse barTouchResponse){
-                            setState(() {
-                              if(barTouchResponse.touchInput is FlPanStart && barTouchResponse.spot.touchedBarGroupIndex == 0){
-                                      Navigator.pushNamed(context, Bon_MissChart.RouteName);
-                              }
-                            });
-                          },
                           enabled: true,
                         ),
                         titlesData: FlTitlesData(
@@ -103,32 +102,62 @@ class _CategoryMissChartState extends State<CategoryMissChart> {
                             getTitles: (double value) {
                               switch (value.toInt()) {
                                 case 0:
-                                  return 'BONJORNO';
+                                  return 'Carrefour';
                                 case 1:
-                                  return 'NESCAFE';
+                                  return 'Carrefour Express';
                                 case 2:
-                                  return 'COFFEE-MATE';
+                                  return 'Hipper one';
                                 case 3:
-                                  return 'NIDO';
+                                  return 'Spinneys';
                                 case 4:
-                                  return 'BABY FOOD';
+                                  return 'Seoudi';
                                 case 5:
-                                  return 'NESQUIK';
+                                  return 'Ragab sons';
                                 case 6:
-                                  return 'MAGGI';
+                                  return 'Metro';
                                 case 7:
-                                  return 'CEREAL';
+                                  return 'Kher zaman';
                                 case 8:
-                                  return 'CONFECTIONERY';
+                                  return 'El otheim';
                                 case 9:
-                                  return 'WATER';
+                                  return 'Raya';
+                                case 10:
+                                  return 'Alfa';
+                                case 11:
+                                  return 'El Mahalawy';
+                                case 12:
+                                  return 'Panda';
+                                case 13:
+                                  return 'El Hawary';
+                                case 14:
+                                  return 'Oscar';
+                                case 15:
+                                  return 'Lulu';
+                                case 16:
+                                  return 'Fathalla gomla market';
+                                case 17:
+                                  return 'Beit el gomla';
+                                case 18:
+                                  return 'Fathalla';
+                                case 19:
+                                  return 'Aswak fathalla mini';
+                                case 20:
+                                  return 'Zahran';
+                                case 21:
+                                  return 'Fresh food';
+                                case 22:
+                                  return 'Royal house';
+                                case 23:
+                                  return 'Mart ville';
+                                case 24:
+                                  return 'Premier';
                                 default:
                                   return '';
                               }
                             },
                           ),
                           leftTitles: SideTitles(
-                            interval: 30,
+                           // interval: 10,
                             showTitles: true,
                             getTextStyles: (value) => const TextStyle(
                                 color: Color(
@@ -140,7 +169,7 @@ class _CategoryMissChartState extends State<CategoryMissChart> {
                         ),
                         gridData: FlGridData(
                           show: true,
-                          checkToShowHorizontalLine: (value) => value % 30 == 0,
+                          checkToShowHorizontalLine: (value) => value % 10 == 0,
                           getDrawingHorizontalLine: (value) => FlLine(
                             color: const Color(0xffe7e8ec),
                             strokeWidth: 1,
@@ -149,7 +178,7 @@ class _CategoryMissChartState extends State<CategoryMissChart> {
                         borderData: FlBorderData(
                           show: false,
                         ),
-                        groupsSpace: MediaQuery.of(context).size.width*0.07,
+                        groupsSpace: MediaQuery.of(context).size.width*0.015,
                         barGroups: getData(),
                       ),
                     ),
@@ -192,7 +221,8 @@ class _CategoryMissChartState extends State<CategoryMissChart> {
                       ),
                     ],
                   ),
-                ),Container(
+                ),
+                Container(
                   decoration: BoxDecoration(
                       gradient: LinearGradient(colors: [new Color(0xff64B6FF),Colors.black12,],
                         begin: Alignment.centerLeft,
@@ -229,58 +259,149 @@ class _CategoryMissChartState extends State<CategoryMissChart> {
     );
   }
   List<BarChartGroupData> getData() {
-    double bonmiss=0;
-    double nescmiss=0;
-    double coffmatemiss=0;
-    double nidomiss=0;
-    double babymiss=0;
-    double nesqmiss=0;
-    double maggimiss=0;
-    double cerealmiss=0;
-    double confecmiss=0;
-    double watermiss=0;
-    for(var item in missingDataItems){
+    double carrefourMiss = 0;
+    double carexpMiss = 0;
+    double hiperoneMiss = 0;
+    double spinneysMiss = 0;
+    double seoudiMiss = 0;
+    double ragabsonsMiss = 0;
+    double metroMiss = 0;
+    double kherzamanMiss = 0;
+    double elouthiemMiss = 0;
+    double rayaMiss = 0;
+    double alfaMiss = 0;
+    double elmahalwyMiss = 0;
+    double pandaMiss = 0;
+    double elhawaryMiss = 0;
+    double oscarMiss = 0;
+    double luluMiss = 0;
+    double fatgomarketMiss = 0;
+    double beitgomlaMiss = 0;
+    double fathallaMiss = 0;
+    double aswakfatminiMiss = 0;
+    double zahranMiss = 0;
+    double freshfoodMiss = 0;
+    double royalhouseMiss = 0;
+    double marthvileMiss = 0;
+    double perimerMiss = 0;
+
+    for (var item in missingDataItems) {
+      String chain = item.chain;
       String category=item.catename;
-      if(category=="BONJORNO"){
-        setState(() {
-          bonmiss=bonmiss+1;
-        });
-      }else if(category=="NESCAFE"){
-        setState(() {
-          nescmiss=nescmiss+1;
-        });
-      }else if(category=="COFFEE-MATE"){
-        setState(() {
-          coffmatemiss=coffmatemiss+1;
-        });
-      }else if(category=="NIDO"){
-        setState(() {
-          nidomiss=nidomiss+1;
-        });
-      }else if(category=="BABY FOOD"){
-        setState(() {
-          babymiss=babymiss+1;
-        });
-      }else if(category=="NESQUIK"){
-        setState(() {
-          nesqmiss=nesqmiss+1;
-        });
-      }else if(category=="MAGGI"){
-        setState(() {
-          maggimiss=maggimiss+1;
-        });
-      }else if(category=="CEREAL"){
-        setState(() {
-          cerealmiss=cerealmiss+1;
-        });
-      }else if(category=="CONFECTIONERY"){
-        setState(() {
-          confecmiss=confecmiss+1;
-        });
-      }else if(category=="WATER"){
-        setState(() {
-          watermiss=watermiss+1;
-        });
+      if(category==widget.cateAnalysis) {
+        if (chain == "Carrefour") {
+          setState(() {
+            carrefourMiss = carrefourMiss + 1;
+          });
+        } else if (chain == "Carrefour Express") {
+          setState(() {
+            carexpMiss = carexpMiss + 1;
+          });
+        } else if (chain == "Hipper one") {
+          setState(() {
+            hiperoneMiss = hiperoneMiss + 1;
+          });
+        } else if (chain == "Spinneys") {
+          setState(() {
+            spinneysMiss = spinneysMiss + 1;
+          });
+        } else if (chain == "Seoudi") {
+          setState(() {
+            seoudiMiss = seoudiMiss + 1;
+          });
+        } else if (chain == "Ragab sons") {
+          setState(() {
+            ragabsonsMiss = ragabsonsMiss + 1;
+          });
+        } else if (chain == "Metro") {
+          setState(() {
+            metroMiss = metroMiss + 1;
+          });
+        }
+        else if (chain == "Kher zaman") {
+          setState(() {
+            kherzamanMiss = kherzamanMiss + 1;
+          });
+        }
+        else if (chain == "El otheim") {
+          setState(() {
+            elouthiemMiss = elouthiemMiss + 1;
+          });
+        }
+        else if (chain == "Raya") {
+          setState(() {
+            rayaMiss = rayaMiss + 1;
+          });
+        }
+        else if (chain == "Alfa") {
+          setState(() {
+            alfaMiss = alfaMiss + 1;
+          });
+        }
+        else if (chain == "El Mahalawy") {
+          setState(() {
+            elmahalwyMiss = elmahalwyMiss + 1;
+          });
+        }
+        else if (chain == "Panda") {
+          setState(() {
+            pandaMiss = pandaMiss + 1;
+          });
+        } else if (chain == "El Hawary") {
+          setState(() {
+            elhawaryMiss = elhawaryMiss + 1;
+          });
+        }
+        else if (chain == "Oscar") {
+          setState(() {
+            oscarMiss = oscarMiss + 1;
+          });
+        } else if (chain == "Lulu") {
+          setState(() {
+            luluMiss = luluMiss + 1;
+          });
+        } else if (chain == "Fathalla gomla market") {
+          setState(() {
+            fatgomarketMiss = fatgomarketMiss + 1;
+          });
+        } else if (chain == "Beit el gomla") {
+          setState(() {
+            beitgomlaMiss = beitgomlaMiss + 1;
+          });
+        }
+        else if (chain == "Fathalla") {
+          setState(() {
+            fathallaMiss = fathallaMiss + 1;
+          });
+        }
+        else if (chain == "Aswak fathalla mini") {
+          setState(() {
+            aswakfatminiMiss = aswakfatminiMiss + 1;
+          });
+        }
+        else if (chain == "Zahran") {
+          setState(() {
+            zahranMiss = zahranMiss + 1;
+          });
+        }
+        else if (chain == "Fresh food") {
+          setState(() {
+            freshfoodMiss = freshfoodMiss + 1;
+          });
+        }
+        else if (chain == "Royal house") {
+          setState(() {
+            royalhouseMiss = royalhouseMiss + 1;
+          });
+        } else if (chain == "Mart ville") {
+          setState(() {
+            marthvileMiss = marthvileMiss + 1;
+          });
+        } else if (chain == "Premier") {
+          setState(() {
+            perimerMiss = perimerMiss + 1;
+          });
+        }
       }
     }
     return [
@@ -289,11 +410,12 @@ class _CategoryMissChartState extends State<CategoryMissChart> {
         barsSpace: 4,
         barRods: [
           BarChartRodData(
-              y: bonmiss,
+              y: carrefourMiss,
               rodStackItems: [
                 BarChartRodStackItem(0, 2000000000, Colors.green),
               ],
               borderRadius: const BorderRadius.all(Radius.zero)),
+
         ],
       ),
       BarChartGroupData(
@@ -301,7 +423,7 @@ class _CategoryMissChartState extends State<CategoryMissChart> {
         barsSpace: 4,
         barRods: [
           BarChartRodData(
-              y: nescmiss,
+              y: carexpMiss,
               rodStackItems: [
                 BarChartRodStackItem(0, 11000000000, Colors.black),
               ],
@@ -313,7 +435,7 @@ class _CategoryMissChartState extends State<CategoryMissChart> {
         barsSpace: 4,
         barRods: [
           BarChartRodData(
-              y: coffmatemiss,
+              y: hiperoneMiss,
               rodStackItems: [
                 BarChartRodStackItem(0, 6000000000, Colors.grey),
               ],
@@ -325,7 +447,7 @@ class _CategoryMissChartState extends State<CategoryMissChart> {
         barsSpace: 4,
         barRods: [
           BarChartRodData(
-              y: nidomiss,
+              y: spinneysMiss,
               rodStackItems: [
                 BarChartRodStackItem(0, 1000000000.5, Colors.yellow),
               ],
@@ -337,7 +459,7 @@ class _CategoryMissChartState extends State<CategoryMissChart> {
         barsSpace: 4,
         barRods: [
           BarChartRodData(
-              y: babymiss,
+              y: seoudiMiss,
               rodStackItems: [
                 BarChartRodStackItem(0, 1000000000.5, Colors.red),
               ],
@@ -349,7 +471,7 @@ class _CategoryMissChartState extends State<CategoryMissChart> {
         barsSpace: 4,
         barRods: [
           BarChartRodData(
-              y: nesqmiss,
+              y: ragabsonsMiss,
               rodStackItems: [
                 BarChartRodStackItem(0, 1000000000.5, Colors.blue),
               ],
@@ -358,10 +480,10 @@ class _CategoryMissChartState extends State<CategoryMissChart> {
       ),
       BarChartGroupData(
         x: 6,
-        barsSpace: 4,
+        barsSpace: 10,
         barRods: [
           BarChartRodData(
-              y: maggimiss,
+              y: metroMiss,
               rodStackItems: [
                 BarChartRodStackItem(0, 1000000000.5, Colors.orange),
               ],
@@ -370,10 +492,10 @@ class _CategoryMissChartState extends State<CategoryMissChart> {
       ),
       BarChartGroupData(
         x: 7,
-        barsSpace: 4,
+        barsSpace: 10,
         barRods: [
           BarChartRodData(
-              y: cerealmiss,
+              y: kherzamanMiss,
               rodStackItems: [
                 BarChartRodStackItem(0, 1000000000.5, Colors.lightGreen),
               ],
@@ -382,10 +504,10 @@ class _CategoryMissChartState extends State<CategoryMissChart> {
       ),
       BarChartGroupData(
         x: 8,
-        barsSpace: 4,
+        barsSpace: 10,
         barRods: [
           BarChartRodData(
-              y: confecmiss,
+              y: elouthiemMiss,
               rodStackItems: [
                 BarChartRodStackItem(0, 1000000000.5, Colors.brown),
               ],
@@ -394,12 +516,192 @@ class _CategoryMissChartState extends State<CategoryMissChart> {
       ),
       BarChartGroupData(
         x: 9,
-        barsSpace: 4,
+        barsSpace: 10,
         barRods: [
           BarChartRodData(
-              y: watermiss,
+              y: rayaMiss,
               rodStackItems: [
                 BarChartRodStackItem(0, 1000000000.5, Colors.lightBlue),
+              ],
+              borderRadius: const BorderRadius.all(Radius.zero)),
+        ],
+      ),
+      BarChartGroupData(
+        x: 10,
+        barsSpace: 10,
+        barRods: [
+          BarChartRodData(
+              y: alfaMiss,
+              rodStackItems: [
+                BarChartRodStackItem(0, 1000000000.5, Colors.purple),
+              ],
+              borderRadius: const BorderRadius.all(Radius.zero)),
+        ],
+      ),
+      BarChartGroupData(
+        x: 11,
+        barsSpace: 10,
+        barRods: [
+          BarChartRodData(
+              y: elmahalwyMiss,
+              rodStackItems: [
+                BarChartRodStackItem(0, 1000000000.5, Colors.cyan),
+              ],
+              borderRadius: const BorderRadius.all(Radius.zero)),
+        ],
+      ),
+      BarChartGroupData(
+        x: 12,
+        barsSpace: 10,
+        barRods: [
+          BarChartRodData(
+              y: pandaMiss,
+              rodStackItems: [
+                BarChartRodStackItem(0, 1000000000.5, Colors.teal),
+              ],
+              borderRadius: const BorderRadius.all(Radius.zero)),
+        ],
+      ),
+      BarChartGroupData(
+        x: 13,
+        barsSpace: 10,
+        barRods: [
+          BarChartRodData(
+              y: elhawaryMiss,
+              rodStackItems: [
+                BarChartRodStackItem(0, 1000000000.5, Colors.pink),
+              ],
+              borderRadius: const BorderRadius.all(Radius.zero)),
+        ],
+      ),
+      BarChartGroupData(
+        x: 14,
+        barsSpace: 10,
+        barRods: [
+          BarChartRodData(
+              y: oscarMiss,
+              rodStackItems: [
+                BarChartRodStackItem(0, 1000000000.5, Colors.amber),
+              ],
+              borderRadius: const BorderRadius.all(Radius.zero)),
+        ],
+      ),
+      BarChartGroupData(
+        x: 15,
+        barsSpace: 10,
+        barRods: [
+          BarChartRodData(
+              y: luluMiss,
+              rodStackItems: [
+                BarChartRodStackItem(0, 1000000000.5, Colors.black),
+              ],
+              borderRadius: const BorderRadius.all(Radius.zero)),
+        ],
+      ),
+      BarChartGroupData(
+        x: 16,
+        barsSpace: 10,
+        barRods: [
+          BarChartRodData(
+              y: fatgomarketMiss,
+              rodStackItems: [
+                BarChartRodStackItem(0, 1000000000.5, Colors.orange),
+              ],
+              borderRadius: const BorderRadius.all(Radius.zero)),
+        ],
+      ),
+      BarChartGroupData(
+        x: 17,
+        barsSpace: 10,
+        barRods: [
+          BarChartRodData(
+              y: beitgomlaMiss,
+              rodStackItems: [
+                BarChartRodStackItem(0, 1000000000.5, Colors.green),
+              ],
+              borderRadius: const BorderRadius.all(Radius.zero)),
+        ],
+      ),
+      BarChartGroupData(
+        x: 18,
+        barsSpace: 10,
+        barRods: [
+          BarChartRodData(
+              y: fathallaMiss,
+              rodStackItems: [
+                BarChartRodStackItem(0, 1000000000.5, Colors.teal),
+              ],
+              borderRadius: const BorderRadius.all(Radius.zero)),
+        ],
+      ),
+      BarChartGroupData(
+        x: 19,
+        barsSpace: 10,
+        barRods: [
+          BarChartRodData(
+              y: aswakfatminiMiss,
+              rodStackItems: [
+                BarChartRodStackItem(0, 1000000000.5, Colors.blueGrey),
+              ],
+              borderRadius: const BorderRadius.all(Radius.zero)),
+        ],
+      ),
+      BarChartGroupData(
+        x: 20,
+        barsSpace: 10,
+        barRods: [
+          BarChartRodData(
+              y: zahranMiss,
+              rodStackItems: [
+                BarChartRodStackItem(0, 1000000000.5, Colors.cyan),
+              ],
+              borderRadius: const BorderRadius.all(Radius.zero)),
+        ],
+      ),
+      BarChartGroupData(
+        x: 21,
+        barsSpace: 10,
+        barRods: [
+          BarChartRodData(
+              y: freshfoodMiss,
+              rodStackItems: [
+                BarChartRodStackItem(0, 1000000000.5, Colors.pinkAccent),
+              ],
+              borderRadius: const BorderRadius.all(Radius.zero)),
+        ],
+      ),
+      BarChartGroupData(
+        x: 22,
+        barsSpace: 10,
+        barRods: [
+          BarChartRodData(
+              y: royalhouseMiss,
+              rodStackItems: [
+                BarChartRodStackItem(0, 1000000000.5, Colors.lightGreenAccent),
+              ],
+              borderRadius: const BorderRadius.all(Radius.zero)),
+        ],
+      ),
+      BarChartGroupData(
+        x: 23,
+        barsSpace: 10,
+        barRods: [
+          BarChartRodData(
+              y: marthvileMiss,
+              rodStackItems: [
+                BarChartRodStackItem(0, 1000000000.5, Colors.lime),
+              ],
+              borderRadius: const BorderRadius.all(Radius.zero)),
+        ],
+      ),
+      BarChartGroupData(
+        x: 24,
+        barsSpace: 10,
+        barRods: [
+          BarChartRodData(
+              y: perimerMiss,
+              rodStackItems: [
+                BarChartRodStackItem(0, 1000000000.5, Colors.indigo),
               ],
               borderRadius: const BorderRadius.all(Radius.zero)),
         ],
