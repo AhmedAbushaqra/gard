@@ -31,7 +31,7 @@ class ListViewItem extends StatelessWidget {
             onPressed: (){
               chainData.id=id;
               chainData.selectedBranch=BranchName;
-              Navigator.of(context).pushNamed(Category.RouteName);
+              Navigator.of(context).pushNamed(Reports.RouteName);
             },
           ),
         ),

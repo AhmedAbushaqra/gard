@@ -1,8 +1,11 @@
 import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:gard/Items.dart';
+import 'package:gard/dbhelper.dart';
 import 'package:gard/models/ExpiryData.dart';
 import 'package:gard/models/MissingData.dart';
+import 'package:gard/models/db_Final_Data.dart';
 import 'package:gard/models/final_data.dart';
 import 'package:gard/provider/ChainProvider.dart';
 import 'package:intl/intl.dart';
@@ -10,9 +13,10 @@ import 'package:provider/provider.dart';
 
 class CustomDialogBox extends StatefulWidget {
   final String img;
+  final int id;
 
    CustomDialogBox(
-      {Key key, this.img})
+      {Key key, this.img,this.id})
       : super(key: key);
 
   @override
@@ -48,6 +52,13 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
     setState(() {
       _index = index;
     });
+  }
+
+  DbHelper helper;
+  @override
+  void initState() {
+    super.initState();
+    helper=DbHelper();
   }
   @override
   Widget build(BuildContext context) {
@@ -202,13 +213,21 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
           bottom: 10,
             right: 10,
             child: FloatingActionButton.extended(
-              onPressed: () {
+              onPressed: () async{
                 if(_index==0||PriceController.text.isEmpty||_index!=3 && FacesController.text.isEmpty){
                   setState(() {
                     ISValidate=false;
                   });
                 }else{
-                  AllData.submitForm(FinalData(
+                  int dbId = int.parse(AllData.id+AllData.itemId);
+                   dbFinalData FD=dbFinalData(
+                    id : dbId, branchid: AllData.id,date : DateFormat.yMMMMd("en_US").format(DateTime.now())
+                    ,chain: AllData.selectedPlace, branch:AllData.selectedBranch,catename:AllData.selectedCategory,
+                    subcatename:AllData.selectedSubCategory, itemname:AllData.ItemName,
+                    capacity:capacity,faces:_index==3?'0':FacesController.text);
+                   int id =await helper.createFinalData(FD);
+                   print('course id is $id');
+                 /* AllData.submitForm(FinalData(
                     branchid: AllData.id,
                     date: DateFormat.yMMMMd("en_US").format(DateTime.now()),
                     chain: AllData.selectedPlace,
@@ -220,8 +239,8 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
                     faces: _index==3?'0':FacesController.text,
                   ), (String response) {
                     print("Response:$response");
-                  });
-                  if(_index==3){
+                  });*/
+                 /* if(_index==3){
                     AllData.submitMissingForm(MissingData(
                       branchid: AllData.id,
                       date: DateFormat.yMMMMd("en_US").format(DateTime.now()),
@@ -234,8 +253,9 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
                     ), (String response) {
                       print("Response:$response");
                     });
-                  }
+                  }*/
                   Navigator.of(context).pop();
+                  Navigator.of(context).popAndPushNamed(Items.RouteName);
                  ISValidate=true;
                 }
               },

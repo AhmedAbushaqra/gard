@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:gard/dbhelper.dart';
 import 'package:gard/models/chainModel.dart';
 import 'package:gard/provider/ChainProvider.dart';
 import 'package:gard/widgets/List_View_Item_Items.dart';
@@ -14,6 +15,7 @@ class ExpireItems extends StatefulWidget {
 
 class _ExpireItemsState extends State<ExpireItems> {
   var _expanded=false;
+  DbHelper helper=DbHelper();
   var _expireItem=Chain(
     id: '',
     chain: '',
@@ -83,7 +85,10 @@ class _ExpireItemsState extends State<ExpireItems> {
           SizedBox(height: 10,),
           Container(
             height: 650,
-            child: ListView.builder(
+            child: FutureBuilder(
+              future: helper.allFinalData(),
+              builder: (context, AsyncSnapshot snapshot){
+                return ListView.builder(
               itemBuilder: (ctx,index)=>ItemsListView(
                 itemData.expireItems[index].id,
                 itemData.expireItems[index].branch,
@@ -91,7 +96,9 @@ class _ExpireItemsState extends State<ExpireItems> {
                 itemData.expireItems[index].chain,
               ),
               itemCount: itemData.expireItems.length,
-            ),
+            );
+        },
+     ),
           ),
         ],
       ),
