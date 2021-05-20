@@ -2,9 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:gard/models/chainModel.dart';
 import 'package:gard/Branches.dart';
 import 'package:gard/provider/ChainProvider.dart';
+import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
+import '../dbhelper.dart';
+
 class GridViewItem extends StatelessWidget {
+  DbHelper helper=DbHelper();
+
   final String id;
   final String ChainName;
   final String imgUrl;
@@ -17,7 +22,10 @@ class GridViewItem extends StatelessWidget {
     return ClipRRect(
       borderRadius: BorderRadius.circular(10),
       child:GestureDetector(
-        onTap: (){
+        onTap: ()async{
+          final tables = await helper.allFinalData();
+          /*if(tables[0]['date'].toString()!=DateFormat.yMMMMd("en_US").format(DateTime.now()).toString()) {
+            helper.clearPreviousDay();
             chainList = [
               Chain(
                 id: id,
@@ -25,10 +33,23 @@ class GridViewItem extends StatelessWidget {
                 imgUrl: imgUrl,
               )
             ];
-            chainData.selectedPlace=ChainName;
-            chainData.imgUrlSelectedPlace=imgUrl;
+            chainData.selectedPlace = ChainName;
+            chainData.imgUrlSelectedPlace = imgUrl;
             chainData.onChangedCallback(ChainName);
             Navigator.of(context).pushNamed(Branches.RouteName);
+          }*/
+            chainList = [
+              Chain(
+                id: id,
+                chain: ChainName,
+                imgUrl: imgUrl,
+              )
+            ];
+            chainData.selectedPlace = ChainName;
+            chainData.imgUrlSelectedPlace = imgUrl;
+            chainData.onChangedCallback(ChainName);
+            Navigator.of(context).pushNamed(Branches.RouteName);
+
     },
         child: GridTile(
           child: Image.asset(imgUrl,fit: BoxFit.fill,),

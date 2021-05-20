@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gard/models/ExpiryData.dart';
 import 'package:gard/models/MissingData.dart';
 import 'package:gard/models/chainModel.dart';
+import 'package:gard/models/extraItems.dart';
 import 'package:gard/models/final_data.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert' as convert;
@@ -20,7 +21,7 @@ class Chains with ChangeNotifier {
 
   void submitForm(
       FinalData finaldata, void Function(String) callback) async {
-    String URL="https://script.google.com/macros/s/AKfycbz48rnB9hUyO94_iSM-8hhojLAkVY9Fv7Wv9GTbfGvZxflO2oDNjk4RzUN3SlZ8mCz6/exec";
+    String URL="https://script.google.com/macros/s/AKfycbz6KOa6RIj8Qfdjl5KdKzXC0jZnT4-seCbrCCen45cw0q1LZGRxEFAoSZBShL3vFNZVFw/exec";
     try {
       await http.post(URL, body: finaldata.toJson()).then((response) async {
         if (response.statusCode == 302) {
@@ -2171,6 +2172,10 @@ class Chains with ChangeNotifier {
   List<Chain> get expireItems {
     return [..._expireItems];
   }
+  List<ExtraItem> _extraItem=[];
+  List<ExtraItem> get extraItem{
+    return [..._extraItem];
+}
   String selectedCategory;
   String selectedSubCategory;
   String itemId;
@@ -2178,7 +2183,16 @@ class Chains with ChangeNotifier {
   bool isClick= false;
 
   String reportType;
+  String extraVisType;
 
+  void AddExtraItem(ExtraItem extraItem){
+    final newExtraItem=ExtraItem(
+      id: extraItem.id,
+      extraCate: extraItem.extraCate
+    );
+    _extraItem.add(newExtraItem);
+    notifyListeners();
+  }
   void AddProduct(Chain expiryData){
     final newExpireItem=Chain(
       id: expiryData.id,

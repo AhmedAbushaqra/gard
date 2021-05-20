@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gard/ExpiryItem.dart';
 import 'package:gard/Items.dart';
+import 'package:gard/extra_vis_screen.dart';
 import 'package:gard/models/product.dart';
 import 'package:gard/provider/ChainProvider.dart';
 import 'package:provider/provider.dart';
@@ -32,7 +33,8 @@ class CategoryListShape extends StatelessWidget {
           catagoryData.selectedCategory=name;
           catagoryData.onChangedSecondCallback(name);
           reportType=='P.O.S'?Navigator.of(context).pushNamed(Items.RouteName)
-              :Navigator.of(context).pushNamed(ExpireItems.RouteName);
+              :reportType=='Extra Vis.'?Navigator.of(context).pushNamed(ExtraVisScreen.RouteName):
+               Navigator.of(context).pushNamed(ExpireItems.RouteName);
         },
         child: GridTile(
           child: Image.asset(imgUrl,fit: BoxFit.fill,),

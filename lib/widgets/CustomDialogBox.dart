@@ -14,9 +14,13 @@ import 'package:provider/provider.dart';
 class CustomDialogBox extends StatefulWidget {
   final String img;
   final int id;
+  final bool isExist;
+  final String oldcap;
+  final String oldprice;
+  final String oldfaces;
 
    CustomDialogBox(
-      {Key key, this.img,this.id})
+      {Key key, this.img,this.id,this.isExist,this.oldcap,this.oldprice,this.oldfaces})
       : super(key: key);
 
   @override
@@ -59,7 +63,13 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
   void initState() {
     super.initState();
     helper=DbHelper();
-  }
+    if(widget.isExist){
+      capacity=widget.oldcap;
+      PriceController.text=widget.oldprice;
+      FacesController.text=widget.oldfaces;
+    }
+    capacity=='Full Capacity'?_index=1:capacity=='Start Missing'?_index=2:capacity=='Missing'?_index=3:_index=0;
+    }
   @override
   Widget build(BuildContext context) {
     return Dialog(
@@ -225,8 +235,7 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
                     ,chain: AllData.selectedPlace, branch:AllData.selectedBranch,catename:AllData.selectedCategory,
                     subcatename:AllData.selectedSubCategory, itemname:AllData.ItemName,
                     capacity:capacity,faces:_index==3?'0':FacesController.text);
-                   int id =await helper.createFinalData(FD);
-                   print('course id is $id');
+                   widget.isExist?helper.updateFinalData(FD):helper.createFinalData(FD);
                  /* AllData.submitForm(FinalData(
                     branchid: AllData.id,
                     date: DateFormat.yMMMMd("en_US").format(DateTime.now()),

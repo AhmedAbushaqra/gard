@@ -15,6 +15,7 @@ import 'package:gard/widgets/grid_view_item.dart';
 import 'package:provider/provider.dart';
 
 import 'Charts/ChainMissChart.dart';
+import 'extra_vis_screen.dart';
 
 //https://script.google.com/macros/s/AKfycbz6KOa6RIj8Qfdjl5KdKzXC0jZnT4-seCbrCCen45cw0q1LZGRxEFAoSZBShL3vFNZVFw/exec
 
@@ -42,6 +43,7 @@ class MyApp extends StatelessWidget {
           ChainMissChart.RouteName:(ctx)=>ChainMissChart(),
           Bon_MissChart.RouteName:(ctx)=>Bon_MissChart(),
           Kher_MissChart.RouteName:(ctx)=>Kher_MissChart(),
+          ExtraVisScreen.RouteName:(ctx)=>ExtraVisScreen(),
         },
       ),
     );

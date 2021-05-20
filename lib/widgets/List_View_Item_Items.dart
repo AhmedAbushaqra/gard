@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:gard/dbhelper.dart';
-import 'package:gard/models/db_Final_Data.dart';
 import 'package:gard/provider/ChainProvider.dart';
 import 'package:gard/widgets/CustomDialogBox.dart';
 import 'package:provider/provider.dart';
@@ -10,7 +9,6 @@ class ItemsListView extends StatefulWidget {
   final String ItemName;
   final String itemImgUrl;
   final String SubCate;
-  //final ids;
 
   ItemsListView(this.id, this.ItemName, this.itemImgUrl, this.SubCate,);
 
@@ -20,6 +18,10 @@ class ItemsListView extends StatefulWidget {
 
 class _ItemsListViewState extends State<ItemsListView> {
   bool isClick = false;
+  bool isExist=false;
+  String oldcap;
+  String oldprice;
+  String oldfaces;
   DbHelper helper;
 //webSite For sqlite With provider // https://noxasch.tech/blog/flutter-using-sqflite-with-provider/[
   @override
@@ -41,6 +43,10 @@ class _ItemsListViewState extends State<ItemsListView> {
               String dbid = snapshot.data[i]['id'].toString();
               if (dbid == id.toString()) {
                 isClick = true;
+                isExist = true;
+                oldcap = snapshot.data[i]['capacity'];
+                oldprice='0';
+                oldfaces=snapshot.data[i]['faces'];
               }
             }
             return Column(
@@ -57,6 +63,10 @@ class _ItemsListViewState extends State<ItemsListView> {
                           return CustomDialogBox(
                             img: widget.itemImgUrl,
                             id: id,
+                            isExist: isExist,
+                            oldcap: oldcap,
+                            oldprice: oldprice,
+                            oldfaces: oldfaces,
                           );
                         });
                   },
