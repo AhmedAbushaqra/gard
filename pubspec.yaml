@@ -74,6 +74,8 @@ flutter:
     - images/nestle.mp4
     - images/nestle_logo.jpg
     - images/nestle_logo.png
+    - images/fatgomla.jpeg
+    - images/aswaqfat.jpeg
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

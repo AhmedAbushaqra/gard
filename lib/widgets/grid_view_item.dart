@@ -24,8 +24,21 @@ class GridViewItem extends StatelessWidget {
       child:GestureDetector(
         onTap: ()async{
           final tables = await helper.allFinalData();
-          /*if(tables[0]['date'].toString()!=DateFormat.yMMMMd("en_US").format(DateTime.now()).toString()) {
+          if(tables.isEmpty){
+            chainList = [
+              Chain(
+                id: id,
+                chain: ChainName,
+                imgUrl: imgUrl,
+              )
+            ];
+            chainData.selectedPlace = ChainName;
+            chainData.imgUrlSelectedPlace = imgUrl;
+            chainData.onChangedCallback(ChainName);
+            Navigator.of(context).pushNamed(Branches.RouteName);
+          }else if(tables[0]['date'].toString()!=DateFormat.yMMMMd("en_US").format(DateTime.now()).toString()) {
             helper.clearPreviousDay();
+            helper.clearExtraPreviousDay();
             chainList = [
               Chain(
                 id: id,
@@ -37,7 +50,7 @@ class GridViewItem extends StatelessWidget {
             chainData.imgUrlSelectedPlace = imgUrl;
             chainData.onChangedCallback(ChainName);
             Navigator.of(context).pushNamed(Branches.RouteName);
-          }*/
+          }else{
             chainList = [
               Chain(
                 id: id,
@@ -49,7 +62,7 @@ class GridViewItem extends StatelessWidget {
             chainData.imgUrlSelectedPlace = imgUrl;
             chainData.onChangedCallback(ChainName);
             Navigator.of(context).pushNamed(Branches.RouteName);
-
+          }
     },
         child: GridTile(
           child: Image.asset(imgUrl,fit: BoxFit.fill,),

@@ -15,7 +15,7 @@ class DbHelper{
     }
     //define the path to the database
     String path = join(await getDatabasesPath(), 'gard.db');
-    await deleteDatabase(path);
+    //await deleteDatabase(path);
     db = await openDatabase(path,version: 1,onCreate: (Database db, int v)async{
       //create all tables
       await db.execute(

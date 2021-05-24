@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:gard/dbhelper.dart';
+import 'package:gard/models/ExtraData.dart';
 import 'package:gard/models/chainModel.dart';
 import 'package:gard/provider/ChainProvider.dart';
 import 'package:gard/widgets/ExtraCustomDialogBox.dart';
@@ -9,6 +10,7 @@ import 'package:gard/widgets/List_View_Item_Items.dart';
 import 'package:provider/provider.dart';
 
 import 'models/extraItems.dart';
+import 'models/final_data.dart';
 
 class ExpireItems extends StatefulWidget {
   static const RouteName = "/Expiry";
@@ -19,6 +21,7 @@ class ExpireItems extends StatefulWidget {
 class _ExpireItemsState extends State<ExpireItems> {
   bool isClick = false;
   var _expanded=false;
+  bool _isLoading=false;
   DbHelper helper=DbHelper();
   var _expireItem=Chain(
     id: '',
@@ -68,7 +71,7 @@ class _ExpireItemsState extends State<ExpireItems> {
     String reportType=itemData.reportType;
     String extraReportType=itemData.extraVisType;
     return Scaffold(
-      body: ListView(
+      body: _isLoading?Center(child: CircularProgressIndicator()):ListView(
         children: [
           Padding(
             padding: EdgeInsets.only(top: 20),
@@ -138,7 +141,7 @@ class _ExpireItemsState extends State<ExpireItems> {
                                   }else{
                                     _extraItem=ExtraItem(
                                       id: category[index]['id'],
-                                      extraCate: category[index]['cate']
+                                      extraCate:'${itemData.extraVisType} ${category[index]['cate']}'
                                     );
                                     itemData.AddExtraItem(_extraItem);
                                     setState(() {
@@ -181,11 +184,11 @@ class _ExpireItemsState extends State<ExpireItems> {
                                 builder: (BuildContext context) {
                                   return ExtraCustomDialogBox(
                                     id: itemData.extraItem[index].id,
-                                    type: '${itemData.extraVisType} ${itemData.extraItem[index].extraCate}',
+                                    type: ' ${itemData.extraItem[index].extraCate}',
                                   );
                                 });
                           },
-                          title: Text(itemData.extraItem[index].extraCate),
+                          title: Text('${itemData.extraItem[index].extraCate}'),
                           trailing: Checkbox(
                             value: isClick,
                             onChanged: (value) {
@@ -203,6 +206,48 @@ class _ExpireItemsState extends State<ExpireItems> {
      ),
           ),
         ],
+      ),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: ()async {
+          setState(() {
+            _isLoading=true;
+          });
+          final tables = await helper.allExtraData();
+          //if(tables.takeWhile((value) => value['catename']==ItemData.selectedCategory).length==ItemData.subCategory.length) {
+            for(int i=0;i<tables.length;i++){
+              await Future.delayed(const Duration(seconds: 4));
+                itemData.submitExtraForm(ExtraData(
+                  branchid: tables[i]['branchid'],
+                  date: tables[i]['date'],
+                  chain: tables[i]['chain'],
+                  branch: tables[i]['branch'],
+                  type: tables[i]['type'],
+                  capacity: tables[i]['capacity'],
+                  faces: tables[i]['faces'],
+                  situation: tables[i]['situation'],
+                  condition: tables[i]['condition'],
+                ), (String response)async {
+                  print("Response:$response");
+                  print(tables[i]['id']);
+                });
+            }
+           setState(() {
+             _isLoading=false;
+           });
+            Navigator.of(context).pop();
+         /* }else{
+            Scaffold.of(context).removeCurrentSnackBar();
+            Scaffold.of(context).showSnackBar(SnackBar(
+              duration: Duration(milliseconds : 1000),
+              content: Text('Complete the Rest before Upload'),
+            ));
+            setState(() {
+             // _isLoading=false;
+            });
+          }*/
+        },
+        icon: Icon(Icons.save),
+        label: Text("Save"),
       ),
     );
   }

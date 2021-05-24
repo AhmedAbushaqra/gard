@@ -201,7 +201,7 @@ class _ExtraCustomDialogBoxState extends State<ExtraCustomDialogBox> {
                 dbExtraData ED=dbExtraData(
                   id: dbEId,
                   branchid: ExtraData.id,
-                  date: DateFormat.yMMMMd("en_US").format(DateTime.now()),
+                  date: DateFormat.yMd().format(DateTime.now()),
                   chain: ExtraData.selectedPlace,
                   branch: ExtraData.selectedBranch,
                   type: widget.type,

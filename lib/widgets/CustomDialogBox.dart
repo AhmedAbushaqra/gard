@@ -195,7 +195,7 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
                         autofocus: false,
                         style: TextStyle(fontSize: 22.0, color: Colors.black),
                         decoration: InputDecoration(
-                          hintText: '00.0',
+                          hintText: '00',
                           filled: true,
                           fillColor: Colors.white,
                           contentPadding: const EdgeInsets.only(
