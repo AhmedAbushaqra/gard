@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gard/models/ExpiryData.dart';
+import 'package:gard/models/ExtraCate.dart';
 import 'package:gard/models/ExtraData.dart';
 import 'package:gard/models/MissingData.dart';
 import 'package:gard/models/chainModel.dart';
@@ -2403,10 +2404,17 @@ class Chains with ChangeNotifier {
   List<Chain> get expireItems {
     return [..._expireItems];
   }
-  List<ExtraItem> _extraItem=[];
-  List<ExtraItem> get extraItem{
-    return [..._extraItem];
+  List<String> _extraItemId=[];
+  List<String> get extraItemId{
+    return [..._extraItemId];
 }
+  List<ExtraCate> _extraItem=[];
+  List<ExtraCate> get extraItem{
+    return [..._extraItem];
+  }
+
+  int extraCatetime=0;
+
   String selectedCategory;
   String selectedSubCategory;
   String itemId;
@@ -2416,14 +2424,19 @@ class Chains with ChangeNotifier {
   String reportType;
   String extraVisType;
 
-  void AddExtraItem(ExtraItem extraItem){
-    final newExtraItem=ExtraItem(
-      id: extraItem.id,
-      extraCate: extraItem.extraCate
-    );
-    _extraItem.add(newExtraItem);
+  void AddExtraItemId(String ExtraId){
+    _extraItemId.add(ExtraId);
     notifyListeners();
   }
+  void AddExtra(ExtraCate extraCate){
+    final newExtraCate=ExtraCate(
+      id: extraCate.id,
+      extraName: extraCate.extraName,
+    );
+    _extraItem.add(newExtraCate);
+    notifyListeners();
+  }
+
   void AddProduct(Chain expiryData){
     final newExpireItem=Chain(
       id: expiryData.id,

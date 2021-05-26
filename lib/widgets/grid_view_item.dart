@@ -24,6 +24,9 @@ class GridViewItem extends StatelessWidget {
       child:GestureDetector(
         onTap: ()async{
           final tables = await helper.allFinalData();
+          helper.clearPreviousDay();
+          helper.clearExtraPreviousDay();
+         helper.clearExtraCatePreviousDay();
           if(tables.isEmpty){
             chainList = [
               Chain(

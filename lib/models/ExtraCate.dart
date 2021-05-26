@@ -3,8 +3,8 @@ import 'package:flutter/cupertino.dart';
 //[branchid,date,chain,branch,catename,subcatename,itemname,capacity,faces]
 
 class ExtraCate {
-  final String id;
-  final String extraName;
+  String id;
+  String extraName;
 
   ExtraCate({
     this.id,
@@ -18,8 +18,9 @@ class ExtraCate {
     );
   }
 
-  Map toJson() => {
-    'id': id,
-    'extraName': extraName,
-  };
+  ExtraCate.fromMap(Map<String, dynamic> data){
+    id = data['id'];
+    extraName = data['extraName'];
+  }
+  Map<String, dynamic> toMap() => {'id' : id, 'extraName': extraName,};
 }

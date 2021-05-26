@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:gard/dbhelper.dart';
+import 'package:gard/models/ExtraCate.dart';
 import 'package:gard/models/ExtraData.dart';
 import 'package:gard/models/chainModel.dart';
 import 'package:gard/provider/ChainProvider.dart';
@@ -22,7 +23,6 @@ class _ExpireItemsState extends State<ExpireItems> {
   bool isClick = false;
   var _expanded=false;
   bool _isLoading=false;
-  DbHelper helper=DbHelper();
   var _expireItem=Chain(
     id: '',
     chain: '',
@@ -34,37 +34,44 @@ class _ExpireItemsState extends State<ExpireItems> {
     extraCate: '',
   );
   var category = [
-    {'id': '0001',
+    {'id': '1',
       'cate': 'Nescafe'},
-    {'id': '0002',
+    {'id': '2',
       'cate': 'Maggi'},
-    {'id': '0003',
+    {'id': '3',
       'cate': 'Cerelac'},
-    {'id': '0004',
+    {'id': '4',
       'cate': 'Nido'},
-    {'id': '0005',
+    {'id': '5',
       'cate': 'Nesquik'},
-    {'id': '0006',
+    {'id': '6',
       'cate': 'Kitkat'},
-    {'id': '0007',
+    {'id': '7',
       'cate': 'Coffe Mix'},
-    {'id': '0008',
+    {'id': '8',
       'cate': 'Cappuccino'},
-    {'id': '0009',
+    {'id': '9',
       'cate': 'Water'},
-    {'id': '00010',
+    {'id': '10',
       'cate': 'Bonjorno'},
-    {'id': '00011',
+    {'id': '11',
       'cate': 'Nestle'},
-    {'id': '00012',
+    {'id': '12',
       'cate': 'Confectionery'},
   ];
   var fridgeCate = [
-    {'id': '00013',
+    {'id': '13',
       'cate': 'Fridge Water'},
-    {'id': '00014',
+    {'id': '14',
       'cate': 'Fridge KitKat'}
   ];
+  DbHelper helper;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    helper=DbHelper();
+  }
   @override
   Widget build(BuildContext context) {
     final itemData = Provider.of<Chains>(context);
@@ -114,7 +121,7 @@ class _ExpireItemsState extends State<ExpireItems> {
                                     print('${index}   ${category.length}  ${category[index]['cate']}');
                                   },
                                 ),
-                                onTap: (){
+                                onTap: () async {
                                   if(reportType=='Expire Report') {
                                     _expireItem = Chain(
                                       id: itemData.subCategory[index]['id'],
@@ -130,20 +137,25 @@ class _ExpireItemsState extends State<ExpireItems> {
                                       _expanded = false;
                                     });
                                   }else if(extraReportType=='Fridge'){
-                                    _extraItem=ExtraItem(
-                                      id: fridgeCate[index]['id'],
-                                      extraCate: fridgeCate[index]['cate']
+                                    itemData.extraCatetime=itemData.extraCatetime+1;
+                                    ExtraCate dbEC=ExtraCate(
+                                      id: fridgeCate[index]['id']+itemData.extraCatetime.toString(),
+                                      extraName: fridgeCate[index]['cate'],
                                     );
-                                    itemData.AddExtraItem(_extraItem);
+                                    //itemData.AddExtraItem(_extraItem);
+                                    int id = await helper.createExtraCate(dbEC);
                                     setState(() {
                                       _expanded = false;
                                     });
                                   }else{
-                                    _extraItem=ExtraItem(
-                                      id: category[index]['id'],
-                                      extraCate:'${itemData.extraVisType} ${category[index]['cate']}'
+                                    itemData.extraCatetime=itemData.extraCatetime+1;
+                                    ExtraCate dbEC=ExtraCate(
+                                      id: category[index]['id']+itemData.extraCatetime.toString(),
+                                      extraName:'${itemData.extraVisType} ${category[index]['cate']}'
                                     );
-                                    itemData.AddExtraItem(_extraItem);
+                                    //String ExtraId=category[index]['id']+itemData.extraCatetime.toString();
+                                    //itemData.AddExtraItemId(ExtraId);
+                                    int id =await helper.createExtraCate(dbEC);
                                     setState(() {
                                       _expanded = false;
                                     });
@@ -160,11 +172,11 @@ class _ExpireItemsState extends State<ExpireItems> {
           ),
           SizedBox(height: 10,),
           Container(
-            height: 650,
+            height: 550,
             child: FutureBuilder(
-              future: helper.allFinalData(),
+              future: helper.allExtraCate(),
               builder: (context, AsyncSnapshot snapshot){
-                return reportType=='Expire Report'?ListView.builder(
+                return !snapshot.hasData?Center(child: CircularProgressIndicator(),):reportType=='Expire Report'?ListView.builder(
               itemBuilder: (ctx,index)=>ItemsListView(
                 itemData.expireItems[index].id,
                 itemData.expireItems[index].branch,
@@ -173,35 +185,76 @@ class _ExpireItemsState extends State<ExpireItems> {
               ),
               itemCount: itemData.expireItems.length,
             ):ListView.builder(
-                    itemBuilder:(ctx,index)=>
-                        Column(
-                      children: [
-                        Divider(),
-                        ListTile(
-                          onTap: (){
-                            showDialog(
-                                context: context,
-                                builder: (BuildContext context) {
-                                  return ExtraCustomDialogBox(
-                                    id: itemData.extraItem[index].id,
-                                    type: ' ${itemData.extraItem[index].extraCate}',
-                                  );
-                                });
-                          },
-                          title: Text('${itemData.extraItem[index].extraCate}'),
-                          trailing: Checkbox(
-                            value: isClick,
-                            onChanged: (value) {
-                              setState(() {
-                                value = isClick;
-                              });
-                            },
-                          ),
-                        ),
-                      ],
-                    ),
-                  itemCount: itemData.extraItem.length,
-                );
+                        itemBuilder:(ctx,index)=>FutureBuilder(
+                            future: helper.allExtraCate(),
+                            builder: (context, AsyncSnapshot snapshotCate){
+                            if (!snapshotCate.hasData) {
+                                    return Center(child: CircularProgressIndicator(),);
+                            } else {
+                              for (int i = 0; i < snapshotCate.data.length; i++) {
+                                String dbid = itemData.id + snapshotCate.data[index]['id'].toString();
+                                print(dbid);
+                                print(itemData.extraItemId);
+                                if (itemData.extraItemId.contains(dbid)) {
+                                  print(dbid);
+                                  print(itemData.extraItemId);
+                                  isClick = true;
+                                }else{
+                                  isClick=false;
+                                }
+                              }
+                              return Column(
+                                children: [
+                                  Divider(),
+                                  ListTile(
+                                    onTap: () async {
+                                      //String dbid = itemData.id + snapshotCate.data[index]['id'].toString();
+                                      //print(itemData.extraItem[index]);
+                                      /* final tables = await helper.allExtraData();
+                                    //print(itemData.id + snapshot.data[index]['id'].toString());
+                                    //print(tables);
+                                    //Future.delayed(Duration(seconds: 5));
+                                     for (int i=0; i < tables.length; i++) {
+                                       String dbid = itemData.id + snapshot.data[index]['id'].toString();
+                                       if (tables[i]['id']==int.parse(dbid)) {
+                                         print(dbid);
+                                         print('true');
+                                         isClick = true;
+                                       } else {
+                                         print(dbid);
+                                         print(tables[i]['id']);
+                                         print('false');
+                                       }
+                                     }*/
+                                      showDialog(
+                                          context: context,
+                                          builder: (BuildContext context) {
+                                            return ExtraCustomDialogBox(
+                                              id: snapshotCate.data[index]['id']
+                                                  .toString(),
+                                              type: ' ${snapshotCate
+                                                  .data[index]['extraName']}',
+                                            );
+                                          });
+                                    },
+                                    title: Text(
+                                        '${snapshot.data[index]['extraName']}'),
+                                    trailing: Checkbox(
+                                      value: isClick,
+                                      onChanged: (value) {
+                                        setState(() {
+                                          value = isClick;
+                                        });
+                                      },
+                                    ),
+                                  ),
+                                ],
+                              );
+                            }
+                    }
+                ),
+                        itemCount: snapshot.data.length,
+                      );
         },
      ),
           ),

@@ -1,3 +1,4 @@
+import 'package:gard/models/ExtraCate.dart';
 import 'package:gard/models/db_Extra_Data.dart';
 import 'package:gard/models/db_Final_Data.dart';
 import 'package:path/path.dart';
@@ -24,6 +25,9 @@ class DbHelper{
       await db.execute(
           "create table ExtraData(id integer primary key , branchid varchar(20) , date varchar(20), chain varchar(50), branch varchar(50), type varchar(50),  capacity varchar(50), faces varchar(10) , situation varchar(50), condition varchar(50))"
       );
+      await db.execute(
+          "create table ExtraCate(id integer primary key , extraName varchar(20))"
+      );
     });
     return db;
   }
@@ -32,6 +36,12 @@ class DbHelper{
     Database db = await createDatabase();
     //db.rawInsert('insert into courses')
     return db.insert('FinalData', dbFD.toMap());
+  }
+
+  Future<int> createExtraCate(ExtraCate dbEC) async{
+    Database db = await createDatabase();
+    //db.rawInsert('insert into courses')
+    return db.insert('ExtraCate', dbEC.toMap());
   }
 
   Future<int> createExtraData(dbExtraData dbED) async{
@@ -46,6 +56,18 @@ class DbHelper{
     return db.query('FinalData');
   }
 
+  Future<List> allExtraCate() async{
+    Database db = await createDatabase();
+    //db.rawQuery("select * from courses")
+    return db.query('ExtraCate');
+  }
+
+  Future<List> Id() async{
+    Database db = await createDatabase();
+    //db.rawQuery("select * from courses")
+    return db.query('ExtraCate');
+  }
+
   Future<List> allExtraData() async{
     Database db = await createDatabase();
     //db.rawQuery("select * from courses")
@@ -55,6 +77,11 @@ class DbHelper{
   Future<int> deleteFinalData(int id) async{
     Database db = await createDatabase();
     return db.delete('FinalData',where: 'id = ?',whereArgs:[id] );
+  }
+
+  Future<int> deleteExtraCate(int id) async{
+    Database db = await createDatabase();
+    return db.delete('ExtraCate',where: 'id = ?',whereArgs:[id] );
   }
 
   Future<int> deleteExtraData(int id) async{
@@ -67,6 +94,11 @@ class DbHelper{
     return db.delete('FinalData');
   }
 
+  Future<int> clearExtraCatePreviousDay()async{
+    Database db=await createDatabase();
+    return db.delete('ExtraCate');
+  }
+
   Future<int> clearExtraPreviousDay()async{
     Database db=await createDatabase();
     return db.delete('ExtraData');
@@ -75,6 +107,11 @@ class DbHelper{
   Future<int> updateFinalData(dbFinalData dbFD) async{
     Database db = await createDatabase();
     return await db.update('FinalData', dbFD.toMap(),where: 'id = ?', whereArgs: [dbFD.id]);
+  }
+
+  Future<int> updateExtraCate(dbExtraData dbEC) async{
+    Database db = await createDatabase();
+    return await db.update('ExtraCate', dbEC.toMap(),where: 'id = ?', whereArgs: [dbEC.id]);
   }
 
   Future<int> updateExtraData(dbExtraData dbED) async{

@@ -211,6 +211,7 @@ class _ExtraCustomDialogBoxState extends State<ExtraCustomDialogBox> {
                   condition: condition,
                 );
                 int id = await helper.createExtraData(ED);
+                ExtraData.AddExtraItemId(dbEId.toString());
                 print(id);
                 Navigator.of(context).pop();
                // Navigator.of(context).popAndPushNamed(Items.RouteName);

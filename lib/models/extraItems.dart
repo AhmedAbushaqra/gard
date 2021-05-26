@@ -4,7 +4,8 @@ class ExtraItem {
   final String id;
   final String extraCate;
 
-  ExtraItem({this.id,
+  ExtraItem({
+    this.id,
     this.extraCate
   });
 }

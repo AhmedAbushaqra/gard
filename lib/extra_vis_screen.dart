@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:gard/dbhelper.dart';
+import 'package:gard/models/ExtraCate.dart';
 import 'package:gard/provider/ChainProvider.dart';
 import 'package:provider/provider.dart';
 
@@ -15,6 +17,12 @@ class ExtraVisScreen extends StatelessWidget {
   String floor='Floor Display';
   String catman='catman';
 
+  var _extraItem=ExtraCate(
+    id: '',
+   extraName: '',
+  );
+
+  DbHelper helper=DbHelper();
   @override
   Widget build(BuildContext context) {
     final catagoryData=Provider.of<Chains>(context);
@@ -44,7 +52,15 @@ class ExtraVisScreen extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(18.0),
                         side: BorderSide(color: Colors.lightBlue)),
-                    onPressed: () {
+                    onPressed: () async{
+                      //catagoryData.extraItem.remove(true);
+                      final tables = await helper.allExtraData();
+                      if(tables.isNotEmpty) {
+                        for (int i = 0; i < tables.length; i++) {
+                          catagoryData.AddExtraItemId(
+                              tables[i]['id'].toString());
+                        }
+                      }
                       catagoryData.extraVisType=stand;
                       Navigator.of(context).pushNamed(ExpireItems.RouteName);
                     },
@@ -76,7 +92,14 @@ class ExtraVisScreen extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(18.0),
                         side: BorderSide(color: Colors.lightBlue)),
-                    onPressed: () {
+                    onPressed: () async{
+                      final tables = await helper.allExtraData();
+                      if(tables.isNotEmpty) {
+                        for (int i = 0; i < tables.length; i++) {
+                          catagoryData.AddExtraItemId(
+                              tables[i]['id'].toString());
+                        }
+                      }
                       catagoryData.extraVisType=poduim;
                       Navigator.of(context).pushNamed(ExpireItems.RouteName);
                     },
@@ -108,7 +131,14 @@ class ExtraVisScreen extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(18.0),
                         side: BorderSide(color: Colors.lightBlue)),
-                    onPressed: () {
+                    onPressed: () async {
+                      final tables = await helper.allExtraData();
+                      if(tables.isNotEmpty) {
+                        for (int i = 0; i < tables.length; i++) {
+                          catagoryData.AddExtraItemId(
+                              tables[i]['id'].toString());
+                        }
+                      }
                       catagoryData.extraVisType=gandola;
                       Navigator.of(context).pushNamed(ExpireItems.RouteName);
                     },
@@ -140,7 +170,14 @@ class ExtraVisScreen extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(18.0),
                         side: BorderSide(color: Colors.lightBlue)),
-                    onPressed: () {
+                    onPressed: () async {
+                      final tables = await helper.allExtraData();
+                      if(tables.isNotEmpty) {
+                        for (int i = 0; i < tables.length; i++) {
+                          catagoryData.AddExtraItemId(
+                              tables[i]['id'].toString());
+                        }
+                      }
                       catagoryData.extraVisType=pillar;
                       Navigator.of(context).pushNamed(ExpireItems.RouteName);
                     },
@@ -172,7 +209,14 @@ class ExtraVisScreen extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(18.0),
                         side: BorderSide(color: Colors.lightBlue)),
-                    onPressed: () {
+                    onPressed: () async {
+                      final tables = await helper.allExtraData();
+                      if(tables.isNotEmpty) {
+                        for (int i = 0; i < tables.length; i++) {
+                          catagoryData.AddExtraItemId(
+                              tables[i]['id'].toString());
+                        }
+                      }
                       catagoryData.extraVisType=fridge;
                       Navigator.of(context).pushNamed(ExpireItems.RouteName);
                     },
@@ -204,7 +248,14 @@ class ExtraVisScreen extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(18.0),
                         side: BorderSide(color: Colors.lightBlue)),
-                    onPressed: () {
+                    onPressed: () async {
+                      final tables = await helper.allExtraData();
+                      if(tables.isNotEmpty) {
+                        for (int i = 0; i < tables.length; i++) {
+                          catagoryData.AddExtraItemId(
+                              tables[i]['id'].toString());
+                        }
+                      }
                       catagoryData.extraVisType=floor;
                       Navigator.of(context).pushNamed(ExpireItems.RouteName);
                     },
@@ -236,7 +287,14 @@ class ExtraVisScreen extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(18.0),
                         side: BorderSide(color: Colors.lightBlue)),
-                    onPressed: () {
+                    onPressed: () async {
+                      final tables = await helper.allExtraData();
+                      if(tables.isNotEmpty) {
+                        for (int i = 0; i < tables.length; i++) {
+                          catagoryData.AddExtraItemId(
+                              tables[i]['id'].toString());
+                        }
+                      }
                       catagoryData.extraVisType=catman;
                       Navigator.of(context).pushNamed(ExpireItems.RouteName);
                     },
