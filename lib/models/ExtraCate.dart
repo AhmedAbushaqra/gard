@@ -4,23 +4,27 @@ import 'package:flutter/cupertino.dart';
 
 class ExtraCate {
   String id;
+  String branchid;
   String extraName;
 
   ExtraCate({
     this.id,
+    this.branchid,
     this.extraName,
   });
 
   factory ExtraCate.fromJson(dynamic json) {
     return ExtraCate(
       id: json['id'].toString(),
+      branchid: json['branchid'],
       extraName: json['extraName'].toString(),
     );
   }
 
   ExtraCate.fromMap(Map<String, dynamic> data){
     id = data['id'];
+    branchid=data['branchid'];
     extraName = data['extraName'];
   }
-  Map<String, dynamic> toMap() => {'id' : id, 'extraName': extraName,};
+  Map<String, dynamic> toMap() => {'id' : id,'branchid':branchid , 'extraName': extraName,};
 }

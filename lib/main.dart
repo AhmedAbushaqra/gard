@@ -7,6 +7,7 @@ import 'package:gard/Charts/KherZman.MissChart.dart';
 import 'package:gard/Charts/selectCategoryChart.dart';
 import 'package:gard/ExpiryItem.dart';
 import 'package:gard/Items.dart';
+import 'package:gard/LogIn.dart';
 import 'package:gard/Reports.dart';
 import 'package:gard/provider/ChainProvider.dart';
 import 'package:gard/Category.dart';
@@ -37,6 +38,7 @@ class MyApp extends StatelessWidget {
           Items.RouteName:(ctx)=>Items(),
           Reports.RouteName:(ctx)=>Reports(),
           ExpireItems.RouteName:(ctx)=>ExpireItems(),
+          LogIn.RouteName:(ctx)=>LogIn(),
           Charts.RouteName:(ctx)=>Charts(),
           SelectCategoryChart.RouteName:(ctx)=>SelectCategoryChart(),
           CategoryMissChart.RouteName:(ctx)=>CategoryMissChart(),
@@ -71,13 +73,13 @@ class Home extends StatelessWidget {
           ),
         ),
       ),
-      floatingActionButton: FloatingActionButton.extended(
+      /*floatingActionButton: FloatingActionButton.extended(
         onPressed: () {
          Navigator.of(context).pushNamed(Charts.RouteName);
         },
         icon: Icon(Icons.save),
         label: Text("get data"),
-      ),
+      ),*/
     );
   }
 }

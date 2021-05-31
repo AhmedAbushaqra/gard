@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gard/ExpiryItem.dart';
 import 'package:gard/Items.dart';
+import 'package:gard/dbhelper.dart';
 import 'package:gard/extra_vis_screen.dart';
 import 'package:gard/models/product.dart';
 import 'package:gard/provider/ChainProvider.dart';
@@ -15,7 +16,7 @@ class CategoryListShape extends StatelessWidget {
 
   CategoryListShape(this.name,this.imgUrl,);
   List<Chain> CategoryList = [];
-
+  DbHelper helper=DbHelper();
   @override
   Widget build(BuildContext context) {
     final catagoryData=Provider.of<Chains>(context);
@@ -23,7 +24,7 @@ class CategoryListShape extends StatelessWidget {
     return ClipRRect(
       borderRadius: BorderRadius.circular(10),
       child:GestureDetector(
-        onTap: (){
+        onTap: ()async{
           CategoryList = [
             Chain(
               chain: name,
@@ -35,6 +36,15 @@ class CategoryListShape extends StatelessWidget {
           reportType=='P.O.S'?Navigator.of(context).pushNamed(Items.RouteName)
               :reportType=='Extra Vis.'?Navigator.of(context).pushNamed(ExtraVisScreen.RouteName):
                Navigator.of(context).pushNamed(ExpireItems.RouteName);
+          if(reportType=='Expire Report'){
+            final tables = await helper.allExpireData();
+            if(tables.isNotEmpty) {
+              for (int i = 0; i < tables.length; i++) {
+                catagoryData.AddExpireItemId(
+                    tables[i]['id'].toString());
+              }
+            }
+          }
         },
         child: GridTile(
           child: Image.asset(imgUrl,fit: BoxFit.fill,),

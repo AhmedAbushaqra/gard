@@ -11,9 +11,14 @@ import '../dbhelper.dart';
 class ExtraCustomDialogBox extends StatefulWidget {
   final String id;
   final String type;
+  final bool isExist;
+  final String oldcap;
+  final String oldSituation;
+  final String oldcondition;
+  final String oldfaces;
 
     ExtraCustomDialogBox(
-      {Key key,this.id,this.type})
+      {Key key,this.id,this.type,this.isExist,this.oldcap,this.oldSituation,this.oldcondition,this.oldfaces})
       : super(key: key);
 
   @override
@@ -40,6 +45,13 @@ class _ExtraCustomDialogBoxState extends State<ExtraCustomDialogBox> {
     // TODO: implement initState
     super.initState();
     helper=DbHelper();
+    if(widget.isExist){
+      capacity=widget.oldcap;
+      situation=widget.oldSituation;
+      condition=widget.oldcondition;
+      FacesController.text=widget.oldfaces;
+    }
+    capacity=='Full Capacity'?_index=1:capacity=='Start Missing'?_index=2:capacity=='Missing'?_index=3:_index=0;
   }
   @override
   Widget build(BuildContext context) {
@@ -210,9 +222,8 @@ class _ExtraCustomDialogBoxState extends State<ExtraCustomDialogBox> {
                   situation: situation,
                   condition: condition,
                 );
-                int id = await helper.createExtraData(ED);
+                widget.isExist?helper.updateExtraData(ED):helper.createExtraData(ED);
                 ExtraData.AddExtraItemId(dbEId.toString());
-                print(id);
                 Navigator.of(context).pop();
                // Navigator.of(context).popAndPushNamed(Items.RouteName);
                 ISValidate=true;

@@ -5,6 +5,7 @@ import 'package:gard/Items.dart';
 import 'package:gard/dbhelper.dart';
 import 'package:gard/models/ExpiryData.dart';
 import 'package:gard/models/MissingData.dart';
+import 'package:gard/models/db_Expire_Data.dart';
 import 'package:gard/models/db_Final_Data.dart';
 import 'package:gard/models/final_data.dart';
 import 'package:gard/provider/ChainProvider.dart';
@@ -19,8 +20,17 @@ class CustomDialogBox extends StatefulWidget {
   final String oldprice;
   final String oldfaces;
 
+  final String itemId;
+  final String selectedSubCategory;
+  final String ItemName;
+
+  final String oldCountController;
+  final String oldmissingType;
+  final String oldselectedDate;
+
    CustomDialogBox(
-      {Key key, this.img,this.id,this.isExist,this.oldcap,this.oldprice,this.oldfaces})
+      {Key key, this.img,this.id,this.isExist,this.oldcap,this.oldprice,this.oldfaces,this.itemId,this.selectedSubCategory,this.ItemName
+      ,this.oldCountController,this.oldmissingType,this.oldselectedDate})
       : super(key: key);
 
   @override
@@ -44,7 +54,7 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
       });
   }
 
-
+  TextEditingController CountController=TextEditingController();
 
   TextEditingController PriceController = TextEditingController();
   TextEditingController FacesController = TextEditingController();
@@ -67,8 +77,12 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
       capacity=widget.oldcap;
       PriceController.text=widget.oldprice;
       FacesController.text=widget.oldfaces;
+      missingType=widget.oldmissingType;
+      CountController.text=widget.oldCountController;
+      _selectedDate=widget.oldselectedDate;
     }
     capacity=='Full Capacity'?_index=1:capacity=='Start Missing'?_index=2:capacity=='Missing'?_index=3:_index=0;
+    missingType=='قطعه '?_index=1:missingType=='علبه '?_index=2:missingType=='كرتونه '?_index=3:_index=0;
     }
   @override
   Widget build(BuildContext context) {
@@ -359,7 +373,7 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
                     child: Theme(
                       data: Theme.of(context).copyWith(splashColor: Colors.transparent),
                       child: TextField(
-                        controller: PriceController,
+                        controller: CountController,
                         maxLength: 4,
                         keyboardType: TextInputType.number,
                         autofocus: false,
@@ -407,13 +421,28 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
           bottom: 10,
           right: 10,
           child: FloatingActionButton.extended(
-            onPressed: () {
-              if(_index==0||PriceController.text.isEmpty||_selectedDate=='Tap to select date'){
+            onPressed: () async{
+              if(_index==0||CountController.text.isEmpty||_selectedDate=='Tap to select date'){
                 setState(() {
                   ISValidate=false;
                 });
               }else{
-                AllData.submitExpiryForm(ExpiryData(
+                dbExpireData ED=dbExpireData(
+                  id: widget.id,
+                  branchid: AllData.id,
+                  chain: AllData.selectedPlace,
+                  branch: AllData.selectedBranch,
+                  itemnum: widget.itemId,
+                  catename: AllData.selectedCategory,
+                  subcatename: widget.selectedSubCategory,
+                  itemname: widget.ItemName,
+                  count: CountController.text,
+                  itemtype: missingType,
+                  expirydate: _selectedDate
+                );
+                widget.isExist?helper.updateExpireData(ED):helper.createExpireData(ED);
+                AllData.AddExpireItemId(widget.id.toString());
+               /* AllData.submitExpiryForm(ExpiryData(
                   branchid: AllData.id,
                   chain: AllData.selectedPlace,
                   branch: AllData.selectedBranch,
@@ -426,7 +455,7 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
                   expirydate: _selectedDate,
                 ), (String response) {
                   print("Response:$response");
-                });
+                });*/
                 Navigator.of(context).pop();
                 ISValidate=true;
               }

@@ -5,29 +5,42 @@ import 'package:gard/provider/ChainProvider.dart';
 import 'package:provider/provider.dart';
 
 import 'ExpiryItem.dart';
+import 'models/ExtraData.dart';
 
-class ExtraVisScreen extends StatelessWidget {
+class ExtraVisScreen extends StatefulWidget {
   static const RouteName = "/ExtraVisScreen";
 
+  @override
+  _ExtraVisScreenState createState() => _ExtraVisScreenState();
+}
+
+class _ExtraVisScreenState extends State<ExtraVisScreen> {
   String stand='Stand';
+
   String poduim='Poduim';
+
   String gandola='Gandola';
+
   String pillar='Pillar';
+
   String fridge='Fridge';
+
   String floor='Floor Display';
+
   String catman='catman';
 
   var _extraItem=ExtraCate(
     id: '',
    extraName: '',
   );
-
+  bool _isLoading=false;
   DbHelper helper=DbHelper();
+
   @override
   Widget build(BuildContext context) {
     final catagoryData=Provider.of<Chains>(context);
     return Scaffold(
-      body: Center(
+      body: _isLoading?Center(child: CircularProgressIndicator()):Center(
         child: Container(
           width: MediaQuery.of(context).size.width*0.55,
           child: Column(
@@ -308,9 +321,56 @@ class ExtraVisScreen extends StatelessWidget {
                 ],
               ),
             ),
+              SizedBox(height: 10,)
           ],
           ),
         ),
+      ),
+      floatingActionButton: _isLoading?Container():FloatingActionButton.extended(
+        onPressed: ()async {
+          setState(() {
+            _isLoading=true;
+          });
+          final tables = await helper.allExtraData();
+          //if(tables.takeWhile((value) => value['catename']==ItemData.selectedCategory).length==ItemData.subCategory.length) {
+          for(int i=0;i<tables.length;i++) {
+            if (tables[i]['branchid'] == catagoryData.id) {
+              await Future.delayed(const Duration(seconds: 4));
+              catagoryData.submitExtraForm(ExtraData(
+                branchid: tables[i]['branchid'],
+                date: tables[i]['date'],
+                chain: tables[i]['chain'],
+                branch: tables[i]['branch'],
+                type: tables[i]['type'],
+                capacity: tables[i]['capacity'],
+                faces: tables[i]['faces'],
+                situation: tables[i]['situation'],
+                condition: tables[i]['condition'],
+              ), (String response) async {
+                print("Response:$response");
+                print(tables[i]['id']);
+              });
+            }else{
+              print('other branch');
+            }
+            setState(() {
+              _isLoading = false;
+            });
+            Navigator.of(context).pop();
+            /* }else{
+            Scaffold.of(context).removeCurrentSnackBar();
+            Scaffold.of(context).showSnackBar(SnackBar(
+              duration: Duration(milliseconds : 1000),
+              content: Text('Complete the Rest before Upload'),
+            ));
+            setState(() {
+             // _isLoading=false;
+            });
+          }*/
+          }
+        },
+        icon: Icon(Icons.save),
+        label: Text("Save"),
       ),
     );
   }

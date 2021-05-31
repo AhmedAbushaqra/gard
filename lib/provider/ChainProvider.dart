@@ -4,6 +4,7 @@ import 'package:gard/models/ExtraCate.dart';
 import 'package:gard/models/ExtraData.dart';
 import 'package:gard/models/MissingData.dart';
 import 'package:gard/models/chainModel.dart';
+import 'package:gard/models/empLogin.dart';
 import 'package:gard/models/extraItems.dart';
 import 'package:gard/models/final_data.dart';
 import 'package:http/http.dart' as http;
@@ -103,7 +104,7 @@ class Chains with ChangeNotifier {
 
   void submitExpiryForm(
       ExpiryData expiryData, void Function(String) callback) async {
-    String URL="https://script.google.com/macros/s/AKfycbwyIsyjv75uOpiuB3JpKUD2-Kk6pV8GhPY-25Yp9_zibszuJDVCrlK7DEddRsW5rNA_Kg/exec";
+    String URL="https://script.google.com/macros/s/AKfycbw-4Bi9Cv9x5lz5asBdjiqisNKbvk-DHbgFJfHwI6eygpjmm7_Zpw2cMkUhxXzutA21xQ/exec";
     try {
       await http.post(URL, body: expiryData.toJson()).then((response) async {
         if (response.statusCode == 302) {
@@ -149,6 +150,55 @@ class Chains with ChangeNotifier {
       return jsonFinalData.map((json) => MissingData.fromJson(json)).toList();
     });
   }
+  List<empLogin> emploadedData=[];
+  Future<void> getEmp()async{
+    const url='https://nestle-2948e-default-rtdb.firebaseio.com/emp.json';
+    try{
+     final response=await http.get(url);
+     final extractData=convert.json.decode(response.body)as Map<String,dynamic>;
+     final List<empLogin> loadedData=[];
+     extractData.forEach((empId, empData) {
+       loadedData.add(empLogin(
+         id: empId,
+         empid: empData['id'],
+         empname: empData['empname'],
+         branchid: empData['branchid'],
+         branchname: empData['branchname'],
+         location: empData['location'],
+       ));
+     });
+     emploadedData=loadedData;
+     notifyListeners();
+    }catch(error){
+      throw error;
+    }
+  }
+  Future<void> empdetails(empLogin emp){
+    const url='https://nestle-2948e-default-rtdb.firebaseio.com/emp.json';
+    return http.post(url,body: convert.json.encode({
+      'empid':emp.empid,
+      'empname':emp.empname,
+      'location':emp.location,
+      'branchid':emp.branchid,
+      'branchname':emp.branchname,
+    }),).then((response) {
+      print(response);
+    }).catchError((error){
+      print(error);
+      throw error;
+    });
+  }
+  Future<void> Updateemp(String id , empLogin Newemp)async{
+      final url = "https://shop-app-38c66.firebaseio.com/Proudcts/$id.json";
+      await http.patch(url,body: convert.json.encode({
+        'empid':Newemp.empid,
+        'empname':Newemp.empname,
+        'location':Newemp.location,
+        'branchid':Newemp.branchid,
+        'branchname':Newemp.branchname,
+      }));
+      notifyListeners();
+  }
   var places = [
     {
       'id':'1',
@@ -187,13 +237,93 @@ class Chains with ChangeNotifier {
     },
     {
       'id':'8',
+      'name':'Kher zaman',
+      'imgUrl':'images/kher.jpeg'
+    },
+    {
+      'id':'9',
+      'name':'El otheim',
+      'imgUrl':'images/othaim.jpeg'
+    },
+    {
+      'id':'10',
+      'name':'Raya',
+      'imgUrl':'images/raya.jpeg'
+    },
+    {
+      'id':'11',
+      'name':'Alfa',
+      'imgUrl':'images/alpha.jpeg'
+    },
+    {
+      'id':'12',
+      'name':'El Mahalawy',
+      'imgUrl':'images/mahlawy.jpeg'
+    },
+    {
+      'id':'13',
+      'name':'Panda',
+      'imgUrl':'images/panda.jpeg'
+    },
+    {
+      'id':'14',
+      'name':'El Hawary',
+      'imgUrl':'images/hawary.jpeg'
+    },
+    {
+      'id':'15',
+      'name':'Oscar',
+      'imgUrl':'images/oscar.jpeg'
+    },
+    {
+      'id':'16',
+      'name':'Lulu',
+      'imgUrl':'images/lulu.jpeg'
+    },
+    {
+      'id':'17',
+      'name':'Fathalla Gomla',
+      'imgUrl':'images/fatgomla.jpeg'
+    },
+    {
+      'id':'18',
+      'name':'Beit el gomla',
+      'imgUrl':'images/biet.jpeg'
+    },
+    {
+      'id':'19',
       'name':'Aswaq Fathalla',
       'imgUrl':'images/aswaqfat.jpeg'
     },
     {
-      'id':'9',
-      'name':'Fathalla Gomla',
-      'imgUrl':'images/fatgomla.jpeg'
+      'id':'20',
+      'name':'Aswak fathalla mini',
+      'imgUrl':'images/aswaqfat.jpeg'
+    },
+    {
+      'id':'21',
+      'name':'Zahran',
+      'imgUrl':'images/zahran.jpeg'
+    },
+    {
+      'id':'22',
+      'name':'Fresh food',
+      'imgUrl':'images/fresh.jpeg'
+    },
+    {
+      'id':'23',
+      'name':'Royal house',
+      'imgUrl':'images/royal.jpeg'
+    },
+    {
+      'id':'24',
+      'name':'Mart ville',
+      'imgUrl':'images/mart.jpeg'
+    },
+    {
+      'id':'25',
+      'name':'Premier',
+      'imgUrl':'images/premier.jpeg'
     },
   ];
   var Carrefour = [
@@ -249,10 +379,10 @@ class Chains with ChangeNotifier {
       'id':'10013',
       'BranchName':"طنطا",
     },
-    // {
-    //   'id':'14',
-    //   'BranchName':  "مراكز",
-    // },
+     {
+       'id':'10314',
+       'BranchName':  "مراكز",
+     },
   ];
   var CarrefourExpress = [
     {
@@ -834,6 +964,416 @@ class Chains with ChangeNotifier {
       'BranchName':  'المنصورة',
     },
   ];
+  var kherzman=[
+    {
+      'id':'10156',
+      'BranchName':  'مصر والسودان',
+    },
+    {
+      'id':'10157',
+      'BranchName':  'النزهة',
+    },
+    {
+      'id':'10158',
+      'BranchName':  'العمرانية',
+    },
+    {
+      'id':'10159',
+      'BranchName':  'فيصل حسن محمد',
+    },
+    {
+      'id':'10160',
+      'BranchName':  'اكتوبر',
+    },
+    {
+      'id':'10161',
+      'BranchName':  'المنيل',
+    },
+    {
+      'id':'10162',
+      'BranchName':  'حدائق الأهرام',
+    },
+    {
+      'id':'10163',
+      'BranchName':  'التحرير',
+    },
+    {
+      'id':'10164',
+      'BranchName':  'نوال',
+    },
+    {
+      'id':'10165',
+      'BranchName':  'ايران',
+    },
+    {
+      'id':'10166',
+      'BranchName':  'السودان',
+    },
+    {
+      'id':'10167',
+      'BranchName':  'البطل احمد عبدالعزيز',
+    },
+    {
+      'id':'10168',
+      'BranchName':  'الاهلى',
+    },
+    {
+      'id':'10169',
+      'BranchName':  'ذاكر حسين',
+    },
+    {
+      'id':'10170',
+      'BranchName':  'السيدة',
+    },
+    {
+      'id':'10171',
+      'BranchName':  'نوبار',
+    },
+    {
+      'id':'10172',
+      'BranchName':  'الظاهر',
+    },
+    {
+      'id':'10173',
+      'BranchName':  'شبرا 1',
+    },
+    {
+      'id':'10174',
+      'BranchName':  'شبرا 2',
+    },
+    {
+      'id':'10175',
+      'BranchName':  'حلوان',
+    },
+    {
+      'id':'10176',
+      'BranchName':  'المقطم',
+    },
+    {
+      'id':'10177',
+      'BranchName':  'النخيل',
+    },
+    {
+      'id':'10178',
+      'BranchName':  'ريحانه',
+    },
+    {
+      'id':'10179',
+      'BranchName':  'زهراء المعادى',
+    },
+    {
+      'id':'10180',
+      'BranchName':  'سموحة',
+    },
+    {
+      'id':'10181',
+      'BranchName':  'بولكلي',
+    },
+    {
+      'id':'10182',
+      'BranchName':  'سبورتنج',
+    },
+    {
+      'id':'10317',
+      'BranchName':  'المنصورة',
+    },
+  ];
+  var othaim=[
+    {
+      'id':'10183',
+      'BranchName':  'الزيتون',
+    },
+    {
+      'id':'10184',
+      'BranchName':  'النزهه',
+    },
+    {
+      'id':'10185',
+      'BranchName':  'قباء',
+    },
+    {
+      'id':'10186',
+      'BranchName':  'الشوربجى',
+    },
+    {
+      'id':'10187',
+      'BranchName':  'الليبينى',
+    },
+    {
+      'id':'10188',
+      'BranchName':  'الدقى',
+    },
+    {
+      'id':'10189',
+      'BranchName':  'المهندسين',
+    },
+    {
+      'id':'10190',
+      'BranchName':  'سما مول',
+    },
+    {
+      'id':'10191',
+      'BranchName':  'التجمع الخامس',
+    },
+    {
+      'id':'10283',
+      'BranchName':  'منشية البكري',
+    },
+    {
+      'id':'10284',
+      'BranchName':  'المطرية',
+    },
+    {
+      'id':'10285',
+      'BranchName':  'مؤسسة الزكاة',
+    },
+    {
+      'id':'10286',
+      'BranchName':  'عين شمس',
+    },
+    {
+      'id':'10287',
+      'BranchName':  'السفارات',
+    },
+    {
+      'id':'10288',
+      'BranchName':  'مدينة نصر - كامل الحروني',
+    },
+    {
+      'id':'10289',
+      'BranchName':  'مدينة نصر - طرابلس',
+    },
+    {
+      'id':'10290',
+      'BranchName':  'مدينة نصر-لوساكا',
+    },
+    {
+      'id':'10291',
+      'BranchName':  'مدينة نصر - مهدى عرفة',
+    },
+    {
+      'id':'10292',
+      'BranchName':  'مدينة نصر أحمد حسن',
+    },
+    {
+      'id':'10293',
+      'BranchName':  'مصر الجديدة-الزاتون-سانان',
+    },
+    {
+      'id':'10294',
+      'BranchName':  'الزاتون-ابن سندر',
+    },
+    {
+      'id':'10295',
+      'BranchName':  'شارع عين شمس - الحلمية',
+    },
+    {
+      'id':'10296',
+      'BranchName':  'المقطم',
+    },
+    {
+      'id':'10297',
+      'BranchName':  'العجوزة - عدن',
+    },
+    {
+      'id':'10298',
+      'BranchName':  'حلوان 1',
+    },
+    {
+      'id':'10299',
+      'BranchName':  'حلوان 2',
+    },
+    {
+      'id':'10300',
+      'BranchName':  'الهرم - الثلاثيني',
+    },
+    {
+      'id':'10301',
+      'BranchName':  '15 مايو',
+    },
+    {
+      'id':'10302',
+      'BranchName':  'حلوان - خسرو',
+    },
+    {
+      'id':'10303',
+      'BranchName':  'حدائق حلوان',
+    },
+    {
+      'id':'10304',
+      'BranchName':  'الهرم - زغلول',
+    },
+    {
+      'id':'10305',
+      'BranchName':  'فيصل- العشرين',
+    },
+    {
+      'id':'10306',
+      'BranchName':  'الهرم - العوربة',
+    },
+    {
+      'id':'10307',
+      'BranchName':  'الهرم - التعاون',
+    },
+    {
+      'id':'10308',
+      'BranchName':  'أكتوبر - الفردوس',
+    },
+    {
+      'id':'10309',
+      'BranchName':  'فيصل - المطبعة',
+    },
+    {
+      'id':'10310',
+      'BranchName':  'فيصل - ميدان الساعة',
+    },
+    {
+      'id':'10311',
+      'BranchName':  'الدقي - الانصار',
+    },
+    {
+      'id':'10312',
+      'BranchName':  'الدقي - طهران',
+    },
+  ];
+  var raya=[
+    {
+      'id':'10192',
+      'BranchName':  'حدائق القبة',
+    },
+    {
+      'id':'10193',
+      'BranchName':  'شركة الراية  - العريش',
+    },
+    {
+      'id':'10194',
+      'BranchName':  'المهندسين',
+    },
+    {
+      'id':'10195',
+      'BranchName':  'الوفاء و الامل',
+    },
+    {
+      'id':'10196',
+      'BranchName':  'مدينة نصر',
+    },
+    {
+      'id':'10197',
+      'BranchName':  'التجمع الاول',
+    },
+    {
+      'id':'10198',
+      'BranchName':  'العبور',
+    },
+    {
+      'id':'10199',
+      'BranchName':  'المقطم',
+    },
+    {
+      'id':'10200',
+      'BranchName':  'المعادى',
+    },
+  ];
+  var alfa=[
+    {
+      'id':'10201',
+      'BranchName':  'الحجاز',
+    },
+    {
+      'id':'10202',
+      'BranchName':  'روكسى',
+    },
+    {
+      'id':'10203',
+      'BranchName':  'الدقى',
+    },
+    {
+      'id':'10204',
+      'BranchName':  'زايد',
+    },
+    {
+      'id':'10205',
+      'BranchName':  'الاعناب',
+    },
+    {
+      'id':'10206',
+      'BranchName':  'الزمالك',
+    },
+    {
+      'id':'10207',
+      'BranchName':  'المعادى',
+    },
+    {
+      'id':'10313',
+      'BranchName':  'التجمع',
+    },
+  ];
+  var mahalawy=[
+    {
+      'id':'10208',
+      'BranchName':  'تريومف',
+    },
+    {
+      'id':'10209',
+      'BranchName':  'الطيران',
+    },
+    {
+      'id':'10210',
+      'BranchName':  'مكرم عبيد',
+    },
+    {
+      'id':'10211',
+      'BranchName':  'مصطفى النحاس',
+    },
+    {
+      'id':'10212',
+      'BranchName':  'التجمع الخامس',
+    },
+    {
+      'id':'10213',
+      'BranchName':  'الحى العاشر',
+    },
+  ];
+  var panda=[
+    {
+      'id':'10214',
+      'BranchName':  'اكتوبر',
+    },
+    {
+      'id':'10215',
+      'BranchName':  'مكرم عبيد',
+    },
+    {
+      'id':'10216',
+      'BranchName':  'العبور',
+    },
+  ];
+  var hawary=[
+    {
+      'id':'10217',
+      'BranchName':  'المهندسين',
+    },
+  ];
+  var oscar=[
+    {
+      'id':'10218',
+      'BranchName':  'ارض الجولف',
+    },
+    {
+      'id':'10219',
+      'BranchName':  'التجمع الخامس',
+    },
+  ];
+  var lulu=[
+    {
+      'id':'10220',
+      'BranchName':  'شيراتون',
+    },
+    {
+      'id':'10221',
+      'BranchName':  'التجمع الاول',
+    },
+  ];
   var aswaqFat=[
     {
       'id':'10254',
@@ -998,6 +1538,136 @@ class Chains with ChangeNotifier {
       'BranchName':'جرين تاور'
     }
   ];
+  var beitgomla=[
+    {
+      'id':'10241',
+      'BranchName':  'سموحة',
+    },
+    {
+      'id':'10242',
+      'BranchName':  'ونجت',
+    },
+    {
+      'id':'10243',
+      'BranchName':  'باكوس',
+    },
+    {
+      'id':'10244',
+      'BranchName':  'ميامي',
+    },
+    {
+      'id':'10245',
+      'BranchName':  'عرامه',
+    },
+    {
+      'id':'10246',
+      'BranchName':  'الترعه',
+    },
+    {
+      'id':'10247',
+      'BranchName':  'الفلكى',
+    },
+    {
+      'id':'10248',
+      'BranchName':  'شارع القاهره',
+    },
+    {
+      'id':'10249',
+      'BranchName':  'الدرايسه',
+    },
+    {
+      'id':'10250',
+      'BranchName':  'المنشية',
+    },
+    {
+      'id':'10251',
+      'BranchName':  'الورديان',
+    },
+    {
+      'id':'10252',
+      'BranchName':  'الحديد والصلب',
+    },
+    {
+      'id':'10253',
+      'BranchName':  'الهانوفيل',
+    },
+  ];
+  var aswaqmini=[
+    {
+      'id':'10269',
+      'BranchName':  'سنابل',
+    },
+    {
+      'id':'10270',
+      'BranchName':  'الجواهر',
+    },
+    {
+      'id':'10271',
+      'BranchName':  'سيدى جابر المينى',
+    },
+    {
+      'id':'10272',
+      'BranchName':  'الدخيله 2',
+    },
+    {
+      'id':'10273',
+      'BranchName':  'الدخيله 1',
+    },
+  ];
+  var zahran=[
+    {
+      'id':'10274',
+      'BranchName':  'سموحة',
+    },
+    {
+      'id':'10275',
+      'BranchName':  'زيزنيا',
+    },
+    {
+      'id':'10276',
+      'BranchName':  'المعمورة',
+    },
+    {
+      'id':'10277',
+      'BranchName':  'البيطاش',
+    },
+    {
+      'id':'10278',
+      'BranchName':  'دمنهور',
+    },
+    {
+      'id':'10315',
+      'BranchName':  'المنصورة',
+    },
+  ];
+  var premier=[
+    {
+      'id':'10316',
+      'BranchName':  'التجمع الثالث',
+    },
+  ];
+  var freshfood=[
+    {
+      'id':'10279',
+      'BranchName':  'Point 90 Mall',
+    },
+    {
+      'id':'10280',
+      'BranchName':  'سان استفانو',
+    },
+  ];
+  var royalhouse=[
+    {
+      'id':'10281',
+      'BranchName':  'هليوبليس',
+    },
+  ];
+  var mart=[
+    {
+      'id':'10282',
+      'BranchName':  'التجمع الخامس',
+    },
+  ];
 
   var branches = [];
   String selectedPlace;
@@ -1020,11 +1690,43 @@ class Chains with ChangeNotifier {
       branches = RagabSons;
     } else if (place == 'Metro') {
       branches = Metro;
-    } else if (place == 'Aswaq Fathalla'){
+    } else if (place == 'Kher zaman'){
+      branches = kherzman;
+    } else if (place == 'El otheim'){
+      branches = othaim;
+    } else if (place == 'Raya'){
+      branches = raya;
+    } else if (place == 'Alfa'){
+      branches = alfa;
+    } else if (place == 'El Mahalawy'){
+      branches = mahalawy;
+    } else if (place == 'Panda'){
+      branches = panda;
+    } else if (place == 'El Hawary'){
+      branches = hawary;
+    } else if (place == 'Oscar'){
+      branches = oscar;
+    } else if (place == 'Lulu'){
+      branches = lulu;
+    }else if (place == 'Aswaq Fathalla'){
       branches = aswaqFat;
-    } else if (place == 'Fathalla Gomla'){
+    }  else if (place == 'Beit el gomla'){
+      branches = beitgomla;
+    }else if (place == 'Fathalla Gomla'){
       branches = fatGomla;
-    } else {
+    }else if (place == 'Aswak fathalla mini'){
+      branches = aswaqmini;
+    } else if (place == 'Zahran'){
+      branches = zahran;
+    }else if (place == 'Fresh food'){
+      branches = freshfood;
+    }else if (place == 'Royal house'){
+      branches = royalhouse;
+    }else if (place == 'Mart ville'){
+      branches = mart;
+    }else if (place == 'Premier'){
+      branches = premier;
+    }else {
       branches = [];
     }
     selectedBranch = null;
@@ -2299,7 +3001,6 @@ class Chains with ChangeNotifier {
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
   ];
-
   var waterSub=[
     {
       'id':'197',
@@ -2398,7 +3099,168 @@ class Chains with ChangeNotifier {
     },
   ];
 
-
+  var empCodes=[
+    {
+      'code':'NE30',
+      'name':'احمد ابوشقره'
+    },
+    {
+      'code':'NE30210',
+      'name':'مصطفى محمود عبد المنعم'
+    },
+    {
+      'code':'NE30211',
+      'name':'بولا عوض الله شكري يوسف'
+    },
+    {
+      'code':'NE30214',
+      'name':'يحيى محمد علي عبد السلام'
+    },
+    {
+      'code':'NE30215',
+      'name':'مصطفى قدري الطوخي عثمان'
+    },
+    {
+      'code':'NE30216',
+      'name':'محمد السيد احمد مصطفى'
+    },
+    {
+      'code':'NE30219',
+      'name':'عمرو محمد احمد ابو الهيثم'
+    },
+    {
+      'code':'NE30218',
+      'name':'عبد الحميد محمد بهجت'
+    },
+    {
+      'code':'NE30217',
+      'name':'عبد الفتاح عبد الحكيم عامر'
+    },
+    {
+      'code':'NE30251',
+      'name':'محمد سمير محمد محمد  مدبولي'
+    },
+    {
+      'code':'NE30248',
+      'name':'محمود سامي عبد الرحيم عبد المجيد'
+    },
+    {
+      'code':'NE30265',
+      'name':'احمد حسين علي حسين بكار'
+    },
+    {
+      'code':'NE30258',
+      'name':'محمد اسامه محمد عبد الهادي'
+    },
+    {
+      'code':'NE30249',
+      'name':'احمد محمد خليل محمود'
+    },
+    {
+      'code':'NE30247',
+      'name':'محمود فتحي عبد السميع صديق'
+    },
+    {
+      'code':'NE30262',
+      'name':'محمد حلمي امين سيد'
+    },
+    {
+      'code':'NE30261',
+      'name':'محمد عرفات محمد حسن'
+    },
+    {
+      'code':'NE30260',
+      'name':'حسام الدين مصطفي محمود حسن'
+    },
+    {
+      'code':'NE30263',
+      'name':'عبد الرحمن احمد السيد احمد'
+    },
+    {
+      'code':'NE30259',
+      'name':'محمد عادل محمد عبد الصبور'
+    },
+    {
+      'code':'NE30255',
+      'name':'محمد كمال السيد عبد الكريم'
+    },
+    {
+      'code':'NE30252',
+      'name':'حسن جابر حسن شاهين'
+    },
+    {
+      'code':'NE30257',
+      'name':'اسامه سعيد احمد عبدالحافظ'
+    },
+    {
+      'code':'NE30254',
+      'name':'اسلام احمد محمد  محمد  المرشدي'
+    },
+    {
+      'code':'NE30246',
+      'name':'شعبان جمال شعبان بدوي'
+    },
+    {
+      'code':'NE30274',
+      'name':'السيد عوض السيد عبد الشافي'
+    },
+    {
+      'code':'NE30307',
+      'name':'محمد احمد محمد حافظ'
+    },
+    {
+      'code':'NE30308',
+      'name':'ابراهيم سرور ابراهيم السيد'
+    },
+    {
+      'code':'NE30310',
+      'name':'عبد الرحمن صبحى ابراهيم الجندى'
+    },
+    {
+      'code':'NE30093',
+      'name':'محمد محمود محمد ابراهيم'
+    },
+    {
+      'code':'NE30094',
+      'name':'احمد امجد رمضان'
+    },
+    {
+      'code':'NE30317',
+      'name':'مصطفى ابراهيم ابراهيم النجار'
+    },
+    {
+      'code':'NE30320',
+      'name':'احمد ابراهيم احمد ابراهيم'
+    },
+    {
+      'code':'NE30321',
+      'name':'محمد الأنصارى رشدي'
+    },
+    {
+      'code':'NE30322',
+      'name':'أحمد حسن ابراهيم السيد'
+    },
+    {
+      'code':'NE30323',
+      'name':'احمد حسين محمد خليل'
+    },
+    {
+      'code':'NE30331',
+      'name':'رامي محمد احمد عبد اللطيف'
+    },
+    {
+      'code':'NE30108',
+      'name':'محمود محمد محود احمد'
+    },
+    {
+      'code':'NE30311',
+      'name':'عبد الرحمن عادل جمال محمد'
+    },
+    {
+      'code':'NE30312',
+      'name':'محمد محمود البشبيشي'
+    },
+  ];
   var subCategory = [];
   List<Chain> _expireItems=[];
   List<Chain> get expireItems {
@@ -2408,12 +3270,18 @@ class Chains with ChangeNotifier {
   List<String> get extraItemId{
     return [..._extraItemId];
 }
+
+  List<String> _expireItemId=[];
+  List<String> get expireItemId{
+    return [..._expireItemId];
+  }
   List<ExtraCate> _extraItem=[];
   List<ExtraCate> get extraItem{
     return [..._extraItem];
   }
 
   int extraCatetime=0;
+  int expireCatetime=0;
 
   String selectedCategory;
   String selectedSubCategory;
@@ -2428,6 +3296,12 @@ class Chains with ChangeNotifier {
     _extraItemId.add(ExtraId);
     notifyListeners();
   }
+
+  void AddExpireItemId(String ExpireId){
+    _expireItemId.add(ExpireId);
+    notifyListeners();
+  }
+
   void AddExtra(ExtraCate extraCate){
     final newExtraCate=ExtraCate(
       id: extraCate.id,

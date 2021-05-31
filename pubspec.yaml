@@ -76,6 +76,21 @@ flutter:
     - images/nestle_logo.png
     - images/fatgomla.jpeg
     - images/aswaqfat.jpeg
+    - images/alpha.jpeg
+    - images/biet.jpeg
+    - images/fresh.jpeg
+    - images/hawary.jpeg
+    - images/kher.jpeg
+    - images/lulu.jpeg
+    - images/mahlawy.jpeg
+    - images/mart.jpeg
+    - images/oscar.jpeg
+    - images/othaim.jpeg
+    - images/panda.jpeg
+    - images/premier.jpeg
+    - images/raya.jpeg
+    - images/royal.jpeg
+    - images/zahran.jpeg
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

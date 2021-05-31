@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:gard/LogIn.dart';
 import 'package:gard/main.dart';
 import 'package:video_player/video_player.dart';
 
@@ -28,7 +29,7 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   void navigationPage() {
-    Navigator.of(context).pushReplacementNamed(Home.RouteName);
+    Navigator.of(context).pushReplacementNamed(LogIn.RouteName);
   }
 
   @override
