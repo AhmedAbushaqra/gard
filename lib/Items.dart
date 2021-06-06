@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:gard/Category.dart';
+import 'package:gard/OffersScreen.dart';
 import 'package:gard/dbhelper.dart';
+import 'package:gard/models/db_catesend.dart';
 import 'package:gard/models/final_data.dart';
 import 'package:gard/provider/ChainProvider.dart';
 import 'package:gard/widgets/List_View_Item_Items.dart';
 import 'package:intl/intl.dart';
+import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:provider/provider.dart';
 
@@ -17,6 +21,7 @@ class Items extends StatefulWidget {
 class _ItemsState extends State<Items> {
   DbHelper helper=DbHelper();
   bool _isLoading=false;
+  String cateOfferName;
 
   @override
   Widget build(BuildContext context) => Scaffold(
@@ -36,12 +41,13 @@ class _ItemsState extends State<Items> {
         ),
       floatingActionButton: _isLoading?SizedBox():FloatingActionButton.extended(
         onPressed: ()async {
-
-
-
-
-
-          /*
+          if(ItemData.selectedCategory=='NESCAFE'){
+            cateOfferName='Coffee';
+          }else if(ItemData.selectedCategory=='Biscuits'){
+            cateOfferName='Chocolate';
+          }else{
+            cateOfferName=ItemData.selectedCategory;
+          }
           int items=0;
       setState(() {
         _isLoading = true;
@@ -53,64 +59,41 @@ class _ItemsState extends State<Items> {
           items=items+1;
         }
       }
-
       if(items==ItemData.subCategory.length) {
-      for (int i = 0; i < tables.length; i++) {
-        if (ItemData.id==tables[i]['branchid']&&tables[i]['catename'] == ItemData.selectedCategory) {
-          print(tables[i]['id']);
-          await Future.delayed(const Duration(seconds: 5));
-          ItemData.submitForm(FinalData(
-            branchid: tables[i]['branchid'],
-            date: tables[i]['date'],
-            chain: tables[i]['chain'],
-            branch: tables[i]['branch'],
-            catename: tables[i]['catename'],
-            subcatename: tables[i]['subcatename'],
-            itemname: tables[i]['itemname'],
-            capacity: tables[i]['capacity'],
-            faces: tables[i]['faces'],
-          ), (String response) async {
-            print("Response:$response");
-            print(tables[i]['id']);
-          });
+        Catesend CD = Catesend(
+            branchid: ItemData.id,
+            cate: ItemData.selectedCategory);
+        int id = await helper.createcatesend(CD);
+        print(id);
+        _isLoading = false;
+        Navigator.of(context).pop();
+        Navigator.of(context).popAndPushNamed(Category.RouteName);
+        if (ItemData.selectedCategory == 'BONJORNO'||ItemData.selectedCategory=='CONFECTIONERY') {
+        }else{
+        await showDialog(
+            context: context,
+            builder: (ctx) => AlertDialog(
+              title: Text('Offers'),
+              content: Text(
+                  'There is any Offers in  $cateOfferName'),
+              actions: [
+                FlatButton(onPressed: () async{
+                  Navigator.of(ctx).pushNamed(OffersScreen.RouteName);
+                  final tables = await helper.allOurOfferData();
+                  if(tables.isNotEmpty) {
+                    for (int i = 0; i < tables.length; i++) {
+                      ItemData.AddOurOfferItemId(tables[i]['id'].toString());
+                    }
+                  }
+                }, child: Text('Yes')),
+                FlatButton(onPressed: () {
+                  Navigator.of(ctx).pop();
+                }, child: Text('No'))
+              ],
+            )
+        );
         }
-      }
-      await Future.delayed(const Duration(seconds: 8));
-      ItemData.submitForm(FinalData(
-        branchid: ItemData.id,
-        date: DateFormat.yMMMMd("en_US").format(DateTime.now()),
-        chain: ItemData.selectedPlace,
-        branch: ItemData.selectedBranch,
-        catename: ItemData.selectedCategory + " Shelf Share",
-        subcatename: "",
-        itemname: "",
-        capacity: "0%",
-        faces: '',
-      ), (String response) {
-        print("Response:$response");
-      });
-      //await Future.delayed(const Duration(seconds: 8));
-      ItemData.submitSelfShare(FinalData(
-        branchid: ItemData.id,
-        date: DateFormat.yMMMMd("en_US").format(DateTime.now()),
-        chain: ItemData.selectedPlace,
-        branch: ItemData.selectedBranch,
-        catename: ItemData.selectedCategory + " Shelf Share",
-        subcatename: "",
-        itemname: "",
-        capacity: "0%",
-        faces: '',
-      ), (String response) {
-        print("Response:$response");
-      });
-      _isLoading = false;
-      Navigator.of(context).pop();
            }else{
-            print(tables[1]);
-            print(tables.takeWhile((value) => value['catename']==ItemData.selectedCategory).length);
-            print(ItemData.subCategory.length);
-            print(tables[1]['catename']);
-            print(ItemData.selectedCategory);
            Scaffold.of(context).removeCurrentSnackBar();
             Scaffold.of(context).showSnackBar(SnackBar(
               duration: Duration(milliseconds : 1000),
@@ -120,7 +103,6 @@ class _ItemsState extends State<Items> {
               _isLoading=false;
             });
           }
-      */
       },
         icon: Icon(Icons.save),
         label: Text("Save"),

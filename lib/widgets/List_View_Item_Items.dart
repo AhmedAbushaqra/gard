@@ -23,6 +23,7 @@ class _ItemsListViewState extends State<ItemsListView> {
   String oldprice;
   String oldfaces;
   DbHelper helper;
+  String report='P.O.S';
 //webSite For sqlite With provider // https://noxasch.tech/blog/flutter-using-sqflite-with-provider/[
   @override
   void initState() {
@@ -67,6 +68,7 @@ class _ItemsListViewState extends State<ItemsListView> {
                             oldcap: oldcap,
                             oldprice: oldprice,
                             oldfaces: oldfaces,
+                            report:report,
                           );
                         });
                   },

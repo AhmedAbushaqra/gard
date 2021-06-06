@@ -110,7 +110,6 @@ class _ExpireItemsState extends State<ExpireItems> {
                   ),
                   if(_expanded)
                     Container(
-                      //padding: EdgeInsets.symmetric(horizontal: 15,vertical: 4),
                       height: reportType=='Expire Report'?min(itemData.subCategory.length*40.0+10,380):
                               extraReportType=='Fridge'?min(fridgeCate.length*40.0+10,380):
                                min(category.length*40.0+10,380),
@@ -138,6 +137,7 @@ class _ExpireItemsState extends State<ExpireItems> {
                                       id: itemData.subCategory[index]['id']+itemData.expireCatetime.toString(),
                                       itemnum: itemData.subCategory[index]['id'],
                                       branchid: itemData.id,
+                                      catename: itemData.selectedCategory,
                                       subcate: itemData.subCategory[index]['SubCate'],
                                       expireName: itemData.subCategory[index]['Itemname'],
                                     );
@@ -223,6 +223,7 @@ class _ExpireItemsState extends State<ExpireItems> {
                                   builder: (BuildContext context) {
                                     return CustomDialogBox(
                                       itemId: snapshot.data[index]['itemnum'],
+                                     selectedCategory: snapshot.data[index]['catename'],
                                      selectedSubCategory: snapshot.data[index]['subcate'],
                                      ItemName: snapshot.data[index]['expireName'],
                                       id: snapshot.data[index]['id'],

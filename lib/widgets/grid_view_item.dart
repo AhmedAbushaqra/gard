@@ -24,6 +24,8 @@ class GridViewItem extends StatelessWidget {
       child:GestureDetector(
         onTap: ()async{
           final tables = await helper.allFinalData();
+          helper.clearcatesheetPreviousDay();
+          helper.clearcatePreviousDay();
           //helper.clearPreviousDay();
           //helper.clearExtraPreviousDay();
          // helper.clearExtraCatePreviousDay();
@@ -40,7 +42,7 @@ class GridViewItem extends StatelessWidget {
             chainData.onChangedCallback(ChainName);
             Navigator.of(context).pushNamed(Branches.RouteName);
           }else if(tables[0]['date'].toString()!=DateFormat.yMMMMd("en_US").format(DateTime.now()).toString()) {
-            helper.clearPreviousDay();
+           // helper.clearPreviousDay();
             helper.clearExtraPreviousDay();
             chainList = [
               Chain(

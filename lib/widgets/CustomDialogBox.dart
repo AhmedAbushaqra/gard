@@ -19,9 +19,11 @@ class CustomDialogBox extends StatefulWidget {
   final String oldcap;
   final String oldprice;
   final String oldfaces;
+  final String report;
 
   final String itemId;
   final String selectedSubCategory;
+  final String selectedCategory;
   final String ItemName;
 
   final String oldCountController;
@@ -29,8 +31,8 @@ class CustomDialogBox extends StatefulWidget {
   final String oldselectedDate;
 
    CustomDialogBox(
-      {Key key, this.img,this.id,this.isExist,this.oldcap,this.oldprice,this.oldfaces,this.itemId,this.selectedSubCategory,this.ItemName
-      ,this.oldCountController,this.oldmissingType,this.oldselectedDate})
+      {Key key, this.img,this.id,this.isExist,this.oldcap,this.oldprice,this.oldfaces,this.itemId,this.selectedSubCategory,
+        this.selectedCategory, this.ItemName,this.oldCountController,this.oldmissingType,this.oldselectedDate, this.report})
       : super(key: key);
 
   @override
@@ -81,7 +83,8 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
       CountController.text=widget.oldCountController;
       _selectedDate=widget.oldselectedDate;
     }
-    capacity=='Full Capacity'?_index=1:capacity=='Start Missing'?_index=2:capacity=='Missing'?_index=3:_index=0;
+    widget.report=='P.O.S'?
+    capacity=='Full Capacity'?_index=1:capacity=='Start Missing'?_index=2:capacity=='Missing'?_index=3:_index=0:
     missingType=='قطعه '?_index=1:missingType=='علبه '?_index=2:missingType=='كرتونه '?_index=3:_index=0;
     }
   @override
@@ -433,7 +436,7 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
                   chain: AllData.selectedPlace,
                   branch: AllData.selectedBranch,
                   itemnum: widget.itemId,
-                  catename: AllData.selectedCategory,
+                  catename: widget.selectedCategory,
                   subcatename: widget.selectedSubCategory,
                   itemname: widget.ItemName,
                   count: CountController.text,

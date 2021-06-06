@@ -2,10 +2,13 @@ import 'package:gard/models/ExpireCate.dart';
 import 'package:gard/models/ExtraCate.dart';
 import 'package:gard/models/db_Extra_Data.dart';
 import 'package:gard/models/db_Final_Data.dart';
+import 'package:gard/models/db_Our_Offer_Cate.dart';
+import 'package:gard/models/db_Our_Offer_Data.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 
 import 'models/db_Expire_Data.dart';
+import 'models/db_catesend.dart';
 
 class DbHelper{
   static final DbHelper _instance = DbHelper.internal();
@@ -35,7 +38,19 @@ class DbHelper{
           "create table ExpireData(id integer primary key , branchid varchar(20) , chain varchar(50), branch varchar(50), itemnum varchar(20),  catename varchar(50), subcatename varchar(50), itemname varchar(50), count varchar(20), itemtype varchar(20), expirydate varchar(20))"
       );
       await db.execute(
-          "create table ExpireCate(id integer primary key,itemnum varchar(20) ,branchid varchar(20) ,subcate varchar(30), expireName varchar(20))"
+          "create table ExpireCate(id integer primary key,itemnum varchar(20) ,branchid varchar(20) , catename varchar(50), subcate varchar(30), expireName varchar(20))"
+      );
+      await db.execute(
+          "create table CateSend(id integer primary key autoincrement , branchid varchar(20) , catename varchar(30) )"
+      );
+      await db.execute(
+          "create table CateSendSheet(id integer primary key autoincrement , branchid varchar(20) , catename varchar(30) )"
+      );
+      await db.execute(
+          "create table OurOfferData(id integer primary key , branchid varchar(20) , chain varchar(50), branch varchar(50), itemnum varchar(20),  catename varchar(50), subcatename varchar(50), subbrand varchar(40), itemname varchar(50), mainprice varchar(20), pormotionreason varchar(20), pormotiontype varchar(20), pormotiondetail varchar(150),startdate varchar(20),enddate varchar(20))"
+      );
+      await db.execute(
+          "create table OurOfferCate( id integer primary key , branchid varchar(20) , chain varchar(50), branch varchar(50), itemnum varchar(20),  catename varchar(50), subcate varchar(50), subbrand varchar(40), ItemName varchar(50))"
       );
     });
     return db;
@@ -59,6 +74,18 @@ class DbHelper{
     return db.insert('ExtraData', dbED.toMap());
   }
 
+  Future<int> createcatesend(Catesend dbc) async{
+    Database db = await createDatabase();
+    //db.rawInsert('insert into courses')
+    return db.insert('CateSend', dbc.toMap());
+  }
+
+  Future<int> createcatesendsheet(Catesend dbc) async{
+    Database db = await createDatabase();
+    //db.rawInsert('insert into courses')
+    return db.insert('CateSendSheet', dbc.toMap());
+  }
+
   Future<int> createExpireData(dbExpireData dbED) async{
     Database db = await createDatabase();
     //db.rawInsert('insert into courses')
@@ -69,6 +96,18 @@ class DbHelper{
     Database db = await createDatabase();
     //db.rawInsert('insert into courses')
     return db.insert('ExpireCate', dbEC.toMap());
+  }
+
+  Future<int> createOurOfferData(dbOurOfferData dbED) async{
+    Database db = await createDatabase();
+    //db.rawInsert('insert into courses')
+    return db.insert('OurOfferData', dbED.toMap());
+  }
+
+  Future<int> createOurOfferCate(dbOurOfferCate dbEC) async{
+    Database db = await createDatabase();
+    //db.rawInsert('insert into courses')
+    return db.insert('OurOfferCate', dbEC.toMap());
   }
 
   Future<List> allFinalData() async{
@@ -89,6 +128,18 @@ class DbHelper{
     return db.query('ExtraData');
   }
 
+  Future<List> allCatesend() async{
+    Database db = await createDatabase();
+    //db.rawQuery("select * from courses")
+    return db.query('CateSend');
+  }
+
+  Future<List> allCatesendsheet() async{
+    Database db = await createDatabase();
+    //db.rawQuery("select * from courses")
+    return db.query('CateSendSheet');
+  }
+
   Future<List> allExpireCate() async{
     Database db = await createDatabase();
     //db.rawQuery("select * from courses")
@@ -99,6 +150,18 @@ class DbHelper{
     Database db = await createDatabase();
     //db.rawQuery("select * from courses")
     return db.query('ExpireData');
+  }
+
+  Future<List> allOurOfferCate() async{
+    Database db = await createDatabase();
+    //db.rawQuery("select * from courses")
+    return db.query('OurOfferCate');
+  }
+
+  Future<List> allOurOfferData() async{
+    Database db = await createDatabase();
+    //db.rawQuery("select * from courses")
+    return db.query('OurOfferData');
   }
 
   Future<int> deleteFinalData(int id) async{
@@ -116,6 +179,16 @@ class DbHelper{
     return db.delete('ExtraData',where: 'id = ?',whereArgs:[id] );
   }
 
+  Future<int> deleteCatesend(int id) async{
+    Database db = await createDatabase();
+    return db.delete('CateSend',where: 'id = ?',whereArgs:[id] );
+  }
+
+  Future<int> deleteCatesendsheet(int id) async{
+    Database db = await createDatabase();
+    return db.delete('CateSendSheet',where: 'id = ?',whereArgs:[id] );
+  }
+
   Future<int> deleteExpireCate(int id) async{
     Database db = await createDatabase();
     return db.delete('ExpireCate',where: 'id = ?',whereArgs:[id] );
@@ -124,6 +197,16 @@ class DbHelper{
   Future<int> deleteExpireData(int id) async{
     Database db = await createDatabase();
     return db.delete('ExpireData',where: 'id = ?',whereArgs:[id] );
+  }
+
+  Future<int> deleteOurOfferCate(int id) async{
+    Database db = await createDatabase();
+    return db.delete('OurOfferCate',where: 'id = ?',whereArgs:[id] );
+  }
+
+  Future<int> deleteOurOfferData(int id) async{
+    Database db = await createDatabase();
+    return db.delete('OurOfferData',where: 'id = ?',whereArgs:[id] );
   }
 
   Future<int> clearPreviousDay()async{
@@ -141,6 +224,16 @@ class DbHelper{
     return db.delete('ExtraData');
   }
 
+  Future<int> clearcatePreviousDay()async{
+    Database db=await createDatabase();
+    return db.delete('CateSend');
+  }
+
+  Future<int> clearcatesheetPreviousDay()async{
+    Database db=await createDatabase();
+    return db.delete('CateSendSheet');
+  }
+
   Future<int> clearExpireCatePreviousDay()async{
     Database db=await createDatabase();
     return db.delete('ExpireCate');
@@ -149,6 +242,16 @@ class DbHelper{
   Future<int> clearExpirePreviousDay()async{
     Database db=await createDatabase();
     return db.delete('ExpireData');
+  }
+
+  Future<int> clearOurOfferCatePreviousDay()async{
+    Database db=await createDatabase();
+    return db.delete('OurOfferCate');
+  }
+
+  Future<int> clearOurOfferDataPreviousDay()async{
+    Database db=await createDatabase();
+    return db.delete('OurOfferData');
   }
 
   Future<int> updateFinalData(dbFinalData dbFD) async{
@@ -166,6 +269,16 @@ class DbHelper{
     return await db.update('ExtraData', dbED.toMap(),where: 'id = ?', whereArgs: [dbED.id]);
   }
 
+  Future<int> updateCatesend(dbExtraData dbc) async{
+    Database db = await createDatabase();
+    return await db.update('CateSend', dbc.toMap(),where: 'id = ?', whereArgs: [dbc.id]);
+  }
+
+  Future<int> updateCatesendsheet(dbExtraData dbc) async{
+    Database db = await createDatabase();
+    return await db.update('CateSendSheet', dbc.toMap(),where: 'id = ?', whereArgs: [dbc.id]);
+  }
+
   Future<int> updateExpireCate(dbExpireData dbEC) async{
     Database db = await createDatabase();
     return await db.update('ExpireCate', dbEC.toMap(),where: 'id = ?', whereArgs: [dbEC.id]);
@@ -174,5 +287,14 @@ class DbHelper{
   Future<int> updateExpireData(dbExpireData dbED) async{
     Database db = await createDatabase();
     return await db.update('ExpireData', dbED.toMap(),where: 'id = ?', whereArgs: [dbED.id]);
+  }
+  Future<int> updateOurOfferCate(dbExpireData dbEC) async{
+    Database db = await createDatabase();
+    return await db.update('OurOfferCate', dbEC.toMap(),where: 'id = ?', whereArgs: [dbEC.id]);
+  }
+
+  Future<int> updateOurOfferData(dbOurOfferData dbED) async{
+    Database db = await createDatabase();
+    return await db.update('OurOfferData', dbED.toMap(),where: 'id = ?', whereArgs: [dbED.id]);
   }
 }

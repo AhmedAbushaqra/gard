@@ -8,19 +8,23 @@ import 'package:gard/Charts/selectCategoryChart.dart';
 import 'package:gard/ExpiryItem.dart';
 import 'package:gard/Items.dart';
 import 'package:gard/LogIn.dart';
+import 'package:gard/OffersScreen.dart';
 import 'package:gard/Reports.dart';
+import 'package:gard/local_notification.dart';
 import 'package:gard/provider/ChainProvider.dart';
 import 'package:gard/Category.dart';
 import 'package:gard/splash_screen.dart';
 import 'package:gard/widgets/grid_view_item.dart';
 import 'package:provider/provider.dart';
-
+import 'package:workmanager/workmanager.dart';
 import 'Charts/ChainMissChart.dart';
 import 'extra_vis_screen.dart';
 
 //https://script.google.com/macros/s/AKfycbz6KOa6RIj8Qfdjl5KdKzXC0jZnT4-seCbrCCen45cw0q1LZGRxEFAoSZBShL3vFNZVFw/exec
 
-void main() => runApp(MyApp());
+void main() async{
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
@@ -46,6 +50,7 @@ class MyApp extends StatelessWidget {
           Bon_MissChart.RouteName:(ctx)=>Bon_MissChart(),
           Kher_MissChart.RouteName:(ctx)=>Kher_MissChart(),
           ExtraVisScreen.RouteName:(ctx)=>ExtraVisScreen(),
+          OffersScreen.RouteName:(ctx)=>OffersScreen(),
         },
       ),
     );

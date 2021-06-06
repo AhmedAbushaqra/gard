@@ -21,6 +21,50 @@ class Chains with ChangeNotifier {
   List<Chain> get chains {
     return [..._chains];
   }
+  String empcode;
+  String empname;
+  String empLocation;
+  void submitLogIn(
+      empLogIn emplogin, void Function(String) callback) async {
+    String URL="https://script.google.com/macros/s/AKfycbxXMEd8wtpR1nscl_4DlLLjbzF_mYb-yim3_sIQ8Bj9O29fibQHYkI-zA6-7oXMCAcd/exec";
+    try {
+      await http.post(URL, body: emplogin.toJson()).then((response) async {
+        if (response.statusCode == 302) {
+          var url = response.headers['location'];
+          await http.get(url).then((response) {
+            callback(convert.jsonDecode(response.body)['status']);
+            print(response.body);
+          });
+        } else {
+          callback(convert.jsonDecode(response.body)['status']);
+        }
+      });
+    } catch (e) {
+      print(e);
+    }
+  }
+
+  void submitLogOut(
+      empLogIn emplogout, void Function(String) callback) async {
+    String URL="https://script.google.com/macros/s/AKfycbyyeCbHAGva1fWOvQDqT_7GwGA0TPIAJL2T-S1xl8Ah2s_tM6F02K4i2sVt3LzkGadD/exec";
+    try {
+      await http.post(URL, body: emplogout.toJson()).then((response) async {
+        if (response.statusCode == 302) {
+          var url = response.headers['location'];
+          await http.get(url).then((response) {
+            callback(convert.jsonDecode(response.body)['status']);
+            print(response.body);
+          });
+        } else {
+          callback(convert.jsonDecode(response.body)['status']);
+          print(response.body);
+          print(response.statusCode);
+        }
+      });
+    } catch (e) {
+      print(e);
+    }
+  }
 
   void submitForm(
       FinalData finaldata, void Function(String) callback) async {
@@ -150,7 +194,7 @@ class Chains with ChangeNotifier {
       return jsonFinalData.map((json) => MissingData.fromJson(json)).toList();
     });
   }
-  List<empLogin> emploadedData=[];
+ /* List<empLogin> emploadedData=[];
   Future<void> getEmp()async{
     const url='https://nestle-2948e-default-rtdb.firebaseio.com/emp.json';
     try{
@@ -198,7 +242,7 @@ class Chains with ChangeNotifier {
         'branchname':Newemp.branchname,
       }));
       notifyListeners();
-  }
+  }*/
   var places = [
     {
       'id':'1',
@@ -1766,6 +1810,10 @@ class Chains with ChangeNotifier {
       'cateImage':'images/NESQUIK.png'
     },
     {
+      'cateName':'RTD',
+      'cateImage':'images/nestle_logo.png'
+    },
+    {
       'cateName':'MAGGI',
       'cateImage':'images/MAGGI.jpg'
     },
@@ -1778,17 +1826,13 @@ class Chains with ChangeNotifier {
       'cateImage':'images/CONFECTIONERY.png'
     },
     {
+      'cateName':'Biscuits',
+      'cateImage':'images/nestle_logo.jpg'
+    },
+    {
       'cateName':'WATER',
       'cateImage':'images/WATER.png'
     },
-    {
-      'cateName':'RTD',
-      'cateImage':'images/nestle_logo.png'
-    },
-    {
-      'cateName':'Biscuits',
-      'cateImage':'images/nestle_logo.jpg'
-    }
   ];
   var bonjornoSub=[
     {
@@ -3099,6 +3143,216 @@ class Chains with ChangeNotifier {
     },
   ];
 
+  var Competator=[];
+  var coffeComp=[
+    {
+      'id':'1',
+      'name':'كوفى بريك',
+    },
+    {
+      'id':'2',
+      'name':'مرفا',
+    },
+    {
+      'id':'3',
+      'name':'على كافيه',
+    },
+    {
+      'id':'4',
+      'name':'كابتشينو دامور',
+    },
+    {
+      'id':'5',
+      'name':'بن اروما',
+    },
+    {
+      'id':'6',
+      'name':'بلاك',
+    },
+    {
+      'id':'7',
+      'name':'روز جاردين',
+    },
+    {
+      'id':'8',
+      'name':'مصر كافيه',
+    },
+  ];
+  var coffeemateComp=[
+    {
+      'id':'9',
+      'name':'دريم',
+    },
+    {
+      'id':'10',
+      'name':'كوفى ميت مستورد',
+    },
+    {
+      'id':'11',
+      'name':'على كافيه',
+    },
+    {
+      'id':'12',
+      'name':'كابتشينو دامور',
+    },
+    {
+      'id':'13',
+      'name':'بن اروما',
+    },
+    {
+      'id':'14',
+      'name':'بلاك',
+    },
+    {
+      'id':'15',
+      'name':'روز جاردين',
+    },
+    {
+      'id':'16',
+      'name':'مصر كافيه',
+    },
+  ];
+  var hotchocComp=[
+    {
+      'id':'17',
+      'name':'دريم',
+    },
+    {
+      'id':'18',
+      'name':'كادبورى',
+    },
+    {
+      'id':'19',
+      'name':'كورونا',
+    },
+    {
+      'id':'20',
+      'name':'بودر دى كوكا',
+    },
+    {
+      'id':'21',
+      'name':'حلو الشام',
+    },
+  ];
+  var RTDComp=[
+    {
+      'id':'22',
+      'name':'كوفى بريك',
+    },
+    {
+      'id':'23',
+      'name':'لاكتيل',
+    },
+    {
+      'id':'24',
+      'name':'دانو',
+    },
+    {
+      'id':'25',
+      'name':'المراعى',
+    },
+    {
+      'id':'26',
+      'name':'جهينه',
+    },
+  ];
+  var nidoComp=[
+    {
+      'id':'27',
+      'name':'ميرو',
+    },
+    {
+      'id':'28',
+      'name':'تاميو',
+    },
+    {
+      'id':'29',
+      'name':'روز جاردين',
+    },
+  ];
+  var babyComp=[
+    {
+      'id':'30',
+      'name':'هيرو',
+    },
+    {
+      'id':'31',
+      'name':'ابتمال',
+    },
+    {
+      'id':'32',
+      'name':'بيبلاك',
+    },
+    {
+      'id':'33',
+      'name':'هيرو',
+    },
+    {
+      'id':'34',
+      'name':'ريرى',
+    },
+  ];
+  var maggiComp=[
+    {
+      'id':'35',
+      'name':'كونور',
+    },
+    {
+      'id':'36',
+      'name':'سبايسى',
+    },
+    {
+      'id':'37',
+      'name':'5 شيف',
+    },
+    {
+      'id':'38',
+      'name':'كوجير',
+    },
+  ];
+  var crealComp=[
+    {
+      'id':'39',
+      'name':'تيميز',
+    },
+    {
+      'id':'40',
+      'name':'سانتى',
+    },
+  ];
+  var chocolateComp=[
+    {
+      'id':'41',
+      'name':'جلاكسى',
+    },
+    {
+      'id':'42',
+      'name':'كادبورى',
+    },
+    {
+      'id':'43',
+      'name':'كورونا',
+    },
+  ];
+  var waterComp=[
+    {
+      'id':'44',
+      'name':'ايلانو',
+    },
+    {
+      'id':'45',
+      'name':'بيبسى',
+    },
+    {
+      'id':'46',
+      'name':'ايزيس',
+    },
+    {
+      'id':'47',
+      'name':'كوكاكولا',
+    },
+  ];
+
   var empCodes=[
     {
       'code':'NE30',
@@ -3262,6 +3516,7 @@ class Chains with ChangeNotifier {
     },
   ];
   var subCategory = [];
+  var subCategoryOffers=[];
   List<Chain> _expireItems=[];
   List<Chain> get expireItems {
     return [..._expireItems];
@@ -3275,6 +3530,12 @@ class Chains with ChangeNotifier {
   List<String> get expireItemId{
     return [..._expireItemId];
   }
+
+  List<String> _OurOfferItemId=[];
+  List<String> get OurOfferItemId{
+    return [..._OurOfferItemId];
+  }
+
   List<ExtraCate> _extraItem=[];
   List<ExtraCate> get extraItem{
     return [..._extraItem];
@@ -3282,6 +3543,7 @@ class Chains with ChangeNotifier {
 
   int extraCatetime=0;
   int expireCatetime=0;
+  int ourOfferCatetime=0;
 
   String selectedCategory;
   String selectedSubCategory;
@@ -3299,6 +3561,11 @@ class Chains with ChangeNotifier {
 
   void AddExpireItemId(String ExpireId){
     _expireItemId.add(ExpireId);
+    notifyListeners();
+  }
+
+  void AddOurOfferItemId(String OurOfferId){
+    _OurOfferItemId.add(OurOfferId);
     notifyListeners();
   }
 
@@ -3325,31 +3592,40 @@ class Chains with ChangeNotifier {
   void onChangedSecondCallback(cate) {
     if (cate == 'BONJORNO') {
       subCategory = bonjornoSub;
-    }
-    else if (cate == 'NESCAFE') {
+    } else if (cate == 'NESCAFE') {
       subCategory = Nescafesub;
-    }
-    else if (cate == 'COFFEE-MATE') {
+      subCategoryOffers=Nescafesub+bonjornoSub;
+      Competator=coffeComp;
+    } else if (cate == 'COFFEE-MATE') {
       subCategory = CoffeeMateSub;
-    }
-    else if (cate == 'NIDO') {
+      Competator=coffeemateComp;
+    } else if (cate == 'NIDO') {
       subCategory = NidoSub;
+      Competator=nidoComp;
     } else if (cate == 'BABY FOOD') {
       subCategory = babyfoodSub;
+      Competator=babyComp;
     } else if (cate == 'NESQUIK') {
       subCategory = nesquikSub;
+      Competator=hotchocComp;
     }else if (cate == 'MAGGI') {
       subCategory = maggiSub;
+      Competator=maggiComp;
     }else if (cate == 'CEREAL') {
       subCategory = cerealSub;
+      Competator=crealComp;
     }else if (cate == 'CONFECTIONERY') {
       subCategory = confectionerySub;
     } else if (cate == 'WATER') {
       subCategory = waterSub;
+      Competator=waterComp;
     } else if (cate == 'RTD'){
       subCategory=RtdSub;
+      Competator=RTDComp;
     } else if (cate == 'Biscuits'){
       subCategory=BiscuitsSub;
+      subCategoryOffers=BiscuitsSub+confectionerySub;
+      Competator=chocolateComp;
     } else {
       subCategory = [];
     }

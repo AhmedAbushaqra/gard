@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:gard/main.dart';
 import 'package:gard/models/empLogin.dart';
 import 'package:gard/provider/ChainProvider.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:provider/provider.dart';
 
 class LogIn extends StatefulWidget {
@@ -18,13 +19,17 @@ class _LogInState extends State<LogIn> {
   String name = '';
   bool isArabic = false;
   bool isAlex = true;
+  bool isLocationSet=false;
 
-  @override
-  void initState() {
-    Future.delayed(Duration.zero).then((_) {
-      Provider.of<Chains>(context, listen: false).getEmp();
+  String _locationMessage = "";
+
+  void _getCurrentLocation() async {
+    final position = await Geolocator().getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
+    setState(() {
+      _locationMessage = "${position.latitude}, ${position.longitude}";
+      isLocationSet=true;
     });
-    super.initState();
+    print(_locationMessage);
   }
 
   @override
@@ -50,7 +55,7 @@ class _LogInState extends State<LogIn> {
           height: MediaQuery
               .of(context)
               .size
-              .height * 0.55,
+              .height * 0.6,
           child: Column(
             children: [
               Container(
@@ -116,13 +121,17 @@ class _LogInState extends State<LogIn> {
                 ],
               ),
               Container(
+                padding: EdgeInsets.all(8),
+                child: Text(isLocationSet?'Location Selected':''),
+              ),
+              Container(
                 margin: EdgeInsets.all(10),
                 height: 50.0,
                 child: RaisedButton(
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(18.0),
                       side: BorderSide(color: Color.fromRGBO(0, 160, 227, 1))),
-                  onPressed: () {},
+                  onPressed: () {_getCurrentLocation();},
                   padding: EdgeInsets.all(10.0),
                   color: Color.fromRGBO(0, 160, 227, 1),
                   textColor: Colors.white,
@@ -224,50 +233,10 @@ class _LogInState extends State<LogIn> {
                         name = 'Enter Right Code';
                       });
                     } else {
-                      //for (int i=0;i<empData.emploadedData.length;i++) {
-                       // if (empData.emploadedData[i].id!=null) {
-                        /*  print('Exist');
-                          await Provider.of<Chains>(context, listen: false).Updateemp(empData.emploadedData[i].id,
-                              empLogin(
-                                  empid: 'NE${empCode.text}',
-                                  empname: name,
-                                  location: '',
-                                  branchid: '10001',
-                                  branchname: '')
-                          );*/
-                      //  } else {
-                     /* for (int i=0;i<empData.emploadedData.length;i++){
-                        if(empData.emploadedData[i].id!=null)
-                      }*/
-                          try {
-                            await Provider.of<Chains>(context, listen: false)
-                                .empdetails(empLogin(
-                                id: null,
-                                empid: 'NE${empCode.text}',
-                                empname: name,
-                                location: '',
-                                branchid: '',
-                                branchname: ''));
-                            Navigator.of(context).pushReplacementNamed(
-                                Home.RouteName);
-                          } catch (error) {
-                            await showDialog(
-                                context: context,
-                                builder: (ctx) =>
-                                    AlertDialog(
-                                      title: Text('An Error Occurred'),
-                                      content: Text(
-                                          'Check internet Connection'),
-                                      actions: [
-                                        FlatButton(onPressed: () {
-                                          Navigator.of(ctx).pop();
-                                        }, child: Text('OK'))
-                                      ],
-                                    )
-                            );
-                          }
-                      //  }
-                    //  }
+                      empData.empcode=NE+empCode.text;
+                      empData.empname=name;
+                      empData.empLocation;
+                      Navigator.of(context).pushNamed(Home.RouteName);
                     }
                   },
                   padding: EdgeInsets.all(10.0),
@@ -284,3 +253,19 @@ class _LogInState extends State<LogIn> {
     );
   }
 }
+/*
+await showDialog(
+                                context: context,
+                                builder: (ctx) =>
+                                    AlertDialog(
+                                      title: Text('An Error Occurred'),
+                                      content: Text(
+                                          'Check internet Connection'),
+                                      actions: [
+                                        FlatButton(onPressed: () {
+                                          Navigator.of(ctx).pop();
+                                        }, child: Text('OK'))
+                                      ],
+                                    )
+                            );
+ */
