@@ -5,6 +5,7 @@ import 'package:gard/Charts/Bon.MissChart.dart';
 import 'package:gard/Charts/CategoryMissChart.dart';
 import 'package:gard/Charts/KherZman.MissChart.dart';
 import 'package:gard/Charts/selectCategoryChart.dart';
+import 'package:gard/CompetitorOfferScreen.dart';
 import 'package:gard/ExpiryItem.dart';
 import 'package:gard/Items.dart';
 import 'package:gard/LogIn.dart';
@@ -51,6 +52,7 @@ class MyApp extends StatelessWidget {
           Kher_MissChart.RouteName:(ctx)=>Kher_MissChart(),
           ExtraVisScreen.RouteName:(ctx)=>ExtraVisScreen(),
           OffersScreen.RouteName:(ctx)=>OffersScreen(),
+          CompetitorOffersScreen.RouteName:(ctx)=>CompetitorOffersScreen(),
         },
       ),
     );

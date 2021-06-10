@@ -14,6 +14,7 @@ class Category extends StatefulWidget {
 
 class _CategoryState extends State<Category> {
   DbHelper helper;
+  bool isLoading=false;
 @override
   void initState() {
     // TODO: implement initState
@@ -46,7 +47,7 @@ class _CategoryState extends State<Category> {
                     builder: (context, AsyncSnapshot snapshot){
                       if(snapshot.connectionState==ConnectionState.done){
                          if(snapshot.hasData){
-                           return CategoryListShape(categoryData.Category[i]['cateName'],categoryData.Category[i]['cateImage'],);
+                           return CategoryListShape(categoryData.Category[i]['cateName'],categoryData.Category[i]['cateImage'],isLoading);
                          }else{
                            return Container();
                          }

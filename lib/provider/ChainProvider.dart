@@ -3536,6 +3536,11 @@ class Chains with ChangeNotifier {
     return [..._OurOfferItemId];
   }
 
+  List<String> _CompOfferItemId=[];
+  List<String> get CompOfferItemId{
+    return [..._CompOfferItemId];
+  }
+
   List<ExtraCate> _extraItem=[];
   List<ExtraCate> get extraItem{
     return [..._extraItem];
@@ -3544,6 +3549,7 @@ class Chains with ChangeNotifier {
   int extraCatetime=0;
   int expireCatetime=0;
   int ourOfferCatetime=0;
+  int CompOfferCatetime=0;
 
   String selectedCategory;
   String selectedSubCategory;
@@ -3566,6 +3572,11 @@ class Chains with ChangeNotifier {
 
   void AddOurOfferItemId(String OurOfferId){
     _OurOfferItemId.add(OurOfferId);
+    notifyListeners();
+  }
+
+  void AddCompOfferItemId(String CompOfferId){
+    _CompOfferItemId.add(CompOfferId);
     notifyListeners();
   }
 

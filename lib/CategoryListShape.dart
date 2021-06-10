@@ -17,8 +17,9 @@ import 'models/chainModel.dart';
 class CategoryListShape extends StatefulWidget {
   final String name;
   final String imgUrl;
+  bool isLoading;
 
-  CategoryListShape(this.name,this.imgUrl,);
+  CategoryListShape(this.name,this.imgUrl,this.isLoading);
 
   @override
   _CategoryListShapeState createState() => _CategoryListShapeState();
@@ -177,11 +178,16 @@ class _CategoryListShapeState extends State<CategoryListShape> {
                                branchid: catagoryData.id,
                                cate: widget.name);
                            int id = await helper.createcatesendsheet(CD);
-                           print(id);
                            final tables = await helper.allFinalData();
                            for (int i = 0; i < tables.length; i++) {
                              if (catagoryData.id==tables[i]['branchid']&&tables[i]['catename'] == widget.name) {
-                               print(tables[i]['id']);
+                                showDialog(
+                                   context: context,
+                                   builder: (ctx) => AlertDialog(
+                                     title: Text('Waiting Upload Data'),
+                                     content: Center(child: CircularProgressIndicator(),),
+                                   )
+                               );
                                await Future.delayed(const Duration(seconds: 5));
                                catagoryData.submitForm(FinalData(
                                  branchid: tables[i]['branchid'],
@@ -199,7 +205,7 @@ class _CategoryListShapeState extends State<CategoryListShape> {
                                });
                              }
                            }
-                           await Future.delayed(const Duration(seconds: 8));
+                           await Future.delayed(const Duration(seconds: 4));
                            catagoryData.submitForm(FinalData(
                              branchid: catagoryData.id,
                              date: DateFormat.yMMMMd("en_US").format(DateTime.now()),
@@ -282,6 +288,10 @@ class _CategoryListShapeState extends State<CategoryListShape> {
                              faces: '',
                            ), (String response) {
                              print("Response:$response");
+                             setState(() {
+                               widget.isLoading=false;
+                             });
+                             print(widget.isLoading);
                              Navigator.of(context).popAndPushNamed(Category.RouteName);
                            });
                          }else if(widget.name=='COFFEE-MATE'&&isNescSent){

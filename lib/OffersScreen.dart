@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:gard/CompetitorOfferScreen.dart';
 import 'package:gard/dbhelper.dart';
 import 'package:gard/models/db_Our_Offer_Cate.dart';
 import 'package:gard/provider/ChainProvider.dart';
@@ -133,7 +134,7 @@ class _OffersScreenState extends State<OffersScreen> {
          ),
          SizedBox(height: 10,),
          Container(
-           height: 550,
+           height: 450,
            child: FutureBuilder(
              future: helper.allOurOfferCate(),
              builder: (context, AsyncSnapshot snapshot){
@@ -193,32 +194,6 @@ class _OffersScreenState extends State<OffersScreen> {
                              isExist=false;
                            }
                          }
-                        /* showDialog(
-                             context: context,
-                             builder: (BuildContext context) {
-                               return CustomDialogBox(
-                                 itemId: snapshot.data[index]['itemnum'],
-                                 selectedSubCategory: snapshot.data[index]['subcate'],
-                                 ItemName: snapshot.data[index]['expireName'],
-                                 id: snapshot.data[index]['id'],
-                                 img: 'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg',
-                                 isExist: isExist,
-                                 oldCountController: oldCountController,
-                                 oldmissingType: oldmissingType,
-                                 oldselectedDate: oldselectedDate,
-                               );
-                             });
-                         for(int i=0;i<snapshotCate.data[1].length;i++){
-                           if (snapshotCate.data[0][index]['id'].toString()==snapshotCate.data[1][i]['id'].toString()) {
-                             isExist=true;
-                             oldCountController=snapshotCate.data[1][i]['count'];
-                             oldmissingType=snapshotCate.data[1][i]['itemtype'];
-                             oldselectedDate=snapshotCate.data[1][i]['expirydate'];
-                             return;
-                           }else{
-                             isExist=false;
-                           }
-                         }*/
                        },
                        title: Text(
                            '${snapshot.data[index]['ItemName']}'),
@@ -239,6 +214,35 @@ class _OffersScreenState extends State<OffersScreen> {
                  itemCount: snapshot.data.length,
                );
              },
+           ),
+         ),
+         Container(
+           margin: EdgeInsets.all(10),
+           height: 50.0,
+           child: RaisedButton(
+             shape: RoundedRectangleBorder(
+                 borderRadius: BorderRadius.circular(18.0),
+                 side: BorderSide(color: Color.fromRGBO(0, 160, 227, 1))),
+             onPressed: () async{
+               final tables = await helper.allComOfferData();
+               if(tables.isNotEmpty) {
+                 for (int i = 0; i < tables.length; i++) {
+                   itemData.AddCompOfferItemId(tables[i]['id'].toString());
+                 }
+               }
+               Navigator.of(context).pushNamed(CompetitorOffersScreen.RouteName);
+             },
+             padding: EdgeInsets.all(10.0),
+             color: Color.fromRGBO(0, 160, 227, 1),
+             textColor: Colors.white,
+             child:Row(
+               mainAxisAlignment: MainAxisAlignment.center,
+               children: [
+                 Icon(Icons.dangerous,size: 30,color: Colors.red,),
+                 SizedBox(width: 10,),
+                 Text("Competitor Offer", style: TextStyle(fontSize: 15)),
+               ],
+             ) ,
            ),
          ),
        ],
