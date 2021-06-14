@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:gard/CompetitorOfferScreen.dart';
 import 'package:gard/dbhelper.dart';
+import 'package:gard/models/OfferDataSheet.dart';
 import 'package:gard/models/db_Our_Offer_Cate.dart';
 import 'package:gard/provider/ChainProvider.dart';
 import 'package:gard/widgets/List_View_Item.dart';
@@ -48,7 +49,7 @@ class _OffersScreenState extends State<OffersScreen> {
        children: [
          Padding(
            padding: EdgeInsets.only(top: 20),
-           child: Card(
+           child: itemData.ReviewPromotion==true?Container():Card(
              margin: EdgeInsets.all(20),
              child: Column(
                mainAxisSize: MainAxisSize.min,
@@ -230,6 +231,7 @@ class _OffersScreenState extends State<OffersScreen> {
                    itemData.AddCompOfferItemId(tables[i]['id'].toString());
                  }
                }
+               await helper.clearAllOfferDataPreviousDay();
                Navigator.of(context).pushNamed(CompetitorOffersScreen.RouteName);
              },
              padding: EdgeInsets.all(10.0),

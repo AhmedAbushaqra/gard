@@ -78,6 +78,7 @@ class _ItemsState extends State<Items> {
                   'There is any Offers in  $cateOfferName'),
               actions: [
                 FlatButton(onPressed: () async{
+                  ItemData.ReviewPromotion=false;
                   Navigator.of(ctx).pushNamed(OffersScreen.RouteName);
                   final tables = await helper.allOurOfferData();
                   if(tables.isNotEmpty) {

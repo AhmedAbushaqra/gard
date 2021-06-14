@@ -26,6 +26,11 @@ class GridViewItem extends StatelessWidget {
           final tables = await helper.allFinalData();
           helper.clearcatesheetPreviousDay();
           helper.clearcatePreviousDay();
+          //helper.clearAllOfferDataPreviousDay();
+          //helper.clearComOfferCatePreviousDay();
+          //helper.clearComOfferDataPreviousDay();
+          //helper.clearOurOfferCatePreviousDay();
+          //helper.clearOurOfferDataPreviousDay();
           //helper.clearPreviousDay();
           //helper.clearExtraPreviousDay();
          // helper.clearExtraCatePreviousDay();

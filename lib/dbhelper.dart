@@ -5,6 +5,7 @@ import 'package:gard/models/db_Extra_Data.dart';
 import 'package:gard/models/db_Final_Data.dart';
 import 'package:gard/models/db_Our_Offer_Cate.dart';
 import 'package:gard/models/db_Our_Offer_Data.dart';
+import 'package:gard/models/db_allOfferData.dart';
 import 'package:gard/models/db_comp_offerCate.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
@@ -59,6 +60,9 @@ class DbHelper{
       );
       await db.execute(
           "create table ComOfferCate( id integer primary key , branchid varchar(20) , catename varchar(50), company varchar(50))"
+      );
+      await db.execute(
+          "create table AllOfferData( id integer primary key, branchid varchar(20), chain varchar(50), branch varchar(50),  itemnum varchar(20), catename varchar(50), subcatename varchar(50), subbrand varchar(50), itemname varchar(50),  mainprice varchar(20), pormotionreason varchar(50), pormotiontype varchar(50), pormotiondetail varchar(150), startdate varchar(20), enddate varchar(20), compid varchar(20),  compcatename  varchar(50),  company varchar(50), compitemname varchar(50), compMainPrice varchar(20), compPormotionReason varchar(50), comppormotiontype varchar(50), compPormotionDetails varchar(150), compstartdate varchar(20), compenddate varchar(20))"
       );
     });
     return db;
@@ -130,6 +134,12 @@ class DbHelper{
     return db.insert('ComOfferCate', dbEC.toMap());
   }
 
+  Future<int> createAllOfferData(dbAllOfferData dbEC) async{
+    Database db = await createDatabase();
+    //db.rawInsert('insert into courses')
+    return db.insert('AllOfferData', dbEC.toMap());
+  }
+
   Future<List> allFinalData() async{
     Database db = await createDatabase();
     //db.rawQuery("select * from courses")
@@ -196,6 +206,12 @@ class DbHelper{
     return db.query('ComOfferData');
   }
 
+  Future<List> allAllOfferData() async{
+    Database db = await createDatabase();
+    //db.rawQuery("select * from courses")
+    return db.query('AllOfferData');
+  }
+
   Future<int> deleteFinalData(int id) async{
     Database db = await createDatabase();
     return db.delete('FinalData',where: 'id = ?',whereArgs:[id] );
@@ -249,6 +265,11 @@ class DbHelper{
   Future<int> deleteComOfferData(int id) async{
     Database db = await createDatabase();
     return db.delete('ComOfferData',where: 'id = ?',whereArgs:[id] );
+  }
+
+  Future<int> deleteAllOfferData(int id) async{
+    Database db = await createDatabase();
+    return db.delete('AllOfferData',where: 'id = ?',whereArgs:[id] );
   }
 
   Future<int> clearPreviousDay()async{
@@ -306,6 +327,11 @@ class DbHelper{
     return db.delete('ComOfferData');
   }
 
+  Future<int> clearAllOfferDataPreviousDay()async{
+    Database db=await createDatabase();
+    return db.delete('AllOfferData');
+  }
+
   Future<int> updateFinalData(dbFinalData dbFD) async{
     Database db = await createDatabase();
     return await db.update('FinalData', dbFD.toMap(),where: 'id = ?', whereArgs: [dbFD.id]);
@@ -359,5 +385,10 @@ class DbHelper{
   Future<int> updateComOfferData(dbCompOfferData dbED) async{
     Database db = await createDatabase();
     return await db.update('ComOfferData', dbED.toMap(),where: 'id = ?', whereArgs: [dbED.id]);
+  }
+
+  Future<int> updateAllOfferData(dbAllOfferData dbED) async{
+    Database db = await createDatabase();
+    return await db.update('AllOfferData', dbED.toMap(),where: 'id = ?', whereArgs: [dbED.id]);
   }
 }

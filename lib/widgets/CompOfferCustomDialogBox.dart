@@ -17,8 +17,9 @@ class CompOfferCustomDialogBox extends StatefulWidget {
   final String catename;
   final String subcate;
   final String subBrand;
-  final String ItemName;
+
   final bool isExist;
+  final String oldItemName;
   final String oldReason;
   final String oldType;
   final String oldPrice;
@@ -28,7 +29,7 @@ class CompOfferCustomDialogBox extends StatefulWidget {
 
   CompOfferCustomDialogBox(
       {Key key,this.id,this.branchid,this.company,this.branch,this.itemnum,this.catename,this.subcate,this.subBrand,
-        this.ItemName,this.isExist,this.oldReason,this.oldType,this.oldPrice,this.oldDetail,this.from,this.to})
+        this.oldItemName,this.isExist,this.oldReason,this.oldType,this.oldPrice,this.oldDetail,this.from,this.to})
       : super(key: key);
 
   @override
@@ -79,14 +80,15 @@ class _ExtraCustomDialogBoxState extends State<CompOfferCustomDialogBox> {
     // TODO: implement initState
     super.initState();
     helper=DbHelper();
-   /* if(widget.isExist){
+    if(widget.isExist){
+      ItemController.text=widget.oldItemName;
       reason=widget.oldReason;
       type=widget.oldType;
       PriceController.text=widget.oldPrice;
       DetailController.text=widget.oldDetail;
       _selectedfromDate=widget.from;
       _selectedtoDate=widget.to;
-    }*/
+    }
   }
   @override
   Widget build(BuildContext context) {
@@ -312,8 +314,7 @@ class _ExtraCustomDialogBoxState extends State<CompOfferCustomDialogBox> {
                   enddate: _selectedfromDate,
                   startdate: _selectedtoDate,
                 );
-                //widget.isExist?await helper.updateOurOfferData(OOD):
-                await helper.createComOfferData(OOD);
+                widget.isExist?await helper.updateComOfferData(OOD):await helper.createComOfferData(OOD);
                 ExtraData.AddCompOfferItemId(widget.id);
                 Navigator.of(context).pop();
                 ISValidate=true;

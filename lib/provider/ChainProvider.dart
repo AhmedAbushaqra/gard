@@ -3,6 +3,7 @@ import 'package:gard/models/ExpiryData.dart';
 import 'package:gard/models/ExtraCate.dart';
 import 'package:gard/models/ExtraData.dart';
 import 'package:gard/models/MissingData.dart';
+import 'package:gard/models/OfferDataSheet.dart';
 import 'package:gard/models/chainModel.dart';
 import 'package:gard/models/empLogin.dart';
 import 'package:gard/models/extraItems.dart';
@@ -164,6 +165,26 @@ class Chains with ChangeNotifier {
       print(e);
     }
   }
+
+  void submitOfferForm(
+      OfferDataSheet OfferData, void Function(String) callback) async {
+    String URL="https://script.google.com/macros/s/AKfycbwBokIu_uA5kL2IqsRr07nItJmYp4X0BU-ArabvCIVRqA5rMfbHHdo9vf_Ne1W54_ZO/exec";
+    try {
+      await http.post(URL, body: OfferData.toJson()).then((response) async {
+        if (response.statusCode == 302) {
+          var url = response.headers['location'];
+          await http.get(url).then((response) {
+            callback(convert.jsonDecode(response.body)['status']);
+          });
+        } else {
+          callback(convert.jsonDecode(response.body)['status']);
+        }
+      });
+    } catch (e) {
+      print(e);
+    }
+  }
+
 
   Future <List<FinalData>> getFinalData() async{
     String url="https://script.google.com/macros/s/AKfycbw164_d4MZqJh2sSlfRGxae7Q6nYcZsMoXWToY9M5oTtZVhzOE_lzQtscMRYWcN4dbHDQ/exec";
@@ -3146,209 +3167,209 @@ class Chains with ChangeNotifier {
   var Competator=[];
   var coffeComp=[
     {
-      'id':'1',
+      'id':'301',
       'name':'كوفى بريك',
     },
     {
-      'id':'2',
+      'id':'302',
       'name':'مرفا',
     },
     {
-      'id':'3',
+      'id':'303',
       'name':'على كافيه',
     },
     {
-      'id':'4',
+      'id':'304',
       'name':'كابتشينو دامور',
     },
     {
-      'id':'5',
+      'id':'305',
       'name':'بن اروما',
     },
     {
-      'id':'6',
+      'id':'306',
       'name':'بلاك',
     },
     {
-      'id':'7',
+      'id':'307',
       'name':'روز جاردين',
     },
     {
-      'id':'8',
+      'id':'308',
       'name':'مصر كافيه',
     },
   ];
   var coffeemateComp=[
     {
-      'id':'9',
+      'id':'309',
       'name':'دريم',
     },
     {
-      'id':'10',
+      'id':'310',
       'name':'كوفى ميت مستورد',
     },
     {
-      'id':'11',
+      'id':'311',
       'name':'على كافيه',
     },
     {
-      'id':'12',
+      'id':'312',
       'name':'كابتشينو دامور',
     },
     {
-      'id':'13',
+      'id':'313',
       'name':'بن اروما',
     },
     {
-      'id':'14',
+      'id':'314',
       'name':'بلاك',
     },
     {
-      'id':'15',
+      'id':'315',
       'name':'روز جاردين',
     },
     {
-      'id':'16',
+      'id':'316',
       'name':'مصر كافيه',
     },
   ];
   var hotchocComp=[
     {
-      'id':'17',
+      'id':'317',
       'name':'دريم',
     },
     {
-      'id':'18',
+      'id':'318',
       'name':'كادبورى',
     },
     {
-      'id':'19',
+      'id':'319',
       'name':'كورونا',
     },
     {
-      'id':'20',
+      'id':'320',
       'name':'بودر دى كوكا',
     },
     {
-      'id':'21',
+      'id':'321',
       'name':'حلو الشام',
     },
   ];
   var RTDComp=[
     {
-      'id':'22',
+      'id':'322',
       'name':'كوفى بريك',
     },
     {
-      'id':'23',
+      'id':'323',
       'name':'لاكتيل',
     },
     {
-      'id':'24',
+      'id':'324',
       'name':'دانو',
     },
     {
-      'id':'25',
+      'id':'325',
       'name':'المراعى',
     },
     {
-      'id':'26',
+      'id':'326',
       'name':'جهينه',
     },
   ];
   var nidoComp=[
     {
-      'id':'27',
+      'id':'327',
       'name':'ميرو',
     },
     {
-      'id':'28',
+      'id':'328',
       'name':'تاميو',
     },
     {
-      'id':'29',
+      'id':'329',
       'name':'روز جاردين',
     },
   ];
   var babyComp=[
     {
-      'id':'30',
+      'id':'330',
       'name':'هيرو',
     },
     {
-      'id':'31',
+      'id':'331',
       'name':'ابتمال',
     },
     {
-      'id':'32',
+      'id':'332',
       'name':'بيبلاك',
     },
     {
-      'id':'33',
+      'id':'333',
       'name':'هيرو',
     },
     {
-      'id':'34',
+      'id':'334',
       'name':'ريرى',
     },
   ];
   var maggiComp=[
     {
-      'id':'35',
+      'id':'335',
       'name':'كونور',
     },
     {
-      'id':'36',
+      'id':'336',
       'name':'سبايسى',
     },
     {
-      'id':'37',
+      'id':'337',
       'name':'5 شيف',
     },
     {
-      'id':'38',
+      'id':'338',
       'name':'كوجير',
     },
   ];
   var crealComp=[
     {
-      'id':'39',
+      'id':'339',
       'name':'تيميز',
     },
     {
-      'id':'40',
+      'id':'340',
       'name':'سانتى',
     },
   ];
   var chocolateComp=[
     {
-      'id':'41',
+      'id':'341',
       'name':'جلاكسى',
     },
     {
-      'id':'42',
+      'id':'342',
       'name':'كادبورى',
     },
     {
-      'id':'43',
+      'id':'343',
       'name':'كورونا',
     },
   ];
   var waterComp=[
     {
-      'id':'44',
+      'id':'344',
       'name':'ايلانو',
     },
     {
-      'id':'45',
+      'id':'345',
       'name':'بيبسى',
     },
     {
-      'id':'46',
+      'id':'346',
       'name':'ايزيس',
     },
     {
-      'id':'47',
+      'id':'347',
       'name':'كوكاكولا',
     },
   ];
@@ -3556,6 +3577,7 @@ class Chains with ChangeNotifier {
   String itemId;
   String ItemName;
   bool isClick= false;
+  bool ReviewPromotion=false;
 
   String reportType;
   String extraVisType;
