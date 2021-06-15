@@ -43,7 +43,7 @@ class _CategoryMissChartState extends State<CategoryMissChart> {
               padding: EdgeInsets.all(0.0),
               child: Ink(
                 decoration: BoxDecoration(
-                    gradient: LinearGradient(colors: [new Color(0xff374ABE), new Color(0xff64B6FF)],
+                    gradient: LinearGradient(List: [new Color(0xff374ABE), new Color(0xff64B6FF)],
                       begin: Alignment.centerLeft,
                       end: Alignment.centerRight,
                     ),
@@ -194,7 +194,7 @@ class _CategoryMissChartState extends State<CategoryMissChart> {
               children: [
                 Container(
                   decoration: BoxDecoration(
-                      gradient: LinearGradient(colors: [ Colors.black12, new Color(0xff64B6FF)],
+                      gradient: LinearGradient(List: [ Colors.black12, new Color(0xff64B6FF)],
                         begin: Alignment.centerLeft,
                         end: Alignment.centerRight,
                       ),
@@ -225,7 +225,7 @@ class _CategoryMissChartState extends State<CategoryMissChart> {
                 ),
                 Container(
                   decoration: BoxDecoration(
-                      gradient: LinearGradient(colors: [new Color(0xff64B6FF),Colors.black12,],
+                      gradient: LinearGradient(List: [new Color(0xff64B6FF),Colors.black12,],
                         begin: Alignment.centerLeft,
                         end: Alignment.centerRight,
                       ),

@@ -110,7 +110,7 @@ class _SelectCategoryChartState extends State<SelectCategoryChart> {
                 padding: EdgeInsets.only(left: 10,right: 10),
                 width: 250,
                 decoration: BoxDecoration(
-                    gradient: LinearGradient(colors: [new Color(0xff64B6FF),Colors.black12,],
+                    gradient: LinearGradient(List: [new Color(0xff64B6FF),Colors.black12,],
                       begin: Alignment.centerLeft,
                       end: Alignment.centerRight,
                     ),
@@ -160,7 +160,7 @@ class _SelectCategoryChartState extends State<SelectCategoryChart> {
                 padding: EdgeInsets.only(left: 10,right: 10),
                 width: 250,
                 decoration: BoxDecoration(
-                    gradient: LinearGradient(colors: [new Color(0xff64B6FF),Colors.black12,],
+                    gradient: LinearGradient(List: [new Color(0xff64B6FF),Colors.black12,],
                       begin: Alignment.centerLeft,
                       end: Alignment.centerRight,
                     ),
@@ -211,7 +211,7 @@ class _SelectCategoryChartState extends State<SelectCategoryChart> {
                 padding: EdgeInsets.only(left: 10,right: 10),
                 width: 250,
                 decoration: BoxDecoration(
-                    gradient: LinearGradient(colors: [new Color(0xff64B6FF),Colors.black12,],
+                    gradient: LinearGradient(List: [new Color(0xff64B6FF),Colors.black12,],
                       begin: Alignment.centerLeft,
                       end: Alignment.centerRight,
                     ),
@@ -262,7 +262,7 @@ class _SelectCategoryChartState extends State<SelectCategoryChart> {
                 padding: EdgeInsets.only(left: 10,right: 10),
                 width: 250,
                 decoration: BoxDecoration(
-                    gradient: LinearGradient(colors: [new Color(0xff64B6FF),Colors.black12,],
+                    gradient: LinearGradient(List: [new Color(0xff64B6FF),Colors.black12,],
                       begin: Alignment.centerLeft,
                       end: Alignment.centerRight,
                     ),
@@ -313,7 +313,7 @@ class _SelectCategoryChartState extends State<SelectCategoryChart> {
                 padding: EdgeInsets.only(left: 10,right: 10),
                 width: 250,
                 decoration: BoxDecoration(
-                    gradient: LinearGradient(colors: [new Color(0xff64B6FF),Colors.black12,],
+                    gradient: LinearGradient(List: [new Color(0xff64B6FF),Colors.black12,],
                       begin: Alignment.centerLeft,
                       end: Alignment.centerRight,
                     ),
@@ -364,7 +364,7 @@ class _SelectCategoryChartState extends State<SelectCategoryChart> {
                 padding: EdgeInsets.only(left: 10,right: 10),
                 width: 250,
                 decoration: BoxDecoration(
-                    gradient: LinearGradient(colors: [new Color(0xff64B6FF),Colors.black12,],
+                    gradient: LinearGradient(List: [new Color(0xff64B6FF),Colors.black12,],
                       begin: Alignment.centerLeft,
                       end: Alignment.centerRight,
                     ),
@@ -415,7 +415,7 @@ class _SelectCategoryChartState extends State<SelectCategoryChart> {
                 padding: EdgeInsets.only(left: 10,right: 10),
                 width: 250,
                 decoration: BoxDecoration(
-                    gradient: LinearGradient(colors: [new Color(0xff64B6FF),Colors.black12,],
+                    gradient: LinearGradient(List: [new Color(0xff64B6FF),Colors.black12,],
                       begin: Alignment.centerLeft,
                       end: Alignment.centerRight,
                     ),
@@ -466,7 +466,7 @@ class _SelectCategoryChartState extends State<SelectCategoryChart> {
                 padding: EdgeInsets.only(left: 10,right: 10),
                 width: 250,
                 decoration: BoxDecoration(
-                    gradient: LinearGradient(colors: [new Color(0xff64B6FF),Colors.black12,],
+                    gradient: LinearGradient(List: [new Color(0xff64B6FF),Colors.black12,],
                       begin: Alignment.centerLeft,
                       end: Alignment.centerRight,
                     ),
@@ -517,7 +517,7 @@ class _SelectCategoryChartState extends State<SelectCategoryChart> {
                 padding: EdgeInsets.only(left: 10,right: 10),
                 width: 250,
                 decoration: BoxDecoration(
-                    gradient: LinearGradient(colors: [new Color(0xff64B6FF),Colors.black12,],
+                    gradient: LinearGradient(List: [new Color(0xff64B6FF),Colors.black12,],
                       begin: Alignment.centerLeft,
                       end: Alignment.centerRight,
                     ),
@@ -568,7 +568,7 @@ class _SelectCategoryChartState extends State<SelectCategoryChart> {
                 padding: EdgeInsets.only(left: 10,right: 10),
                 width: 250,
                 decoration: BoxDecoration(
-                    gradient: LinearGradient(colors: [new Color(0xff64B6FF),Colors.black12,],
+                    gradient: LinearGradient(List: [new Color(0xff64B6FF),Colors.black12,],
                       begin: Alignment.centerLeft,
                       end: Alignment.centerRight,
                     ),
