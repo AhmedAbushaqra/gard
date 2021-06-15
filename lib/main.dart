@@ -20,11 +20,19 @@ import 'package:provider/provider.dart';
 import 'package:workmanager/workmanager.dart';
 import 'Charts/ChainMissChart.dart';
 import 'extra_vis_screen.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 //https://script.google.com/macros/s/AKfycbz6KOa6RIj8Qfdjl5KdKzXC0jZnT4-seCbrCCen45cw0q1LZGRxEFAoSZBShL3vFNZVFw/exec
 
 void main() async{
-  runApp(MyApp());
+  runApp( EasyLocalization(
+      supportedLocales: [Locale('en'), Locale('ar')],
+      path: 'assets/translations', // <-- change patch to your
+      fallbackLocale: Locale('en'),
+      child: MyApp()
+  ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -33,6 +41,9 @@ class MyApp extends StatelessWidget {
     return ChangeNotifierProvider<Chains>(
       create: (context)=>Chains(),
       child: MaterialApp(
+        localizationsDelegates: context.localizationDelegates,
+        supportedLocales: context.supportedLocales,
+        locale: context.locale,
         home: SplashScreen(),
         routes: {
           SplashScreen.RouteName: (ctx)=>SplashScreen(),
