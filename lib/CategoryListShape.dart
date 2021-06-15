@@ -52,6 +52,7 @@ class _CategoryListShapeState extends State<CategoryListShape> {
 
   bool isWaterSent=false;
 
+  bool _isLoading=false;
   List<Chain> CategoryList = [];
 
   DbHelper helper;
@@ -66,7 +67,7 @@ class _CategoryListShapeState extends State<CategoryListShape> {
   Widget build(BuildContext context) {
     final catagoryData=Provider.of<Chains>(context);
     String reportType=catagoryData.reportType;
-    return FutureBuilder(
+    return _isLoading?Center(child: CircularProgressIndicator(),):FutureBuilder(
         future: Future.wait([helper.allCatesend(),helper.allCatesendsheet()]),
         builder: (context, AsyncSnapshot snapshot){
          if (!snapshot.hasData) {
@@ -177,11 +178,21 @@ class _CategoryListShapeState extends State<CategoryListShape> {
                            Catesend CD = Catesend(
                                branchid: catagoryData.id,
                                cate: widget.name);
-                           int id = await helper.createcatesendsheet(CD);
+                          // int id = await helper.createcatesendsheet(CD);
                            final tables = await helper.allFinalData();
                            for (int i = 0; i < tables.length; i++) {
                              if (catagoryData.id==tables[i]['branchid']&&tables[i]['catename'] == widget.name) {
-                               await Future.delayed(const Duration(seconds: 5));
+                               setState(() {
+                                 _isLoading=true;
+                               });
+                               /* showDialog(
+                                   context: context,
+                                   builder: (BuildContext context) => AlertDialog(
+                                     title: Text('Waiting Upload Data'),
+                                     content: Center(child: CircularProgressIndicator(),),
+                                   )
+                               );*/
+                              /* await Future.delayed(const Duration(seconds: 5));
                                catagoryData.submitForm(FinalData(
                                  branchid: tables[i]['branchid'],
                                  date: tables[i]['date'],
@@ -195,10 +206,10 @@ class _CategoryListShapeState extends State<CategoryListShape> {
                                ), (String response) async {
                                  print("Response:$response");
                                  print(tables[i]['id']);
-                               });
+                               });*/
                              }
                            }
-                           await Future.delayed(const Duration(seconds: 4));
+                          /* await Future.delayed(const Duration(seconds: 4));
                            catagoryData.submitForm(FinalData(
                              branchid: catagoryData.id,
                              date: DateFormat.yMMMMd("en_US").format(DateTime.now()),
@@ -226,7 +237,7 @@ class _CategoryListShapeState extends State<CategoryListShape> {
                            ), (String response) {
                              print("Response:$response");
                              Navigator.of(context).popAndPushNamed(Category.RouteName);
-                           });
+                           });*/
                          }else if(widget.name=='NESCAFE'&&isBonSent){
                            Catesend CD = Catesend(
                                branchid: catagoryData.id,
