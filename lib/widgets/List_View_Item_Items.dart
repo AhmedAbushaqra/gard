@@ -7,10 +7,11 @@ import 'package:provider/provider.dart';
 class ItemsListView extends StatefulWidget {
   final String id;
   final String ItemName;
+  final String transName;
   final String itemImgUrl;
   final String SubCate;
 
-  ItemsListView(this.id, this.ItemName, this.itemImgUrl, this.SubCate,);
+  ItemsListView(this.id, this.ItemName,this.transName, this.itemImgUrl, this.SubCate,);
 
   @override
   _ItemsListViewState createState() => _ItemsListViewState();
@@ -72,7 +73,7 @@ class _ItemsListViewState extends State<ItemsListView> {
                           );
                         });
                   },
-                  title: Text(widget.ItemName),
+                  title: Text(widget.transName),
                   leading: CircleAvatar(
                     backgroundImage: NetworkImage(widget.itemImgUrl),
                     maxRadius: 55,

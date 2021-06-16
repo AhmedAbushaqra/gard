@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:gard/main.dart';
 import 'package:gard/models/empLogin.dart';
 import 'package:gard/provider/ChainProvider.dart';
+import 'package:gard/translation/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:provider/provider.dart';
 
@@ -69,7 +71,7 @@ class _LogInState extends State<LogIn> {
                 crossAxisAlignment: CrossAxisAlignment.baseline,
                 children: [
                   Container(
-                    margin: EdgeInsets.only(right: 10),
+                    margin: EdgeInsets.only(right: 10,left: 10),
                     padding: EdgeInsets.all(10),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10.0),
@@ -103,7 +105,7 @@ class _LogInState extends State<LogIn> {
                           filled: true,
                           fillColor: Colors.white,
                           contentPadding: const EdgeInsets.only(
-                              left: 14.0, bottom: 8.0, top: 8.0),
+                              right: 5,left: 14.0, bottom: 8.0, top: 8.0),
                           focusedBorder: OutlineInputBorder(
                             borderSide: BorderSide(color: Colors.black),
                             borderRadius: BorderRadius.circular(10.0),
@@ -135,7 +137,7 @@ class _LogInState extends State<LogIn> {
                   padding: EdgeInsets.all(10.0),
                   color: Color.fromRGBO(0, 160, 227, 1),
                   textColor: Colors.white,
-                  child: Text("Location",
+                  child: Text(LocaleKeys.location.tr(),
                       style: TextStyle(fontSize: 15)),
                 ),
               ),
@@ -155,6 +157,7 @@ class _LogInState extends State<LogIn> {
                         onPressed: () {
                           setState(() {
                             isArabic = false;
+                            context.locale=Locale('en');
                           });
                         }
                     ),
@@ -173,6 +176,7 @@ class _LogInState extends State<LogIn> {
                         onPressed: () {
                           setState(() {
                             isArabic = true;
+                            context.locale=Locale('ar');
                           });
                         }
                     ),
@@ -192,7 +196,7 @@ class _LogInState extends State<LogIn> {
                             borderRadius: BorderRadius.circular(18.0),
                             side: BorderSide(color: Color.fromRGBO(0, 160, 227,
                                 1))),
-                        child: Text('Alex&Delta'),
+                        child: Text(LocaleKeys.AlexAndDelta.tr()),
                         onPressed: () {
                           setState(() {
                             isAlex = true;
@@ -210,7 +214,7 @@ class _LogInState extends State<LogIn> {
                             borderRadius: BorderRadius.circular(18.0),
                             side: BorderSide(color: Color.fromRGBO(0, 160, 227,
                                 1))),
-                        child: Text('Cairo'),
+                        child: Text(LocaleKeys.Cairo.tr()),
                         onPressed: () {
                           setState(() {
                             isAlex = false;
@@ -242,7 +246,7 @@ class _LogInState extends State<LogIn> {
                   padding: EdgeInsets.all(10.0),
                   color: Color.fromRGBO(0, 160, 227, 1),
                   textColor: Colors.white,
-                  child: Text("LogIn",
+                  child: Text(LocaleKeys.LogIn.tr(),
                       style: TextStyle(fontSize: 15)),
                 ),
               ),

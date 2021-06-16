@@ -3,9 +3,11 @@ import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:gard/models/db_Extra_Data.dart';
 import 'package:gard/provider/ChainProvider.dart';
+import 'package:gard/translation/locale_keys.g.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
-
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:easy_localization/easy_localization.dart';
 import '../dbhelper.dart';
 
 class ExtraCustomDialogBox extends StatefulWidget {
@@ -93,7 +95,7 @@ class _ExtraCustomDialogBoxState extends State<ExtraCustomDialogBox> {
                         color: _index == 1 ? Colors.green: null,
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10)),
-                        child: Text('Full Capacity'),
+                        child: Text(LocaleKeys.FullCap.tr()),
                         onPressed: () {
                           isClicked(1);
                           capacity='Full Capacity';
@@ -106,7 +108,7 @@ class _ExtraCustomDialogBoxState extends State<ExtraCustomDialogBox> {
                         color: _index == 2 ? Colors.yellow: null,
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10)),
-                        child: Text('Start Missing'),
+                        child: Text(LocaleKeys.StartMis.tr()),
                         onPressed: () {
                           isClicked(2);
                           capacity='Start Missing';
@@ -119,7 +121,7 @@ class _ExtraCustomDialogBoxState extends State<ExtraCustomDialogBox> {
                         color: _index == 3 ? Colors.red: null,
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10)),
-                        child: Text('Missing'),
+                        child: Text(LocaleKeys.Miss.tr(),),
                         onPressed: () {
                           isClicked(3);
                           capacity='Missing';
@@ -132,8 +134,8 @@ class _ExtraCustomDialogBoxState extends State<ExtraCustomDialogBox> {
                 children: <Widget>[
                   DropdownButton<String>(
                     value: situation,
-                    hint: Text('selectItem'),
-                    items: <String>['دائم', 'مؤقت', 'ملك الفرع', 'غير موجود'].map((String value) {
+                    hint: Text(LocaleKeys.selectitem.tr(),),
+                    items: <String>[LocaleKeys.Permanent.tr(), LocaleKeys.Temporary.tr(), LocaleKeys.Unbranded.tr(), LocaleKeys.NotExisting.tr(),].map((String value) {
                       return new DropdownMenuItem<String>(
                         value: value,
                         child: new Text(value),
@@ -146,9 +148,9 @@ class _ExtraCustomDialogBoxState extends State<ExtraCustomDialogBox> {
                     },
                   ),
                   DropdownButton<String>(
-                    hint: Text('select Item'),
+                    hint: Text(LocaleKeys.selectitem.tr()),
                     value: condition,
-                    items: <String>['جيدة', 'سيئة', 'مرفوعة بالمخزن', 'غير موجود'].map((String value) {
+                    items: <String>[LocaleKeys.Good.tr(), LocaleKeys.Bad.tr(), LocaleKeys.INStoreWarehouse.tr(), LocaleKeys.NotExisting.tr(),].map((String value) {
                       return DropdownMenuItem<String>(
                         value: value,
                         child: Text(value),
@@ -162,7 +164,7 @@ class _ExtraCustomDialogBoxState extends State<ExtraCustomDialogBox> {
                   ),
                   SizedBox(height: 30,),
                   _index == 3 ?Container()
-                      :Text('Faces'),
+                      :Text(LocaleKeys.faces.tr()),
                   _index==3?Container()
                       :Container(
                     width: MediaQuery.of(context).size.width*0.3,
@@ -230,7 +232,7 @@ class _ExtraCustomDialogBoxState extends State<ExtraCustomDialogBox> {
               }
             },
             icon: Icon(Icons.save),
-            label: Text("Save"),
+            label: Text(LocaleKeys.save.tr(),),
           ),
         ),
         Positioned(

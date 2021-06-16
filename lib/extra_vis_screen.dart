@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:gard/dbhelper.dart';
 import 'package:gard/models/ExtraCate.dart';
 import 'package:gard/provider/ChainProvider.dart';
+import 'package:gard/translation/locale_keys.g.dart';
 import 'package:provider/provider.dart';
-
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'ExpiryItem.dart';
 import 'models/ExtraData.dart';
 
@@ -49,7 +51,7 @@ class _ExtraVisScreenState extends State<ExtraVisScreen> {
             children: [
             Container(
               decoration: BoxDecoration(
-                  gradient: LinearGradient(List: [new Color(0xff64B6FF),Colors.black12,],
+                  gradient: LinearGradient(colors: [new Color(0xff64B6FF),Colors.black12,],
                     begin: Alignment.centerLeft,
                     end: Alignment.centerRight,
                   ),
@@ -80,7 +82,7 @@ class _ExtraVisScreenState extends State<ExtraVisScreen> {
                     padding: EdgeInsets.all(10.0),
                     color: Color.fromRGBO(0, 160, 227, 1),
                     textColor: Colors.white,
-                    child: Text(stand,
+                    child: Text(LocaleKeys.Stand.tr(),
                         style: TextStyle(fontSize: 15)),
                   ),
                   Icon(Icons.send)
@@ -89,7 +91,7 @@ class _ExtraVisScreenState extends State<ExtraVisScreen> {
             ),
             Container(
               decoration: BoxDecoration(
-                  gradient: LinearGradient(List: [new Color(0xff64B6FF),Colors.black12,],
+                  gradient: LinearGradient(colors: [new Color(0xff64B6FF),Colors.black12,],
                     begin: Alignment.centerLeft,
                     end: Alignment.centerRight,
                   ),
@@ -119,7 +121,7 @@ class _ExtraVisScreenState extends State<ExtraVisScreen> {
                     padding: EdgeInsets.all(10.0),
                     color: Color.fromRGBO(0, 160, 227, 1),
                     textColor: Colors.white,
-                    child: Text(poduim,
+                    child: Text(LocaleKeys.Poduim.tr(),
                         style: TextStyle(fontSize: 15)),
                   ),
                   Icon(Icons.send)
@@ -128,7 +130,7 @@ class _ExtraVisScreenState extends State<ExtraVisScreen> {
             ),
             Container(
               decoration: BoxDecoration(
-                  gradient: LinearGradient(List: [new Color(0xff64B6FF),Colors.black12,],
+                  gradient: LinearGradient(colors: [new Color(0xff64B6FF),Colors.black12,],
                     begin: Alignment.centerLeft,
                     end: Alignment.centerRight,
                   ),
@@ -158,7 +160,7 @@ class _ExtraVisScreenState extends State<ExtraVisScreen> {
                     padding: EdgeInsets.all(10.0),
                     color: Color.fromRGBO(0, 160, 227, 1),
                     textColor: Colors.white,
-                    child: Text(gandola,
+                    child: Text(LocaleKeys.Gandola.tr(),
                         style: TextStyle(fontSize: 15)),
                   ),
                   Icon(Icons.send)
@@ -167,7 +169,7 @@ class _ExtraVisScreenState extends State<ExtraVisScreen> {
             ),
             Container(
               decoration: BoxDecoration(
-                  gradient: LinearGradient(List: [new Color(0xff64B6FF),Colors.black12,],
+                  gradient: LinearGradient(colors: [new Color(0xff64B6FF),Colors.black12,],
                     begin: Alignment.centerLeft,
                     end: Alignment.centerRight,
                   ),
@@ -197,7 +199,7 @@ class _ExtraVisScreenState extends State<ExtraVisScreen> {
                     padding: EdgeInsets.all(10.0),
                     color: Color.fromRGBO(0, 160, 227, 1),
                     textColor: Colors.white,
-                    child: Text(pillar,
+                    child: Text(LocaleKeys.Pillar.tr(),
                         style: TextStyle(fontSize: 15)),
                   ),
                   Icon(Icons.send)
@@ -206,7 +208,7 @@ class _ExtraVisScreenState extends State<ExtraVisScreen> {
             ),
             Container(
               decoration: BoxDecoration(
-                  gradient: LinearGradient(List: [new Color(0xff64B6FF),Colors.black12,],
+                  gradient: LinearGradient(colors: [new Color(0xff64B6FF),Colors.black12,],
                     begin: Alignment.centerLeft,
                     end: Alignment.centerRight,
                   ),
@@ -236,7 +238,7 @@ class _ExtraVisScreenState extends State<ExtraVisScreen> {
                     padding: EdgeInsets.all(10.0),
                     color: Color.fromRGBO(0, 160, 227, 1),
                     textColor: Colors.white,
-                    child: Text(fridge,
+                    child: Text(LocaleKeys.Fridge.tr(),
                         style: TextStyle(fontSize: 15)),
                   ),
                   Icon(Icons.send)
@@ -245,7 +247,7 @@ class _ExtraVisScreenState extends State<ExtraVisScreen> {
             ),
             Container(
               decoration: BoxDecoration(
-                  gradient: LinearGradient(List: [new Color(0xff64B6FF),Colors.black12,],
+                  gradient: LinearGradient(colors: [new Color(0xff64B6FF),Colors.black12,],
                     begin: Alignment.centerLeft,
                     end: Alignment.centerRight,
                   ),
@@ -275,7 +277,7 @@ class _ExtraVisScreenState extends State<ExtraVisScreen> {
                     padding: EdgeInsets.all(10.0),
                     color: Color.fromRGBO(0, 160, 227, 1),
                     textColor: Colors.white,
-                    child: Text(floor,
+                    child: Text(LocaleKeys.FloorDisplay.tr(),
                         style: TextStyle(fontSize: 15)),
                   ),
                   Icon(Icons.send)
@@ -284,7 +286,7 @@ class _ExtraVisScreenState extends State<ExtraVisScreen> {
             ),
             Container(
               decoration: BoxDecoration(
-                  gradient: LinearGradient(List: [new Color(0xff64B6FF),Colors.black12,],
+                  gradient: LinearGradient(colors: [new Color(0xff64B6FF),Colors.black12,],
                     begin: Alignment.centerLeft,
                     end: Alignment.centerRight,
                   ),
@@ -314,7 +316,7 @@ class _ExtraVisScreenState extends State<ExtraVisScreen> {
                     padding: EdgeInsets.all(10.0),
                     color: Color.fromRGBO(0, 160, 227, 1),
                     textColor: Colors.white,
-                    child: Text(catman,
+                    child: Text(LocaleKeys.Catman.tr(),
                         style: TextStyle(fontSize: 15)),
                   ),
                   Icon(Icons.send)

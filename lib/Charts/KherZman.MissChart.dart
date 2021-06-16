@@ -33,7 +33,7 @@ class _Kher_MissChartState extends State<Kher_MissChart> {
               padding: EdgeInsets.all(0.0),
               child: Ink(
                 decoration: BoxDecoration(
-                    gradient: LinearGradient(List: [new Color(0xff374ABE), new Color(0xff64B6FF)],
+                    gradient: LinearGradient(colors: [new Color(0xff374ABE), new Color(0xff64B6FF)],
                       begin: Alignment.centerLeft,
                       end: Alignment.centerRight,
                     ),
@@ -156,7 +156,7 @@ class _Kher_MissChartState extends State<Kher_MissChart> {
                   children: [
                     Container(
                       decoration: BoxDecoration(
-                          gradient: LinearGradient(List: [ Colors.black12, new Color(0xff64B6FF)],
+                          gradient: LinearGradient(colors: [ Colors.black12, new Color(0xff64B6FF)],
                             begin: Alignment.centerLeft,
                             end: Alignment.centerRight,
                           ),
@@ -186,7 +186,7 @@ class _Kher_MissChartState extends State<Kher_MissChart> {
                     ),
                     Container(
                       decoration: BoxDecoration(
-                          gradient: LinearGradient(List: [ Colors.black12, new Color(0xff64B6FF)],
+                          gradient: LinearGradient(colors: [ Colors.black12, new Color(0xff64B6FF)],
                             begin: Alignment.centerLeft,
                             end: Alignment.centerRight,
                           ),
@@ -219,7 +219,7 @@ class _Kher_MissChartState extends State<Kher_MissChart> {
                 ),
                 Container(
                   decoration: BoxDecoration(
-                      gradient: LinearGradient(List: [new Color(0xff64B6FF),Colors.black12,],
+                      gradient: LinearGradient(colors: [new Color(0xff64B6FF),Colors.black12,],
                         begin: Alignment.centerLeft,
                         end: Alignment.centerRight,
                       ),

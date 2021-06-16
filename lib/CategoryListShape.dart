@@ -16,10 +16,10 @@ import 'models/chainModel.dart';
 
 class CategoryListShape extends StatefulWidget {
   final String name;
+  final String transName;
   final String imgUrl;
 
-
-  CategoryListShape(this.name,this.imgUrl,);
+  CategoryListShape(this.name,this.transName,this.imgUrl,);
 
   @override
   _CategoryListShapeState createState() => _CategoryListShapeState();
@@ -915,7 +915,7 @@ class _CategoryListShapeState extends State<CategoryListShape> {
                    ),
                    backgroundColor: Colors.black54,
                    title: Text(
-                     widget.name,
+                     widget.transName,
                      style: TextStyle(fontSize: 12),
                      textAlign: TextAlign.center,
                    ),

@@ -12,9 +12,10 @@ import 'package:provider/provider.dart';
 class ListViewItem extends StatefulWidget {
   final String id;
   final String BranchName;
+  final String TransName;
   final String imgUrl;
 
-  ListViewItem(this.id,this.BranchName,this.imgUrl);
+  ListViewItem(this.id,this.BranchName,this.TransName,this.imgUrl);
 
   @override
   _ListViewItemState createState() => _ListViewItemState();
@@ -30,7 +31,7 @@ class _ListViewItemState extends State<ListViewItem> {
       children: [
         Divider(),
         ListTile(
-          title: Text(widget.BranchName),
+          title: Text(widget.TransName),
           onTap: ()async{
             setState(() {
               _isLoading=true;

@@ -10,6 +10,8 @@ import 'package:gard/provider/ChainProvider.dart';
 import 'package:gard/widgets/CompOfferCustomDialogBox.dart';
 import 'package:gard/widgets/OurOfferCustomDialogBox.dart';
 import 'package:provider/provider.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:gard/translation/locale_keys.g.dart';
 
 class CompetitorOffersScreen extends StatefulWidget {
   static const RouteName = "/compatitoroffers";
@@ -70,7 +72,7 @@ class _CompetitorOffersScreenState extends State<CompetitorOffersScreen> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text('Competitor Offer',style: TextStyle(color: Colors.black,fontSize: 30),),
+        title: Text(LocaleKeys.competitorOffer.tr(),style: TextStyle(color: Colors.black,fontSize: 30),),
         backgroundColor: Colors.transparent,
         elevation: 0,
       ),

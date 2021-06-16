@@ -12,6 +12,8 @@ import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'CategoryListShape.dart';
 import 'Items.dart';
+import 'package:gard/translation/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class Category extends StatefulWidget {
   static const RouteName = "/selectItem";
@@ -48,6 +50,10 @@ class _CategoryState extends State<Category> {
   bool isWaterSent=false;
 
   List<Chain> CategoryList = [];
+
+  var transName=[LocaleKeys.Bonjorno.tr(),LocaleKeys.Nescafe.tr(),LocaleKeys.CoffeMate.tr(),LocaleKeys.Nido.tr(),LocaleKeys.BabyFood.tr(),
+    'Nesquik',LocaleKeys.RTD.tr(),LocaleKeys.Maggi.tr(),LocaleKeys.Cereal.tr(),LocaleKeys.Confec.tr(),LocaleKeys.Bisqu.tr(),
+    LocaleKeys.water.tr(),];
 
   DbHelper helper;
   bool isLoading=false;
@@ -88,7 +94,7 @@ class _CategoryState extends State<Category> {
                               crossAxisSpacing: 10,
                               mainAxisSpacing: 10,
                             ),
-                            itemBuilder: (ctx,i)=>CategoryListShape(categoryData.Category[i]['cateName'],categoryData.Category[i]['cateImage'],),
+                            itemBuilder: (ctx,i)=>CategoryListShape(categoryData.Category[i]['cateName'],transName[i],categoryData.Category[i]['cateImage'],),
                           );
                         }
                     }

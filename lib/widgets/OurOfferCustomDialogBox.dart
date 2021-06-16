@@ -4,7 +4,8 @@ import 'package:gard/provider/ChainProvider.dart';
 import 'package:gard/widgets/OfferExpiry.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
-
+import 'package:gard/translation/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import '../dbhelper.dart';
 
 class OurOfferCustomDialogBox extends StatefulWidget {
@@ -124,8 +125,8 @@ class _ExtraCustomDialogBoxState extends State<OurOfferCustomDialogBox> {
                     children: <Widget>[
                       DropdownButton<String>(
                         value: reason,
-                        hint: Text('selectItem'),
-                        items: <String>['عرض شهري', 'عرض صلاحية', 'عرض مجلة'].map((String value) {
+                        hint: Text(LocaleKeys.selectitem.tr(),),
+                        items: <String>[LocaleKeys.MonthlyOffer.tr(), LocaleKeys.ExpirtionOffer.tr(), LocaleKeys.MagazineOffer.tr(),].map((String value) {
                           return new DropdownMenuItem<String>(
                             value: value,
                             child: new Text(value),
@@ -138,9 +139,9 @@ class _ExtraCustomDialogBoxState extends State<OurOfferCustomDialogBox> {
                         },
                       ),
                       DropdownButton<String>(
-                        hint: Text('select Item'),
+                        hint: Text(LocaleKeys.selectitem.tr(),),
                         value: type,
-                        items: <String>['عرض سعر', 'كميه زياده', 'هديه', 'عروض خاصة'].map((String value) {
+                        items: <String>[LocaleKeys.PriceOffer.tr(), LocaleKeys.QuantityOffer.tr(), LocaleKeys.GiftOffer.tr(),LocaleKeys.SpecialOffer.tr(),].map((String value) {
                           return DropdownMenuItem<String>(
                             value: value,
                             child: Text(value),
@@ -157,9 +158,9 @@ class _ExtraCustomDialogBoxState extends State<OurOfferCustomDialogBox> {
                   ),
                   Column(
                     children: [
-                      Text('MainPrice'),
+                      Text(LocaleKeys.MainPrice.tr(),),
                       Container(
-                        width: MediaQuery.of(context).size.width*0.3,
+                        width: MediaQuery.of(context).size.width*0.28,
                         child: Theme(
                           data: Theme.of(context).copyWith(splashColor: Colors.transparent),
                           child: TextField(
@@ -203,7 +204,7 @@ class _ExtraCustomDialogBoxState extends State<OurOfferCustomDialogBox> {
                     autofocus: false,
                     style: TextStyle(fontSize: 22.0, color: Colors.black),
                     decoration: InputDecoration(
-                      hintText: 'promotion Details',
+                      hintText: LocaleKeys.promotionDetails.tr(),
                       filled: true,
                       fillColor: Colors.white,
                       contentPadding: const EdgeInsets.only(
@@ -228,7 +229,7 @@ class _ExtraCustomDialogBoxState extends State<OurOfferCustomDialogBox> {
                 children: [
                   Column(
                     children: [
-                      Text('From'),
+                      Text(LocaleKeys.from.tr(),),
                       IconButton(
                           icon: Icon(Icons.calendar_today),
                           onPressed: (){
@@ -240,7 +241,7 @@ class _ExtraCustomDialogBoxState extends State<OurOfferCustomDialogBox> {
                   ),
                   Column(
                     children: [
-                      Text('To'),
+                      Text(LocaleKeys.to.tr(),),
                       IconButton(
                           icon: Icon(Icons.calendar_today),
                           onPressed: (){

@@ -9,6 +9,8 @@ import 'package:gard/models/db_Expire_Data.dart';
 import 'package:gard/models/db_Final_Data.dart';
 import 'package:gard/models/final_data.dart';
 import 'package:gard/provider/ChainProvider.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:gard/translation/locale_keys.g.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
@@ -129,7 +131,7 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
                       color: _index == 1 ? Colors.green: null,
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10)),
-                        child: Text('Full Capacity'),
+                        child: Text(LocaleKeys.FullCap.tr(),),
                         onPressed: () {
                           isClicked(1);
                           capacity='Full Capacity';
@@ -142,7 +144,7 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
                         color: _index == 2 ? Colors.yellow: null,
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10)),
-                        child: Text('Start Missing'),
+                        child: Text(LocaleKeys.StartMis.tr(),),
                         onPressed: () {
                           isClicked(2);
                           capacity='Start Missing';
@@ -155,7 +157,7 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
                         color: _index == 3 ? Colors.red: null,
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10)),
-                        child: Text('Missing'),
+                        child: Text(LocaleKeys.Miss.tr(),),
                         onPressed: () {
                           isClicked(3);
                           capacity='Missing';
@@ -166,7 +168,7 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
               Column(
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
-                  Text('Main Price'),
+                  Text(LocaleKeys.MainPrice.tr(),),
                   Container(
                     width: MediaQuery.of(context).size.width*0.3,
                     child: Theme(
@@ -199,7 +201,7 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
                   ),
                   SizedBox(height: 30,),
                   _index == 3 ?Container()
-                      :Text('Faces'),
+                      :Text(LocaleKeys.faces.tr(),),
                   _index==3?Container()
                       :Container(
                     width: MediaQuery.of(context).size.width*0.3,
@@ -286,7 +288,7 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
                 }
               },
               icon: Icon(Icons.save),
-              label: Text("Save"),
+              label: Text(LocaleKeys.save.tr(),),
             ),
         ),
         Positioned(
@@ -333,7 +335,7 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
                         color: _index == 1 ? Colors.green: null,
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10)),
-                        child: Text('قطعه'),
+                        child: Text('Piece'),
                         onPressed: () {
                           missingType='قطعه ';
                           isClicked(1);
@@ -346,7 +348,7 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
                         color: _index == 2 ? Colors.yellow: null,
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10)),
-                        child: Text('علبه'),
+                        child: Text('BOX'),
                         onPressed: () {
                           missingType='علبه ';
                           isClicked(2);
@@ -359,7 +361,7 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
                         color: _index == 3 ? Colors.red: null,
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10)),
-                        child: Text('كرتونه'),
+                        child: Text('Carton'),
                         onPressed: () {
                           missingType='كرتونه ';
                           isClicked(3);

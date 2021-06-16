@@ -95,7 +95,8 @@ flutter:
     - images/raya.jpeg
     - images/royal.jpeg
     - images/zahran.jpeg
-    - assets/translation
+    - assets/translation/ar.json
+    - assets/translation/en.json
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

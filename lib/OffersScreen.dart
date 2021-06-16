@@ -1,5 +1,6 @@
 import 'dart:math';
-
+import 'package:easy_localization/easy_localization.dart';
+import 'package:gard/translation/locale_keys.g.dart';
 import 'package:flutter/material.dart';
 import 'package:gard/CompetitorOfferScreen.dart';
 import 'package:gard/dbhelper.dart';
@@ -41,7 +42,7 @@ class _OffersScreenState extends State<OffersScreen> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text('Nestle Offer',style: TextStyle(color: Colors.black,fontSize: 30),),
+        title: Text(LocaleKeys.Nestleoffer.tr(),style: TextStyle(color: Colors.black,fontSize: 30),),
         backgroundColor: Colors.transparent,
         elevation: 0,
       ),
@@ -242,7 +243,7 @@ class _OffersScreenState extends State<OffersScreen> {
                children: [
                  Icon(Icons.dangerous,size: 30,color: Colors.red,),
                  SizedBox(width: 10,),
-                 Text("Competitor Offer", style: TextStyle(fontSize: 15)),
+                 Text(LocaleKeys.competitorOffer.tr(), style: TextStyle(fontSize: 15)),
                ],
              ) ,
            ),

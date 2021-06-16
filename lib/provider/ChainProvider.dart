@@ -8,6 +8,8 @@ import 'package:gard/models/chainModel.dart';
 import 'package:gard/models/empLogin.dart';
 import 'package:gard/models/extraItems.dart';
 import 'package:gard/models/final_data.dart';
+import 'package:gard/translation/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert' as convert;
 
@@ -264,129 +266,163 @@ class Chains with ChangeNotifier {
       }));
       notifyListeners();
   }*/
+ /* void ChangelangtoEn(BuildContext context){
+    context.locale=Locale('en');
+    notifyListeners();
+  }
+  void ChangelangtoAr(BuildContext context){
+    context.locale=Locale('en');
+    notifyListeners();
+  }*/
+
   var places = [
     {
       'id':'1',
+      'trans':LocaleKeys.Carrfour.tr(),
       'name':'Carrefour',
       'imgUrl':'images/Carrefour.jpeg'
     },
     {
       'id':'2',
+      'trans':LocaleKeys.CarrfourExpress.tr(),
       'name':'Carrefour Express',
       'imgUrl':'images/CarrefourExpress.jpeg'
     },
     {
       'id':'3',
+      'trans':LocaleKeys.hipperOne.tr(),
       'name':'Hipper one',
       'imgUrl':'images/HipperOne.jpeg'
     },
     {
       'id':'4',
+      'trans':LocaleKeys.Spinnyes.tr(),
       'name':'Spinneys',
       'imgUrl':'images/Spinneys.jpeg'
     },
     {
       'id':'5',
+      'trans':LocaleKeys.Seoudi.tr(),
       'name':'Seoudi',
       'imgUrl':'images/Seoudi.jpeg'
     },
     {
       'id':'6',
+      'trans':LocaleKeys.RagabSons.tr(),
       'name':'Ragab sons',
       'imgUrl':'images/RagabSons.jpeg'
     },
     {
       'id':'7',
+      'trans':LocaleKeys.Metro.tr(),
       'name':'Metro',
       'imgUrl':'images/Metro.jpeg'
     },
     {
       'id':'8',
+      'trans':LocaleKeys.KherZaman.tr(),
       'name':'Kher zaman',
       'imgUrl':'images/kher.jpeg'
     },
     {
       'id':'9',
+      'trans':LocaleKeys.ELOtheim.tr(),
       'name':'El otheim',
       'imgUrl':'images/othaim.jpeg'
     },
     {
       'id':'10',
+      'trans':LocaleKeys.raya.tr(),
       'name':'Raya',
       'imgUrl':'images/raya.jpeg'
     },
     {
       'id':'11',
+      'trans':LocaleKeys.alfa.tr(),
       'name':'Alfa',
       'imgUrl':'images/alpha.jpeg'
     },
     {
       'id':'12',
+      'trans':LocaleKeys.Elmahalawy.tr(),
       'name':'El Mahalawy',
       'imgUrl':'images/mahlawy.jpeg'
     },
     {
       'id':'13',
+      'trans':LocaleKeys.panda.tr(),
       'name':'Panda',
       'imgUrl':'images/panda.jpeg'
     },
     {
       'id':'14',
+      'trans':LocaleKeys.Elhawary.tr(),
       'name':'El Hawary',
       'imgUrl':'images/hawary.jpeg'
     },
     {
       'id':'15',
+      'trans':LocaleKeys.oscar.tr(),
       'name':'Oscar',
       'imgUrl':'images/oscar.jpeg'
     },
     {
       'id':'16',
+      'trans':LocaleKeys.lulu.tr(),
       'name':'Lulu',
       'imgUrl':'images/lulu.jpeg'
     },
     {
       'id':'17',
+      'trans':LocaleKeys.FAthallaGomla.tr(),
       'name':'Fathalla Gomla',
       'imgUrl':'images/fatgomla.jpeg'
     },
     {
       'id':'18',
+      'trans':LocaleKeys.BeitElgomal.tr(),
       'name':'Beit el gomla',
       'imgUrl':'images/biet.jpeg'
     },
     {
       'id':'19',
+      'trans':LocaleKeys.AswaqFathalla.tr(),
       'name':'Aswaq Fathalla',
       'imgUrl':'images/aswaqfat.jpeg'
     },
     {
       'id':'20',
+      'trans':LocaleKeys.AswaqFathallamini.tr(),
       'name':'Aswak fathalla mini',
       'imgUrl':'images/aswaqfat.jpeg'
     },
     {
       'id':'21',
+      'trans':LocaleKeys.Zahran.tr(),
       'name':'Zahran',
       'imgUrl':'images/zahran.jpeg'
     },
     {
       'id':'22',
+      'trans':LocaleKeys.freshfood.tr(),
       'name':'Fresh food',
       'imgUrl':'images/fresh.jpeg'
     },
     {
       'id':'23',
+      'trans':LocaleKeys.RoyalHouse.tr(),
       'name':'Royal house',
       'imgUrl':'images/royal.jpeg'
     },
     {
       'id':'24',
+      'trans':LocaleKeys.Martville.tr(),
       'name':'Mart ville',
       'imgUrl':'images/mart.jpeg'
     },
     {
       'id':'25',
+      'trans':LocaleKeys.Premier.tr(),
       'name':'Premier',
       'imgUrl':'images/premier.jpeg'
     },
@@ -1860,66 +1896,77 @@ class Chains with ChangeNotifier {
       'id':'1',
       'SubCate':'Bon.Mixes',
       'Itemname':' khamsina2in1',
+      'transItemName':LocaleKeys.Khamsina2in1.tr(),
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'2',
       'SubCate':'Bon.Mixes',
       'Itemname':' (6) gm Mehwega',
+      'transItemName':LocaleKeys.mehaweg6gm.tr(),
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
     'id':'3',
     'SubCate':'Bon.Mixes',
     'Itemname':' 2in1',
+      'transItemName':LocaleKeys.in1Bon.tr(),
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg',
     },
     {
       'id':'4',
       'SubCate':'Bon.Mixes',
       'Itemname':' 2in1Hazelnut',
+      'transItemName':LocaleKeys.in1Huzelnut.tr(),
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg',
     },
     {
       'id':'5',
       'SubCate':'Bon.Mixes',
       'Itemname':' 2in1 Jar 400g EG',
+      'transItemName':LocaleKeys.in1Jar400gEg.tr(),
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'6',
       'SubCate':'Bon.Cappuuccino',
       'Itemname':' Mocha',
+      'transItemName':LocaleKeys.mocha.tr(),
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'7',
       'SubCate':'Bon.Cappuuccino',
       'Itemname':' Latte',
+      'transItemName':LocaleKeys.latte.tr(),
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'8',
       'SubCate':'Bon.Cappuuccino',
       'Itemname':' Hazelnut',
+      'transItemName':LocaleKeys.Hazelnut.tr(),
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'9',
       'SubCate':'Bon.Cappuuccino',
       'Itemname':' Latte Caramel',
+      'transItemName':LocaleKeys.latteCaramel.tr(),
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'10',
       'SubCate':'Bon.Cappuuccino',
       'Itemname':' Vanilla',
+      'transItemName':LocaleKeys.vanilla.tr(),
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'11',
       'SubCate':'Bon.Cappuuccino',
       'Itemname':' Latte Cinnamon Cocoa',
+      'transItemName':LocaleKeys.latteCinnamonCocoa.tr(),
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
   ];
@@ -1928,228 +1975,266 @@ class Chains with ChangeNotifier {
       'id':'12',
       'SubCate':'NESCAFE CLASSIC ',
       'Itemname':' NESCAFE CLASSIC 1.8g',
+      'transItemName':LocaleKeys.NescClassic18g.tr(),
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'13',
       'SubCate':'NESCAFE CLASSIC ',
       'Itemname':' NESCAFE Pouch 18g',
+      'transItemName':LocaleKeys.NescPouch18g.tr(),
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'14',
       'SubCate':'NESCAFE CLASSIC ',
       'Itemname':'NESCAFE CLASSIC 50g',
+      'transItemName':LocaleKeys.NescClassic50g.tr(),
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'15',
       'SubCate':'NESCAFE CLASSIC ',
       'Itemname':' CL200 Pouch',
+      'transItemName':LocaleKeys.CL200Pouch.tr(),
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'16',
       'SubCate':'NESCAFE CLASSIC ',
       'Itemname':' NESCAFE Pouch 50g',
+      'transItemName':LocaleKeys.Nescpouch50g.tr(),
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'17',
       'SubCate':'NESCAFE CLASSIC ',
       'Itemname':' NESCAFE CLASSIC 100g',
+      'transItemName':LocaleKeys.NescClassic100g.tr(),
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'18',
       'SubCate':'NESCAFE CLASSIC ',
       'Itemname':' NESCAFE CLASSIC 200g',
+      'transItemName':LocaleKeys.NescClassic200g.tr(),
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'19',
       'SubCate':'NESCAFE CLASSIC ',
       'Itemname':' NESCAFE CLSSIC 200g Red Mug',
+      'transItemName':LocaleKeys.NescClassic200gRedMug.tr(),
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'20',
       'SubCate':'NESCAFE CLASSIC ',
       'Itemname':' NESCAFE CLASSIC Creama 100g',
+      'transItemName':LocaleKeys.NescClassicCreama100g.tr(),
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'21',
       'SubCate':'NESCAFE GOLD',
       'Itemname':' NESCAFE G 100g',
+      'transItemName':LocaleKeys.NescG100g.tr(),
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'22',
       'SubCate':'NESCAFE GOLD',
       'Itemname':' NESCAFE G 200g',
+      'transItemName':LocaleKeys.NescG200g.tr(),
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'23',
       'SubCate':'NESCAFE GOLD',
       'Itemname':' NESCAFE G 50g',
+      'transItemName':LocaleKeys.NescG50g.tr(),
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'24',
       'SubCate':'NESCAFE GOLD',
       'Itemname':' NESCAFE GOLD Dcf 100g',
+      'transItemName':LocaleKeys.NescGoldDcf100g.tr(),
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'25',
       'SubCate':'NESCAFE GOLD',
       'Itemname':' NESCAFE ESPRESSO 100g',
+      'transItemName':LocaleKeys.NescEspresso100g.tr(),
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'26',
       'SubCate':'NESCAFE GOLD',
       'Itemname':'NESCAFE ESPRESSO Rich Cream 100g',
+      'transItemName':LocaleKeys.NescEspressoRichCream100g.tr(),
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'27',
       'SubCate':'NESCAFE GOLD',
       'Itemname':'NESCAFE GOLD COLOMBIA 100g',
+      'transItemName':LocaleKeys.NescGoldColombia100g.tr(),
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'28',
       'SubCate':'NESCAFE GOLD',
       'Itemname':'NESCAFE GOLD ALTA RICA 100g',
+      'transItemName':LocaleKeys.NescGoldAltarica100G.tr(),
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'29',
       'SubCate':'NESCAFE GOLD',
       'Itemname':' NESCAFE GOLD Stick 1.8g',
+      'transItemName':LocaleKeys.NescGoldStick18g.tr(),
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'30',
       'SubCate':'NESCAFE GOLD',
       'Itemname':' NESCAFE ESPRESSO 1.8g',
+      'transItemName':LocaleKeys.NescEspressp18g.tr(),
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'31',
       'SubCate':'NESCAFE GOLD',
       'Itemname':' NESCAFE GOLD Dcf 100g 20%PriceOff',
+      'transItemName':LocaleKeys.NescGoldDecf100gpriceoff.tr(),
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'32',
       'SubCate':'NESCAFE MIX 2 IN 1',
       'Itemname':' 2IN1 (24 Sticks )',
+      'transItemName':LocaleKeys.Nesc2in1stick24.tr(),
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'33',
       'SubCate':'NESCAFE MIX 2 IN 1',
       'Itemname':' 2IN1 (12 Sticks )',
+      'transItemName':LocaleKeys.Nesc2in1stick12.tr(),
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'34',
       'SubCate':'NESCAFE MIX 3 IN 1',
       'Itemname':' 3in1',
+      'transItemName':LocaleKeys.Nesc3in1.tr(),
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'35',
       'SubCate':'NESCAFE MIX 3 IN 1',
       'Itemname':' 3IN1 RICH',
+      'transItemName':LocaleKeys.Nesc3in1RICH.tr(),
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'36',
       'SubCate':'NESCAFE MIX 3 IN 1',
       'Itemname':' GOLD 3IN1',
+      'transItemName':LocaleKeys.NescGold3in1.tr(),
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'37',
       'SubCate':'NESCAFE MIX 3 IN 1',
       'Itemname':' Arabiana',
+      'transItemName':LocaleKeys.Arabiana.tr(),
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'38',
       'SubCate':'NESCAFE MIX 3 IN 1',
       'Itemname':' 3in1 Hzn',
+      'transItemName':LocaleKeys.Nesc3IN1Hzn.tr(),
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'39',
       'SubCate':'NESCAFE MIX 3 IN 1',
       'Itemname':' 3in1 Choc',
+      'transItemName':LocaleKeys.Nesc3in1Choc.tr(),
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'40',
       'SubCate':'NESCAFE MIX 3 IN 1',
       'Itemname':' 3in1 Caramel',
+      'transItemName':LocaleKeys.Nesc3in1Caramel.tr(),
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'41',
       'SubCate':'NESCAFE MIX 3 IN 1',
       'Itemname':' 3IN1 Milk',
+      'transItemName':LocaleKeys.Nesc3in1Milk.tr(),
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'42',
       'SubCate':'NESCAFE MIX 3 IN 1',
       'Itemname':' 3in1 ICE',
+      'transItemName':LocaleKeys.Nesc3in1Ice.tr(),
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'43',
       'SubCate':'NESCAFE MIX 3 IN 1',
       'Itemname':' NESC 3in1 Salted Crml',
+      'transItemName':LocaleKeys.Nesc3in1SaltedCrml.tr(),
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'44',
       'SubCate':'NESCAFE MIX 3 IN 1',
       'Itemname':' 3in1 Vanilla',
+      'transItemName':LocaleKeys.Nesc3in1Vanilla.tr(),
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'45',
       'SubCate':'NESCAFE CAPPU',
       'Itemname':' GOLD Sweet',
+      'transItemName':LocaleKeys.GoldSweet.tr(),
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'46',
       'SubCate':'NESCAFE CAPPU',
       'Itemname':'GOLD Latte',
+      'transItemName':LocaleKeys.GoldLatte.tr(),
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'47',
       'SubCate':'NESCAFE CAPPU',
       'Itemname':'GOLD Vanilla',
+      'transItemName':LocaleKeys.GoldVanilla.tr(),
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'48',
       'SubCate':'NESCAFE CAPPU',
       'Itemname':'GOLD Mocha',
+      'transItemName':LocaleKeys.GoldMocha.tr(),
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'49',
       'SubCate':'NESCAFE CAPPU',
       'Itemname':'GOLD Caramel',
+      'transItemName':LocaleKeys.GoldCaramel.tr(),
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
   ];
@@ -2158,18 +2243,21 @@ class Chains with ChangeNotifier {
       'id':'50',
       'SubCate':'Coffee - Mate',
       'Itemname':'400 g',
+      'transItemName':LocaleKeys.g400.tr(),
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'51',
       'SubCate':'Coffee - Mate',
       'Itemname':'170 g',
+      'transItemName':LocaleKeys.g170.tr(),
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'52',
       'SubCate':'Coffee - Mate',
       'Itemname':'CFMT + NESC CLAS CP (400g+50g)',
+      'transItemName':LocaleKeys.CFMTMATE.tr(),
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
   ];

@@ -4,7 +4,8 @@ import 'package:gard/models/empLogin.dart';
 import 'package:gard/provider/ChainProvider.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
-
+import 'package:gard/translation/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'Category.dart';
 
 class Reports extends StatefulWidget {
@@ -41,7 +42,7 @@ class _ReportsState extends State<Reports> {
                 padding: EdgeInsets.all(10.0),
                 color: Color.fromRGBO(0, 160, 227, 1),
                 textColor: Colors.white,
-                child: Text("Stock Status",
+                child: Text(LocaleKeys.StockStatus.tr(),
                     style: TextStyle(fontSize: 15)),
               ),
             ),
@@ -60,7 +61,7 @@ class _ReportsState extends State<Reports> {
                 padding: EdgeInsets.all(10.0),
                 color: Color.fromRGBO(0, 160, 227, 1),
                 textColor: Colors.white,
-                child: Text("Extra Vis.",
+                child: Text(LocaleKeys.ExtraVisa.tr(),
                     style: TextStyle(fontSize: 15)),
               ),
             ),
@@ -79,7 +80,7 @@ class _ReportsState extends State<Reports> {
                 padding: EdgeInsets.all(10.0),
                 color: Color.fromRGBO(0, 160, 227, 1),
                 textColor: Colors.white,
-                child: Text("Expire Report",
+                child: Text(LocaleKeys.ExpireReport.tr(),
                     style: TextStyle(fontSize: 15)),
               ),
             ),
@@ -95,7 +96,7 @@ class _ReportsState extends State<Reports> {
                 padding: EdgeInsets.all(10.0),
                 color: Color.fromRGBO(0, 160, 227, 1),
                 textColor: Colors.white,
-                child: Text("Main Price V.S Competitor",
+                child: Text(LocaleKeys.MainPrice.tr(),
                     style: TextStyle(fontSize: 15)),
               ),
             ),
@@ -151,7 +152,7 @@ class _ReportsState extends State<Reports> {
                 padding: EdgeInsets.all(10.0),
                 color: Colors.red,
                 textColor: Colors.white,
-                child: Text("Log Out",
+                child: Text(LocaleKeys.LogOut.tr(),
                     style: TextStyle(fontSize: 15)),
               ),
             ),
