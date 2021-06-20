@@ -1896,77 +1896,77 @@ class Chains with ChangeNotifier {
       'id':'1',
       'SubCate':'Bon.Mixes',
       'Itemname':' khamsina2in1',
-      'transItemName':LocaleKeys.Khamsina2in1.tr(),
+      'MainPCateName':'Nun foaming mexis',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'2',
       'SubCate':'Bon.Mixes',
       'Itemname':' (6) gm Mehwega',
-      'transItemName':LocaleKeys.mehaweg6gm.tr(),
+      'MainPCateName':'Nun foaming mexis',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
     'id':'3',
     'SubCate':'Bon.Mixes',
     'Itemname':' 2in1',
-      'transItemName':LocaleKeys.in1Bon.tr(),
+      'MainPCateName':'Nun foaming mexis',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg',
     },
     {
       'id':'4',
       'SubCate':'Bon.Mixes',
       'Itemname':' 2in1Hazelnut',
-      'transItemName':LocaleKeys.in1Huzelnut.tr(),
+      'MainPCateName':'Nun foaming mexis',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg',
     },
     {
       'id':'5',
       'SubCate':'Bon.Mixes',
       'Itemname':' 2in1 Jar 400g EG',
-      'transItemName':LocaleKeys.in1Jar400gEg.tr(),
+      'MainPCateName':'Nun foaming mexis',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'6',
       'SubCate':'Bon.Cappuuccino',
       'Itemname':' Mocha',
-      'transItemName':LocaleKeys.mocha.tr(),
+      'MainPCateName':'Foaming',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'7',
       'SubCate':'Bon.Cappuuccino',
       'Itemname':' Latte',
-      'transItemName':LocaleKeys.latte.tr(),
+      'MainPCateName':'Foaming',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'8',
       'SubCate':'Bon.Cappuuccino',
       'Itemname':' Hazelnut',
-      'transItemName':LocaleKeys.Hazelnut.tr(),
+      'MainPCateName':'Foaming',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'9',
       'SubCate':'Bon.Cappuuccino',
       'Itemname':' Latte Caramel',
-      'transItemName':LocaleKeys.latteCaramel.tr(),
+      'MainPCateName':'Foaming',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'10',
       'SubCate':'Bon.Cappuuccino',
       'Itemname':' Vanilla',
-      'transItemName':LocaleKeys.vanilla.tr(),
+      'MainPCateName':'Foaming',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'11',
       'SubCate':'Bon.Cappuuccino',
       'Itemname':' Latte Cinnamon Cocoa',
-      'transItemName':LocaleKeys.latteCinnamonCocoa.tr(),
+      'MainPCateName':'Foaming',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
   ];
@@ -1975,266 +1975,266 @@ class Chains with ChangeNotifier {
       'id':'12',
       'SubCate':'NESCAFE CLASSIC ',
       'Itemname':' NESCAFE CLASSIC 1.8g',
-      'transItemName':LocaleKeys.NescClassic18g.tr(),
+      'MainPCateName':'Instant Cofee',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'13',
       'SubCate':'NESCAFE CLASSIC ',
       'Itemname':' NESCAFE Pouch 18g',
-      'transItemName':LocaleKeys.NescPouch18g.tr(),
+      'MainPCateName':'Instant Cofee',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'14',
       'SubCate':'NESCAFE CLASSIC ',
       'Itemname':'NESCAFE CLASSIC 50g',
-      'transItemName':LocaleKeys.NescClassic50g.tr(),
+      'MainPCateName':'Instant Cofee',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'15',
       'SubCate':'NESCAFE CLASSIC ',
       'Itemname':' CL200 Pouch',
-      'transItemName':LocaleKeys.CL200Pouch.tr(),
+      'MainPCateName':'Instant Cofee',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'16',
       'SubCate':'NESCAFE CLASSIC ',
       'Itemname':' NESCAFE Pouch 50g',
-      'transItemName':LocaleKeys.Nescpouch50g.tr(),
+      'MainPCateName':'Instant Cofee',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'17',
       'SubCate':'NESCAFE CLASSIC ',
       'Itemname':' NESCAFE CLASSIC 100g',
-      'transItemName':LocaleKeys.NescClassic100g.tr(),
+      'MainPCateName':'Instant Cofee',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'18',
       'SubCate':'NESCAFE CLASSIC ',
       'Itemname':' NESCAFE CLASSIC 200g',
-      'transItemName':LocaleKeys.NescClassic200g.tr(),
+      'MainPCateName':'Instant Cofee',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'19',
       'SubCate':'NESCAFE CLASSIC ',
       'Itemname':' NESCAFE CLSSIC 200g Red Mug',
-      'transItemName':LocaleKeys.NescClassic200gRedMug.tr(),
+      'MainPCateName':'Instant Cofee',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'20',
       'SubCate':'NESCAFE CLASSIC ',
       'Itemname':' NESCAFE CLASSIC Creama 100g',
-      'transItemName':LocaleKeys.NescClassicCreama100g.tr(),
+      'MainPCateName':'Instant Cofee',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'21',
       'SubCate':'NESCAFE GOLD',
       'Itemname':' NESCAFE G 100g',
-      'transItemName':LocaleKeys.NescG100g.tr(),
+      'MainPCateName':'Instant Cofee',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'22',
       'SubCate':'NESCAFE GOLD',
       'Itemname':' NESCAFE G 200g',
-      'transItemName':LocaleKeys.NescG200g.tr(),
+      'MainPCateName':'Instant Cofee',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'23',
       'SubCate':'NESCAFE GOLD',
       'Itemname':' NESCAFE G 50g',
-      'transItemName':LocaleKeys.NescG50g.tr(),
+      'MainPCateName':'Instant Cofee',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'24',
       'SubCate':'NESCAFE GOLD',
       'Itemname':' NESCAFE GOLD Dcf 100g',
-      'transItemName':LocaleKeys.NescGoldDcf100g.tr(),
+      'MainPCateName':'Instant Cofee',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'25',
       'SubCate':'NESCAFE GOLD',
       'Itemname':' NESCAFE ESPRESSO 100g',
-      'transItemName':LocaleKeys.NescEspresso100g.tr(),
+      'MainPCateName':'Instant Cofee',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'26',
       'SubCate':'NESCAFE GOLD',
       'Itemname':'NESCAFE ESPRESSO Rich Cream 100g',
-      'transItemName':LocaleKeys.NescEspressoRichCream100g.tr(),
+      'MainPCateName':'Instant Cofee',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'27',
       'SubCate':'NESCAFE GOLD',
       'Itemname':'NESCAFE GOLD COLOMBIA 100g',
-      'transItemName':LocaleKeys.NescGoldColombia100g.tr(),
+      'MainPCateName':'Instant Cofee',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'28',
       'SubCate':'NESCAFE GOLD',
       'Itemname':'NESCAFE GOLD ALTA RICA 100g',
-      'transItemName':LocaleKeys.NescGoldAltarica100G.tr(),
+      'MainPCateName':'Instant Cofee',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'29',
       'SubCate':'NESCAFE GOLD',
       'Itemname':' NESCAFE GOLD Stick 1.8g',
-      'transItemName':LocaleKeys.NescGoldStick18g.tr(),
+      'MainPCateName':'Instant Cofee',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'30',
       'SubCate':'NESCAFE GOLD',
       'Itemname':' NESCAFE ESPRESSO 1.8g',
-      'transItemName':LocaleKeys.NescEspressp18g.tr(),
+      'MainPCateName':'Instant Cofee',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'31',
       'SubCate':'NESCAFE GOLD',
       'Itemname':' NESCAFE GOLD Dcf 100g 20%PriceOff',
-      'transItemName':LocaleKeys.NescGoldDecf100gpriceoff.tr(),
+      'MainPCateName':'Instant Cofee',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'32',
       'SubCate':'NESCAFE MIX 2 IN 1',
       'Itemname':' 2IN1 (24 Sticks )',
-      'transItemName':LocaleKeys.Nesc2in1stick24.tr(),
+      'MainPCateName':'Nun foaming mexis',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'33',
       'SubCate':'NESCAFE MIX 2 IN 1',
       'Itemname':' 2IN1 (12 Sticks )',
-      'transItemName':LocaleKeys.Nesc2in1stick12.tr(),
+      'MainPCateName':'Nun foaming mexis',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'34',
       'SubCate':'NESCAFE MIX 3 IN 1',
       'Itemname':' 3in1',
-      'transItemName':LocaleKeys.Nesc3in1.tr(),
+      'MainPCateName':'Nun foaming mexis',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'35',
       'SubCate':'NESCAFE MIX 3 IN 1',
       'Itemname':' 3IN1 RICH',
-      'transItemName':LocaleKeys.Nesc3in1RICH.tr(),
+      'MainPCateName':'Nun foaming mexis',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'36',
       'SubCate':'NESCAFE MIX 3 IN 1',
       'Itemname':' GOLD 3IN1',
-      'transItemName':LocaleKeys.NescGold3in1.tr(),
+      'MainPCateName':'Nun foaming mexis',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'37',
       'SubCate':'NESCAFE MIX 3 IN 1',
       'Itemname':' Arabiana',
-      'transItemName':LocaleKeys.Arabiana.tr(),
+      'MainPCateName':'Nun foaming mexis',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'38',
       'SubCate':'NESCAFE MIX 3 IN 1',
       'Itemname':' 3in1 Hzn',
-      'transItemName':LocaleKeys.Nesc3IN1Hzn.tr(),
+      'MainPCateName':'Nun foaming mexis',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'39',
       'SubCate':'NESCAFE MIX 3 IN 1',
       'Itemname':' 3in1 Choc',
-      'transItemName':LocaleKeys.Nesc3in1Choc.tr(),
+      'MainPCateName':'Nun foaming mexis',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'40',
       'SubCate':'NESCAFE MIX 3 IN 1',
       'Itemname':' 3in1 Caramel',
-      'transItemName':LocaleKeys.Nesc3in1Caramel.tr(),
+      'MainPCateName':'Nun foaming mexis',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'41',
       'SubCate':'NESCAFE MIX 3 IN 1',
       'Itemname':' 3IN1 Milk',
-      'transItemName':LocaleKeys.Nesc3in1Milk.tr(),
+      'MainPCateName':'Nun foaming mexis',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'42',
       'SubCate':'NESCAFE MIX 3 IN 1',
       'Itemname':' 3in1 ICE',
-      'transItemName':LocaleKeys.Nesc3in1Ice.tr(),
+      'MainPCateName':'Nun foaming mexis',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'43',
       'SubCate':'NESCAFE MIX 3 IN 1',
       'Itemname':' NESC 3in1 Salted Crml',
-      'transItemName':LocaleKeys.Nesc3in1SaltedCrml.tr(),
+      'MainPCateName':'Nun foaming mexis',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'44',
       'SubCate':'NESCAFE MIX 3 IN 1',
       'Itemname':' 3in1 Vanilla',
-      'transItemName':LocaleKeys.Nesc3in1Vanilla.tr(),
+      'MainPCateName':'Nun foaming mexis',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'45',
       'SubCate':'NESCAFE CAPPU',
       'Itemname':' GOLD Sweet',
-      'transItemName':LocaleKeys.GoldSweet.tr(),
+      'MainPCateName':'Foaming',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'46',
       'SubCate':'NESCAFE CAPPU',
       'Itemname':'GOLD Latte',
-      'transItemName':LocaleKeys.GoldLatte.tr(),
+      'MainPCateName':'Foaming',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'47',
       'SubCate':'NESCAFE CAPPU',
       'Itemname':'GOLD Vanilla',
-      'transItemName':LocaleKeys.GoldVanilla.tr(),
+      'MainPCateName':'Foaming',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'48',
       'SubCate':'NESCAFE CAPPU',
       'Itemname':'GOLD Mocha',
-      'transItemName':LocaleKeys.GoldMocha.tr(),
+      'MainPCateName':'Foaming',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'49',
       'SubCate':'NESCAFE CAPPU',
       'Itemname':'GOLD Caramel',
-      'transItemName':LocaleKeys.GoldCaramel.tr(),
+      'MainPCateName':'Foaming',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
   ];
@@ -2243,21 +2243,21 @@ class Chains with ChangeNotifier {
       'id':'50',
       'SubCate':'Coffee - Mate',
       'Itemname':'400 g',
-      'transItemName':LocaleKeys.g400.tr(),
+      'MainPCateName':'Creamer',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'51',
       'SubCate':'Coffee - Mate',
       'Itemname':'170 g',
-      'transItemName':LocaleKeys.g170.tr(),
+      'MainPCateName':'Creamer',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'52',
       'SubCate':'Coffee - Mate',
       'Itemname':'CFMT + NESC CLAS CP (400g+50g)',
-      'transItemName':LocaleKeys.CFMTMATE.tr(),
+      'MainPCateName':'Creamer',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
   ];
@@ -2266,102 +2266,119 @@ class Chains with ChangeNotifier {
       'id':'53',
       'SubCate':'Nido',
       'Itemname':'NIDO 25g',
+      'MainPCateName':'Powder Milk',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'54',
       'SubCate':'Nido',
       'Itemname':'NIDO 100g',
+      'MainPCateName':'Powder Milk',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'55',
       'SubCate':'Nido',
       'Itemname':'NIDO 200g',
+      'MainPCateName':'Powder Milk',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'56',
       'SubCate':'Nido',
       'Itemname':'NIDO 300g',
+      'MainPCateName':'Powder Milk',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'57',
       'SubCate':'Nido',
       'Itemname':'NIDO 450g',
+      'MainPCateName':'Powder Milk',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'58',
       'SubCate':'Nido',
       'Itemname':'NIDO 700g',
+      'MainPCateName':'Powder Milk',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'59',
       'SubCate':'Nido',
       'Itemname':'NIDO 1500g',
+      'MainPCateName':'Powder Milk',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'60',
       'SubCate':'Nido',
       'Itemname':'Elasasy 275 g',
+      'MainPCateName':'Powder Milk',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'61',
       'SubCate':'Nido',
       'Itemname':'NIDO(1.5KG+450g)',
+      'MainPCateName':'Powder Milk',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'62',
       'SubCate':'Nido',
       'Itemname':'NIDO 400g',
+      'MainPCateName':'Powder Milk',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'63',
       'SubCate':'Nido',
       'Itemname':'NIDO 900g',
+      'MainPCateName':'Powder Milk',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'64',
       'SubCate':'Nido',
       'Itemname':'NESTLE Powder Sahlep 17g',
+      'MainPCateName':'Powder Milk',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'65',
       'SubCate':'Nido',
       'Itemname':'NESTLE SCM 397g',
+      'MainPCateName':'Powder Milk',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'66',
       'SubCate':'Nido',
       'Itemname':'NESTLE Milk Cream 160g',
+      'MainPCateName':'Powder Milk',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'67',
       'SubCate':'GUMs',
       'Itemname':'NIDO 1+ (576g)',
+      'MainPCateName':'Baby Milk',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'68',
       'SubCate':'GUMs',
       'Itemname':'NIDO 1+ (288g)',
+      'MainPCateName':'Baby Milk',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'69',
       'SubCate':'GUMs',
       'Itemname':'NIDO 1+ (145g)',
+      'MainPCateName':'Baby Milk',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
   ];
@@ -2371,186 +2388,217 @@ class Chains with ChangeNotifier {
       'id':'70',
       'SubCate':'Wyeth',
       'Itemname':'NAN 3 400g',
+      'MainPCateName':'Baby Milk',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'71',
       'SubCate':'Wyeth',
       'Itemname':'NAN 1 400g',
+      'MainPCateName':'Baby Milk',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'72',
       'SubCate':'Wyeth',
       'Itemname':'NAN 2 400g',
+      'MainPCateName':'Baby Milk',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'73',
       'SubCate':'Wyeth',
       'Itemname':'NESTOGEN 1 400G',
+      'MainPCateName':'Baby Milk',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'74',
       'SubCate':'Wyeth',
       'Itemname':'NESTOGEN 3 200G',
+      'MainPCateName':'Baby Milk',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'75',
       'SubCate':'Wyeth',
       'Itemname':'NESTOGEN 2 400G',
+      'MainPCateName':'Baby Milk',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'76',
       'SubCate':'Wyeth',
       'Itemname':'PROGRESS GOLD 3 400G',
+      'MainPCateName':'Baby Milk',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'77',
       'SubCate':'Wyeth',
       'Itemname':'Pro GOLD Tin 400G',
+      'MainPCateName':'Baby Milk',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'78',
       'SubCate':'Wyeth',
       'Itemname':'Promil Gold 400G',
+      'MainPCateName':'Baby Milk',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'79',
       'SubCate':'Wyeth',
       'Itemname':'PROGRESS GOLD 3 800G',
+      'MainPCateName':'Baby Milk',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'80',
       'SubCate':'Wyeth',
       'Itemname':'Pro GOLD Tin 800G',
+      'MainPCateName':'Baby Milk',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'81',
       'SubCate':'Wyeth',
       'Itemname':'Promil GOLD 800G',
+      'MainPCateName':'Baby Milk',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'82',
       'SubCate':'Wyeth',
       'Itemname':'RESOURCE JUNIOR 400G',
+      'MainPCateName':'Baby Milk',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'83',
       'SubCate':'CERELAC',
       'Itemname':'Rice Wtht Milk 125g',
+      'MainPCateName':'Baby Food',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'84',
       'SubCate':'CERELAC',
       'Itemname':'Rice Milk 125g',
+      'MainPCateName':'Baby Food',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'85',
       'SubCate':'CERELAC',
       'Itemname':'Rise+Vegetables Wtht Milk 125g',
+      'MainPCateName':'Baby Food',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'86',
       'SubCate':'CERELAC',
       'Itemname':'Dates Milk 125g',
+      'MainPCateName':'Baby Food',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'87',
       'SubCate':'CERELAC',
       'Itemname':'Honey Milk 125g',
+      'MainPCateName':'Baby Food',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'88',
       'SubCate':'CERELAC',
       'Itemname':'3 Fruits Milk 125g',
+      'MainPCateName':'Baby Food',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'89',
       'SubCate':'CERELAC',
       'Itemname':'Wheat Milk 125g',
+      'MainPCateName':'Baby Food',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'90',
       'SubCate':'CERELAC',
       'Itemname':'Wheat Without Milk 125g',
+      'MainPCateName':'Baby Food',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'91',
       'SubCate':'CERELAC',
       'Itemname':'Wheat Without Milk 250g',
+      'MainPCateName':'Baby Food',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'92',
       'SubCate':'CERELAC',
       'Itemname':'Rice Without Milk 250g',
+      'MainPCateName':'Baby Food',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'93',
       'SubCate':'CERELAC',
       'Itemname':'Wheat Milk 250g',
+      'MainPCateName':'Baby Food',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'94',
       'SubCate':'CERELAC',
       'Itemname':'3 Fruits Milk 250g',
+      'MainPCateName':'Baby Food',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'95',
       'SubCate':'CERELAC',
       'Itemname':'Honey Milk 250g',
+      'MainPCateName':'Baby Food',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'96',
       'SubCate':'CERELAC',
       'Itemname':'Iron + Rice Milk 250g',
+      'MainPCateName':'Baby Food',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'97',
       'SubCate':'CERELAC',
       'Itemname':'Iron + Wheat Milk 500g',
+      'MainPCateName':'Baby Food',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'98',
       'SubCate':'CERELAC',
       'Itemname':'Iron+ 3 Fruits Milk 500g',
+      'MainPCateName':'Baby Food',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'99',
       'SubCate':'CERELAC',
       'Itemname':'Iron+ Wheat Milk 500g Price Off EG',
+      'MainPCateName':'Baby Food',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'100',
       'SubCate':'CERELAC',
       'Itemname':'Iron+ 3Frt Milk 500g Price Off EG',
+      'MainPCateName':'Baby Food',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
   ];
@@ -2561,48 +2609,56 @@ class Chains with ChangeNotifier {
       'id':'101',
       'SubCate':'Powder',
       'Itemname':'NESQUIK 880g ',
+      'MainPCateName':'Instant Chocolate',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'102',
       'SubCate':'Powder',
       'Itemname':'NESQUIK 330g ',
+      'MainPCateName':'Instant Chocolate',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'103',
       'SubCate':'Powder',
       'Itemname':'NESQUIK 154g ',
+      'MainPCateName':'Instant Chocolate',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'104',
       'SubCate':'Powder',
       'Itemname':'NESQUIK 13g ',
+      'MainPCateName':'Instant Chocolate',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'105',
       'SubCate':'Powder',
       'Itemname':'NESQUIK 77g ',
+      'MainPCateName':'Instant Chocolate',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'106',
       'SubCate':'Powder',
       'Itemname':'NESQUIK 44g ',
+      'MainPCateName':'Instant Chocolate',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'107',
       'SubCate':'Powder',
       'Itemname':'BONJORNO Hot Choc Hazelnut',
+      'MainPCateName':'Instant Chocolate',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'108',
       'SubCate':'Powder',
       'Itemname':'BONJORNO Hot Chocolate',
+      'MainPCateName':'Instant Chocolate',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
   ];
@@ -2612,24 +2668,28 @@ class Chains with ChangeNotifier {
       'id':'109',
       'SubCate':'RTD',
       'Itemname':'Chocolate RTD ',
+      'MainPCateName':'RTD',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'110',
       'SubCate':'RTD',
       'Itemname':'Strawbery Milk RTD ',
+      'MainPCateName':'RTD',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'111',
       'SubCate':'RTD',
       'Itemname':'Chocolate RTD shrink 3+1',
+      'MainPCateName':'RTD',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'112',
       'SubCate':'RTD',
       'Itemname':'Strawbery Milk RTD shrink 3+1',
+      'MainPCateName':'RTD',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
   ];
@@ -2639,144 +2699,168 @@ class Chains with ChangeNotifier {
       'id':'113',
       'SubCate':'Tab',
       'Itemname':'MAGGI 72g',
+      'MainPCateName':'Tabs',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'114',
       'SubCate':'Tab',
       'Itemname':'MAGGI Beef 20g',
+      'MainPCateName':'Tabs',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'115',
       'SubCate':'Tab',
       'Itemname':'MAGGI LowSalt 20g',
+      'MainPCateName':'Tabs',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'116',
       'SubCate':'Tab',
       'Itemname':'MAGGI V 18g',
+      'MainPCateName':'Tabs',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'117',
       'SubCate':'Tab',
       'Itemname':'MAGGI V 72g',
+      'MainPCateName':'Tabs',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'118',
       'SubCate':'Tab',
       'Itemname':'MAGGI 12 Tab',
+      'MainPCateName':'Tabs',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'119',
       'SubCate':'Mix',
       'Itemname':'Bechamel',
+      'MainPCateName':'Mixes',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'120',
       'SubCate':'Mix',
       'Itemname':'Bachamel Cheese',
+      'MainPCateName':'Mixes',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'121',
       'SubCate':'Mix',
       'Itemname':'Shawerma',
+      'MainPCateName':'Mixes',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'122',
       'SubCate':'Mix',
       'Itemname':'Shish Tawuuk',
+      'MainPCateName':'Mixes',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'123',
       'SubCate':'Mix',
       'Itemname':'Fish',
+      'MainPCateName':'Mixes',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'124',
       'SubCate':'Mix',
       'Itemname':'Burger',
+      'MainPCateName':'Mixes',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'125',
       'SubCate':'Mix',
       'Itemname':'Hawawshi',
+      'MainPCateName':'Mixes',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'126',
       'SubCate':'Mix',
       'Itemname':'Kofta',
+      'MainPCateName':'Mixes',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'127',
       'SubCate':'Mix',
       'Itemname':'Kofta With Parsley',
+      'MainPCateName':'Mixes',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'128',
       'SubCate':'Mix',
       'Itemname':'Chicken Mashawy',
+      'MainPCateName':'Mixes',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'129',
       'SubCate':'Mix',
       'Itemname':'Chinese',
+      'MainPCateName':'Mixes',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'130',
       'SubCate':'Mix',
       'Itemname':'Indian',
+      'MainPCateName':'Mixes',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'131',
       'SubCate':'Soup',
       'Itemname':'Chicken Noodle',
+      'MainPCateName':'Soups',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'132',
       'SubCate':'Soup',
       'Itemname':'Chicken ABC',
+      'MainPCateName':'Soups',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'133',
       'SubCate':'Soup',
       'Itemname':'Chicken Cream',
+      'MainPCateName':'Soups',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'134',
       'SubCate':'Soup',
       'Itemname':'Mushroom',
+      'MainPCateName':'Soups',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'135',
       'SubCate':'Soup',
       'Itemname':'Chicken pasta',
+      'MainPCateName':'Soups',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'136',
       'SubCate':'Soup',
       'Itemname':'Kids potato',
+      'MainPCateName':'Soups',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
   ];
@@ -2786,66 +2870,77 @@ class Chains with ChangeNotifier {
       'id':'137',
       'SubCate':'Cereal',
       'Itemname':'FITNESS 375g',
+      'MainPCateName':'Cereal',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'138',
       'SubCate':'Cereal',
       'Itemname':'LION 400g',
+      'MainPCateName':'Cereal',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'139',
       'SubCate':'Cereal',
       'Itemname':'NESQUIK 330g (cer.)',
+      'MainPCateName':'Cereal',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'140',
       'SubCate':'Cereal',
       'Itemname':'NESQUIK 180g',
+      'MainPCateName':'Cereal',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'141',
       'SubCate':'Cereal',
       'Itemname':'CHOCAPIC 375g',
+      'MainPCateName':'Cereal',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'142',
       'SubCate':'Cereal',
       'Itemname':'LION 250g',
+      'MainPCateName':'Cereal',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'143',
       'SubCate':'Cereal',
       'Itemname':'FITNESS & FRT 375g',
+      'MainPCateName':'Cereal',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'144',
       'SubCate':'Cereal',
       'Itemname':'FITNESS HNY&LMD 355g',
+      'MainPCateName':'Cereal',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'145',
       'SubCate':'Cereal',
       'Itemname':'NESQUIK 25g',
+      'MainPCateName':'Cereal',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'146',
       'SubCate':'Cereal',
       'Itemname':'LION 25g',
+      'MainPCateName':'Cereal',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'147',
       'SubCate':'Cereal',
       'Itemname':'Cheerios',
+      'MainPCateName':'Cereal',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
   ];
@@ -2855,222 +2950,259 @@ class Chains with ChangeNotifier {
       'id':'148',
       'SubCate':'Chocolate',
       'Itemname':'MACKINTOSH\'S QUALITY  DATES 17*6g',
+      'MainPCateName':'Chocolate',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'149',
       'SubCate':'Chocolate',
       'Itemname':'MACKINTOSH\'S QUALITY  DATES 17*15g',
+      'MainPCateName':'Chocolate',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'150',
       'SubCate':'Chocolate',
       'Itemname':'MACKINTOSH\'S QUALITY 200g',
+      'MainPCateName':'Chocolate',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'151',
       'SubCate':'Chocolate',
       'Itemname':'MACKINTOSH\'S QUALITY 375g',
+      'MainPCateName':'Chocolate',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'152',
       'SubCate':'Chocolate',
       'Itemname':'MACKINTOSH\'S QUALITY 850g',
+      'MainPCateName':'Chocolate',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'153',
       'SubCate':'Chocolate',
       'Itemname':'KIT KAT 4F',
+      'MainPCateName':'Chocolate',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'154',
       'SubCate':'Chocolate',
       'Itemname':'KIT KAT CHUNKY Lotus',
+      'MainPCateName':'Chocolate',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'155',
       'SubCate':'Chocolate',
       'Itemname':'KIT KAT CHUNKY Caramel ',
+      'MainPCateName':'Chocolate',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'156',
       'SubCate':'Chocolate',
       'Itemname':'KIT KAT CHUNKY Cookies & Cream',
+      'MainPCateName':'Chocolate',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'157',
       'SubCate':'Chocolate',
       'Itemname':'KIT KAT CHUNKY peant butter',
+      'MainPCateName':'Chocolate',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'158',
       'SubCate':'Chocolate',
       'Itemname':'KIT KAT CHUNKY White',
+      'MainPCateName':'Chocolate',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'159',
       'SubCate':'Chocolate',
       'Itemname':'KIT KAT CKY Popcorn',
+      'MainPCateName':'Chocolate',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'160',
       'SubCate':'Chocolate',
       'Itemname':'KIT KAT CHUNKY Red',
+      'MainPCateName':'Chocolate',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'161',
       'SubCate':'Chocolate',
       'Itemname':'KIT KAT Dark',
+      'MainPCateName':'Chocolate',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'162',
       'SubCate':'Chocolate',
       'Itemname':'KIT KAT 4F White',
+      'MainPCateName':'Chocolate',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'163',
       'SubCate':'Chocolate',
       'Itemname':'KIT KAT 2F',
+      'MainPCateName':'Chocolate',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'164',
       'SubCate':'Chocolate',
       'Itemname':'KIT KAT 2F Caramel',
+      'MainPCateName':'Chocolate',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'165',
       'SubCate':'Chocolate',
       'Itemname':'KIT KAT 2F Hazelnut',
+      'MainPCateName':'Chocolate',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'166',
       'SubCate':'Chocolate',
       'Itemname':'KIT KAT 2F Cookie',
+      'MainPCateName':'Chocolate',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'167',
       'SubCate':'Chocolate',
       'Itemname':'KIT KAT 2F Raspberry',
+      'MainPCateName':'Chocolate',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'168',
       'SubCate':'Chocolate',
       'Itemname':'KIT KAT MINI Bag 2F 250g',
+      'MainPCateName':'Chocolate',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'169',
       'SubCate':'Chocolate',
       'Itemname':'KIT KAT Mini Mix Bag 227',
+      'MainPCateName':'Chocolate',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'170',
       'SubCate':'Chocolate',
       'Itemname':'KIT KAT Minis 232g',
+      'MainPCateName':'Chocolate',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'171',
       'SubCate':'Chocolate',
       'Itemname':'KIT KAT CUNKY Mini 250g',
+      'MainPCateName':'Chocolate',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'172',
       'SubCate':'Chocolate',
       'Itemname':'KITKAT MINI Moments 272',
+      'MainPCateName':'Chocolate',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'173',
       'SubCate':'Chocolate',
       'Itemname':'KIT KAT MINI Moments Desserts',
+      'MainPCateName':'Chocolate',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'174',
       'SubCate':'Chocolate',
       'Itemname':'KITKAT MINI Moments Lotus',
+      'MainPCateName':'Chocolate',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'175',
       'SubCate':'Chocolate',
       'Itemname':'Kit Kat Miniatures',
+      'MainPCateName':'Chocolate',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'176',
       'SubCate':'Promotion',
       'Itemname':'KIT KAT 2 Finger4 + 1 Free',
+      'MainPCateName':'Chocolate',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'177',
       'SubCate':'Promotion',
       'Itemname':'KIT KAT 4 Finger 5 + 1 Free',
+      'MainPCateName':'Chocolate',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'178',
       'SubCate':'Promotion',
       'Itemname':'KIT KAT CHUNKY Red 3+1 Free',
+      'MainPCateName':'Chocolate',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'179',
       'SubCate':'Promotion',
       'Itemname':'KIT KAT 2 Finger +6 Free',
+      'MainPCateName':'Chocolate',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'180',
       'SubCate':'Promotion',
       'Itemname':'KIT KAT 4 Finger + 4 Free',
+      'MainPCateName':'Chocolate',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'181',
       'SubCate':'Promotion',
       'Itemname':'KIT KAT 2F Hazelnut 5+ 1 Free',
+      'MainPCateName':'Chocolate',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'182',
       'SubCate':'Promotion',
       'Itemname':'KIT KAT 2F Cookie Crumble 5+1 Free',
+      'MainPCateName':'Chocolate',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'183',
       'SubCate':'Promotion',
       'Itemname':'KIT KAT 2F Caramel 5+1 Free',
+      'MainPCateName':'Chocolate',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'184',
       'SubCate':'Promotion',
       'Itemname':'KIT KAT 2F Raspberry 5+1 Free',
+      'MainPCateName':'Chocolate',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
   ];
@@ -3080,120 +3212,140 @@ class Chains with ChangeNotifier {
       'id':'185',
       'SubCate':'FITNESS Toasties',
       'Itemname':'Honey Mustard',
+      'MainPCateName':'Snakes',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'186',
       'SubCate':'FITNESS Toasties',
       'Itemname':'Tomato Herbs',
+      'MainPCateName':'Snakes',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'187',
       'SubCate':'FITNESS Toasties',
       'Itemname':'Cumin Lemon',
+      'MainPCateName':'Snakes',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'188',
       'SubCate':'FITNESS Toasties',
       'Itemname':'Mix Spices',
+      'MainPCateName':'Snakes',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'189',
       'SubCate':'FITNESS Toasties',
       'Itemname':'Cheese',
+      'MainPCateName':'Snakes',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'190',
       'SubCate':'FITNESS Toasties',
       'Itemname':'Olive&oregano Flaver',
+      'MainPCateName':'Snakes',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'191',
       'SubCate':'FITNESS Toasties',
       'Itemname':'FITNESS Biscuits App&Cinnamon',
+      'MainPCateName':'Biscuits',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'192',
       'SubCate':'FITNESS Toasties',
       'Itemname':'Fitness Biscuits Plain',
+      'MainPCateName':'Biscuits',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'193',
       'SubCate':'DOLCECA',
       'Itemname':'Coat Wafer Eshta',
+      'MainPCateName':'Wafer',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'194',
       'SubCate':'DOLCECA',
       'Itemname':'Coat Wafer Choc',
+      'MainPCateName':'Wafer',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'195',
       'SubCate':'DOLCECA',
       'Itemname':'Long Chocolate',
+      'MainPCateName':'Wafer',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'196',
       'SubCate':'DOLCECA',
       'Itemname':'Long Brownie',
+      'MainPCateName':'Wafer',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'197',
       'SubCate':'DOLCECA',
       'Itemname':'Long Eshta',
+      'MainPCateName':'Wafer',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'198',
       'SubCate':'Buscuits Nesquik',
       'Itemname':'Swch Milk 56g',
+      'MainPCateName':'Biscuits',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'199',
       'SubCate':'Buscuits Nesquik',
       'Itemname':'Swch Choc 28g',
+      'MainPCateName':'Biscuits',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'200',
       'SubCate':'Buscuits Nesquik',
       'Itemname':'Swch Choc 56g',
+      'MainPCateName':'Biscuits',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'201',
       'SubCate':'Buscuits Nesquik',
       'Itemname':'Swch Milk 28g',
+      'MainPCateName':'Biscuits',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'202',
       'SubCate':'Buscuits Nesquik',
       'Itemname':'Choco 37g',
+      'MainPCateName':'Biscuits',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'203',
       'SubCate':'Buscuits Nesquik',
       'Itemname':'Choco 75g',
+      'MainPCateName':'Biscuits',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'204',
       'SubCate':'Buscuits Nesquik',
       'Itemname':'Milk 37g',
+      'MainPCateName':'Biscuits',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
   ];
@@ -3202,84 +3354,98 @@ class Chains with ChangeNotifier {
       'id':'205',
       'SubCate':'Water',
       'Itemname':'NPL 1.5 L',
+      'MainPCateName':'Water',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'206',
       'SubCate':'Water',
       'Itemname':'NPL .6 L',
+      'MainPCateName':'Water',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'207',
       'SubCate':'Water',
       'Itemname':'Nestle Shrink 6L',
+      'MainPCateName':'Water',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'208',
       'SubCate':'Water',
       'Itemname':'Kids Charcters 330L',
+      'MainPCateName':'Water',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'209',
       'SubCate':'Water',
       'Itemname':'Sparkling 0.24 L',
+      'MainPCateName':'Water',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'210',
       'SubCate':'Water',
       'Itemname':'1.5 Shrink',
+      'MainPCateName':'Water',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'211',
       'SubCate':'Water',
       'Itemname':'Baraka 1.5L',
+      'MainPCateName':'Water',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'212',
       'SubCate':'Water',
       'Itemname':'Baraka 0.6 L',
+      'MainPCateName':'Water',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'213',
       'SubCate':'Water',
       'Itemname':'Nestle Gallon 18.9L',
+      'MainPCateName':'Water',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'214',
       'SubCate':'Water',
       'Itemname':'Vitality .500 L',
+      'MainPCateName':'Water',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'215',
       'SubCate':'Water',
       'Itemname':'IMMUNITY ZINC',
+      'MainPCateName':'Water',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'216',
       'SubCate':'Water',
       'Itemname':'Lemon 12B',
+      'MainPCateName':'Water',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'217',
       'SubCate':'Water',
       'Itemname':'Mixed Berries 12B',
+      'MainPCateName':'Water',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
     {
       'id':'218',
       'SubCate':'Water',
       'Itemname':'Green Apple 12B',
+      'MainPCateName':'Water',
       'imgUrl':'https://www.nestle.com/sites/default/files/flickr-nestle-corporate-logo-2020.jpg'
     },
   ];
@@ -3696,6 +3862,7 @@ class Chains with ChangeNotifier {
   String selectedSubCategory;
   String itemId;
   String ItemName;
+  String MainPCateName;
   bool isClick= false;
   bool ReviewPromotion=false;
 

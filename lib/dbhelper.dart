@@ -3,6 +3,7 @@ import 'package:gard/models/ExtraCate.dart';
 import 'package:gard/models/db_Comp_offerData.dart';
 import 'package:gard/models/db_Extra_Data.dart';
 import 'package:gard/models/db_Final_Data.dart';
+import 'package:gard/models/db_OurMainPrice.dart';
 import 'package:gard/models/db_Our_Offer_Cate.dart';
 import 'package:gard/models/db_Our_Offer_Data.dart';
 import 'package:gard/models/db_allOfferData.dart';
@@ -29,7 +30,7 @@ class DbHelper{
     db = await openDatabase(path,version: 1,onCreate: (Database db, int v)async{
       //create all tables
       await db.execute(
-          "create table FinalData(id integer primary key , branchid varchar(20) , date varchar(20), chain varchar(50), branch varchar(50), catename varchar(50), subcatename varchar(50), itemname varchar(50), capacity varchar(50), faces varchar(10))"
+          "create table FinalData(id integer primary key , branchid varchar(20) , date varchar(20), chain varchar(50), branch varchar(50), catename varchar(50), subcatename varchar(50), itemname varchar(50), capacity varchar(50), faces varchar(10) ,pricecatename varchar(20), price  varchar(20), size  varchar(20))"
       );
       await db.execute(
           "create table ExtraData(id integer primary key , branchid varchar(20) , date varchar(20), chain varchar(50), branch varchar(50), type varchar(50),  capacity varchar(50), faces varchar(10) , situation varchar(50), condition varchar(50))"
@@ -63,6 +64,9 @@ class DbHelper{
       );
       await db.execute(
           "create table AllOfferData( id integer primary key, branchid varchar(20), chain varchar(50), branch varchar(50),  itemnum varchar(20), catename varchar(50), subcatename varchar(50), subbrand varchar(50), itemname varchar(50),  mainprice varchar(20), pormotionreason varchar(50), pormotiontype varchar(50), pormotiondetail varchar(150), startdate varchar(20), enddate varchar(20), compid varchar(20),  compcatename  varchar(50),  company varchar(50), compitemname varchar(50), compMainPrice varchar(20), compPormotionReason varchar(50), comppormotiontype varchar(50), compPormotionDetails varchar(150), compstartdate varchar(20), compenddate varchar(20))"
+      );
+      await db.execute(
+          "create table OurMainPrice( id integer primary key, branchid varchar(20), ItemName varchar(30), pricecatename varchar(20), price  varchar(20), size  varchar(20))"
       );
     });
     return db;
@@ -140,6 +144,12 @@ class DbHelper{
     return db.insert('AllOfferData', dbEC.toMap());
   }
 
+  Future<int> createOurMainPrice(dbOurMainPrice dbEC) async{
+    Database db = await createDatabase();
+    //db.rawInsert('insert into courses')
+    return db.insert('OurMainPrice', dbEC.toMap());
+  }
+
   Future<List> allFinalData() async{
     Database db = await createDatabase();
     //db.rawQuery("select * from courses")
@@ -212,6 +222,12 @@ class DbHelper{
     return db.query('AllOfferData');
   }
 
+  Future<List> allOurMainPrice() async{
+    Database db = await createDatabase();
+    //db.rawQuery("select * from courses")
+    return db.query('OurMainPrice');
+  }
+
   Future<int> deleteFinalData(int id) async{
     Database db = await createDatabase();
     return db.delete('FinalData',where: 'id = ?',whereArgs:[id] );
@@ -270,6 +286,11 @@ class DbHelper{
   Future<int> deleteAllOfferData(int id) async{
     Database db = await createDatabase();
     return db.delete('AllOfferData',where: 'id = ?',whereArgs:[id] );
+  }
+
+  Future<int> deleteOurMainPrice(int id) async{
+    Database db = await createDatabase();
+    return db.delete('OurMainPrice',where: 'id = ?',whereArgs:[id] );
   }
 
   Future<int> clearPreviousDay()async{
@@ -332,6 +353,11 @@ class DbHelper{
     return db.delete('AllOfferData');
   }
 
+  Future<int> clearOurMainPricePreviousDay()async{
+    Database db=await createDatabase();
+    return db.delete('OurMainPrice');
+  }
+
   Future<int> updateFinalData(dbFinalData dbFD) async{
     Database db = await createDatabase();
     return await db.update('FinalData', dbFD.toMap(),where: 'id = ?', whereArgs: [dbFD.id]);
@@ -390,5 +416,10 @@ class DbHelper{
   Future<int> updateAllOfferData(dbAllOfferData dbED) async{
     Database db = await createDatabase();
     return await db.update('AllOfferData', dbED.toMap(),where: 'id = ?', whereArgs: [dbED.id]);
+  }
+
+  Future<int> updateOurMainPrice(dbOurMainPrice dbED) async{
+    Database db = await createDatabase();
+    return await db.update('OurMainPrice', dbED.toMap(),where: 'id = ?', whereArgs: [dbED.id]);
   }
 }

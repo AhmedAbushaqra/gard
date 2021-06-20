@@ -9,6 +9,7 @@ import 'package:gard/CompetitorOfferScreen.dart';
 import 'package:gard/ExpiryItem.dart';
 import 'package:gard/Items.dart';
 import 'package:gard/LogIn.dart';
+import 'package:gard/MainPriceCate.dart';
 import 'package:gard/OffersScreen.dart';
 import 'package:gard/Reports.dart';
 import 'package:gard/local_notification.dart';
@@ -67,6 +68,7 @@ class MyApp extends StatelessWidget {
           ExtraVisScreen.RouteName:(ctx)=>ExtraVisScreen(),
           OffersScreen.RouteName:(ctx)=>OffersScreen(),
           CompetitorOffersScreen.RouteName:(ctx)=>CompetitorOffersScreen(),
+          MainPriceCate.RouteName:(ctx)=>MainPriceCate(),
         },
       ),
     );

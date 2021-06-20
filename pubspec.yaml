@@ -95,6 +95,24 @@ flutter:
     - images/raya.jpeg
     - images/royal.jpeg
     - images/zahran.jpeg
+    - images/nonfoaming.jpeg
+    - images/foaming.jpeg
+    - images/inestantcoffe.jpeg
+    - images/cream.jpeg
+    - images/powdermilk.jpeg
+    - images/BabyFood.jpg
+    - images/babymilk.jpeg
+    - images/powderchocolate.jpeg
+    - images/tabs.jpeg
+    - images/mixes.jpeg
+    - images/soup.jpeg
+    - images/cereal.jpeg
+    - images/chocolate.jpeg
+    - images/snak.jpeg
+    - images/waffer.jpeg
+    - images/biscuits.jpeg
+    - images/RTD.jpeg
+    - images/waterp.jpeg
     - assets/translation/ar.json
     - assets/translation/en.json
 

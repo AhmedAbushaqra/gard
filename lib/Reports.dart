@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gard/MainPriceCate.dart';
 import 'package:gard/extra_vis_screen.dart';
 import 'package:gard/models/empLogin.dart';
 import 'package:gard/provider/ChainProvider.dart';
@@ -92,12 +93,14 @@ class _ReportsState extends State<Reports> {
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(18.0),
                     side: BorderSide(color: Color.fromRGBO(0, 160, 227, 1))),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).pushNamed(MainPriceCate.RouteName);
+                  reportType.reportType='MainPrice Report';
+                },
                 padding: EdgeInsets.all(10.0),
                 color: Color.fromRGBO(0, 160, 227, 1),
                 textColor: Colors.white,
-                child: Text(LocaleKeys.MainPrice.tr(),
-                    style: TextStyle(fontSize: 15)),
+                child: Text(LocaleKeys.MainPrice.tr(), style: TextStyle(fontSize: 15)),
               ),
             ),
 

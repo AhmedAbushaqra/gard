@@ -9,6 +9,9 @@ class dbFinalData{
   String itemname;
   String capacity;
   String faces;
+  String pricecatename;
+  String price;
+  String size;
 
   dbFinalData({
     this.id,
@@ -20,7 +23,10 @@ class dbFinalData{
     this.subcatename,
     this.itemname,
     this.capacity,
-    this.faces
+    this.faces,
+    this.pricecatename,
+    this.price,
+    this.size,
 });
   factory dbFinalData.fromjson(dynamic obj){
     return dbFinalData(
@@ -34,6 +40,9 @@ class dbFinalData{
     itemname: obj['itemname'].toString(),
     capacity: obj['capacity'].toString(),
     faces: obj['faces'].toString(),
+      pricecatename: obj['pricecatename'].toString(),
+      price: obj['price'].toString(),
+      size: obj['size'].toString(),
     );
   }
   dbFinalData.fromMap(Map<String, dynamic> data){
@@ -47,7 +56,11 @@ class dbFinalData{
     itemname=data['itemname'];
     capacity=data['capacity'];
     faces=data['faces'];
+    pricecatename=data['pricecatename'];
+    price=data['price'];
+    size=data['size'];
   }
   Map<String, dynamic> toMap() => {'id' : id, 'branchid': branchid,'date' : date,'chain': chain, 'branch':branch, 'catename':catename
-                                   ,'subcatename':subcatename, 'itemname':itemname,'capacity':capacity,'faces':faces };
+                                   ,'subcatename':subcatename, 'itemname':itemname,'capacity':capacity,'faces':faces,
+                                      'pricecatename':pricecatename,'price':price,'size':size,};
 }

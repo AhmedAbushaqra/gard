@@ -59,6 +59,7 @@ class _ItemsState extends State<Items> {
             ItemData.subCategory[index]['Itemname'],
             ItemData.selectedCategory=='BONJORNO'||ItemData.selectedCategory=='NESCAFE'||ItemData.selectedCategory=='COFFEE-MATE'
                 ?transItems[index]:ItemData.subCategory[index]['Itemname'],
+            ItemData.subCategory[index]['MainPCateName'],
             ItemData.subCategory[index]['imgUrl'],
             ItemData.subCategory[index]['SubCate'],
           ),

@@ -7,7 +7,7 @@ import 'package:gard/models/ExpiryData.dart';
 import 'package:gard/models/MissingData.dart';
 import 'package:gard/models/db_Expire_Data.dart';
 import 'package:gard/models/db_Final_Data.dart';
-import 'package:gard/models/final_data.dart';
+import 'package:gard/models/db_OurMainPrice.dart';
 import 'package:gard/provider/ChainProvider.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:gard/translation/locale_keys.g.dart';
@@ -21,6 +21,8 @@ class CustomDialogBox extends StatefulWidget {
   final String oldcap;
   final String oldprice;
   final String oldfaces;
+  final String oldSize;
+  final bool isMainPExist;
   final String report;
 
   final String itemId;
@@ -33,7 +35,7 @@ class CustomDialogBox extends StatefulWidget {
   final String oldselectedDate;
 
    CustomDialogBox(
-      {Key key, this.img,this.id,this.isExist,this.oldcap,this.oldprice,this.oldfaces,this.itemId,this.selectedSubCategory,
+      {Key key, this.img,this.id,this.isExist,this.oldcap,this.oldprice,this.oldfaces,this.oldSize,this.isMainPExist,this.itemId,this.selectedSubCategory,
         this.selectedCategory, this.ItemName,this.oldCountController,this.oldmissingType,this.oldselectedDate, this.report})
       : super(key: key);
 
@@ -61,6 +63,7 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
   TextEditingController CountController=TextEditingController();
 
   TextEditingController PriceController = TextEditingController();
+  TextEditingController SizeController = TextEditingController();
   TextEditingController FacesController = TextEditingController();
   String capacity;
   String missingType;
@@ -79,11 +82,14 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
     helper=DbHelper();
     if(widget.isExist){
       capacity=widget.oldcap;
-      PriceController.text=widget.oldprice;
       FacesController.text=widget.oldfaces;
       missingType=widget.oldmissingType;
       CountController.text=widget.oldCountController;
       _selectedDate=widget.oldselectedDate;
+    }
+    if(widget.isMainPExist){
+      PriceController.text=widget.oldprice;
+      SizeController.text=widget.oldSize;
     }
     widget.report=='P.O.S'?
     capacity=='Full Capacity'?_index=1:capacity=='Start Missing'?_index=2:capacity=='Missing'?_index=3:_index=0:
@@ -168,7 +174,39 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
               Column(
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
-                  Text(LocaleKeys.MainPrice.tr(),),
+                  Text('Size'),
+                  Container(
+                    width: MediaQuery.of(context).size.width*0.3,
+                    child: Theme(
+                      data: Theme.of(context).copyWith(splashColor: Colors.transparent),
+                      child: TextField(
+                        controller: SizeController,
+                        maxLength: 5,
+                        keyboardType: TextInputType.number,
+                        autofocus: false,
+                        style: TextStyle(fontSize: 22.0, color: Colors.black),
+                        decoration: InputDecoration(
+                          hintText: '00.0',
+                          filled: true,
+                          fillColor: Colors.white,
+                          contentPadding: const EdgeInsets.only(
+                              left: 14.0, bottom: 8.0, top: 8.0),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.black),
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Colors.black,
+                            ),
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 30,),
+                  Text(LocaleKeys.mainp.tr(),),
                   Container(
                     width: MediaQuery.of(context).size.width*0.3,
                     child: Theme(
@@ -243,7 +281,7 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
             right: 10,
             child: FloatingActionButton.extended(
               onPressed: () async{
-                if(_index==0||PriceController.text.isEmpty||_index!=3 && FacesController.text.isEmpty){
+                if(_index==0||SizeController.text.isEmpty||PriceController.text.isEmpty||_index!=3 && FacesController.text.isEmpty){
                   setState(() {
                     ISValidate=false;
                   });
@@ -253,8 +291,14 @@ class _CustomDialogBoxState extends State<CustomDialogBox> {
                     id : dbId, branchid: AllData.id,date : DateFormat.yMMMMd("en_US").format(DateTime.now())
                     ,chain: AllData.selectedPlace, branch:AllData.selectedBranch,catename:AllData.selectedCategory,
                     subcatename:AllData.selectedSubCategory, itemname:AllData.ItemName,
-                    capacity:capacity,faces:_index==3?'0':FacesController.text);
+                    capacity:capacity,faces:_index==3?'0':FacesController.text,pricecatename: AllData.MainPCateName,
+                   price: PriceController.text,size: SizeController.text);
                    widget.isExist?helper.updateFinalData(FD):helper.createFinalData(FD);
+
+                  dbOurMainPrice MP=dbOurMainPrice(
+                    id: dbId.toString(),branchid: AllData.id,ItemName: AllData.ItemName,pricecatename: AllData.MainPCateName,
+                    price: PriceController.text,size: SizeController.text);
+                  widget.isExist?helper.updateOurMainPrice(MP):widget.isMainPExist?helper.updateOurMainPrice(MP):helper.createOurMainPrice(MP);
                  /* AllData.submitForm(FinalData(
                     branchid: AllData.id,
                     date: DateFormat.yMMMMd("en_US").format(DateTime.now()),
